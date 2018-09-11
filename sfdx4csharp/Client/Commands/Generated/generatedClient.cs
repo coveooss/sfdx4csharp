@@ -1,4 +1,4 @@
-// Generated on September 11th 2018, 4:34:13 pm. DO NOT MODIFY
+// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using System.Diagnostics;
