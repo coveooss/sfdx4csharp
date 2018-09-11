@@ -24,15 +24,16 @@ namespace sfdx4csharpClient.Core
             T p_RequestOptions)
         {
             Debug.Assert(p_Command != null);
-            Debug.Assert(p_RequestOptions != null);
-            
+                        
             string options = BuildOptions(p_RequestOptions);
             return string.IsNullOrEmpty(options) ? p_Command : p_Command + " " + options;
         }
 
         private static string BuildOptions(T p_RequestOptions)
-        {
-            Debug.Assert(p_RequestOptions != null);
+        {            
+            if(p_RequestOptions == null) {
+                return "";
+            }
 
             var parameters = p_RequestOptions.GetType()
                 .GetProperties()

@@ -24,7 +24,6 @@ namespace sfdx4csharpClient.Core
             TOptions p_Options) where TOptions : SFDXOptions
         {
             Debug.Assert(p_MethodName != null);
-            Debug.Assert(p_Options != null);
 
             MethodInfo methodInfo = GetType().GetMethod(p_MethodName);
             Debug.Assert(methodInfo != null);

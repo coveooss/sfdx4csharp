@@ -35,8 +35,7 @@ namespace sfdx4csharpClient.Core
             T p_RequestOptions) where T : SFDXOptions
         {
             Debug.Assert(p_Command != null);
-            Debug.Assert(p_RequestOptions != null);
-            
+                        
             string completeCommand = CommandBuilder<T>.Build(p_Command, p_RequestOptions);
             return m_CommandRunner.RunCommand(completeCommand);
         }
