@@ -11,13 +11,14 @@ namespace sfdx4csharp
         {
             Console.WriteLine("Verifying sfdx version.");
             var client = new SFDXClient("/usr/local/bin/sfdx");
-            var response = client.AuthCommand.JwtGrant(new sfdx4csharpClient.Commands.Options.AuthJwtGrantOptions() {
-
+            var response = client.auth.jwtGrant(new AuthJwtGrantOptions {
+                username = "rdaccess@coveo.com",
+                instanceurl = "https://login.salesforce.com",
+                clientid = "3MVG99OxTyEMCQ3jzMsXigXWi8U5eV.e7V8LqZXTVhSFWeIvQ_CXgDyNS_alUlp6PZZ02elvXfc_zD2FvO5r4",
+                jwtkeyfile = "/Users/maveilleux/Repositories/SalesforceIntegrationV2/2/env/.sfdxjwtkey"
             });
 
-            Console.WriteLine("test:"+ response.AccessToken);
-              
-
+            Console.WriteLine("accessToken:"+ response["accessToken"].ToString());
         }
     }
 }

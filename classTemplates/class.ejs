@@ -1,0 +1,68 @@
+// Generated on <%= getCurrentFormatedDate() %>. DO NOT MODIFY
+using Newtonsoft.Json.Linq;
+using sfdx4csharp.Client.Core;
+using sfdx4csharpClient.Core;
+using sfdx4csharpClient.Core.Attributes;
+
+<% _.each(functionDefinitions, function(functionDef) { %>
+/**
+ * Options for the method <%= functionDef.name %> of class <%= className %>.
+ *
+ * I<%= className %><%= capitalizeFirstLetter(functionDef.name) %>
+ */
+public class <%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options : SFDXOptions {
+<% var numberOfParameters = functionDef.parameters.length;
+  _.each(functionDef.parameters, function(functionParameter, index) {
+    
+    // Preprocessing types for C#.
+    functionParameter.type = functionParameter.type.replace('IStringKeyPair[] | string[] | string', 'string');
+    functionParameter.type = functionParameter.type.replace('Boolean', 'bool');
+    functionParameter.type = functionParameter.type.replace('loglevel', 'LogLevel');
+
+    if(functionParameter.name == 'namespace')  {
+      functionParameter.name = '@namespace';
+    }
+
+    // String in C# are optional by default.
+    if(functionParameter.type == 'string') {
+      functionParameter.optional = false;
+    }
+%>
+  /**
+   * <%= functionParameter.optional ? '[Optional]' : '[Required]' %> <%= escapeForComments(functionParameter.description) %>
+   * @type {<%= functionParameter.type %>}
+   * @memberof <%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options
+   */
+  [SwitchName("<%= functionParameter.flagKey %>")]
+  public <%= functionParameter.type %><% if(functionParameter.optional){ %>?<% } %> <%= functionParameter.name %>  {get; set;}
+<% }) %>}
+<% }) %>
+
+/**
+ * <%= className %>
+ *
+ * @class <%= className %>
+ */
+[CommandClass("<%= apiCommandClass %>")]
+public class <%= className %> : SFDXCommand {
+        /// <inheritDoc />
+    public <%= className %>(CommandExecutioner p_CommandExecutioner)
+        : base(p_CommandExecutioner)
+    {
+    }
+
+  <% _.each(functionDefinitions, function(functionDef) { %>
+  /**
+   * <%= escapeForComments(functionDef.shortDescription) %>
+   * @returns {(Promise<<%= functionDef.returnType %> | void>)}
+   * @memberof <%= escapeForComments(className) %>
+   * @description <%= escapeForComments(functionDef.description) %>
+   * @example <%= escapeForComments(functionDef.help) %>
+   * <%= escapeForComments(functionDef.example) %>
+   */
+   [Command("<%= functionDef.apiCommand %>")]
+    public JToken <%= functionDef.name %>(<%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options p_Options<% if(isAllOptionalParameters(functionDef.parameters)) {%> = null<%} %>) {
+      return ExecuteCommand<<%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options, JToken>(nameof(<%= functionDef.name %>), p_Options);      
+    }
+  <% }) %>
+}
