@@ -12,4 +12,3 @@ deploy:
   script: dotnet nuget push src/bin/Release/sfdx4csharp.*.nupkg --api-key $NUGET_API_KEY
   on:
     tags: true
-    condition: $TRAVIS_TAG =~ ^(\d+\.)?(\d+\.)?(\*|\d+)$
