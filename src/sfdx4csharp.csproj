@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageId>sfdx4csharp</PackageId>
+    <PackageVersion>0.0.1</PackageVersion>
+    <Authors>Marc-Antoine Veilleux</Authors>
+    <Owners>JMarc-Antoine Veilleux</Owners>
+    <Title>SFDX for C#</Title>
+    <Description>A simple wrapper in C# for SFDX</Description>
+    <ProjectUrl>https://github.com/coveo/sfdx4csharp</ProjectUrl>
+    <LicenseUrl>https://github.com/coveo/sfdx4csharp/LICENSE.md</LicenseUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright Notice</Copyright>
+    <PackageTags>SFDX C# salesforce dx wrapper</PackageTags>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+</Project>
