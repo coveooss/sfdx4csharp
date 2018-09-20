@@ -1,4 +1,4 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 19th 2018, 4:53:42 pm. DO NOT MODIFY
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +6,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method create of class Package2.
   /// </summary>
   public class Package2CreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] Name of the second-generation package to create.
     /// </summary>  
@@ -61,7 +59,6 @@ namespace sfdx4csharpClient
   /// Options for the method list of class Package2.
   /// </summary>
   public class Package2ListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -85,7 +82,6 @@ namespace sfdx4csharpClient
   /// Options for the method update of class Package2.
   /// </summary>
   public class Package2UpdateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] ID of package (starts with 0Ho).
     /// </summary>  
@@ -127,7 +123,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionCreate of class Package2.
   /// </summary>
   public class Package2VersionCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] Specifies that the sfdx-project.json file should be validated against JSON schema
     /// </summary>  
@@ -211,7 +206,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionCreateGet of class Package2.
   /// </summary>
   public class Package2VersionCreateGetOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The ID of the package2 version creation request you want to display.
     /// </summary>  
@@ -241,7 +235,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionCreateList of class Package2.
   /// </summary>
   public class Package2VersionCreateListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -277,7 +270,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionGet of class Package2.
   /// </summary>
   public class Package2VersionGetOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The package version ID (starts with 05i).
     /// </summary>  
@@ -307,7 +299,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionList of class Package2.
   /// </summary>
   public class Package2VersionListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] Display extended package2 versions detail.
     /// </summary>  
@@ -373,7 +364,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionUpdate of class Package2.
   /// </summary>
   public class Package2VersionUpdateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The package version ID (starts with 05i).
     /// </summary>  
@@ -477,8 +467,8 @@ namespace sfdx4csharpClient
     /// force:package2:create -n <string> [-o <string>] [-d <string>] [-e] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("create")]
-      public JToken create(Package2CreateOptions p_Options) {
-        return ExecuteCommand<Package2CreateOptions, JToken>(nameof(create), p_Options);      
+      public JToken Create(Package2CreateOptions p_Options) {
+        return ExecuteCommand<Package2CreateOptions, JToken>(nameof(Create), p_Options);      
       }
     
     /// <summary>
@@ -494,8 +484,8 @@ namespace sfdx4csharpClient
     /// force:package2:list [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("list")]
-      public JToken list(Package2ListOptions p_Options) {
-        return ExecuteCommand<Package2ListOptions, JToken>(nameof(list), p_Options);      
+      public JToken List(Package2ListOptions p_Options) {
+        return ExecuteCommand<Package2ListOptions, JToken>(nameof(List), p_Options);      
       }
     
     /// <summary>
@@ -519,8 +509,8 @@ namespace sfdx4csharpClient
     /// force:package2:update -i <id> [-n <string>] [-d <string>] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("update")]
-      public JToken update(Package2UpdateOptions p_Options) {
-        return ExecuteCommand<Package2UpdateOptions, JToken>(nameof(update), p_Options);      
+      public JToken Update(Package2UpdateOptions p_Options) {
+        return ExecuteCommand<Package2UpdateOptions, JToken>(nameof(Update), p_Options);      
       }
     
     /// <summary>
@@ -546,8 +536,8 @@ namespace sfdx4csharpClient
     /// force:package2:version:create [-i <id>] [-d <directory>] [-b <string>] [-t <string>] [-k <string>] [-w <minutes>] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("version:create")]
-      public JToken versionCreate(Package2VersionCreateOptions p_Options) {
-        return ExecuteCommand<Package2VersionCreateOptions, JToken>(nameof(versionCreate), p_Options);      
+      public JToken VersionCreate(Package2VersionCreateOptions p_Options) {
+        return ExecuteCommand<Package2VersionCreateOptions, JToken>(nameof(VersionCreate), p_Options);      
       }
     
     /// <summary>
@@ -568,8 +558,8 @@ namespace sfdx4csharpClient
     /// force:package2:version:create:get -i <id> [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("version:create:get")]
-      public JToken versionCreateGet(Package2VersionCreateGetOptions p_Options) {
-        return ExecuteCommand<Package2VersionCreateGetOptions, JToken>(nameof(versionCreateGet), p_Options);      
+      public JToken VersionCreateGet(Package2VersionCreateGetOptions p_Options) {
+        return ExecuteCommand<Package2VersionCreateGetOptions, JToken>(nameof(VersionCreateGet), p_Options);      
       }
     
     /// <summary>
@@ -596,8 +586,8 @@ namespace sfdx4csharpClient
     /// force:package2:version:create:list [-c <number>] [-s <string>] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("version:create:list")]
-      public JToken versionCreateList(Package2VersionCreateListOptions p_Options) {
-        return ExecuteCommand<Package2VersionCreateListOptions, JToken>(nameof(versionCreateList), p_Options);      
+      public JToken VersionCreateList(Package2VersionCreateListOptions p_Options) {
+        return ExecuteCommand<Package2VersionCreateListOptions, JToken>(nameof(VersionCreateList), p_Options);      
       }
     
     /// <summary>
@@ -618,8 +608,8 @@ namespace sfdx4csharpClient
     /// force:package2:version:get -i <id> [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("version:get")]
-      public JToken versionGet(Package2VersionGetOptions p_Options) {
-        return ExecuteCommand<Package2VersionGetOptions, JToken>(nameof(versionGet), p_Options);      
+      public JToken VersionGet(Package2VersionGetOptions p_Options) {
+        return ExecuteCommand<Package2VersionGetOptions, JToken>(nameof(VersionGet), p_Options);      
       }
     
     /// <summary>
@@ -646,8 +636,8 @@ namespace sfdx4csharpClient
     /// force:package2:version:list [-c <number>] [-m <number>] [-i <string>...] [-r] [-o <string>...] [-v <string>] [--concise] [--json] [--loglevel <string>] [--verbose]
     /// </example>
     [Command("version:list")]
-      public JToken versionList(Package2VersionListOptions p_Options) {
-        return ExecuteCommand<Package2VersionListOptions, JToken>(nameof(versionList), p_Options);      
+      public JToken VersionList(Package2VersionListOptions p_Options) {
+        return ExecuteCommand<Package2VersionListOptions, JToken>(nameof(VersionList), p_Options);      
       }
     
     /// <summary>
@@ -671,8 +661,8 @@ namespace sfdx4csharpClient
     /// force:package2:version:update -i <id> [-n <string>] [-d <string>] [-b <string>] [-t <string>] [-k <string>] [-s] [-p] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("version:update")]
-      public JToken versionUpdate(Package2VersionUpdateOptions p_Options) {
-        return ExecuteCommand<Package2VersionUpdateOptions, JToken>(nameof(versionUpdate), p_Options);      
+      public JToken VersionUpdate(Package2VersionUpdateOptions p_Options) {
+        return ExecuteCommand<Package2VersionUpdateOptions, JToken>(nameof(VersionUpdate), p_Options);      
       }
     
   }

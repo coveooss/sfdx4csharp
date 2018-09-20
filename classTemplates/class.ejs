@@ -14,13 +14,13 @@ using sfdx4csharpClient.Core;
 using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
-{
-  <% _.each(functionDefinitions, function(functionDef) { %>
+{<% 
+  _.each(functionDefinitions, function(functionDef) { %>
   /// <summary>
   /// Options for the method <%= functionDef.name %> of class <%= className %>.
   /// </summary>
-  public class <%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options : SFDXOptions {
-  <% var numberOfParameters = functionDef.parameters.length;
+  public class <%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options : SFDXOptions {<% 
+    var numberOfParameters = functionDef.parameters.length;
     _.each(functionDef.parameters, function(functionParameter, index) {
       
       // Preprocessing types for C#.
@@ -57,7 +57,9 @@ namespace sfdx4csharpClient
     {
     }
 
-    <% _.each(functionDefinitions, function(functionDef) { %>
+    <% _.each(functionDefinitions, function(functionDef) { 
+      var capitalizedFunctionName = capitalizeFirstLetter(functionDef.name);
+      %>
     /// <summary>
     /// <%= escapeForComments(functionDef.shortDescription) %>
     /// </summary>
@@ -69,8 +71,8 @@ namespace sfdx4csharpClient
     /// <%= escapeForComments(functionDef.example) %>
     /// </example>
     [Command("<%= functionDef.apiCommand %>")]
-      public JToken <%= functionDef.name %>(<%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options p_Options<% if(isAllOptionalParameters(functionDef.parameters)) {%> = null<%} %>) {
-        return ExecuteCommand<<%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options, JToken>(nameof(<%= functionDef.name %>), p_Options);      
+      public JToken <%= capitalizedFunctionName %>(<%= className %><%= capitalizedFunctionName %>Options p_Options<% if(isAllOptionalParameters(functionDef.parameters)) {%> = null<%} %>) {
+        return ExecuteCommand<<%= className %><%= capitalizedFunctionName %>Options, JToken>(nameof(<%= capitalizedFunctionName %>), p_Options);      
       }
     <% }) %>
   }

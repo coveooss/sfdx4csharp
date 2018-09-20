@@ -1,4 +1,4 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 19th 2018, 4:53:42 pm. DO NOT MODIFY
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +6,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method create of class Package.
   /// </summary>
   public class PackageCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] Name of the package to create.
     /// </summary>  
@@ -67,7 +65,6 @@ namespace sfdx4csharpClient
   /// Options for the method install of class Package.
   /// </summary>
   public class PackageInstallOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -128,7 +125,6 @@ namespace sfdx4csharpClient
   /// Options for the method installGet of class Package.
   /// </summary>
   public class PackageInstallGetOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The ID of the package install request you want to check.
     /// </summary>  
@@ -158,7 +154,6 @@ namespace sfdx4csharpClient
   /// Options for the method installReport of class Package.
   /// </summary>
   public class PackageInstallReportOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The ID of the package install request you want to check.
     /// </summary>  
@@ -188,7 +183,6 @@ namespace sfdx4csharpClient
   /// Options for the method installedList of class Package.
   /// </summary>
   public class PackageInstalledListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -212,7 +206,6 @@ namespace sfdx4csharpClient
   /// Options for the method list of class Package.
   /// </summary>
   public class PackageListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] Displays extended package details.
     /// </summary>  
@@ -242,7 +235,6 @@ namespace sfdx4csharpClient
   /// Options for the method uninstall of class Package.
   /// </summary>
   public class PackageUninstallOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -284,7 +276,6 @@ namespace sfdx4csharpClient
   /// Options for the method uninstallGet of class Package.
   /// </summary>
   public class PackageUninstallGetOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The ID of the package uninstall request you want to check.
     /// </summary>  
@@ -314,7 +305,6 @@ namespace sfdx4csharpClient
   /// Options for the method uninstallReport of class Package.
   /// </summary>
   public class PackageUninstallReportOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The ID of the package uninstall request you want to check.
     /// </summary>  
@@ -344,7 +334,6 @@ namespace sfdx4csharpClient
   /// Options for the method update of class Package.
   /// </summary>
   public class PackageUpdateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The D (starts with 0Ho) or alias of the package to update.
     /// </summary>  
@@ -386,7 +375,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionCreate of class Package.
   /// </summary>
   public class PackageVersionCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The number of minutes to wait for the package version to be created.
     /// </summary>  
@@ -500,7 +488,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionCreateList of class Package.
   /// </summary>
   public class PackageVersionCreateListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -536,7 +523,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionCreateReport of class Package.
   /// </summary>
   public class PackageVersionCreateReportOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The ID (starts with 08c) of the package version creation request you want to display.
     /// </summary>  
@@ -566,7 +552,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionList of class Package.
   /// </summary>
   public class PackageVersionListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] Displays extended package version details.
     /// </summary>  
@@ -632,7 +617,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionPromote of class Package.
   /// </summary>
   public class PackageVersionPromoteOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The ID (starts with 04t) or alias of the package version to promote.
     /// </summary>  
@@ -668,7 +652,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionReport of class Package.
   /// </summary>
   public class PackageVersionReportOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The ID (starts with 04t) or alias of the package to retrieve details for.
     /// </summary>  
@@ -704,7 +687,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionUpdate of class Package.
   /// </summary>
   public class PackageVersionUpdateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The ID (starts with 04t) or alias of the package to update a version of.
     /// </summary>  
@@ -797,8 +779,8 @@ namespace sfdx4csharpClient
     /// force:package:create -n <string> -t <string> -r <directory> [-d <string>] [-e] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("create")]
-      public JToken create(PackageCreateOptions p_Options) {
-        return ExecuteCommand<PackageCreateOptions, JToken>(nameof(create), p_Options);      
+      public JToken Create(PackageCreateOptions p_Options) {
+        return ExecuteCommand<PackageCreateOptions, JToken>(nameof(Create), p_Options);      
       }
     
     /// <summary>
@@ -817,8 +799,8 @@ namespace sfdx4csharpClient
     /// force:package:install [-i <id>] [-w <minutes>] [-k <string>] [-p <minutes>] [-r] [--package <string>] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("install")]
-      public JToken install(PackageInstallOptions p_Options) {
-        return ExecuteCommand<PackageInstallOptions, JToken>(nameof(install), p_Options);      
+      public JToken Install(PackageInstallOptions p_Options) {
+        return ExecuteCommand<PackageInstallOptions, JToken>(nameof(Install), p_Options);      
       }
     
     /// <summary>
@@ -836,8 +818,8 @@ namespace sfdx4csharpClient
     /// force:package:install:get -i <id> [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("install:get")]
-      public JToken installGet(PackageInstallGetOptions p_Options) {
-        return ExecuteCommand<PackageInstallGetOptions, JToken>(nameof(installGet), p_Options);      
+      public JToken InstallGet(PackageInstallGetOptions p_Options) {
+        return ExecuteCommand<PackageInstallGetOptions, JToken>(nameof(InstallGet), p_Options);      
       }
     
     /// <summary>
@@ -853,8 +835,8 @@ namespace sfdx4csharpClient
     /// force:package:install:report -i <id> [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("install:report")]
-      public JToken installReport(PackageInstallReportOptions p_Options) {
-        return ExecuteCommand<PackageInstallReportOptions, JToken>(nameof(installReport), p_Options);      
+      public JToken InstallReport(PackageInstallReportOptions p_Options) {
+        return ExecuteCommand<PackageInstallReportOptions, JToken>(nameof(InstallReport), p_Options);      
       }
     
     /// <summary>
@@ -872,8 +854,8 @@ namespace sfdx4csharpClient
     /// force:package:installed:list [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("installed:list")]
-      public JToken installedList(PackageInstalledListOptions p_Options) {
-        return ExecuteCommand<PackageInstalledListOptions, JToken>(nameof(installedList), p_Options);      
+      public JToken InstalledList(PackageInstalledListOptions p_Options) {
+        return ExecuteCommand<PackageInstalledListOptions, JToken>(nameof(InstalledList), p_Options);      
       }
     
     /// <summary>
@@ -891,8 +873,8 @@ namespace sfdx4csharpClient
     /// force:package:list [-v <string>] [--json] [--loglevel <string>] [--verbose]
     /// </example>
     [Command("list")]
-      public JToken list(PackageListOptions p_Options) {
-        return ExecuteCommand<PackageListOptions, JToken>(nameof(list), p_Options);      
+      public JToken List(PackageListOptions p_Options) {
+        return ExecuteCommand<PackageListOptions, JToken>(nameof(List), p_Options);      
       }
     
     /// <summary>
@@ -915,8 +897,8 @@ namespace sfdx4csharpClient
     /// force:package:uninstall [-i <id>] [-w <minutes>] [-p <string>] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("uninstall")]
-      public JToken uninstall(PackageUninstallOptions p_Options) {
-        return ExecuteCommand<PackageUninstallOptions, JToken>(nameof(uninstall), p_Options);      
+      public JToken Uninstall(PackageUninstallOptions p_Options) {
+        return ExecuteCommand<PackageUninstallOptions, JToken>(nameof(Uninstall), p_Options);      
       }
     
     /// <summary>
@@ -934,8 +916,8 @@ namespace sfdx4csharpClient
     /// force:package:uninstall:get -i <id> [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("uninstall:get")]
-      public JToken uninstallGet(PackageUninstallGetOptions p_Options) {
-        return ExecuteCommand<PackageUninstallGetOptions, JToken>(nameof(uninstallGet), p_Options);      
+      public JToken UninstallGet(PackageUninstallGetOptions p_Options) {
+        return ExecuteCommand<PackageUninstallGetOptions, JToken>(nameof(UninstallGet), p_Options);      
       }
     
     /// <summary>
@@ -951,8 +933,8 @@ namespace sfdx4csharpClient
     /// force:package:uninstall:report -i <id> [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("uninstall:report")]
-      public JToken uninstallReport(PackageUninstallReportOptions p_Options) {
-        return ExecuteCommand<PackageUninstallReportOptions, JToken>(nameof(uninstallReport), p_Options);      
+      public JToken UninstallReport(PackageUninstallReportOptions p_Options) {
+        return ExecuteCommand<PackageUninstallReportOptions, JToken>(nameof(UninstallReport), p_Options);      
       }
     
     /// <summary>
@@ -974,8 +956,8 @@ namespace sfdx4csharpClient
     /// force:package:update -p <string> [-n <string>] [-d <string>] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("update")]
-      public JToken update(PackageUpdateOptions p_Options) {
-        return ExecuteCommand<PackageUpdateOptions, JToken>(nameof(update), p_Options);      
+      public JToken Update(PackageUpdateOptions p_Options) {
+        return ExecuteCommand<PackageUpdateOptions, JToken>(nameof(Update), p_Options);      
       }
     
     /// <summary>
@@ -1002,8 +984,8 @@ namespace sfdx4csharpClient
     /// force:package:version:create [-p <string>] [-d <directory>] [-f <filepath>] [-b <string>] [-t <string>] [-k <string>] [-x] [-w <minutes>] [-a <string>] [-n <string>] [-e <string>] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("version:create")]
-      public JToken versionCreate(PackageVersionCreateOptions p_Options) {
-        return ExecuteCommand<PackageVersionCreateOptions, JToken>(nameof(versionCreate), p_Options);      
+      public JToken VersionCreate(PackageVersionCreateOptions p_Options) {
+        return ExecuteCommand<PackageVersionCreateOptions, JToken>(nameof(VersionCreate), p_Options);      
       }
     
     /// <summary>
@@ -1028,8 +1010,8 @@ namespace sfdx4csharpClient
     /// force:package:version:create:list [-c <number>] [-s <string>] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("version:create:list")]
-      public JToken versionCreateList(PackageVersionCreateListOptions p_Options) {
-        return ExecuteCommand<PackageVersionCreateListOptions, JToken>(nameof(versionCreateList), p_Options);      
+      public JToken VersionCreateList(PackageVersionCreateListOptions p_Options) {
+        return ExecuteCommand<PackageVersionCreateListOptions, JToken>(nameof(VersionCreateList), p_Options);      
       }
     
     /// <summary>
@@ -1049,8 +1031,8 @@ namespace sfdx4csharpClient
     /// force:package:version:create:report -i <id> [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("version:create:report")]
-      public JToken versionCreateReport(PackageVersionCreateReportOptions p_Options) {
-        return ExecuteCommand<PackageVersionCreateReportOptions, JToken>(nameof(versionCreateReport), p_Options);      
+      public JToken VersionCreateReport(PackageVersionCreateReportOptions p_Options) {
+        return ExecuteCommand<PackageVersionCreateReportOptions, JToken>(nameof(VersionCreateReport), p_Options);      
       }
     
     /// <summary>
@@ -1076,8 +1058,8 @@ namespace sfdx4csharpClient
     /// force:package:version:list [-c <number>] [-m <number>] [-p <string>...] [-r] [-o <string>...] [-v <string>] [--concise] [--json] [--loglevel <string>] [--verbose]
     /// </example>
     [Command("version:list")]
-      public JToken versionList(PackageVersionListOptions p_Options) {
-        return ExecuteCommand<PackageVersionListOptions, JToken>(nameof(versionList), p_Options);      
+      public JToken VersionList(PackageVersionListOptions p_Options) {
+        return ExecuteCommand<PackageVersionListOptions, JToken>(nameof(VersionList), p_Options);      
       }
     
     /// <summary>
@@ -1098,8 +1080,8 @@ namespace sfdx4csharpClient
     /// force:package:version:promote -p <string> [-n] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("version:promote")]
-      public JToken versionPromote(PackageVersionPromoteOptions p_Options) {
-        return ExecuteCommand<PackageVersionPromoteOptions, JToken>(nameof(versionPromote), p_Options);      
+      public JToken VersionPromote(PackageVersionPromoteOptions p_Options) {
+        return ExecuteCommand<PackageVersionPromoteOptions, JToken>(nameof(VersionPromote), p_Options);      
       }
     
     /// <summary>
@@ -1119,8 +1101,8 @@ namespace sfdx4csharpClient
     /// force:package:version:report -p <string> [-v <string>] [--json] [--loglevel <string>] [--verbose]
     /// </example>
     [Command("version:report")]
-      public JToken versionReport(PackageVersionReportOptions p_Options) {
-        return ExecuteCommand<PackageVersionReportOptions, JToken>(nameof(versionReport), p_Options);      
+      public JToken VersionReport(PackageVersionReportOptions p_Options) {
+        return ExecuteCommand<PackageVersionReportOptions, JToken>(nameof(VersionReport), p_Options);      
       }
     
     /// <summary>
@@ -1143,8 +1125,8 @@ namespace sfdx4csharpClient
     /// force:package:version:update -p <string> [-a <string>] [-e <string>] [-b <string>] [-t <string>] [-k <string>] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("version:update")]
-      public JToken versionUpdate(PackageVersionUpdateOptions p_Options) {
-        return ExecuteCommand<PackageVersionUpdateOptions, JToken>(nameof(versionUpdate), p_Options);      
+      public JToken VersionUpdate(PackageVersionUpdateOptions p_Options) {
+        return ExecuteCommand<PackageVersionUpdateOptions, JToken>(nameof(VersionUpdate), p_Options);      
       }
     
   }

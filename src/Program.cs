@@ -12,7 +12,7 @@ namespace sfdx4csharp
             Console.WriteLine("Verifying sfdx version.");
             var client = new SFDXClient("/usr/local/bin/sfdx");
             {
-                var response = client.auth.jwtGrant(new AuthJwtGrantOptions {
+                var response = client.Auth.JwtGrant(new AuthJwtGrantOptions {
                     username = "rdaccess@coveo.com",
                     instanceurl = "https://login.salesforce.com",
                     clientid = "3MVG99OxTyEMCQ3jzMsXigXWi8U5eV.e7V8LqZXTVhSFWeIvQ_CXgDyNS_alUlp6PZZ02elvXfc_zD2FvO5r4",
@@ -24,7 +24,7 @@ namespace sfdx4csharp
             }
 
             {
-                var response = client.org.list();
+                var response = client.Org.List();
                 Console.WriteLine("orgs:"+ response.ToString());
 
             }

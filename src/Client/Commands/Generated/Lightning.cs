@@ -1,4 +1,4 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 19th 2018, 4:53:42 pm. DO NOT MODIFY
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +6,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method appCreate of class Lightning.
   /// </summary>
   public class LightningAppCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The Lightning app name. The name can be up to 40 characters and must start with a letter.
     /// </summary>  
@@ -59,7 +57,6 @@ namespace sfdx4csharpClient
   /// Options for the method componentCreate of class Lightning.
   /// </summary>
   public class LightningComponentCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The Lightning component name. The name can be up to 40 characters and must start with a letter.
     /// </summary>  
@@ -113,7 +110,6 @@ namespace sfdx4csharpClient
   /// Options for the method eventCreate of class Lightning.
   /// </summary>
   public class LightningEventCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The Lightning event name. The name can be up to 40 characters and must start with a letter.
     /// </summary>  
@@ -161,7 +157,6 @@ namespace sfdx4csharpClient
   /// Options for the method interfaceCreate of class Lightning.
   /// </summary>
   public class LightningInterfaceCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The Lightning interface name. The name can be up to 40 characters and must start with a letter.
     /// </summary>  
@@ -209,7 +204,6 @@ namespace sfdx4csharpClient
   /// Options for the method lint of class Lightning.
   /// </summary>
   public class LightningLintOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] Exit with error code 1 if there are lint issues. The default exits without an error code.
     /// </summary>  
@@ -251,7 +245,6 @@ namespace sfdx4csharpClient
   /// Options for the method testCreate of class Lightning.
   /// </summary>
   public class LightningTestCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The name of the new Lightning test. The name can be up to 40 characters and must start with a letter.
     /// </summary>  
@@ -293,7 +286,6 @@ namespace sfdx4csharpClient
   /// Options for the method testInstall of class Lightning.
   /// </summary>
   public class LightningTestInstallOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -335,7 +327,6 @@ namespace sfdx4csharpClient
   /// Options for the method testRun of class Lightning.
   /// </summary>
   public class LightningTestRunOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -424,8 +415,8 @@ namespace sfdx4csharpClient
     /// force:lightning:app:create -n <string> [-t <string>] [-d <string>] [-a <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("app:create")]
-      public JToken appCreate(LightningAppCreateOptions p_Options) {
-        return ExecuteCommand<LightningAppCreateOptions, JToken>(nameof(appCreate), p_Options);      
+      public JToken AppCreate(LightningAppCreateOptions p_Options) {
+        return ExecuteCommand<LightningAppCreateOptions, JToken>(nameof(AppCreate), p_Options);      
       }
     
     /// <summary>
@@ -446,8 +437,8 @@ namespace sfdx4csharpClient
     /// force:lightning:component:create -n <string> [-t <string>] [-d <string>] [-a <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("component:create")]
-      public JToken componentCreate(LightningComponentCreateOptions p_Options) {
-        return ExecuteCommand<LightningComponentCreateOptions, JToken>(nameof(componentCreate), p_Options);      
+      public JToken ComponentCreate(LightningComponentCreateOptions p_Options) {
+        return ExecuteCommand<LightningComponentCreateOptions, JToken>(nameof(ComponentCreate), p_Options);      
       }
     
     /// <summary>
@@ -468,8 +459,8 @@ namespace sfdx4csharpClient
     /// force:lightning:event:create -n <string> [-t <string>] [-d <string>] [-a <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("event:create")]
-      public JToken eventCreate(LightningEventCreateOptions p_Options) {
-        return ExecuteCommand<LightningEventCreateOptions, JToken>(nameof(eventCreate), p_Options);      
+      public JToken EventCreate(LightningEventCreateOptions p_Options) {
+        return ExecuteCommand<LightningEventCreateOptions, JToken>(nameof(EventCreate), p_Options);      
       }
     
     /// <summary>
@@ -490,8 +481,8 @@ namespace sfdx4csharpClient
     /// force:lightning:interface:create -n <string> [-t <string>] [-d <string>] [-a <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("interface:create")]
-      public JToken interfaceCreate(LightningInterfaceCreateOptions p_Options) {
-        return ExecuteCommand<LightningInterfaceCreateOptions, JToken>(nameof(interfaceCreate), p_Options);      
+      public JToken InterfaceCreate(LightningInterfaceCreateOptions p_Options) {
+        return ExecuteCommand<LightningInterfaceCreateOptions, JToken>(nameof(InterfaceCreate), p_Options);      
       }
     
     /// <summary>
@@ -507,8 +498,8 @@ namespace sfdx4csharpClient
     /// 
     /// </example>
     [Command("lint")]
-      public JToken lint(LightningLintOptions p_Options) {
-        return ExecuteCommand<LightningLintOptions, JToken>(nameof(lint), p_Options);      
+      public JToken Lint(LightningLintOptions p_Options) {
+        return ExecuteCommand<LightningLintOptions, JToken>(nameof(Lint), p_Options);      
       }
     
     /// <summary>
@@ -527,8 +518,8 @@ namespace sfdx4csharpClient
     /// force:lightning:test:create -n <string> [-t <string>] [-d <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("test:create")]
-      public JToken testCreate(LightningTestCreateOptions p_Options) {
-        return ExecuteCommand<LightningTestCreateOptions, JToken>(nameof(testCreate), p_Options);      
+      public JToken TestCreate(LightningTestCreateOptions p_Options) {
+        return ExecuteCommand<LightningTestCreateOptions, JToken>(nameof(TestCreate), p_Options);      
       }
     
     /// <summary>
@@ -545,8 +536,8 @@ namespace sfdx4csharpClient
     /// force:lightning:test:install [-w <minutes>] [-r <string>] [-t <string>] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("test:install")]
-      public JToken testInstall(LightningTestInstallOptions p_Options) {
-        return ExecuteCommand<LightningTestInstallOptions, JToken>(nameof(testInstall), p_Options);      
+      public JToken TestInstall(LightningTestInstallOptions p_Options) {
+        return ExecuteCommand<LightningTestInstallOptions, JToken>(nameof(TestInstall), p_Options);      
       }
     
     /// <summary>
@@ -563,8 +554,8 @@ namespace sfdx4csharpClient
     /// force:lightning:test:run [-a <string>] [-d <directory>] [-r <string>] [-f <filepath>] [-o] [-t <number>] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("test:run")]
-      public JToken testRun(LightningTestRunOptions p_Options) {
-        return ExecuteCommand<LightningTestRunOptions, JToken>(nameof(testRun), p_Options);      
+      public JToken TestRun(LightningTestRunOptions p_Options) {
+        return ExecuteCommand<LightningTestRunOptions, JToken>(nameof(TestRun), p_Options);      
       }
     
   }

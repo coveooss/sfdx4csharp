@@ -1,4 +1,4 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 19th 2018, 4:53:42 pm. DO NOT MODIFY
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +6,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method create of class Project.
   /// </summary>
   public class ProjectCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The name for the new project. Any valid folder name is accepted.
     /// </summary>  
@@ -77,7 +75,6 @@ namespace sfdx4csharpClient
   /// Options for the method upgrade of class Project.
   /// </summary>
   public class ProjectUpgradeOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -128,8 +125,8 @@ namespace sfdx4csharpClient
     /// force:project:create -n <string> [-t <string>] [-d <string>] [-s <string>] [-p <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("create")]
-      public JToken create(ProjectCreateOptions p_Options) {
-        return ExecuteCommand<ProjectCreateOptions, JToken>(nameof(create), p_Options);      
+      public JToken Create(ProjectCreateOptions p_Options) {
+        return ExecuteCommand<ProjectCreateOptions, JToken>(nameof(Create), p_Options);      
       }
     
     /// <summary>
@@ -145,8 +142,8 @@ namespace sfdx4csharpClient
     /// force:project:upgrade [-f] [--json] [--loglevel <string>]
     /// </example>
     [Command("upgrade")]
-      public JToken upgrade(ProjectUpgradeOptions p_Options = null) {
-        return ExecuteCommand<ProjectUpgradeOptions, JToken>(nameof(upgrade), p_Options);      
+      public JToken Upgrade(ProjectUpgradeOptions p_Options = null) {
+        return ExecuteCommand<ProjectUpgradeOptions, JToken>(nameof(Upgrade), p_Options);      
       }
     
   }

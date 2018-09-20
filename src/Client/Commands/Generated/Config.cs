@@ -1,4 +1,4 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 19th 2018, 4:53:42 pm. DO NOT MODIFY
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +6,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method get of class Config.
   /// </summary>
   public class ConfigGetOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The key pair expression for the command
     /// </summary>  
@@ -41,7 +39,6 @@ namespace sfdx4csharpClient
   /// Options for the method list of class Config.
   /// </summary>
   public class ConfigListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -59,7 +56,6 @@ namespace sfdx4csharpClient
   /// Options for the method set of class Config.
   /// </summary>
   public class ConfigSetOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The key pair expression for the command
     /// </summary>  
@@ -118,8 +114,8 @@ namespace sfdx4csharpClient
     /// force:config:get name=value... [--json] [--loglevel <string>] [--verbose]
     /// </example>
     [Command("get")]
-      public JToken get(ConfigGetOptions p_Options) {
-        return ExecuteCommand<ConfigGetOptions, JToken>(nameof(get), p_Options);      
+      public JToken Get(ConfigGetOptions p_Options) {
+        return ExecuteCommand<ConfigGetOptions, JToken>(nameof(Get), p_Options);      
       }
     
     /// <summary>
@@ -133,8 +129,8 @@ namespace sfdx4csharpClient
     /// force:config:list [--json] [--loglevel <string>]
     /// </example>
     [Command("list")]
-      public JToken list(ConfigListOptions p_Options = null) {
-        return ExecuteCommand<ConfigListOptions, JToken>(nameof(list), p_Options);      
+      public JToken List(ConfigListOptions p_Options = null) {
+        return ExecuteCommand<ConfigListOptions, JToken>(nameof(List), p_Options);      
       }
     
     /// <summary>
@@ -152,8 +148,8 @@ namespace sfdx4csharpClient
     /// force:config:set name=value... [-g] [--json] [--loglevel <string>]
     /// </example>
     [Command("set")]
-      public JToken set(ConfigSetOptions p_Options) {
-        return ExecuteCommand<ConfigSetOptions, JToken>(nameof(set), p_Options);      
+      public JToken Set(ConfigSetOptions p_Options) {
+        return ExecuteCommand<ConfigSetOptions, JToken>(nameof(Set), p_Options);      
       }
     
   }

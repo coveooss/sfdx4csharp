@@ -1,4 +1,4 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 19th 2018, 4:53:42 pm. DO NOT MODIFY
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +6,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method sobjectDescribe of class Schema.
   /// </summary>
   public class SchemaSobjectDescribeOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The API name of the object to describe.
     /// </summary>  
@@ -47,7 +45,6 @@ namespace sfdx4csharpClient
   /// Options for the method sobjectList of class Schema.
   /// </summary>
   public class SchemaSobjectListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The type of objects to list: all, custom, or standard.
     /// </summary>  
@@ -101,8 +98,8 @@ namespace sfdx4csharpClient
     /// force:schema:sobject:describe -s <string> [-t] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("sobject:describe")]
-      public JToken sobjectDescribe(SchemaSobjectDescribeOptions p_Options) {
-        return ExecuteCommand<SchemaSobjectDescribeOptions, JToken>(nameof(sobjectDescribe), p_Options);      
+      public JToken SobjectDescribe(SchemaSobjectDescribeOptions p_Options) {
+        return ExecuteCommand<SchemaSobjectDescribeOptions, JToken>(nameof(SobjectDescribe), p_Options);      
       }
     
     /// <summary>
@@ -121,8 +118,8 @@ namespace sfdx4csharpClient
     /// force:schema:sobject:list -c <string> [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("sobject:list")]
-      public JToken sobjectList(SchemaSobjectListOptions p_Options) {
-        return ExecuteCommand<SchemaSobjectListOptions, JToken>(nameof(sobjectList), p_Options);      
+      public JToken SobjectList(SchemaSobjectListOptions p_Options) {
+        return ExecuteCommand<SchemaSobjectListOptions, JToken>(nameof(SobjectList), p_Options);      
       }
     
   }

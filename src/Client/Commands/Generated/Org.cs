@@ -1,4 +1,4 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 19th 2018, 4:53:42 pm. DO NOT MODIFY
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +6,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method create of class Org.
   /// </summary>
   public class OrgCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The key pair expression for the command
     /// </summary>  
@@ -101,7 +99,6 @@ namespace sfdx4csharpClient
   /// Options for the method delete of class Org.
   /// </summary>
   public class OrgDeleteOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] A username or alias for the target org.
     /// </summary>  
@@ -137,7 +134,6 @@ namespace sfdx4csharpClient
   /// Options for the method display of class Org.
   /// </summary>
   public class OrgDisplayOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] Emit additional command output to stdout.
     /// </summary>  
@@ -167,7 +163,6 @@ namespace sfdx4csharpClient
   /// Options for the method list of class Org.
   /// </summary>
   public class OrgListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] Lists more information about each org.
     /// </summary>  
@@ -209,7 +204,6 @@ namespace sfdx4csharpClient
   /// Options for the method open of class Org.
   /// </summary>
   public class OrgOpenOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -245,7 +239,6 @@ namespace sfdx4csharpClient
   /// Options for the method shapeCreate of class Org.
   /// </summary>
   public class OrgShapeCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -269,7 +262,6 @@ namespace sfdx4csharpClient
   /// Options for the method shapeDelete of class Org.
   /// </summary>
   public class OrgShapeDeleteOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] Username for the target org.
     /// </summary>  
@@ -299,7 +291,6 @@ namespace sfdx4csharpClient
   /// Options for the method shapeList of class Org.
   /// </summary>
   public class OrgShapeListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] Lists more information about each org shape.
     /// </summary>  
@@ -349,8 +340,8 @@ namespace sfdx4csharpClient
     /// force:org:create name=value... [-f <filepath>] [-n] [-c] [-i <string>] [-s] [-a <string>] [-w <minutes>] [-d <number>] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("create")]
-      public JToken create(OrgCreateOptions p_Options) {
-        return ExecuteCommand<OrgCreateOptions, JToken>(nameof(create), p_Options);      
+      public JToken Create(OrgCreateOptions p_Options) {
+        return ExecuteCommand<OrgCreateOptions, JToken>(nameof(Create), p_Options);      
       }
     
     /// <summary>
@@ -368,8 +359,8 @@ namespace sfdx4csharpClient
     /// force:org:delete -u <string> [-p] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("delete")]
-      public JToken delete(OrgDeleteOptions p_Options) {
-        return ExecuteCommand<OrgDeleteOptions, JToken>(nameof(delete), p_Options);      
+      public JToken Delete(OrgDeleteOptions p_Options) {
+        return ExecuteCommand<OrgDeleteOptions, JToken>(nameof(Delete), p_Options);      
       }
     
     /// <summary>
@@ -391,8 +382,8 @@ namespace sfdx4csharpClient
     /// force:org:display [-u <string>] [--json] [--loglevel <string>] [--verbose]
     /// </example>
     [Command("display")]
-      public JToken display(OrgDisplayOptions p_Options) {
-        return ExecuteCommand<OrgDisplayOptions, JToken>(nameof(display), p_Options);      
+      public JToken Display(OrgDisplayOptions p_Options) {
+        return ExecuteCommand<OrgDisplayOptions, JToken>(nameof(Display), p_Options);      
       }
     
     /// <summary>
@@ -409,8 +400,8 @@ namespace sfdx4csharpClient
     /// force:org:list [--all] [--clean] [-p] [--json] [--loglevel <string>]
     /// </example>
     [Command("list")]
-      public JToken list(OrgListOptions p_Options = null) {
-        return ExecuteCommand<OrgListOptions, JToken>(nameof(list), p_Options);      
+      public JToken List(OrgListOptions p_Options = null) {
+        return ExecuteCommand<OrgListOptions, JToken>(nameof(List), p_Options);      
       }
     
     /// <summary>
@@ -435,8 +426,8 @@ namespace sfdx4csharpClient
     /// force:org:open [-p <string>] [-r] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("open")]
-      public JToken open(OrgOpenOptions p_Options) {
-        return ExecuteCommand<OrgOpenOptions, JToken>(nameof(open), p_Options);      
+      public JToken Open(OrgOpenOptions p_Options) {
+        return ExecuteCommand<OrgOpenOptions, JToken>(nameof(Open), p_Options);      
       }
     
     /// <summary>
@@ -452,8 +443,8 @@ namespace sfdx4csharpClient
     /// force:org:shape:create [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("shape:create")]
-      public JToken shapeCreate(OrgShapeCreateOptions p_Options) {
-        return ExecuteCommand<OrgShapeCreateOptions, JToken>(nameof(shapeCreate), p_Options);      
+      public JToken ShapeCreate(OrgShapeCreateOptions p_Options) {
+        return ExecuteCommand<OrgShapeCreateOptions, JToken>(nameof(ShapeCreate), p_Options);      
       }
     
     /// <summary>
@@ -471,8 +462,8 @@ namespace sfdx4csharpClient
     /// force:org:shape:delete -u <string> [-p] [--json] [--loglevel <string>]
     /// </example>
     [Command("shape:delete")]
-      public JToken shapeDelete(OrgShapeDeleteOptions p_Options) {
-        return ExecuteCommand<OrgShapeDeleteOptions, JToken>(nameof(shapeDelete), p_Options);      
+      public JToken ShapeDelete(OrgShapeDeleteOptions p_Options) {
+        return ExecuteCommand<OrgShapeDeleteOptions, JToken>(nameof(ShapeDelete), p_Options);      
       }
     
     /// <summary>
@@ -489,8 +480,8 @@ namespace sfdx4csharpClient
     /// force:org:shape:list [--json] [--loglevel <string>]
     /// </example>
     [Command("shape:list")]
-      public JToken shapeList(OrgShapeListOptions p_Options = null) {
-        return ExecuteCommand<OrgShapeListOptions, JToken>(nameof(shapeList), p_Options);      
+      public JToken ShapeList(OrgShapeListOptions p_Options = null) {
+        return ExecuteCommand<OrgShapeListOptions, JToken>(nameof(ShapeList), p_Options);      
       }
     
   }

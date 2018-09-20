@@ -1,4 +1,4 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 19th 2018, 4:53:42 pm. DO NOT MODIFY
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +6,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method commandsDisplay of class Doc.
   /// </summary>
   public class DocCommandsDisplayOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -29,7 +27,6 @@ namespace sfdx4csharpClient
   /// Options for the method commandsList of class Doc.
   /// </summary>
   public class DocCommandsListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -75,8 +72,8 @@ namespace sfdx4csharpClient
     /// force:doc:commands:display [--json] [--loglevel <string>]
     /// </example>
     [Command("commands:display")]
-      public JToken commandsDisplay(DocCommandsDisplayOptions p_Options = null) {
-        return ExecuteCommand<DocCommandsDisplayOptions, JToken>(nameof(commandsDisplay), p_Options);      
+      public JToken CommandsDisplay(DocCommandsDisplayOptions p_Options = null) {
+        return ExecuteCommand<DocCommandsDisplayOptions, JToken>(nameof(CommandsDisplay), p_Options);      
       }
     
     /// <summary>
@@ -90,8 +87,8 @@ namespace sfdx4csharpClient
     /// force:doc:commands:list [-u] [--json] [--loglevel <string>]
     /// </example>
     [Command("commands:list")]
-      public JToken commandsList(DocCommandsListOptions p_Options = null) {
-        return ExecuteCommand<DocCommandsListOptions, JToken>(nameof(commandsList), p_Options);      
+      public JToken CommandsList(DocCommandsListOptions p_Options = null) {
+        return ExecuteCommand<DocCommandsListOptions, JToken>(nameof(CommandsList), p_Options);      
       }
     
   }

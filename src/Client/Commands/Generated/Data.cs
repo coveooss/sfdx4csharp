@@ -1,4 +1,4 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 19th 2018, 4:53:42 pm. DO NOT MODIFY
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +6,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method bulkDelete of class Data.
   /// </summary>
   public class DataBulkDeleteOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The sObject type of the records you’re deleting.
     /// </summary>  
@@ -53,7 +51,6 @@ namespace sfdx4csharpClient
   /// Options for the method bulkStatus of class Data.
   /// </summary>
   public class DataBulkStatusOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The ID of the job you want to view or of the job whose batch you want to view.
     /// </summary>  
@@ -89,7 +86,6 @@ namespace sfdx4csharpClient
   /// Options for the method bulkUpsert of class Data.
   /// </summary>
   public class DataBulkUpsertOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The sObject type of the records you want to upsert.
     /// </summary>  
@@ -137,7 +133,6 @@ namespace sfdx4csharpClient
   /// Options for the method recordCreate of class Data.
   /// </summary>
   public class DataRecordCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The sObject type of the record you’re creating.
     /// </summary>  
@@ -185,7 +180,6 @@ namespace sfdx4csharpClient
   /// Options for the method recordDelete of class Data.
   /// </summary>
   public class DataRecordDeleteOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The sObject type of the record you’re deleting.
     /// </summary>  
@@ -239,7 +233,6 @@ namespace sfdx4csharpClient
   /// Options for the method recordGet of class Data.
   /// </summary>
   public class DataRecordGetOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The sObject type of the record you’re retrieving.
     /// </summary>  
@@ -293,7 +286,6 @@ namespace sfdx4csharpClient
   /// Options for the method recordUpdate of class Data.
   /// </summary>
   public class DataRecordUpdateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The sObject type of the record you’re updating.
     /// </summary>  
@@ -353,7 +345,6 @@ namespace sfdx4csharpClient
   /// Options for the method soqlQuery of class Data.
   /// </summary>
   public class DataSoqlQueryOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] SOQL query to execute.
     /// </summary>  
@@ -401,7 +392,6 @@ namespace sfdx4csharpClient
   /// Options for the method treeExport of class Data.
   /// </summary>
   public class DataTreeExportOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] A SOQL query statement or the path of a file containing a SOQL query statement to retrieve the records to export.
     /// </summary>  
@@ -449,7 +439,6 @@ namespace sfdx4csharpClient
   /// Options for the method treeImport of class Data.
   /// </summary>
   public class DataTreeImportOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -524,8 +513,8 @@ namespace sfdx4csharpClient
     /// force:data:bulk:delete -s <string> -f <filepath> [-w <minutes>] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("bulk:delete")]
-      public JToken bulkDelete(DataBulkDeleteOptions p_Options) {
-        return ExecuteCommand<DataBulkDeleteOptions, JToken>(nameof(bulkDelete), p_Options);      
+      public JToken BulkDelete(DataBulkDeleteOptions p_Options) {
+        return ExecuteCommand<DataBulkDeleteOptions, JToken>(nameof(BulkDelete), p_Options);      
       }
     
     /// <summary>
@@ -541,8 +530,8 @@ namespace sfdx4csharpClient
     /// force:data:bulk:status -i <id> [-b <id>] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("bulk:status")]
-      public JToken bulkStatus(DataBulkStatusOptions p_Options) {
-        return ExecuteCommand<DataBulkStatusOptions, JToken>(nameof(bulkStatus), p_Options);      
+      public JToken BulkStatus(DataBulkStatusOptions p_Options) {
+        return ExecuteCommand<DataBulkStatusOptions, JToken>(nameof(BulkStatus), p_Options);      
       }
     
     /// <summary>
@@ -564,8 +553,8 @@ namespace sfdx4csharpClient
     /// force:data:bulk:upsert -s <string> -f <filepath> -i <id> [-w <minutes>] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("bulk:upsert")]
-      public JToken bulkUpsert(DataBulkUpsertOptions p_Options) {
-        return ExecuteCommand<DataBulkUpsertOptions, JToken>(nameof(bulkUpsert), p_Options);      
+      public JToken BulkUpsert(DataBulkUpsertOptions p_Options) {
+        return ExecuteCommand<DataBulkUpsertOptions, JToken>(nameof(BulkUpsert), p_Options);      
       }
     
     /// <summary>
@@ -590,8 +579,8 @@ namespace sfdx4csharpClient
     /// force:data:record:create -s <string> -v <string> [-t] [--perflog] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("record:create")]
-      public JToken recordCreate(DataRecordCreateOptions p_Options) {
-        return ExecuteCommand<DataRecordCreateOptions, JToken>(nameof(recordCreate), p_Options);      
+      public JToken RecordCreate(DataRecordCreateOptions p_Options) {
+        return ExecuteCommand<DataRecordCreateOptions, JToken>(nameof(RecordCreate), p_Options);      
       }
     
     /// <summary>
@@ -617,8 +606,8 @@ namespace sfdx4csharpClient
     /// force:data:record:delete -s <string> [-i <id>] [-w <string>] [-t] [--perflog] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("record:delete")]
-      public JToken recordDelete(DataRecordDeleteOptions p_Options) {
-        return ExecuteCommand<DataRecordDeleteOptions, JToken>(nameof(recordDelete), p_Options);      
+      public JToken RecordDelete(DataRecordDeleteOptions p_Options) {
+        return ExecuteCommand<DataRecordDeleteOptions, JToken>(nameof(RecordDelete), p_Options);      
       }
     
     /// <summary>
@@ -644,8 +633,8 @@ namespace sfdx4csharpClient
     /// force:data:record:get -s <string> [-i <id>] [-w <string>] [-t] [--perflog] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("record:get")]
-      public JToken recordGet(DataRecordGetOptions p_Options) {
-        return ExecuteCommand<DataRecordGetOptions, JToken>(nameof(recordGet), p_Options);      
+      public JToken RecordGet(DataRecordGetOptions p_Options) {
+        return ExecuteCommand<DataRecordGetOptions, JToken>(nameof(RecordGet), p_Options);      
       }
     
     /// <summary>
@@ -670,8 +659,8 @@ namespace sfdx4csharpClient
     /// force:data:record:update -s <string> -v <string> [-i <id>] [-w <string>] [-t] [--perflog] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("record:update")]
-      public JToken recordUpdate(DataRecordUpdateOptions p_Options) {
-        return ExecuteCommand<DataRecordUpdateOptions, JToken>(nameof(recordUpdate), p_Options);      
+      public JToken RecordUpdate(DataRecordUpdateOptions p_Options) {
+        return ExecuteCommand<DataRecordUpdateOptions, JToken>(nameof(RecordUpdate), p_Options);      
       }
     
     /// <summary>
@@ -693,8 +682,8 @@ namespace sfdx4csharpClient
     /// force:data:soql:query -q <string> [-t] [-r <string>] [--perflog] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("soql:query")]
-      public JToken soqlQuery(DataSoqlQueryOptions p_Options) {
-        return ExecuteCommand<DataSoqlQueryOptions, JToken>(nameof(soqlQuery), p_Options);      
+      public JToken SoqlQuery(DataSoqlQueryOptions p_Options) {
+        return ExecuteCommand<DataSoqlQueryOptions, JToken>(nameof(SoqlQuery), p_Options);      
       }
     
     /// <summary>
@@ -716,8 +705,8 @@ namespace sfdx4csharpClient
     /// force:data:tree:export -q <string> [-p] [-x <string>] [-d <directory>] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("tree:export")]
-      public JToken treeExport(DataTreeExportOptions p_Options) {
-        return ExecuteCommand<DataTreeExportOptions, JToken>(nameof(treeExport), p_Options);      
+      public JToken TreeExport(DataTreeExportOptions p_Options) {
+        return ExecuteCommand<DataTreeExportOptions, JToken>(nameof(TreeExport), p_Options);      
       }
     
     /// <summary>
@@ -745,8 +734,8 @@ namespace sfdx4csharpClient
     /// force:data:tree:import (-f <filepath>... | -p <filepath>) [-c <string>] [--confighelp] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("tree:import")]
-      public JToken treeImport(DataTreeImportOptions p_Options) {
-        return ExecuteCommand<DataTreeImportOptions, JToken>(nameof(treeImport), p_Options);      
+      public JToken TreeImport(DataTreeImportOptions p_Options) {
+        return ExecuteCommand<DataTreeImportOptions, JToken>(nameof(TreeImport), p_Options);      
       }
     
   }

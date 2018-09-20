@@ -15,8 +15,7 @@ namespace sfdx4csharpClient
     /// How to: https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm
     /// </remarks>
     public class GeneratedSFDXClient
-    {
-  <% _.each(classDefinitions, function(classDefinition) { %>
+    {<% _.each(classDefinitions, function(classDefinition) { %>
       public <%= classDefinition.className %> <%= classDefinition.fileName %> { get; }<% }) %>
 
       private CommandExecutioner CommandExecutioner { get; }
@@ -33,7 +32,6 @@ namespace sfdx4csharpClient
           CommandExecutioner = new CommandExecutioner(new CommandRunner(p_Path));<%
           _.each(classDefinitions, function(classDefinition) { %>
           this.<%= classDefinition.fileName %> = new <%= classDefinition.className %>(CommandExecutioner);<% }) %>
-
         }
     }
 }

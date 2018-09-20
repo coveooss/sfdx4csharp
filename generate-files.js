@@ -1,15 +1,18 @@
-var generator = require('sfdx-generator')
-var path = require('path')
-var root = path.resolve(__dirname, './')
-var generator = new generator.Generator({
+const sfdxGenerator = require('sfdx-generator');
+const path = require('path');
+const root = path.resolve(__dirname, './');
+const generator = new sfdxGenerator.Generator({
   SFDXPath: 'sfdx',
-  outputDirectory: path.resolve(root, 'sfdx4csharp/Client/Commands/Generated'),
+  outputDirectory: path.resolve(root, './src/Client/Commands/Generated'),
   templateDirectory: path.resolve(root, './classTemplates'),
-  fileExtension: 'cs'
-})
+  fileExtension: '.cs',
+  formatFileName: (defaultFileName) => {
+    return defaultFileName.charAt(0).toUpperCase() + defaultFileName.slice(1);
+  }
+});
 
-var commandFile = require('./commands.json')
-var stringFile = JSON.stringify(commandFile)
+const commandFile = require('./commands.json');
+const stringFile = JSON.stringify(commandFile);
 generator.generate(stringFile).then(() => {
-  console.log('Generating done')
-})
+  console.log('Generating done');
+});
