@@ -7,7 +7,7 @@
     "moment": "^2.22.2"
   },
   "scripts": {
-    "run-generator": "node generate-files.js",
-    "generate": "sfdx force:doc:commands:display --json > commands.json && npm run run-generator"
+    "run-generator": "node tools/generate-files.js",
+    "generate": "sfdx force:doc:commands:display --json > tools/commands.json && npm run run-generator"
   }
 }
