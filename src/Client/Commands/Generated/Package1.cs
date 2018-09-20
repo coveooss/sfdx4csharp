@@ -1,4 +1,6 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Copyright (c) 2005-2018, Coveo Solutions Inc.
+
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +8,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method versionCreate of class Package1.
   /// </summary>
   public class Package1VersionCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] ID of the metadata package (starts with 033) of which you’re creating a new version.
     /// </summary>  
@@ -89,7 +89,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionCreateGet of class Package1.
   /// </summary>
   public class Package1VersionCreateGetOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The ID of the PackageUploadRequest.
     /// </summary>  
@@ -119,7 +118,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionDisplay of class Package1.
   /// </summary>
   public class Package1VersionDisplayOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] ID (starts with 04t) of the metadata package version whose details you want to display.
     /// </summary>  
@@ -149,7 +147,6 @@ namespace sfdx4csharpClient
   /// Options for the method versionList of class Package1.
   /// </summary>
   public class Package1VersionListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -202,8 +199,8 @@ namespace sfdx4csharpClient
     /// force:package1:version:create -i <id> -n <string> [-d <string>] [-v <string>] [-m] [-r <url>] [-p <url>] [-k <string>] [-w <number>] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("version:create")]
-      public JToken versionCreate(Package1VersionCreateOptions p_Options) {
-        return ExecuteCommand<Package1VersionCreateOptions, JToken>(nameof(versionCreate), p_Options);      
+      public JToken VersionCreate(Package1VersionCreateOptions p_Options) {
+        return ExecuteCommand<Package1VersionCreateOptions, JToken>(nameof(VersionCreate), p_Options);      
       }
     
     /// <summary>
@@ -219,8 +216,8 @@ namespace sfdx4csharpClient
     /// force:package1:version:create:get -i <id> [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("version:create:get")]
-      public JToken versionCreateGet(Package1VersionCreateGetOptions p_Options) {
-        return ExecuteCommand<Package1VersionCreateGetOptions, JToken>(nameof(versionCreateGet), p_Options);      
+      public JToken VersionCreateGet(Package1VersionCreateGetOptions p_Options) {
+        return ExecuteCommand<Package1VersionCreateGetOptions, JToken>(nameof(VersionCreateGet), p_Options);      
       }
     
     /// <summary>
@@ -236,8 +233,8 @@ namespace sfdx4csharpClient
     /// force:package1:version:display -i <id> [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("version:display")]
-      public JToken versionDisplay(Package1VersionDisplayOptions p_Options) {
-        return ExecuteCommand<Package1VersionDisplayOptions, JToken>(nameof(versionDisplay), p_Options);      
+      public JToken VersionDisplay(Package1VersionDisplayOptions p_Options) {
+        return ExecuteCommand<Package1VersionDisplayOptions, JToken>(nameof(VersionDisplay), p_Options);      
       }
     
     /// <summary>
@@ -253,8 +250,8 @@ namespace sfdx4csharpClient
     /// force:package1:version:list [-i <id>] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("version:list")]
-      public JToken versionList(Package1VersionListOptions p_Options) {
-        return ExecuteCommand<Package1VersionListOptions, JToken>(nameof(versionList), p_Options);      
+      public JToken VersionList(Package1VersionListOptions p_Options) {
+        return ExecuteCommand<Package1VersionListOptions, JToken>(nameof(VersionList), p_Options);      
       }
     
   }

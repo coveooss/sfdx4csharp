@@ -1,4 +1,6 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Copyright (c) 2005-2018, Coveo Solutions Inc.
+
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +8,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method classCreate of class Apex.
   /// </summary>
   public class ApexClassCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The name of the new Apex class. The name can be up to 40 characters and must start with a letter.
     /// </summary>  
@@ -59,7 +59,6 @@ namespace sfdx4csharpClient
   /// Options for the method execute of class Apex.
   /// </summary>
   public class ApexExecuteOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -89,7 +88,6 @@ namespace sfdx4csharpClient
   /// Options for the method logGet of class Apex.
   /// </summary>
   public class ApexLogGetOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -131,7 +129,6 @@ namespace sfdx4csharpClient
   /// Options for the method logList of class Apex.
   /// </summary>
   public class ApexLogListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -155,7 +152,6 @@ namespace sfdx4csharpClient
   /// Options for the method logTail of class Apex.
   /// </summary>
   public class ApexLogTailOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -197,7 +193,6 @@ namespace sfdx4csharpClient
   /// Options for the method testReport of class Apex.
   /// </summary>
   public class ApexTestReportOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The ID of test run.
     /// </summary>  
@@ -257,7 +252,6 @@ namespace sfdx4csharpClient
   /// Options for the method testRun of class Apex.
   /// </summary>
   public class ApexTestRunOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
     /// </summary>  
@@ -350,7 +344,6 @@ namespace sfdx4csharpClient
   /// Options for the method triggerCreate of class Apex.
   /// </summary>
   public class ApexTriggerCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The name of the new Apex trigger. The name can be up to 40 characters and must start with a letter.
     /// </summary>  
@@ -437,8 +430,8 @@ namespace sfdx4csharpClient
     /// force:apex:class:create -n <string> [-t <string>] [-d <string>] [-a <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("class:create")]
-      public JToken classCreate(ApexClassCreateOptions p_Options) {
-        return ExecuteCommand<ApexClassCreateOptions, JToken>(nameof(classCreate), p_Options);      
+      public JToken ClassCreate(ApexClassCreateOptions p_Options) {
+        return ExecuteCommand<ApexClassCreateOptions, JToken>(nameof(ClassCreate), p_Options);      
       }
     
     /// <summary>
@@ -462,8 +455,8 @@ namespace sfdx4csharpClient
     /// force:apex:execute [-f <filepath>] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("execute")]
-      public JToken execute(ApexExecuteOptions p_Options) {
-        return ExecuteCommand<ApexExecuteOptions, JToken>(nameof(execute), p_Options);      
+      public JToken Execute(ApexExecuteOptions p_Options) {
+        return ExecuteCommand<ApexExecuteOptions, JToken>(nameof(Execute), p_Options);      
       }
     
     /// <summary>
@@ -488,8 +481,8 @@ namespace sfdx4csharpClient
     /// force:apex:log:get (-i <id> | -n <number>) [-c] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("log:get")]
-      public JToken logGet(ApexLogGetOptions p_Options) {
-        return ExecuteCommand<ApexLogGetOptions, JToken>(nameof(logGet), p_Options);      
+      public JToken LogGet(ApexLogGetOptions p_Options) {
+        return ExecuteCommand<ApexLogGetOptions, JToken>(nameof(LogGet), p_Options);      
       }
     
     /// <summary>
@@ -507,8 +500,8 @@ namespace sfdx4csharpClient
     /// force:apex:log:list [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("log:list")]
-      public JToken logList(ApexLogListOptions p_Options) {
-        return ExecuteCommand<ApexLogListOptions, JToken>(nameof(logList), p_Options);      
+      public JToken LogList(ApexLogListOptions p_Options) {
+        return ExecuteCommand<ApexLogListOptions, JToken>(nameof(LogList), p_Options);      
       }
     
     /// <summary>
@@ -537,8 +530,8 @@ namespace sfdx4csharpClient
     /// force:apex:log:tail [-c] [-d <string>] [-s] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("log:tail")]
-      public JToken logTail(ApexLogTailOptions p_Options) {
-        return ExecuteCommand<ApexLogTailOptions, JToken>(nameof(logTail), p_Options);      
+      public JToken LogTail(ApexLogTailOptions p_Options) {
+        return ExecuteCommand<ApexLogTailOptions, JToken>(nameof(LogTail), p_Options);      
       }
     
     /// <summary>
@@ -557,8 +550,8 @@ namespace sfdx4csharpClient
     /// force:apex:test:report -i <id> [-c] [-d <directory>] [-r <string>] [-w <minutes>] [-u <string>] [--json] [--loglevel <string>] [--verbose]
     /// </example>
     [Command("test:report")]
-      public JToken testReport(ApexTestReportOptions p_Options) {
-        return ExecuteCommand<ApexTestReportOptions, JToken>(nameof(testReport), p_Options);      
+      public JToken TestReport(ApexTestReportOptions p_Options) {
+        return ExecuteCommand<ApexTestReportOptions, JToken>(nameof(TestReport), p_Options);      
       }
     
     /// <summary>
@@ -583,8 +576,8 @@ namespace sfdx4csharpClient
     /// force:apex:test:run (-n <string>... | -s <string>... | -t <string>...) [-c] [-d <directory>] [-l <string>] [-r <string>] [-w <minutes>] [-y] [-u <string>] [--json] [--loglevel <string>] [--verbose]
     /// </example>
     [Command("test:run")]
-      public JToken testRun(ApexTestRunOptions p_Options) {
-        return ExecuteCommand<ApexTestRunOptions, JToken>(nameof(testRun), p_Options);      
+      public JToken TestRun(ApexTestRunOptions p_Options) {
+        return ExecuteCommand<ApexTestRunOptions, JToken>(nameof(TestRun), p_Options);      
       }
     
     /// <summary>
@@ -605,8 +598,8 @@ namespace sfdx4csharpClient
     /// force:apex:trigger:create -n <string> [-t <string>] [-d <string>] [-a <string>] [-s <string>] [-e <string>...] [--json] [--loglevel <string>]
     /// </example>
     [Command("trigger:create")]
-      public JToken triggerCreate(ApexTriggerCreateOptions p_Options) {
-        return ExecuteCommand<ApexTriggerCreateOptions, JToken>(nameof(triggerCreate), p_Options);      
+      public JToken TriggerCreate(ApexTriggerCreateOptions p_Options) {
+        return ExecuteCommand<ApexTriggerCreateOptions, JToken>(nameof(TriggerCreate), p_Options);      
       }
     
   }

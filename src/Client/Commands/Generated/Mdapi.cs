@@ -1,4 +1,6 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Copyright (c) 2005-2018, Coveo Solutions Inc.
+
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +8,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method convert of class Mdapi.
   /// </summary>
   public class MdapiConvertOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The root directory that contains the metadata you retrieved using Metadata API.
     /// </summary>  
@@ -41,7 +41,6 @@ namespace sfdx4csharpClient
   /// Options for the method deploy of class Mdapi.
   /// </summary>
   public class MdapiDeployOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] Ignores the deploy errors, and continues with the deploy operation. The default is false. Keep this parameter set to false when deploying to a production org. If set to true, components without errors are deployed, and components with errors are skipped.
     /// </summary>  
@@ -142,7 +141,6 @@ namespace sfdx4csharpClient
   /// Options for the method deployReport of class Mdapi.
   /// </summary>
   public class MdapiDeployReportOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] Indicates that you want verbose output for deploy results.
     /// </summary>  
@@ -184,7 +182,6 @@ namespace sfdx4csharpClient
   /// Options for the method retrieve of class Mdapi.
   /// </summary>
   public class MdapiRetrieveOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The root of the directory structure where the retrieved .zip or metadata files are put.
     /// </summary>  
@@ -262,7 +259,6 @@ namespace sfdx4csharpClient
   /// Options for the method retrieveReport of class Mdapi.
   /// </summary>
   public class MdapiRetrieveReportOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] Indicates that you want verbose output from the retrieve operation.
     /// </summary>  
@@ -339,8 +335,8 @@ namespace sfdx4csharpClient
     /// force:mdapi:convert -r <directory> [-d <directory>] [--json] [--loglevel <string>]
     /// </example>
     [Command("convert")]
-      public JToken convert(MdapiConvertOptions p_Options) {
-        return ExecuteCommand<MdapiConvertOptions, JToken>(nameof(convert), p_Options);      
+      public JToken Convert(MdapiConvertOptions p_Options) {
+        return ExecuteCommand<MdapiConvertOptions, JToken>(nameof(Convert), p_Options);      
       }
     
     /// <summary>
@@ -358,8 +354,8 @@ namespace sfdx4csharpClient
     /// force:mdapi:deploy (-c | -i <id>) (-d <directory> | -f <filepath>) [-w <minutes>] [-l <string>] [-r <string>...] [-e <boolean>] [-o] [-g] [-u <string>] [--json] [--loglevel <string>] [--verbose]
     /// </example>
     [Command("deploy")]
-      public JToken deploy(MdapiDeployOptions p_Options) {
-        return ExecuteCommand<MdapiDeployOptions, JToken>(nameof(deploy), p_Options);      
+      public JToken Deploy(MdapiDeployOptions p_Options) {
+        return ExecuteCommand<MdapiDeployOptions, JToken>(nameof(Deploy), p_Options);      
       }
     
     /// <summary>
@@ -373,8 +369,8 @@ namespace sfdx4csharpClient
     /// force:mdapi:deploy:report [-w <minutes>] [-i <id>] [-u <string>] [--json] [--loglevel <string>] [--verbose]
     /// </example>
     [Command("deploy:report")]
-      public JToken deployReport(MdapiDeployReportOptions p_Options) {
-        return ExecuteCommand<MdapiDeployReportOptions, JToken>(nameof(deployReport), p_Options);      
+      public JToken DeployReport(MdapiDeployReportOptions p_Options) {
+        return ExecuteCommand<MdapiDeployReportOptions, JToken>(nameof(DeployReport), p_Options);      
       }
     
     /// <summary>
@@ -388,8 +384,8 @@ namespace sfdx4csharpClient
     /// force:mdapi:retrieve -r <directory> [-a <number>] [-w <minutes>] [-k <filepath>] [-d <directory>] [-p <string>...] [-s] [-i <id>] [-u <string>] [--json] [--loglevel <string>] [--verbose]
     /// </example>
     [Command("retrieve")]
-      public JToken retrieve(MdapiRetrieveOptions p_Options) {
-        return ExecuteCommand<MdapiRetrieveOptions, JToken>(nameof(retrieve), p_Options);      
+      public JToken Retrieve(MdapiRetrieveOptions p_Options) {
+        return ExecuteCommand<MdapiRetrieveOptions, JToken>(nameof(Retrieve), p_Options);      
       }
     
     /// <summary>
@@ -403,8 +399,8 @@ namespace sfdx4csharpClient
     /// force:mdapi:retrieve:report [-w <minutes>] [-r <directory>] [-i <id>] [-u <string>] [--json] [--loglevel <string>] [--verbose]
     /// </example>
     [Command("retrieve:report")]
-      public JToken retrieveReport(MdapiRetrieveReportOptions p_Options) {
-        return ExecuteCommand<MdapiRetrieveReportOptions, JToken>(nameof(retrieveReport), p_Options);      
+      public JToken RetrieveReport(MdapiRetrieveReportOptions p_Options) {
+        return ExecuteCommand<MdapiRetrieveReportOptions, JToken>(nameof(RetrieveReport), p_Options);      
       }
     
   }

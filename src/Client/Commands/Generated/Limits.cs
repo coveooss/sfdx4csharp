@@ -1,4 +1,6 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Copyright (c) 2005-2018, Coveo Solutions Inc.
+
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +8,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method apiDisplay of class Limits.
   /// </summary>
   public class LimitsApiDisplayOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -60,8 +60,8 @@ namespace sfdx4csharpClient
     /// force:limits:api:display [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("api:display")]
-      public JToken apiDisplay(LimitsApiDisplayOptions p_Options) {
-        return ExecuteCommand<LimitsApiDisplayOptions, JToken>(nameof(apiDisplay), p_Options);      
+      public JToken ApiDisplay(LimitsApiDisplayOptions p_Options) {
+        return ExecuteCommand<LimitsApiDisplayOptions, JToken>(nameof(ApiDisplay), p_Options);      
       }
     
   }

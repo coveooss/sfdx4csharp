@@ -1,4 +1,6 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Copyright (c) 2005-2018, Coveo Solutions Inc.
+
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +8,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method componentCreate of class Visualforce.
   /// </summary>
   public class VisualforceComponentCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The Visualforce component name. The name can be up to 40 characters and must start with a letter.
     /// </summary>  
@@ -65,7 +65,6 @@ namespace sfdx4csharpClient
   /// Options for the method pageCreate of class Visualforce.
   /// </summary>
   public class VisualforcePageCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The Visualforce page name. The name can be up to 40 characters and must start with a letter.
     /// </summary>  
@@ -147,8 +146,8 @@ namespace sfdx4csharpClient
     /// force:visualforce:component:create -n <string> -l <string> [-t <string>] [-d <string>] [-a <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("component:create")]
-      public JToken componentCreate(VisualforceComponentCreateOptions p_Options) {
-        return ExecuteCommand<VisualforceComponentCreateOptions, JToken>(nameof(componentCreate), p_Options);      
+      public JToken ComponentCreate(VisualforceComponentCreateOptions p_Options) {
+        return ExecuteCommand<VisualforceComponentCreateOptions, JToken>(nameof(ComponentCreate), p_Options);      
       }
     
     /// <summary>
@@ -169,8 +168,8 @@ namespace sfdx4csharpClient
     /// force:visualforce:page:create -n <string> -l <string> [-t <string>] [-d <string>] [-a <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("page:create")]
-      public JToken pageCreate(VisualforcePageCreateOptions p_Options) {
-        return ExecuteCommand<VisualforcePageCreateOptions, JToken>(nameof(pageCreate), p_Options);      
+      public JToken PageCreate(VisualforcePageCreateOptions p_Options) {
+        return ExecuteCommand<VisualforcePageCreateOptions, JToken>(nameof(PageCreate), p_Options);      
       }
     
   }

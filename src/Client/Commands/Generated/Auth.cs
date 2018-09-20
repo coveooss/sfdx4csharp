@@ -1,4 +1,6 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Copyright (c) 2005-2018, Coveo Solutions Inc.
+
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +8,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method jwtGrant of class Auth.
   /// </summary>
   public class AuthJwtGrantOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The authentication username.
     /// </summary>  
@@ -77,7 +77,6 @@ namespace sfdx4csharpClient
   /// Options for the method logout of class Auth.
   /// </summary>
   public class AuthLogoutOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -113,7 +112,6 @@ namespace sfdx4csharpClient
   /// Options for the method sfdxurlStore of class Auth.
   /// </summary>
   public class AuthSfdxurlStoreOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] Path to a file containing the SFDX URL.
     /// </summary>  
@@ -161,7 +159,6 @@ namespace sfdx4csharpClient
   /// Options for the method webLogin of class Auth.
   /// </summary>
   public class AuthWebLoginOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -249,8 +246,8 @@ namespace sfdx4csharpClient
     /// force:auth:jwt:grant -u <string> -f <filepath> -i <string> [-r <url>] [-d] [-s] [-a <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("jwt:grant")]
-      public JToken jwtGrant(AuthJwtGrantOptions p_Options) {
-        return ExecuteCommand<AuthJwtGrantOptions, JToken>(nameof(jwtGrant), p_Options);      
+      public JToken JwtGrant(AuthJwtGrantOptions p_Options) {
+        return ExecuteCommand<AuthJwtGrantOptions, JToken>(nameof(JwtGrant), p_Options);      
       }
     
     /// <summary>
@@ -268,8 +265,8 @@ namespace sfdx4csharpClient
     /// force:auth:logout [-a] [-p] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("logout")]
-      public JToken logout(AuthLogoutOptions p_Options) {
-        return ExecuteCommand<AuthLogoutOptions, JToken>(nameof(logout), p_Options);      
+      public JToken Logout(AuthLogoutOptions p_Options) {
+        return ExecuteCommand<AuthLogoutOptions, JToken>(nameof(Logout), p_Options);      
       }
     
     /// <summary>
@@ -289,8 +286,8 @@ namespace sfdx4csharpClient
     /// force:auth:sfdxurl:store -f <filepath> [-d] [-s] [-a <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("sfdxurl:store")]
-      public JToken sfdxurlStore(AuthSfdxurlStoreOptions p_Options) {
-        return ExecuteCommand<AuthSfdxurlStoreOptions, JToken>(nameof(sfdxurlStore), p_Options);      
+      public JToken SfdxurlStore(AuthSfdxurlStoreOptions p_Options) {
+        return ExecuteCommand<AuthSfdxurlStoreOptions, JToken>(nameof(SfdxurlStore), p_Options);      
       }
     
     /// <summary>
@@ -309,8 +306,8 @@ namespace sfdx4csharpClient
     /// force:auth:web:login [-i <string>] [-r <url>] [-d] [-s] [-a <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("web:login")]
-      public JToken webLogin(AuthWebLoginOptions p_Options) {
-        return ExecuteCommand<AuthWebLoginOptions, JToken>(nameof(webLogin), p_Options);      
+      public JToken WebLogin(AuthWebLoginOptions p_Options) {
+        return ExecuteCommand<AuthWebLoginOptions, JToken>(nameof(WebLogin), p_Options);      
       }
     
   }

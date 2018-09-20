@@ -1,4 +1,6 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Copyright (c) 2005-2018, Coveo Solutions Inc.
+
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +8,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method list of class Alias.
   /// </summary>
   public class AliasListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -29,7 +29,6 @@ namespace sfdx4csharpClient
   /// Options for the method set of class Alias.
   /// </summary>
   public class AliasSetOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The key pair expression for the command
     /// </summary>  
@@ -75,8 +74,8 @@ namespace sfdx4csharpClient
     /// force:alias:list [--json] [--loglevel <string>]
     /// </example>
     [Command("list")]
-      public JToken list(AliasListOptions p_Options = null) {
-        return ExecuteCommand<AliasListOptions, JToken>(nameof(list), p_Options);      
+      public JToken List(AliasListOptions p_Options = null) {
+        return ExecuteCommand<AliasListOptions, JToken>(nameof(List), p_Options);      
       }
     
     /// <summary>
@@ -97,8 +96,8 @@ namespace sfdx4csharpClient
     /// force:alias:set name=value... [--json] [--loglevel <string>]
     /// </example>
     [Command("set")]
-      public JToken set(AliasSetOptions p_Options) {
-        return ExecuteCommand<AliasSetOptions, JToken>(nameof(set), p_Options);      
+      public JToken Set(AliasSetOptions p_Options) {
+        return ExecuteCommand<AliasSetOptions, JToken>(nameof(Set), p_Options);      
       }
     
   }

@@ -1,4 +1,6 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Copyright (c) 2005-2018, Coveo Solutions Inc.
+
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +8,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method create of class User.
   /// </summary>
   public class UserCreateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The key pair expression for the command
     /// </summary>  
@@ -59,7 +59,6 @@ namespace sfdx4csharpClient
   /// Options for the method display of class User.
   /// </summary>
   public class UserDisplayOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -89,7 +88,6 @@ namespace sfdx4csharpClient
   /// Options for the method list of class User.
   /// </summary>
   public class UserListOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -119,7 +117,6 @@ namespace sfdx4csharpClient
   /// Options for the method passwordGenerate of class User.
   /// </summary>
   public class UserPasswordGenerateOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -155,7 +152,6 @@ namespace sfdx4csharpClient
   /// Options for the method permsetAssign of class User.
   /// </summary>
   public class UserPermsetAssignOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] The name of the permission set to assign.
     /// </summary>  
@@ -218,8 +214,8 @@ namespace sfdx4csharpClient
     /// force:user:create name=value... [-f <filepath>] [-a <string>] [-u <string>] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("create")]
-      public JToken create(UserCreateOptions p_Options) {
-        return ExecuteCommand<UserCreateOptions, JToken>(nameof(create), p_Options);      
+      public JToken Create(UserCreateOptions p_Options) {
+        return ExecuteCommand<UserCreateOptions, JToken>(nameof(Create), p_Options);      
       }
     
     /// <summary>
@@ -236,8 +232,8 @@ namespace sfdx4csharpClient
     /// force:user:display [-u <string>] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("display")]
-      public JToken display(UserDisplayOptions p_Options) {
-        return ExecuteCommand<UserDisplayOptions, JToken>(nameof(display), p_Options);      
+      public JToken Display(UserDisplayOptions p_Options) {
+        return ExecuteCommand<UserDisplayOptions, JToken>(nameof(Display), p_Options);      
       }
     
     /// <summary>
@@ -255,8 +251,8 @@ namespace sfdx4csharpClient
     /// force:user:list [-u <string>] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("list")]
-      public JToken list(UserListOptions p_Options) {
-        return ExecuteCommand<UserListOptions, JToken>(nameof(list), p_Options);      
+      public JToken List(UserListOptions p_Options) {
+        return ExecuteCommand<UserListOptions, JToken>(nameof(List), p_Options);      
       }
     
     /// <summary>
@@ -279,8 +275,8 @@ namespace sfdx4csharpClient
     /// force:user:password:generate [-o <string>...] [-u <string>] [-v <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("password:generate")]
-      public JToken passwordGenerate(UserPasswordGenerateOptions p_Options) {
-        return ExecuteCommand<UserPasswordGenerateOptions, JToken>(nameof(passwordGenerate), p_Options);      
+      public JToken PasswordGenerate(UserPasswordGenerateOptions p_Options) {
+        return ExecuteCommand<UserPasswordGenerateOptions, JToken>(nameof(PasswordGenerate), p_Options);      
       }
     
     /// <summary>
@@ -299,8 +295,8 @@ namespace sfdx4csharpClient
     /// force:user:permset:assign -n <string> [-o <string>...] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("permset:assign")]
-      public JToken permsetAssign(UserPermsetAssignOptions p_Options) {
-        return ExecuteCommand<UserPermsetAssignOptions, JToken>(nameof(permsetAssign), p_Options);      
+      public JToken PermsetAssign(UserPermsetAssignOptions p_Options) {
+        return ExecuteCommand<UserPermsetAssignOptions, JToken>(nameof(PermsetAssign), p_Options);      
       }
     
   }

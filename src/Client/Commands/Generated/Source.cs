@@ -1,4 +1,6 @@
-// Generated on September 11th 2018, 5:23:30 pm. DO NOT MODIFY
+// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Copyright (c) 2005-2018, Coveo Solutions Inc.
+
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -6,12 +8,10 @@ using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient
 {
-  
   /// <summary>
   /// Options for the method convert of class Source.
   /// </summary>
   public class SourceConvertOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -47,7 +47,6 @@ namespace sfdx4csharpClient
   /// Options for the method open of class Source.
   /// </summary>
   public class SourceOpenOptions : SFDXOptions {
-  
     /// <summary>
     /// [Required] File to edit.
     /// </summary>  
@@ -83,7 +82,6 @@ namespace sfdx4csharpClient
   /// Options for the method pull of class Source.
   /// </summary>
   public class SourcePullOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -119,7 +117,6 @@ namespace sfdx4csharpClient
   /// Options for the method push of class Source.
   /// </summary>
   public class SourcePushOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -167,7 +164,6 @@ namespace sfdx4csharpClient
   /// Options for the method status of class Source.
   /// </summary>
   public class SourceStatusOptions : SFDXOptions {
-  
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
@@ -240,8 +236,8 @@ namespace sfdx4csharpClient
     /// force:source:convert [-r <directory>] [-d <directory>] [-n <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("convert")]
-      public JToken convert(SourceConvertOptions p_Options) {
-        return ExecuteCommand<SourceConvertOptions, JToken>(nameof(convert), p_Options);      
+      public JToken Convert(SourceConvertOptions p_Options) {
+        return ExecuteCommand<SourceConvertOptions, JToken>(nameof(Convert), p_Options);      
       }
     
     /// <summary>
@@ -263,8 +259,8 @@ namespace sfdx4csharpClient
     /// force:source:open -f <filepath> [-r] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("open")]
-      public JToken open(SourceOpenOptions p_Options) {
-        return ExecuteCommand<SourceOpenOptions, JToken>(nameof(open), p_Options);      
+      public JToken Open(SourceOpenOptions p_Options) {
+        return ExecuteCommand<SourceOpenOptions, JToken>(nameof(Open), p_Options);      
       }
     
     /// <summary>
@@ -280,8 +276,8 @@ namespace sfdx4csharpClient
     /// force:source:pull [-w <minutes>] [-f] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("pull")]
-      public JToken pull(SourcePullOptions p_Options) {
-        return ExecuteCommand<SourcePullOptions, JToken>(nameof(pull), p_Options);      
+      public JToken Pull(SourcePullOptions p_Options) {
+        return ExecuteCommand<SourcePullOptions, JToken>(nameof(Pull), p_Options);      
       }
     
     /// <summary>
@@ -297,8 +293,8 @@ namespace sfdx4csharpClient
     /// force:source:push [-f] [-g] [-w <minutes>] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("push")]
-      public JToken push(SourcePushOptions p_Options) {
-        return ExecuteCommand<SourcePushOptions, JToken>(nameof(push), p_Options);      
+      public JToken Push(SourcePushOptions p_Options) {
+        return ExecuteCommand<SourcePushOptions, JToken>(nameof(Push), p_Options);      
       }
     
     /// <summary>
@@ -318,8 +314,8 @@ namespace sfdx4csharpClient
     /// force:source:status [-a] [-l] [-r] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("status")]
-      public JToken status(SourceStatusOptions p_Options) {
-        return ExecuteCommand<SourceStatusOptions, JToken>(nameof(status), p_Options);      
+      public JToken Status(SourceStatusOptions p_Options) {
+        return ExecuteCommand<SourceStatusOptions, JToken>(nameof(Status), p_Options);      
       }
     
   }

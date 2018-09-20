@@ -1,26 +1,27 @@
-<%
-    escapeForComments = function(element, numberOfSpaces = 4) {
-      if (element === undefined) {
-        return element;
-      }
-      var spaces = new Array(numberOfSpaces + 1).join(" ");
-      return element.replace(/\*\//g, "* /").replace(/\n/g, "\n" + spaces + "/// ");
-    }
+// Generated on <%= getCurrentFormatedDate() %>. DO NOT MODIFY
+// Copyright (c) 2005-<%= new Date().getFullYear() %>, Coveo Solutions Inc.
 
-%>// Generated on <%= getCurrentFormatedDate() %>. DO NOT MODIFY
 using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
 using sfdx4csharpClient.Core.Attributes;
-
+<%
+  escapeForComments = function(element, numberOfSpaces = 4) {
+    if (element === undefined) {
+      return element;
+    }
+    var spaces = new Array(numberOfSpaces + 1).join(" ");
+    return element.replace(/\*\//g, "* /").replace(/\n/g, "\n" + spaces + "/// ");
+  }
+%>
 namespace sfdx4csharpClient
-{
-  <% _.each(functionDefinitions, function(functionDef) { %>
+{<% 
+  _.each(functionDefinitions, function(functionDef) { %>
   /// <summary>
   /// Options for the method <%= functionDef.name %> of class <%= className %>.
   /// </summary>
-  public class <%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options : SFDXOptions {
-  <% var numberOfParameters = functionDef.parameters.length;
+  public class <%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options : SFDXOptions {<% 
+    var numberOfParameters = functionDef.parameters.length;
     _.each(functionDef.parameters, function(functionParameter, index) {
       
       // Preprocessing types for C#.
@@ -57,7 +58,9 @@ namespace sfdx4csharpClient
     {
     }
 
-    <% _.each(functionDefinitions, function(functionDef) { %>
+    <% _.each(functionDefinitions, function(functionDef) { 
+      var capitalizedFunctionName = capitalizeFirstLetter(functionDef.name);
+      %>
     /// <summary>
     /// <%= escapeForComments(functionDef.shortDescription) %>
     /// </summary>
@@ -69,8 +72,8 @@ namespace sfdx4csharpClient
     /// <%= escapeForComments(functionDef.example) %>
     /// </example>
     [Command("<%= functionDef.apiCommand %>")]
-      public JToken <%= functionDef.name %>(<%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options p_Options<% if(isAllOptionalParameters(functionDef.parameters)) {%> = null<%} %>) {
-        return ExecuteCommand<<%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options, JToken>(nameof(<%= functionDef.name %>), p_Options);      
+      public JToken <%= capitalizedFunctionName %>(<%= className %><%= capitalizedFunctionName %>Options p_Options<% if(isAllOptionalParameters(functionDef.parameters)) {%> = null<%} %>) {
+        return ExecuteCommand<<%= className %><%= capitalizedFunctionName %>Options, JToken>(nameof(<%= capitalizedFunctionName %>), p_Options);      
       }
     <% }) %>
   }
