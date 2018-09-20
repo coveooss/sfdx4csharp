@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Copyright (c) 2005-2018, Coveo Solutions Inc.
+
+using System;
 using System.Diagnostics;
 using Newtonsoft.Json;
 using sfdx4csharpClient;

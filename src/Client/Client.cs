@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.IO;
 using sfdx4csharpClient.Core;
 
-
 namespace sfdx4csharpClient
 {
     /// <summary>
