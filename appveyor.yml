@@ -1,0 +1,19 @@
+version: 0.0.{build}-{branch}
+image: Visual Studio 2017
+configuration: Release
+before_build:
+  - nuget restore
+build:
+  project: sfdx4csharp.sln
+  verbosity: minimal
+  publish_nuget: true
+branches:
+  only:
+    - master
+deploy:
+  provider: NuGet
+  api_key:
+    secure: XXXXXXXXXXXXXXXXXXXX
+  on:
+    branch: master
+    APPVEYOR_REPO_TAG: true
