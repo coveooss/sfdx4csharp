@@ -19,9 +19,9 @@ limitations under the License.
     <OutputType>Library</OutputType>
     <TargetFrameworks>net461;netcoreapp2.1</TargetFrameworks>
     <PackageId>sfdx4csharp</PackageId>
-    <PackageVersion>0.0.3</PackageVersion>
-    <Authors>Marc-Antoine Veilleux</Authors>
-    <Owners>SMarc-Antoine Veilleux</Owners>
+    <PackageVersion>0.0.4-alpha04</PackageVersion>
+    <Authors>Marc-Antoine Veilleux;Benjamin Ross</Authors>
+    <Owners>Marc-Antoine Veilleux</Owners>
     <Title>SFDX for C#</Title>
     <Description>A simple wrapper in C# for SFDX</Description>
     <ProjectUrl>https://github.com/coveo/sfdx4csharp</ProjectUrl>
@@ -30,13 +30,17 @@ limitations under the License.
     <Copyright>Copyright 2018 Coveo</Copyright>
     <PackageTags>SFDX C# salesforce dx wrapper</PackageTags>
   </PropertyGroup>
-  
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFrameworks>net461;netcoreapp2.1</TargetFrameworks>
-  </PropertyGroup>
 
   <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(OutputPath)\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
