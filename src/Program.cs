@@ -4,34 +4,30 @@ using System;
 using System.Diagnostics;
 using Newtonsoft.Json;
 using sfdx4csharpClient;
+using sfdx4csharpClient.Core;
 
 namespace sfdx4csharp
 {
     class Program
     {
+        const string SFDX_PATH_ENV_KEY = "SFDX_PATH";
         static void Main(string[] args)
-        {
+        {            
             Console.WriteLine("Verifying sfdx version.");
-            var client = new SFDXClient("/usr/local/bin/sfdx");
-            {
-                var response = client.Auth.JwtGrant(new AuthJwtGrantOptions {
-                    username = "rdaccess@coveo.com",
-                    instanceurl = "https://login.salesforce.com",
-                    clientid = "3MVG99OxTyEMCQ3jzMsXigXWi8U5eV.e7V8LqZXTVhSFWeIvQ_CXgDyNS_alUlp6PZZ02elvXfc_zD2FvO5r4",
-                    jwtkeyfile = "/Users/maveilleux/Repositories/SalesforceIntegrationV2/2/env/.sfdxjwtkey"
-                });
+            var cliPath = Environment.GetEnvironmentVariable(SFDX_PATH_ENV_KEY);
+            Debug.Assert(cliPath != null);
 
-                
-                Console.WriteLine("accessToken:"+ response["accessToken"].ToString());
-            }
-
-            {
-                var response = client.Org.List();
-                Console.WriteLine("orgs:"+ response.ToString());
-
-            }
-
-
+            CommandRunner runner = new CommandRunner(cliPath);
+            string version = runner.RunCommand("--version");
+            Console.WriteLine($"Using SFDX version: {version}");
+            
+            Console.WriteLine("Simple debug test using api:display command.");
+            var client = new SFDXClient(cliPath);
+            var response = client.Doc.CommandsDisplay(new DocCommandsDisplayOptions{
+                json = true
+            });
+            string commandNamespace = response.First["command"].ToString();
+            Debug.Assert(commandNamespace.Equals("api:display"));            
         }
     }
 }

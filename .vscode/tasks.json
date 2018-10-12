@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sfdx4csharp/sfdx4csharp.csproj"
+                "${workspaceFolder}/src/sfdx4csharp.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

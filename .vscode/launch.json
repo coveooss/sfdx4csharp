@@ -5,25 +5,22 @@
    "version": "0.2.0",
    "configurations": [
        {
+           "name": ".NET Core Launch (console)",
+           "type": "coreclr",
+           "request": "launch",
+           "preLaunchTask": "build",
+           "program": "${workspaceFolder}/src/bin/Debug/netcoreapp2.1/sfdx4csharp.dll",
+           "args": [],
+           "cwd": "${workspaceFolder}",
+           "stopAtEntry": false,
+           "console": "internalConsole"
+       },
+       {
            "type": "node",
            "request": "launch",
            "name": "Generate files",
            "program": "${workspaceFolder}/generate-files.js"
        },
-        {
-            "name": ".NET Core Launch (console)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/sfdx4csharp/bin/Debug/netcoreapp2.1/sfdx4csharp.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/sfdx4csharp",
-            // For more information about the 'console' field, see https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "internalConsoleOptions": "openOnSessionStart"
-        },
         {
             "name": ".NET Core Attach",
             "type": "coreclr",
