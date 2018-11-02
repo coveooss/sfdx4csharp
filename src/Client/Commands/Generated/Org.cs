@@ -1,4 +1,4 @@
-// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Generated on November 2nd 2018, 11:11:11 am using sfdx-cli/6.38.0-0d66175ccf (windows-x64) node-v8.9.4. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using Newtonsoft.Json.Linq;
@@ -25,13 +25,13 @@ namespace sfdx4csharpClient
     public string env  {get; set;}
   
     /// <summary>
-    /// [Required] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
+    /// [Optional] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
+    public int? wait  {get; set;}
   
     /// <summary>
-    /// [Required] Path to a scratch org definition file. Either --definitionfile or --definitionjson is required.
+    /// [Required] Path to a scratch org definition file. Either --definitionfile or a vararg value for edition (for example, edition=Developer) is required. Varargs override the values in the scratch org definition file.
     /// </summary>  
     [SwitchName("--definitionfile")]
     public string definitionfile  {get; set;}
@@ -61,10 +61,10 @@ namespace sfdx4csharpClient
     public string targetdevhubusername  {get; set;}
   
     /// <summary>
-    /// [Required] Sets the duration of the scratch org, in days. Valid values are from 1-30. The default is 7 days.
+    /// [Optional] Sets the duration of the scratch org, in days. Valid values are from 1-30. The default is 7 days.
     /// </summary>  
     [SwitchName("--durationdays")]
-    public string durationdays  {get; set;}
+    public int? durationdays  {get; set;}
   
     /// <summary>
     /// [Optional] Do not include second-generation package ancestors in the scratch org.
@@ -312,6 +312,128 @@ namespace sfdx4csharpClient
     public bool? json  {get; set;}
   }
   
+  /// <summary>
+  /// Options for the method snapshotCreate of class Org.
+  /// </summary>
+  public class OrgSnapshotCreateOptions : SFDXOptions {
+    /// <summary>
+    /// [Required] The org ID, or a locally authenticated username or alias, of the scratch org to snapshot.
+    /// </summary>  
+    [SwitchName("--sourceorg")]
+    public string sourceorg  {get; set;}
+  
+    /// <summary>
+    /// [Required] The unique name of the snapshot. Use this name to create scratch orgs from the snapshot.
+    /// </summary>  
+    [SwitchName("--snapshotname")]
+    public string snapshotname  {get; set;}
+  
+    /// <summary>
+    /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+    /// </summary>  
+    [SwitchName("--loglevel")]
+    public LogLevel? loglevel  {get; set;}
+  
+    /// <summary>
+    /// [Optional] Format output as JSON.
+    /// </summary>  
+    [SwitchName("--json")]
+    public bool? json  {get; set;}
+  
+    /// <summary>
+    /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+    /// </summary>  
+    [SwitchName("--targetdevhubusername")]
+    public string targetdevhubusername  {get; set;}
+  
+    /// <summary>
+    /// [Required] A description of the snapshot. Use this description to document the contents of the snapshot. We suggest that you include a reference point, such as a version control system tag or commit ID.
+    /// </summary>  
+    [SwitchName("--description")]
+    public string description  {get; set;}
+  }
+  
+  /// <summary>
+  /// Options for the method snapshotDelete of class Org.
+  /// </summary>
+  public class OrgSnapshotDeleteOptions : SFDXOptions {
+    /// <summary>
+    /// [Required] The name or ID (starts with 0Oo) of the snapshot to delete.
+    /// </summary>  
+    [SwitchName("--snapshot")]
+    public string snapshot  {get; set;}
+  
+    /// <summary>
+    /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+    /// </summary>  
+    [SwitchName("--loglevel")]
+    public LogLevel? loglevel  {get; set;}
+  
+    /// <summary>
+    /// [Optional] Format output as JSON.
+    /// </summary>  
+    [SwitchName("--json")]
+    public bool? json  {get; set;}
+  
+    /// <summary>
+    /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+    /// </summary>  
+    [SwitchName("--targetdevhubusername")]
+    public string targetdevhubusername  {get; set;}
+  }
+  
+  /// <summary>
+  /// Options for the method snapshotGet of class Org.
+  /// </summary>
+  public class OrgSnapshotGetOptions : SFDXOptions {
+    /// <summary>
+    /// [Required] The name or ID (starts with 0Oo) of the snapshot to retrieve.
+    /// </summary>  
+    [SwitchName("--snapshot")]
+    public string snapshot  {get; set;}
+  
+    /// <summary>
+    /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+    /// </summary>  
+    [SwitchName("--loglevel")]
+    public LogLevel? loglevel  {get; set;}
+  
+    /// <summary>
+    /// [Optional] Format output as JSON.
+    /// </summary>  
+    [SwitchName("--json")]
+    public bool? json  {get; set;}
+  
+    /// <summary>
+    /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+    /// </summary>  
+    [SwitchName("--targetdevhubusername")]
+    public string targetdevhubusername  {get; set;}
+  }
+  
+  /// <summary>
+  /// Options for the method snapshotList of class Org.
+  /// </summary>
+  public class OrgSnapshotListOptions : SFDXOptions {
+    /// <summary>
+    /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+    /// </summary>  
+    [SwitchName("--loglevel")]
+    public LogLevel? loglevel  {get; set;}
+  
+    /// <summary>
+    /// [Optional] Format output as JSON.
+    /// </summary>  
+    [SwitchName("--json")]
+    public bool? json  {get; set;}
+  
+    /// <summary>
+    /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+    /// </summary>  
+    [SwitchName("--targetdevhubusername")]
+    public string targetdevhubusername  {get; set;}
+  }
+  
 
   /// <summary>
   /// Org
@@ -484,6 +606,96 @@ namespace sfdx4csharpClient
     [Command("shape:list")]
       public JToken ShapeList(OrgShapeListOptions p_Options = null) {
         return ExecuteCommand<OrgShapeListOptions, JToken>(nameof(ShapeList), p_Options);      
+      }
+    
+    /// <summary>
+    /// snapshot a scratch org
+    /// </summary>
+    /// <remarks>
+    /// Creates a snapshot of a scratch org.
+    /// </remarks>
+    /// <example>  
+    /// A snapshot is a point-in-time export of a scratch org. The export is stored in Salesforce and referenced by its unique name in a scratch definition file.
+    /// 
+    /// Use "sfdx force:org:snapshot:get" to get details, including status, about a snapshot creation request.
+    /// 
+    /// With "snapshot" in your scratch org definition file, use "sfdx force:org:create" to create a scratch org from a snapshot.
+    /// 
+    /// Examples:
+    /// 
+    ///    $ sfdx force:org:snapshot:create --sourceorg 00Dxx0000000000 --snapshotname Dependencies --description "Contains PackageA v1.1.0"
+    /// 
+    ///    $ sfdx force:org:snapshot:create -o myuser@myorg -n NightlyBranch -d "Contains PkgA v2.1.0 and PkgB 3.3.0"
+    /// force:org:snapshot:create -o <id> -n <string> [-d <string>] [-v <string>] [--json] [--loglevel <string>]
+    /// </example>
+    [Command("snapshot:create")]
+      public JToken SnapshotCreate(OrgSnapshotCreateOptions p_Options) {
+        return ExecuteCommand<OrgSnapshotCreateOptions, JToken>(nameof(SnapshotCreate), p_Options);      
+      }
+    
+    /// <summary>
+    /// delete a scratch org snapshot
+    /// </summary>
+    /// <remarks>
+    /// Deletes a scratch org snapshot.
+    /// </remarks>
+    /// <example>  
+    /// Examples:
+    /// 
+    ///    $ sfdx force:org:snapshot:delete --snapshot 0Oo...
+    /// 
+    ///    $ sfdx force:org:snapshot:delete -s BaseSnapshot
+    /// force:org:snapshot:delete -s <string> [-v <string>] [--json] [--loglevel <string>]
+    /// </example>
+    [Command("snapshot:delete")]
+      public JToken SnapshotDelete(OrgSnapshotDeleteOptions p_Options) {
+        return ExecuteCommand<OrgSnapshotDeleteOptions, JToken>(nameof(SnapshotDelete), p_Options);      
+      }
+    
+    /// <summary>
+    /// get details about a scratch org snapshot
+    /// </summary>
+    /// <remarks>
+    /// Retrieves details about a scratch org snapshot.
+    /// </remarks>
+    /// <example>  
+    /// Use "sfdx force:org:snapshot:create" to create a snapshot.
+    /// 
+    /// Use "sfdx force:org:snapshot:list" to retrieve all snapshots.
+    /// 
+    /// Examples:
+    /// 
+    ///    $ sfdx force:org:snapshot:get --snapshot 0Oo...
+    /// 
+    ///    $ sfdx force:org:snapshot:get -s Dependencies
+    /// force:org:snapshot:get -s <string> [-v <string>] [--json] [--loglevel <string>]
+    /// </example>
+    [Command("snapshot:get")]
+      public JToken SnapshotGet(OrgSnapshotGetOptions p_Options) {
+        return ExecuteCommand<OrgSnapshotGetOptions, JToken>(nameof(SnapshotGet), p_Options);      
+      }
+    
+    /// <summary>
+    /// list scratch org snapshots
+    /// </summary>
+    /// <remarks>
+    /// Lists scratch org snapshots for your Dev Hub.
+    /// </remarks>
+    /// <example>  
+    /// Use "sfdx force:org:snapshot:get" to get details about a snapshot request.
+    /// 
+    /// Use "sfdx force:org:snapshot:create" to create a snapshot.
+    /// 
+    /// Examples:
+    /// 
+    ///    $ sfdx force:org:snapshot:list
+    /// 
+    ///    $ sfdx force:org:snapshot:list -v OtherDevHub@example.com
+    /// force:org:snapshot:list [-v <string>] [--json] [--loglevel <string>]
+    /// </example>
+    [Command("snapshot:list")]
+      public JToken SnapshotList(OrgSnapshotListOptions p_Options) {
+        return ExecuteCommand<OrgSnapshotListOptions, JToken>(nameof(SnapshotList), p_Options);      
       }
     
   }

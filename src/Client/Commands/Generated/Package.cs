@@ -1,4 +1,4 @@
-// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Generated on November 2nd 2018, 11:11:11 am using sfdx-cli/6.38.0-0d66175ccf (windows-x64) node-v8.9.4. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using Newtonsoft.Json.Linq;
@@ -20,7 +20,7 @@ namespace sfdx4csharpClient
   
     /// <summary>
     /// [Required] Package type for the package.
-    /// The options for package type are Managed and Unlocked (Managed=DeveloperManagedSubscriberManaged, Unlocked=DeveloperControlledSubscriberEditable).
+    /// The options for package type are Managed and Unlocked (Managed=DeveloperManagedSubscriberManaged, Unlocked=DeveloperControlledSubscriberEditable). Managed packages are currently in beta.
     /// These options determine upgrade and editability rules.
     /// </summary>  
     [SwitchName("--packagetype")]
@@ -98,11 +98,10 @@ namespace sfdx4csharpClient
     public bool? noprompt  {get; set;}
   
     /// <summary>
-    /// [Required] Maximum number of minutes to wait for the subscriber package version ID to become available in the target org before canceling the installation request. The default is 0.
-    /// WARNING: The short name "-p" has been deprecated and will be removed in v44.0 or later. Use "--publishwait" instead.
+    /// [Optional] Maximum number of minutes to wait for the Subscriber Package Version ID to become available in the target org before canceling the install request. The default is 0.
     /// </summary>  
     [SwitchName("--publishwait")]
-    public string publishwait  {get; set;}
+    public int? publishwait  {get; set;}
   
     /// <summary>
     /// [Required] Installation key for installing a key-protected package. The default is null.
@@ -111,45 +110,10 @@ namespace sfdx4csharpClient
     public string installationkey  {get; set;}
   
     /// <summary>
-    /// [Required] Maximum number of minutes to wait for installation status. The default is 0.
+    /// [Optional] Maximum number of minutes to wait for installation status. The default is 0.
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
-  
-    /// <summary>
-    /// [Required] The ID of the package version to install (starts with 04t).
-    /// </summary>  
-    [SwitchName("--id")]
-    public string id  {get; set;}
-  }
-  
-  /// <summary>
-  /// Options for the method installGet of class Package.
-  /// </summary>
-  public class PackageInstallGetOptions : SFDXOptions {
-    /// <summary>
-    /// [Required] The ID of the package install request you want to check.
-    /// </summary>  
-    [SwitchName("--requestid")]
-    public string requestid  {get; set;}
-  
-    /// <summary>
-    /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
-    /// </summary>  
-    [SwitchName("--loglevel")]
-    public LogLevel? loglevel  {get; set;}
-  
-    /// <summary>
-    /// [Optional] Format output as JSON.
-    /// </summary>  
-    [SwitchName("--json")]
-    public bool? json  {get; set;}
-  
-    /// <summary>
-    /// [Required] A username or alias for the target org. Overrides the default target org.
-    /// </summary>  
-    [SwitchName("--targetusername")]
-    public string targetusername  {get; set;}
+    public int? wait  {get; set;}
   }
   
   /// <summary>
@@ -262,45 +226,10 @@ namespace sfdx4csharpClient
     public string package  {get; set;}
   
     /// <summary>
-    /// [Required] Maximum number of minutes to wait for uninstall status. The default is 0.
+    /// [Optional] Maximum number of minutes to wait for uninstall status. The default is 0.
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
-  
-    /// <summary>
-    /// [Required] The ID of the second-generation package to uninstall (starts with 04t).
-    /// </summary>  
-    [SwitchName("--id")]
-    public string id  {get; set;}
-  }
-  
-  /// <summary>
-  /// Options for the method uninstallGet of class Package.
-  /// </summary>
-  public class PackageUninstallGetOptions : SFDXOptions {
-    /// <summary>
-    /// [Required] The ID of the package uninstall request you want to check.
-    /// </summary>  
-    [SwitchName("--requestid")]
-    public string requestid  {get; set;}
-  
-    /// <summary>
-    /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
-    /// </summary>  
-    [SwitchName("--loglevel")]
-    public LogLevel? loglevel  {get; set;}
-  
-    /// <summary>
-    /// [Optional] Format output as JSON.
-    /// </summary>  
-    [SwitchName("--json")]
-    public bool? json  {get; set;}
-  
-    /// <summary>
-    /// [Required] A username or alias for the target org. Overrides the default target org.
-    /// </summary>  
-    [SwitchName("--targetusername")]
-    public string targetusername  {get; set;}
+    public int? wait  {get; set;}
   }
   
   /// <summary>
@@ -337,7 +266,7 @@ namespace sfdx4csharpClient
   /// </summary>
   public class PackageUpdateOptions : SFDXOptions {
     /// <summary>
-    /// [Required] The D (starts with 0Ho) or alias of the package to update.
+    /// [Required] The ID (starts with 0Ho) or alias of the package to update.
     /// </summary>  
     [SwitchName("--package")]
     public string package  {get; set;}
@@ -378,10 +307,10 @@ namespace sfdx4csharpClient
   /// </summary>
   public class PackageVersionCreateOptions : SFDXOptions {
     /// <summary>
-    /// [Required] The number of minutes to wait for the package version to be created.
+    /// [Optional] The number of minutes to wait for the package version to be created.
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
+    public int? wait  {get; set;}
   
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
@@ -408,7 +337,7 @@ namespace sfdx4csharpClient
     public string sourceorg  {get; set;}
   
     /// <summary>
-    /// [Required] The path to a definition file (similar to a scratch org definition file) that contains the list of features and org preferences that the metadata in the package version depends on.
+    /// [Required] The path to a definition file similar to scratch org definition file that contains the list of features and org preferences that the metadata of the package version depends on.
     /// </summary>  
     [SwitchName("--definitionfile")]
     public string definitionfile  {get; set;}
@@ -515,10 +444,10 @@ namespace sfdx4csharpClient
     public string status  {get; set;}
   
     /// <summary>
-    /// [Required] Filters the list based on the specified maximum number of days since the request was created (starting at 00:00:00 of first day to now; 0 for today).
+    /// [Optional] Filters the list based on the specified maximum number of days since the request was created (starting at 00:00:00 of first day to now; 0 for today).
     /// </summary>  
     [SwitchName("--createdlastdays")]
-    public string createdlastdays  {get; set;}
+    public int? createdlastdays  {get; set;}
   }
   
   /// <summary>
@@ -603,16 +532,16 @@ namespace sfdx4csharpClient
     public string packages  {get; set;}
   
     /// <summary>
-    /// [Required] Lists the items modified in the specified last number of days, starting at 00:00:00 of first day to now. Use 0 for today.
+    /// [Optional] Lists the items modified in the specified last number of days, starting at 00:00:00 of first day to now. Use 0 for today.
     /// </summary>  
     [SwitchName("--modifiedlastdays")]
-    public string modifiedlastdays  {get; set;}
+    public int? modifiedlastdays  {get; set;}
   
     /// <summary>
-    /// [Required] Filters the list based on the specified maximum number of days since the request was created (starting at 00:00:00 of first day to now; 0 for today).
+    /// [Optional] Filters the list based on the specified maximum number of days since the request was created (starting at 00:00:00 of first day to now; 0 for today).
     /// </summary>  
     [SwitchName("--createdlastdays")]
-    public string createdlastdays  {get; set;}
+    public int? createdlastdays  {get; set;}
   }
   
   /// <summary>
@@ -644,10 +573,10 @@ namespace sfdx4csharpClient
     public string targetdevhubusername  {get; set;}
   
     /// <summary>
-    /// [Required] Do not prompt to confirm setting the package version as released.
+    /// [Optional] Do not prompt to confirm setting the package version as released.
     /// </summary>  
     [SwitchName("--noprompt")]
-    public string noprompt  {get; set;}
+    public bool? noprompt  {get; set;}
   }
   
   /// <summary>
@@ -769,7 +698,7 @@ namespace sfdx4csharpClient
     /// 
     /// First, use this command to create a package. Then create a package version.
     /// 
-    /// If you don't have a namespace defined in your sfdx-project.json file, use --nonamespace.
+    /// If you don’t have a namespace defined in your sfdx-project.json file, use --nonamespace.
     /// 
     /// Your --name value must be unique within your namespace.
     /// 
@@ -792,36 +721,17 @@ namespace sfdx4csharpClient
     /// Installs a package in the target org.
     /// </remarks>
     /// <example>  
-    /// Supply the ID of the package version you want to install. The package installs in your default target org unless you supply the username for a different target org.
+    /// Supply the ID of the package version to install. The package installs in your default target org unless you supply the username for a different target org.
     /// 
     /// Examples:
     ///    $ sfdx force:package:install --package 04t... -u me@example.com
     ///    $ sfdx force:package:install --package awesome_package_alias
     ///    $ sfdx force:package:install --package "Awesome Package Alias"
-    /// force:package:install [-i <id>] [-w <minutes>] [-k <string>] [-p <minutes>] [-r] [--package <string>] [-u <string>] [--json] [--loglevel <string>]
+    /// force:package:install [-w <minutes>] [-k <string>] [-b <minutes>] [-r] [-p <string>] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("install")]
       public JToken Install(PackageInstallOptions p_Options) {
         return ExecuteCommand<PackageInstallOptions, JToken>(nameof(Install), p_Options);      
-      }
-    
-    /// <summary>
-    /// (deprecated) retrieve the status of a package installation request
-    /// </summary>
-    /// <remarks>
-    /// Retrieves the status of a package installation request.
-    /// </remarks>
-    /// <example>  
-    /// WARNING: The command "install:get" has been deprecated and will be removed in v43.01.0 or later. Use "force:package:install:report" instead.
-    /// 
-    /// Examples:
-    ///    $ sfdx force:package:install:get -i 0Hf...
-    ///    $ sfdx force:package:install:get -i 0Hf... -u me@example.com
-    /// force:package:install:get -i <id> [-u <string>] [--json] [--loglevel <string>]
-    /// </example>
-    [Command("install:get")]
-      public JToken InstallGet(PackageInstallGetOptions p_Options) {
-        return ExecuteCommand<PackageInstallGetOptions, JToken>(nameof(InstallGet), p_Options);      
       }
     
     /// <summary>
@@ -896,30 +806,11 @@ namespace sfdx4csharpClient
     /// To list the org’s installed packages, run "sfdx force:package:installed:list".
     /// 
     /// To uninstall a first-generation package, from Setup, enter Installed Packages in the Quick Find box, then select Installed Packages.
-    /// force:package:uninstall [-i <id>] [-w <minutes>] [-p <string>] [-u <string>] [--json] [--loglevel <string>]
+    /// force:package:uninstall [-w <minutes>] [-p <string>] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("uninstall")]
       public JToken Uninstall(PackageUninstallOptions p_Options) {
         return ExecuteCommand<PackageUninstallOptions, JToken>(nameof(Uninstall), p_Options);      
-      }
-    
-    /// <summary>
-    /// (deprecated) retrieve the status of a package uninstall request
-    /// </summary>
-    /// <remarks>
-    /// Retrieves the status of a package uninstall request.
-    /// </remarks>
-    /// <example>  
-    /// WARNING: The command "uninstall:get" has been deprecated and will be removed in v43.01.0 or later. Use "force:package:uninstall:report" instead.
-    /// 
-    /// Examples:
-    ///    $ sfdx force:package:uninstall:get -i 06y...
-    ///    $ sfdx force:package:uninstall:get -i 06y... -u me@example.com
-    /// force:package:uninstall:get -i <id> [-u <string>] [--json] [--loglevel <string>]
-    /// </example>
-    [Command("uninstall:get")]
-      public JToken UninstallGet(PackageUninstallGetOptions p_Options) {
-        return ExecuteCommand<PackageUninstallGetOptions, JToken>(nameof(UninstallGet), p_Options);      
       }
     
     /// <summary>
@@ -997,7 +888,7 @@ namespace sfdx4csharpClient
     /// Lists all requests to create second-generation package versions in the Dev Hub org.
     /// </remarks>
     /// <example>  
-    /// Shows the details of each request to create a package version that has run in the Dev Hub org.
+    /// Shows the details of each request to create a package version in the Dev Hub org.
     /// 
     /// All filter parameters are applied using the AND logical operator (not OR).
     /// 

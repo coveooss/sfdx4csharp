@@ -19,7 +19,7 @@
            "type": "node",
            "request": "launch",
            "name": "Generate files",
-           "program": "${workspaceFolder}/generate-files.js"
+           "program": "${workspaceFolder}/tools/generate-files.js"
        },
         {
             "name": ".NET Core Attach",
