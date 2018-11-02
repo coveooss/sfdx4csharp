@@ -1,4 +1,4 @@
-// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Generated on November 2nd 2018, 11:11:11 am using sfdx-cli/6.38.0-0d66175ccf (windows-x64) node-v8.9.4. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using Newtonsoft.Json.Linq;
@@ -107,10 +107,10 @@ namespace sfdx4csharpClient
     public string targetusername  {get; set;}
   
     /// <summary>
-    /// [Required] Number of most recent logs to display.
+    /// [Optional] Number of most recent logs to display.
     /// </summary>  
     [SwitchName("--number")]
-    public string number  {get; set;}
+    public int? number  {get; set;}
   
     /// <summary>
     /// [Required] ID of the log to display.
@@ -224,10 +224,10 @@ namespace sfdx4csharpClient
     public string targetusername  {get; set;}
   
     /// <summary>
-    /// [Required] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
+    /// [Optional] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
+    public int? wait  {get; set;}
   
     /// <summary>
     /// [Required] Format to use when displaying test results. If you also specify the --json flag, --json overrides this parameter.
@@ -253,10 +253,10 @@ namespace sfdx4csharpClient
   /// </summary>
   public class ApexTestRunOptions : SFDXOptions {
     /// <summary>
-    /// [Required] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
+    /// [Optional] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
+    public int? wait  {get; set;}
   
     /// <summary>
     /// [Optional] Displays Apex test processing details. If JSON format is specified, processing details aren’t displayed.
@@ -265,10 +265,10 @@ namespace sfdx4csharpClient
     public bool? verbose  {get; set;}
   
     /// <summary>
-    /// [Required] Specifies how long to wait (in minutes) for Apex pre-compilation to complete before running the tests or timing out.
+    /// [Optional] Specifies how long to wait (in minutes) for Apex pre-compilation to complete before running the tests or timing out.
     /// </summary>  
     [SwitchName("--precompilewait")]
-    public string precompilewait  {get; set;}
+    public int? precompilewait  {get; set;}
   
     /// <summary>
     /// [Required] Comma-separated list of Apex test class names to run. You can specify only one of classnames, suitenames, or tests.

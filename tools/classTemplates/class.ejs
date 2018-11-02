@@ -1,4 +1,4 @@
-// Generated on <%= getCurrentFormatedDate() %>. DO NOT MODIFY
+// Generated on <%= getCurrentFormatedDate() %> using <%= cliVersion %>. DO NOT MODIFY
 // Copyright (c) 2005-<%= new Date().getFullYear() %>, Coveo Solutions Inc.
 
 using Newtonsoft.Json.Linq;
@@ -28,6 +28,7 @@ namespace sfdx4csharpClient
       functionParameter.type = functionParameter.type.replace('IStringKeyPair[] | string[] | string', 'string');
       functionParameter.type = functionParameter.type.replace('Boolean', 'bool');
       functionParameter.type = functionParameter.type.replace('loglevel', 'LogLevel');
+      functionParameter.type = functionParameter.type.replace('number', 'int');
 
       if(functionParameter.name == 'namespace')  {
         functionParameter.name = '@namespace';

@@ -1,4 +1,4 @@
-// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Generated on November 2nd 2018, 11:11:11 am using sfdx-cli/6.38.0-0d66175ccf (windows-x64) node-v8.9.4. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using System.Diagnostics;
@@ -26,7 +26,6 @@ namespace sfdx4csharpClient
       public Source Source { get; }
       public Org Org { get; }
       public Package Package { get; }
-      public Package2 Package2 { get; }
       public User User { get; }
       public Project Project { get; }
       public Config Config { get; }
@@ -57,7 +56,6 @@ namespace sfdx4csharpClient
           this.Source = new Source(CommandExecutioner);
           this.Org = new Org(CommandExecutioner);
           this.Package = new Package(CommandExecutioner);
-          this.Package2 = new Package2(CommandExecutioner);
           this.User = new User(CommandExecutioner);
           this.Project = new Project(CommandExecutioner);
           this.Config = new Config(CommandExecutioner);

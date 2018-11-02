@@ -1,4 +1,4 @@
-// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Generated on November 2nd 2018, 11:11:11 am using sfdx-cli/6.38.0-0d66175ccf (windows-x64) node-v8.9.4. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using Newtonsoft.Json.Linq;
@@ -19,6 +19,12 @@ namespace sfdx4csharpClient
     public string projectname  {get; set;}
   
     /// <summary>
+    /// [Required] The source API version for the project. The version defaults to the current release and will normally be defaulted.This is used to properly import or export metadata.
+    /// </summary>  
+    [SwitchName("--sourceapiversion")]
+    public string sourceapiversion  {get; set;}
+  
+    /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
     /// </summary>  
     [SwitchName("--loglevel")]
@@ -29,6 +35,12 @@ namespace sfdx4csharpClient
     /// </summary>  
     [SwitchName("--json")]
     public string json  {get; set;}
+  
+    /// <summary>
+    /// [Required] Generates a default manifest (package.xml) for fetching Apex, Visualforce, Lightning components, and static resources.
+    /// </summary>  
+    [SwitchName("--manifest")]
+    public string manifest  {get; set;}
   
     /// <summary>
     /// [Required] The default package directory name. Metadata items such as classes and Lightning bundles are placed inside this folder.
@@ -43,10 +55,10 @@ namespace sfdx4csharpClient
     public string @namespace  {get; set;}
   
     /// <summary>
-    /// [Required] The source API version for the project. The version defaults to the current release and will normally be defaulted.This is used to properly import or export metadata.
+    /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
     /// </summary>  
-    [SwitchName("--sourceapiversion")]
-    public string sourceapiversion  {get; set;}
+    [SwitchName("--template")]
+    public string template  {get; set;}
   
     /// <summary>
     /// [Required] The login URL for the Salesforce instance being used.Normally defaults to https://login.salesforce.com.
@@ -65,12 +77,6 @@ namespace sfdx4csharpClient
     /// </summary>  
     [SwitchName("--outputdir")]
     public string outputdir  {get; set;}
-  
-    /// <summary>
-    /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
-    /// </summary>  
-    [SwitchName("--template")]
-    public string template  {get; set;}
   }
   
   /// <summary>
@@ -123,8 +129,9 @@ namespace sfdx4csharpClient
     /// Examples:
     ///    $ sfdx force:project:create --projectname mywork
     ///    $ sfdx force:project:create --projectname mywork --defaultpackagedir myapp
+    ///    $ sfdx force:project:create --projectname mywork --defaultpackagedir myapp --manifest
     /// 
-    /// force:project:create -n <string> [-t <string>] [-d <string>] [-s <string>] [-p <string>] [--json] [--loglevel <string>]
+    /// force:project:create -n <string> [-t <string>] [-d <string>] [-s <string>] [-p <string>] [-x] [--json] [--loglevel <string>]
     /// </example>
     [Command("create")]
       public JToken Create(ProjectCreateOptions p_Options) {

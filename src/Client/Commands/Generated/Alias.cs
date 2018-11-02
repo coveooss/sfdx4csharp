@@ -1,4 +1,4 @@
-// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Generated on November 2nd 2018, 11:11:11 am using sfdx-cli/6.38.0-0d66175ccf (windows-x64) node-v8.9.4. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using Newtonsoft.Json.Linq;
@@ -90,8 +90,8 @@ namespace sfdx4csharpClient
     /// To delete an alias, run "sfdx force:alias:set" with no username.
     /// 
     /// Examples:
-    ///    $ sfdx force:alias:set DefaultOrg=me@my.org
-    ///    $ sfdx force:alias:set DefaultOrg=me@my.org DevHubOrg=me@myhub.org
+    ///    $ sfdx force:alias:set YourAlias=username@example.com
+    ///    $ sfdx force:alias:set YourAlias=username@example.com YourOtherAlias=devhub@example.com
     ///    $ sfdx force:alias:set AliasToDelete=
     /// force:alias:set name=value... [--json] [--loglevel <string>]
     /// </example>

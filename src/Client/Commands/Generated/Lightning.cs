@@ -1,4 +1,4 @@
-// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Generated on November 2nd 2018, 11:11:11 am using sfdx-cli/6.38.0-0d66175ccf (windows-x64) node-v8.9.4. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using Newtonsoft.Json.Linq;
@@ -319,10 +319,10 @@ namespace sfdx4csharpClient
     public string releaseversion  {get; set;}
   
     /// <summary>
-    /// [Required] Maximum number of minutes to wait for installation status.
+    /// [Optional] Maximum number of minutes to wait for installation status.
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
+    public int? wait  {get; set;}
   }
   
   /// <summary>
@@ -348,10 +348,10 @@ namespace sfdx4csharpClient
     public string targetusername  {get; set;}
   
     /// <summary>
-    /// [Required] Time, in milliseconds, to wait for the results element to be present in the DOM, before failing and moving on to the next test.
+    /// [Optional] Time, in milliseconds, to wait for the results element to be present in the DOM, before failing and moving on to the next test.
     /// </summary>  
     [SwitchName("--timeout")]
-    public string timeout  {get; set;}
+    public int? timeout  {get; set;}
   
     /// <summary>
     /// [Optional] Leaves browser open after the test finishes so that you can view the test suite results.
@@ -403,7 +403,7 @@ namespace sfdx4csharpClient
     /// create a Lightning app
     /// </summary>
     /// <remarks>
-    /// Creates a Lightning app bundle in the specified directory or the current working directory. The bundle consists of multiple files in a folder with the designated name.
+    /// Creates a Lightning app bundle in the specified directory or the current working directory. The bundle consists of multiple files in a folder with the designated name. 
     /// </remarks>
     /// <example>  
     /// If not supplied, the apiversion, template, and outputdir use default values.
@@ -425,7 +425,7 @@ namespace sfdx4csharpClient
     /// create a Lightning component
     /// </summary>
     /// <remarks>
-    /// Creates a Lightning component bundle in the specified directory or the current working directory. The bundle consists of multiple files in a folder with the designated name.
+    /// Creates a Lightning component bundle in the specified directory or the current working directory. The bundle consists of multiple files in a folder with the designated name. 
     /// </remarks>
     /// <example>  
     /// If not supplied, the apiversion, template, and outputdir use default values.
@@ -447,7 +447,7 @@ namespace sfdx4csharpClient
     /// create a Lightning event
     /// </summary>
     /// <remarks>
-    /// Creates a Lightning event bundle in the specified directory or the current working directory. The bundle consists of multiple files in a folder with the designated name.
+    /// Creates a Lightning event bundle in the specified directory or the current working directory. The bundle consists of multiple files in a folder with the designated name. 
     /// </remarks>
     /// <example>  
     /// If not supplied, the apiversion, template, and outputdir use default values.
@@ -469,7 +469,7 @@ namespace sfdx4csharpClient
     /// create a Lightning interface
     /// </summary>
     /// <remarks>
-    /// Creates a Lightning interface bundle in the specified directory or the current working directory. The bundle consists of multiple files in a folder with the designated name.
+    /// Creates a Lightning interface bundle in the specified directory or the current working directory. The bundle consists of multiple files in a folder with the designated name. 
     /// </remarks>
     /// <example>  
     /// If not supplied, the apiversion, template, and outputdir use default values.

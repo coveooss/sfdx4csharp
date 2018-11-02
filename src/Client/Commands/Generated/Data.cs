@@ -1,4 +1,4 @@
-// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Generated on November 2nd 2018, 11:11:11 am using sfdx-cli/6.38.0-0d66175ccf (windows-x64) node-v8.9.4. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using Newtonsoft.Json.Linq;
@@ -43,10 +43,10 @@ namespace sfdx4csharpClient
     public string targetusername  {get; set;}
   
     /// <summary>
-    /// [Required] The number of minutes to wait for the command to complete before displaying the results.
+    /// [Optional] The number of minutes to wait for the command to complete before displaying the results.
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
+    public int? wait  {get; set;}
   }
   
   /// <summary>
@@ -125,10 +125,10 @@ namespace sfdx4csharpClient
     public string targetusername  {get; set;}
   
     /// <summary>
-    /// [Required] The number of minutes to wait for the command to complete before displaying the results.
+    /// [Optional] The number of minutes to wait for the command to complete before displaying the results.
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
+    public int? wait  {get; set;}
   }
   
   /// <summary>

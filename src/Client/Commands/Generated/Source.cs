@@ -1,4 +1,4 @@
-// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Generated on November 2nd 2018, 11:11:11 am using sfdx-cli/6.38.0-0d66175ccf (windows-x64) node-v8.9.4. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using Newtonsoft.Json.Linq;
@@ -25,22 +25,119 @@ namespace sfdx4csharpClient
     public bool? json  {get; set;}
   
     /// <summary>
-    /// [Required] The name of the package to associate with the Metadata API–formatted metadata.
+    /// [Required] The name of the package to associate with the metadata-formatted files.
     /// </summary>  
     [SwitchName("--packagename")]
     public string packagename  {get; set;}
   
     /// <summary>
-    /// [Required] The output directory to export the Metadata API–formatted metadata to.
+    /// [Required] The output directory to store the Metadata API–formatted metadata files in.
     /// </summary>  
     [SwitchName("--outputdir")]
     public string outputdir  {get; set;}
   
     /// <summary>
-    /// [Required] A directory other than the default package directory that contains the Salesforce DX–formatted source to convert.
+    /// [Required] A directory other than the default package directory that contains the source-formatted files to convert.
     /// </summary>  
     [SwitchName("--rootdir")]
     public string rootdir  {get; set;}
+  }
+  
+  /// <summary>
+  /// Options for the method delete of class Source.
+  /// </summary>
+  public class SourceDeleteOptions : SFDXOptions {
+    /// <summary>
+    /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+    /// </summary>  
+    [SwitchName("--loglevel")]
+    public LogLevel? loglevel  {get; set;}
+  
+    /// <summary>
+    /// [Optional] Format output as JSON.
+    /// </summary>  
+    [SwitchName("--json")]
+    public bool? json  {get; set;}
+  
+    /// <summary>
+    /// [Required] A username or alias for the target org. Overrides the default target org.
+    /// </summary>  
+    [SwitchName("--targetusername")]
+    public string targetusername  {get; set;}
+  
+    /// <summary>
+    /// [Required] A comma-separated list of names of metadata components to delete from your project and your org.
+    /// </summary>  
+    [SwitchName("--metadata")]
+    public string metadata  {get; set;}
+  
+    /// <summary>
+    /// [Required] A comma-separated list of paths to the local metadata to delete. The supplied paths can be a single file (in which case the operation is applied to only one file) or a folder (in which case the operation is applied to all metadata types in the directory and its sub-directories).
+    /// If you specify this parameter, don’t specify --manifest or --metadata.
+    /// </summary>  
+    [SwitchName("--sourcepath")]
+    public string sourcepath  {get; set;}
+  
+    /// <summary>
+    /// [Optional] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
+    /// </summary>  
+    [SwitchName("--wait")]
+    public int? wait  {get; set;}
+  
+    /// <summary>
+    /// [Optional] Do not prompt for delete confirmation.
+    /// </summary>  
+    [SwitchName("--noprompt")]
+    public bool? noprompt  {get; set;}
+  }
+  
+  /// <summary>
+  /// Options for the method deploy of class Source.
+  /// </summary>
+  public class SourceDeployOptions : SFDXOptions {
+    /// <summary>
+    /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+    /// </summary>  
+    [SwitchName("--loglevel")]
+    public LogLevel? loglevel  {get; set;}
+  
+    /// <summary>
+    /// [Optional] Format output as JSON.
+    /// </summary>  
+    [SwitchName("--json")]
+    public bool? json  {get; set;}
+  
+    /// <summary>
+    /// [Required] A username or alias for the target org. Overrides the default target org.
+    /// </summary>  
+    [SwitchName("--targetusername")]
+    public string targetusername  {get; set;}
+  
+    /// <summary>
+    /// [Required] The complete path for the manifest (package.xml) file that specifies the components to deploy.
+    /// If you specify this parameter, don’t specify --metadata or --sourcepath.
+    /// </summary>  
+    [SwitchName("--manifest")]
+    public string manifest  {get; set;}
+  
+    /// <summary>
+    /// [Required] A comma-separated list of paths to the local source files to deploy. The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its sub-directories).
+    /// If you specify this parameter, don’t specify --manifest or --metadata.
+    /// </summary>  
+    [SwitchName("--sourcepath")]
+    public string sourcepath  {get; set;}
+  
+    /// <summary>
+    /// [Required] A comma-separated list of names of metadata components to deploy to the org.
+    /// </summary>  
+    [SwitchName("--metadata")]
+    public string metadata  {get; set;}
+  
+    /// <summary>
+    /// [Optional] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
+    /// </summary>  
+    [SwitchName("--wait")]
+    public int? wait  {get; set;}
   }
   
   /// <summary>
@@ -107,10 +204,10 @@ namespace sfdx4csharpClient
     public bool? forceoverwrite  {get; set;}
   
     /// <summary>
-    /// [Required] The number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
+    /// [Optional] The number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
+    public int? wait  {get; set;}
   }
   
   /// <summary>
@@ -136,10 +233,10 @@ namespace sfdx4csharpClient
     public string targetusername  {get; set;}
   
     /// <summary>
-    /// [Required] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
+    /// [Optional] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
+    public int? wait  {get; set;}
   
     /// <summary>
     /// [Optional] Replaces tokens in source files prior to deployment.
@@ -158,6 +255,54 @@ namespace sfdx4csharpClient
     /// </summary>  
     [SwitchName("--forceoverwrite")]
     public bool? forceoverwrite  {get; set;}
+  }
+  
+  /// <summary>
+  /// Options for the method retrieve of class Source.
+  /// </summary>
+  public class SourceRetrieveOptions : SFDXOptions {
+    /// <summary>
+    /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+    /// </summary>  
+    [SwitchName("--loglevel")]
+    public LogLevel? loglevel  {get; set;}
+  
+    /// <summary>
+    /// [Optional] Format output as JSON.
+    /// </summary>  
+    [SwitchName("--json")]
+    public bool? json  {get; set;}
+  
+    /// <summary>
+    /// [Required] A username or alias for the target org. Overrides the default target org.
+    /// </summary>  
+    [SwitchName("--targetusername")]
+    public string targetusername  {get; set;}
+  
+    /// <summary>
+    /// [Required] A comma-separated list of file paths for source to retrieve from the org. The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all source files in the directory and its sub-directories).
+    /// </summary>  
+    [SwitchName("--sourcepath")]
+    public string sourcepath  {get; set;}
+  
+    /// <summary>
+    /// [Required] A comma-separated list of names of metadata components to retrieve from the org.
+    /// </summary>  
+    [SwitchName("--metadata")]
+    public string metadata  {get; set;}
+  
+    /// <summary>
+    /// [Required] The complete path for the manifest (package.xml) file that specifies the components to retrieve.
+    /// If you specify this parameter, don’t specify --metadata or --sourcepath.
+    /// </summary>  
+    [SwitchName("--manifest")]
+    public string manifest  {get; set;}
+  
+    /// <summary>
+    /// [Optional] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
+    /// </summary>  
+    [SwitchName("--wait")]
+    public int? wait  {get; set;}
   }
   
   /// <summary>
@@ -216,28 +361,94 @@ namespace sfdx4csharpClient
 
     
     /// <summary>
-    /// convert Salesforce DX source into Metadata API format
+    /// convert source into Metadata API format
     /// </summary>
     /// <remarks>
-    /// Converts source in a Salesforce DX project into metadata that you can deploy using Metadata API.
+    /// Converts source-formatted files into metadata that you can deploy using Metadata API.
     /// </remarks>
     /// <example>  
     /// NOTE: This command must be run from within a project.
     /// 
-    /// To convert Salesforce DX–formatted source into a format that you can deploy using Metadata API, run "sfdx force:source:convert". Then deploy the metadata using "sfdx force:mdapi:deploy".
+    /// To convert source-formatted files into the metadata format, so that you can deploy them using Metadata API, run "sfdx force:source:convert". Then deploy the metadata using "sfdx force:mdapi:deploy".
     /// 
-    /// To convert Metadata API–formatted source into the Salesforce DX format, run "sfdx force:mdapi:convert".
+    /// To convert Metadata API–formatted files into the source format, run "sfdx force:mdapi:convert".
     /// 
     /// To specify a package name that includes spaces, enclose the name in single quotes.
     /// 
     /// Examples:
-    ///    $ sfdx force:source:convert -r <path to source>
-    ///    $ sfdx force:source:convert -r <path to source> -d <path to output dir> -n 'My Package'
+    ///    $ sfdx force:source:convert -r path/to/source
+    ///    $ sfdx force:source:convert -r path/to/source -d path/to/outputdir -n 'My Package'
     /// force:source:convert [-r <directory>] [-d <directory>] [-n <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("convert")]
       public JToken Convert(SourceConvertOptions p_Options) {
         return ExecuteCommand<SourceConvertOptions, JToken>(nameof(Convert), p_Options);      
+      }
+    
+    /// <summary>
+    /// delete source from your project and from a non-source-tracked org
+    /// </summary>
+    /// <remarks>
+    /// Deletes source files from your project and from a non-source-tracked org, such as a sandbox.
+    /// </remarks>
+    /// <example>  
+    /// NOTE: This command must be run from within a project.
+    /// 
+    /// Use this command to delete components from orgs that don’t have source tracking, such as sandboxes.
+    /// To remove deleted items from scratch orgs, which have change tracking, use "sfdx force:source:push".
+    /// 
+    /// Examples:
+    ///    $ sfdx force:source:delete -p path/to/source
+    ///    $ sfdx force:source:delete -m <metadata>
+    /// force:source:delete (-p <filepath>... | -m <string>...) [-r] [-w <minutes>] [-u <string>] [--json] [--loglevel <string>]
+    /// </example>
+    [Command("delete")]
+      public JToken Delete(SourceDeleteOptions p_Options) {
+        return ExecuteCommand<SourceDeleteOptions, JToken>(nameof(Delete), p_Options);      
+      }
+    
+    /// <summary>
+    /// deploy source to a non-source-tracked org
+    /// </summary>
+    /// <remarks>
+    /// Deploys source to a non-source-tracked org, such as a sandbox.
+    /// </remarks>
+    /// <example>  
+    /// NOTE: This command must be run from within a project.
+    /// 
+    /// Use this command to deploy source to orgs that don’t have source tracking, such as sandboxes.
+    /// To push source to scratch orgs, which have change tracking, use "sfdx force:source:push".
+    /// To deploy metadata that’s in the Metadata API format, use "sfdx force:mdapi:deploy".
+    /// 
+    /// The source you deploy overwrites the corresponding metadata in your org. This command does not attempt to merge your source with the versions in your org.
+    /// 
+    /// If the comma-separated list you’re supplying contains spaces, enclose the entire comma-separated list in one set of double quotes.
+    /// 
+    /// Examples:
+    /// 
+    /// To deploy the source files in a directory:
+    ///    $ sfdx force:source:deploy -p path/to/source
+    /// To deploy a specific Apex class and the objects whose source is in a directory:
+    ///    $ sfdx force:source:deploy -p path/to/apex/classes/MyClass.cls,path/to/source/objects
+    /// To deploy source files in a comma-separated list that contains spaces:
+    ///    $ sfdx force:source:deploy -p "path/to/objects/MyCustomObject/fields/MyField.field-meta.xml, path/to/apex/classes"
+    /// 
+    /// To deploy all Apex classes:
+    ///    $ sfdx force:source:deploy -m ApexClass
+    /// To deploy a specific Apex class:
+    ///    $ sfdx force:source:deploy -m ApexClass:MyApexClass
+    /// To deploy all custom objects and Apex classes:
+    ///    $ sfdx force:source:deploy -m CustomObject,ApexClass
+    /// To deploy all Apex classes and two specific profiles (one of which has a space in its name):
+    ///    $ sfdx force:source:deploy -m "ApexClass, Profile:My Profile, Profile: AnotherProfile"
+    /// 
+    /// To deploy all components listed in a manifest:
+    ///    $ sfdx force:source:deploy -x path/to/package.xml
+    /// force:source:deploy (-p <filepath>... | -x <filepath>) [-w <minutes>] [-m <string>...] [-u <string>] [--json] [--loglevel <string>]
+    /// </example>
+    [Command("deploy")]
+      public JToken Deploy(SourceDeployOptions p_Options) {
+        return ExecuteCommand<SourceDeployOptions, JToken>(nameof(Deploy), p_Options);      
       }
     
     /// <summary>
@@ -281,10 +492,10 @@ namespace sfdx4csharpClient
       }
     
     /// <summary>
-    /// push source to an org from the project
+    /// push source to a scratch org from the project
     /// </summary>
     /// <remarks>
-    /// Pushes changed source from your project to the scratch org to keep them in sync.
+    /// Pushes changed source from your project to a scratch org to keep them in sync.
     /// </remarks>
     /// <example>  
     /// NOTE: This command must be run from within a project.
@@ -295,6 +506,50 @@ namespace sfdx4csharpClient
     [Command("push")]
       public JToken Push(SourcePushOptions p_Options) {
         return ExecuteCommand<SourcePushOptions, JToken>(nameof(Push), p_Options);      
+      }
+    
+    /// <summary>
+    /// retrieve source from a non-source-tracked org
+    /// </summary>
+    /// <remarks>
+    /// Retrieves source from a non-source-tracked org, such as a sandbox, to your local Salesforce DX project.
+    /// </remarks>
+    /// <example>  
+    /// NOTE: This command must be run from within a project.
+    /// 
+    /// Use this command to retrieve source from orgs that don’t have source tracking, such as sandboxes.
+    /// To pull source from scratch orgs, which have change tracking, use "sfdx force:source:pull".
+    /// To retrieve metadata that’s in the Metadata API format, use "sfdx force:mdapi:retrieve".
+    /// 
+    /// The source you retrieve overwrites the corresponding source files in your local project. This command does not attempt to merge the source from your org with your local source files.
+    /// 
+    /// If the comma-separated list you’re supplying contains spaces, enclose the entire comma-separated list in one set of double quotes.
+    /// 
+    /// Examples:
+    /// 
+    /// To retrieve the source files in a directory:
+    ///    $ sfdx force:source:retrieve -p path/to/source
+    /// To retrieve a specific Apex class and the objects whose source is in a directory:
+    ///    $ sfdx force:source:retrieve -p path/to/apex/classes/MyClass.cls,path/to/source/objects
+    /// To retrieve source files in a comma-separated list that contains spaces:
+    ///    $ sfdx force:source:retrieve -p "path/to/objects/MyCustomObject/fields/MyField.field-meta.xml, path/to/apex/classes"
+    /// 
+    /// To retrieve all Apex classes:
+    ///    $ sfdx force:source:retrieve -m ApexClass
+    /// To retrieve a specific Apex class:
+    ///    $ sfdx force:source:retrieve -m ApexClass:MyApexClass
+    /// To retrieve all custom objects and Apex classes:
+    ///    $ sfdx force:source:retrieve -m CustomObject,ApexClass
+    /// To retrieve all Apex classes and two specific profiles (one of which has a space in its name):
+    ///    $ sfdx force:source:retrieve -m "ApexClass, Profile:My Profile, Profile: AnotherProfile"
+    /// 
+    /// To retrieve all metadata components listed in a manifest:
+    ///    $ sfdx force:source:retrieve -x path/to/package.xml
+    /// force:source:retrieve (-x <filepath> | -m <string>... | -p <filepath>...) [-w <minutes>] [-u <string>] [--json] [--loglevel <string>]
+    /// </example>
+    [Command("retrieve")]
+      public JToken Retrieve(SourceRetrieveOptions p_Options) {
+        return ExecuteCommand<SourceRetrieveOptions, JToken>(nameof(Retrieve), p_Options);      
       }
     
     /// <summary>
@@ -310,7 +565,7 @@ namespace sfdx4csharpClient
     ///    $ sfdx force:source:status -l
     ///    $ sfdx force:source:status -r
     ///    $ sfdx force:source:status -a
-    ///    $ sfdx force:source:status -a -u me@my.org --json
+    ///    $ sfdx force:source:status -a -u me@example.com --json
     /// force:source:status [-a] [-l] [-r] [-u <string>] [--json] [--loglevel <string>]
     /// </example>
     [Command("status")]

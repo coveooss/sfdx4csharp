@@ -1,4 +1,4 @@
-// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Generated on November 2nd 2018, 11:11:11 am using sfdx-cli/6.38.0-0d66175ccf (windows-x64) node-v8.9.4. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using Newtonsoft.Json.Linq;
@@ -49,10 +49,10 @@ namespace sfdx4csharpClient
     public string targetusername  {get; set;}
   
     /// <summary>
-    /// [Required] Minutes to wait for the package version to be created. The default is 2 minutes.
+    /// [Optional] Minutes to wait for the package version to be created. The default is 2 minutes.
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
+    public int? wait  {get; set;}
   
     /// <summary>
     /// [Required] Installation key for creating the key-protected package. The default is null.

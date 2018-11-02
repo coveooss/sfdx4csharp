@@ -1,4 +1,4 @@
-// Generated on September 20th 2018, 2:58:04 pm. DO NOT MODIFY
+// Generated on November 2nd 2018, 11:11:11 am using sfdx-cli/6.38.0-0d66175ccf (windows-x64) node-v8.9.4. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using Newtonsoft.Json.Linq;
@@ -31,7 +31,7 @@ namespace sfdx4csharpClient
     public bool? json  {get; set;}
   
     /// <summary>
-    /// [Required] The directory to store your source in after it’s converted to the Salesforce DX format. Can be an absolute or relative path.
+    /// [Required] The directory to store your files in after they’re converted to the source format. Can be an absolute or relative path.
     /// </summary>  
     [SwitchName("--outputdir")]
     public string outputdir  {get; set;}
@@ -72,10 +72,10 @@ namespace sfdx4csharpClient
     public string checkonly  {get; set;}
   
     /// <summary>
-    /// [Required] The number of minutes to wait for the command to complete. The default is –1 (no limit). 0
+    /// [Optional] The number of minutes to wait for the command to complete. The default is –1 (no limit). 0
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
+    public int? wait  {get; set;}
   
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
@@ -102,7 +102,7 @@ namespace sfdx4csharpClient
     public string zipfile  {get; set;}
   
     /// <summary>
-    /// [Required] The job ID (asyncId) of the deployment you want to check. Use with -w to resume waiting.
+    /// [Required] The job ID (asyncId) of the deployment you want to check. If not specified, the default value is the ID of the most recent metadata deployment you ran using Salesforce CLI. Use with -w to resume waiting.
     /// </summary>  
     [SwitchName("--jobid")]
     public string jobid  {get; set;}
@@ -138,6 +138,41 @@ namespace sfdx4csharpClient
   }
   
   /// <summary>
+  /// Options for the method deployCancel of class Mdapi.
+  /// </summary>
+  public class MdapiDeployCancelOptions : SFDXOptions {
+    /// <summary>
+    /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+    /// </summary>  
+    [SwitchName("--loglevel")]
+    public LogLevel? loglevel  {get; set;}
+  
+    /// <summary>
+    /// [Optional] Format output as JSON.
+    /// </summary>  
+    [SwitchName("--json")]
+    public bool? json  {get; set;}
+  
+    /// <summary>
+    /// [Required] A username or alias for the target org. Overrides the default target org.
+    /// </summary>  
+    [SwitchName("--targetusername")]
+    public string targetusername  {get; set;}
+  
+    /// <summary>
+    /// [Required] The job ID (requestId) of the deployment you want to cancel. If not specified, the default value is the ID of the most recent metadata deployment you ran using Salesforce CLI.
+    /// </summary>  
+    [SwitchName("--jobid")]
+    public string jobid  {get; set;}
+  
+    /// <summary>
+    /// [Optional] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
+    /// </summary>  
+    [SwitchName("--wait")]
+    public int? wait  {get; set;}
+  }
+  
+  /// <summary>
   /// Options for the method deployReport of class Mdapi.
   /// </summary>
   public class MdapiDeployReportOptions : SFDXOptions {
@@ -166,16 +201,16 @@ namespace sfdx4csharpClient
     public string targetusername  {get; set;}
   
     /// <summary>
-    /// [Required] The job ID (asyncId) of the deployment you want to check. Use with -w to resume waiting.
+    /// [Required] The job ID (asyncId) of the deployment you want to check. If not specified, the default value is the ID of the most recent metadata deployment you ran using Salesforce CLI. Use with -w to resume waiting.
     /// </summary>  
     [SwitchName("--jobid")]
     public string jobid  {get; set;}
   
     /// <summary>
-    /// [Required] The number of minutes to wait for the command to complete. The default is –1 (no limit). 0
+    /// [Optional] The number of minutes to wait for the command to complete. The default is –1 (no limit). 0
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
+    public int? wait  {get; set;}
   }
   
   /// <summary>
@@ -201,10 +236,10 @@ namespace sfdx4csharpClient
     public bool? verbose  {get; set;}
   
     /// <summary>
-    /// [Required] Use to override the default, which is the latest version supported by your CLI plug-in, with the version in your package.xml file.
+    /// [Optional] Use to override the default, which is the latest version supported by your CLI plug-in, with the version in your package.xml file.
     /// </summary>  
     [SwitchName("--apiversion")]
-    public string apiversion  {get; set;}
+    public int? apiversion  {get; set;}
   
     /// <summary>
     /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
@@ -225,16 +260,16 @@ namespace sfdx4csharpClient
     public string targetusername  {get; set;}
   
     /// <summary>
-    /// [Required] The job ID (asyncId) of the retrieve you want to check. You must specify a --retrievetargetdir. Use with --wait to resume waiting.
+    /// [Required] The job ID (asyncId) of the retrieve you want to check. If not specified, the default value is the ID of the most recent metadata retrieval you ran using Salesforce CLI. You must specify a --retrievetargetdir. Use with --wait to resume waiting.
     /// </summary>  
     [SwitchName("--jobid")]
     public string jobid  {get; set;}
   
     /// <summary>
-    /// [Required] The number of minutes to wait for the command to complete. -1
+    /// [Optional] The number of minutes to wait for the command to complete. -1
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
+    public int? wait  {get; set;}
   
     /// <summary>
     /// [Required] A comma-separated list of package names to retrieve.
@@ -284,7 +319,7 @@ namespace sfdx4csharpClient
     public string targetusername  {get; set;}
   
     /// <summary>
-    /// [Required] The job ID (asyncId) of the retrieve you want to check. You must specify a --retrievetargetdir. Use with --wait to resume waiting.
+    /// [Required] The job ID (asyncId) of the retrieve you want to check. If not specified, the default value is the ID of the most recent metadata retrieval you ran using Salesforce CLI. You must specify a --retrievetargetdir. Use with --wait to resume waiting.
     /// </summary>  
     [SwitchName("--jobid")]
     public string jobid  {get; set;}
@@ -296,10 +331,10 @@ namespace sfdx4csharpClient
     public string retrievetargetdir  {get; set;}
   
     /// <summary>
-    /// [Required] The number of minutes to wait for the command to complete. -1
+    /// [Optional] The number of minutes to wait for the command to complete. -1
     /// </summary>  
     [SwitchName("--wait")]
-    public string wait  {get; set;}
+    public int? wait  {get; set;}
   }
   
 
@@ -317,7 +352,7 @@ namespace sfdx4csharpClient
 
     
     /// <summary>
-    /// convert metadata from the Metadata API format into the Salesforce DX format
+    /// convert metadata from the Metadata API format into the source format
     /// </summary>
     /// <remarks>
     /// Converts metadata retrieved via Metadata API into the source format used in Salesforce DX projects.
@@ -325,13 +360,13 @@ namespace sfdx4csharpClient
     /// <example>  
     /// NOTE: This command must be run from within a project.
     /// 
-    /// To work with metadata that you retrieved via Metadata API using the Salesforce DX tools, convert the metadata to the Salesforce DX source format using "sfdx force:mdapi:convert".
+    /// To use Salesforce CLI to work with components that you retrieved via Metadata API, first convert your files from the metadata format to the source format using "sfdx force:mdapi:convert".
     /// 
-    /// To convert the source back to the Metadata API format, so that you can deploy it using "sfdx force:mdapi:deploy", run "sfdx force:source:convert".
+    /// To convert files from the source format back to the metadata format, so that you can deploy them using "sfdx force:mdapi:deploy", run "sfdx force:source:convert".
     /// 
     /// Examples:
-    ///    $ sfdx force:mdapi:convert -r <path to source>
-    ///    $ sfdx force:mdapi:convert -r <path to source> -d <path to outputdir>
+    ///    $ sfdx force:mdapi:convert -r path/to/metadata
+    ///    $ sfdx force:mdapi:convert -r path/to/metadata -d path/to/outputdir
     /// force:mdapi:convert -r <directory> [-d <directory>] [--json] [--loglevel <string>]
     /// </example>
     [Command("convert")]
@@ -356,6 +391,33 @@ namespace sfdx4csharpClient
     [Command("deploy")]
       public JToken Deploy(MdapiDeployOptions p_Options) {
         return ExecuteCommand<MdapiDeployOptions, JToken>(nameof(Deploy), p_Options);      
+      }
+    
+    /// <summary>
+    /// cancel a metadata deployment
+    /// </summary>
+    /// <remarks>
+    /// Cancels an asynchronous metadata deployment.
+    /// </remarks>
+    /// <example>  
+    /// Use this command to cancel a specified asynchronous metadata deployment. You can also specify a wait time (in minutes) to check for updates to the canceled deploy status.
+    /// 
+    /// Examples:
+    /// 
+    /// Deploy a directory of files to the org
+    ///   $ sfdx force:mdapi:deploy -d <directory>
+    /// Now cancel this deployment and wait two minutes
+    ///   $ sfdx force:mdapi:deploy:cancel -w 2
+    /// 
+    /// If you have multiple deployments in progress and want to cancel a specific one, specify the job ID
+    ///   $ sfdx force:mdapi:deploy:cancel -i <jobid>
+    /// Check the status of the cancel job
+    ///   $ sfdx force:mdapi:deploy:report
+    /// force:mdapi:deploy:cancel [-w <minutes>] [-i <id>] [-u <string>] [--json] [--loglevel <string>]
+    /// </example>
+    [Command("deploy:cancel")]
+      public JToken DeployCancel(MdapiDeployCancelOptions p_Options) {
+        return ExecuteCommand<MdapiDeployCancelOptions, JToken>(nameof(DeployCancel), p_Options);      
       }
     
     /// <summary>
