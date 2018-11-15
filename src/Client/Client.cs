@@ -1,9 +1,5 @@
 ﻿// Copyright (c) 2005-2018, Coveo Solutions Inc.
 
-using System.Diagnostics;
-using System.IO;
-using sfdx4csharpClient.Core;
-
 namespace sfdx4csharpClient
 {
     /// <summary>
@@ -15,7 +11,9 @@ namespace sfdx4csharpClient
     /// </remarks>
     public class SFDXClient : GeneratedSFDXClient
     {
-        public SFDXClient(string p_SFDXPath) : base(p_SFDXPath)
+        public SFDXClient(string p_SFDXPath,
+            string p_WorkingFolder = "")
+            : base(p_SFDXPath, p_WorkingFolder)
         {
         }
     }

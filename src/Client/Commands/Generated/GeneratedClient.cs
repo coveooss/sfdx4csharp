@@ -1,4 +1,4 @@
-// Generated on November 2nd 2018, 11:11:11 am using sfdx-cli/6.38.0-0d66175ccf (windows-x64) node-v8.9.4. DO NOT MODIFY
+// Generated on November 15th 2018, 4:22:46 pm using sfdx-cli/6.40.0-384e0c6cf2 (windows-x64) node-v8.9.4. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using System.Diagnostics;
@@ -39,13 +39,16 @@ namespace sfdx4csharpClient
       /// <summary>
       /// Initialize the modules that encapsulate the commands in the force namespace.
       /// </summary>
-      /// <param name="p_Path">File path to the SFDC CLI executable</param>
-      public GeneratedSFDXClient(string p_Path)
+      /// <param name="p_Path">File path to the SFDC CLI executable.</param>
+      /// <param name="p_WorkingFolder">The working folder where to run SFDX commands.</param>
+      public GeneratedSFDXClient(string p_Path,
+          string p_WorkingFolder = "")
       {
           Debug.Assert(!string.IsNullOrEmpty(p_Path));
           Debug.Assert(File.Exists(p_Path));
+          Debug.Assert(string.IsNullOrEmpty(p_WorkingFolder) || Directory.Exists(p_WorkingFolder));
 
-          CommandExecutioner = new CommandExecutioner(new CommandRunner(p_Path));
+          CommandExecutioner = new CommandExecutioner(new CommandRunner(p_Path, p_WorkingFolder));
           this.Limits = new Limits(CommandExecutioner);
           this.Lightning = new Lightning(CommandExecutioner);
           this.Data = new Data(CommandExecutioner);

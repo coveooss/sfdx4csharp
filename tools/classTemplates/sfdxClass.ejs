@@ -23,13 +23,16 @@ namespace sfdx4csharpClient
       /// <summary>
       /// Initialize the modules that encapsulate the commands in the force namespace.
       /// </summary>
-      /// <param name="p_Path">File path to the SFDC CLI executable</param>
-      public GeneratedSFDXClient(string p_Path)
+      /// <param name="p_Path">File path to the SFDC CLI executable.</param>
+      /// <param name="p_WorkingFolder">The working folder where to run SFDX commands.</param>
+      public GeneratedSFDXClient(string p_Path,
+          string p_WorkingFolder = "")
       {
           Debug.Assert(!string.IsNullOrEmpty(p_Path));
           Debug.Assert(File.Exists(p_Path));
+          Debug.Assert(string.IsNullOrEmpty(p_WorkingFolder) || Directory.Exists(p_WorkingFolder));
 
-          CommandExecutioner = new CommandExecutioner(new CommandRunner(p_Path));<%
+          CommandExecutioner = new CommandExecutioner(new CommandRunner(p_Path, p_WorkingFolder));<%
           _.each(classDefinitions, function(classDefinition) { %>
           this.<%= classDefinition.fileName %> = new <%= classDefinition.className %>(CommandExecutioner);<% }) %>
         }
