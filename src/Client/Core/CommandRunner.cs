@@ -12,7 +12,11 @@ namespace sfdx4csharpClient.Core
     public class CommandRunner
     {
         private readonly string m_SFDXPath;
-        private readonly string m_WorkingFolder;
+
+        /// <summary>
+        /// The working folder where all the commands will be executed.
+        /// </summary>
+        public string WorkingFolder { get; set; }
 
         /// <summary>
         /// Constructor.
@@ -24,7 +28,7 @@ namespace sfdx4csharpClient.Core
             Debug.Assert(!string.IsNullOrEmpty(p_Path));
 
             m_SFDXPath = p_Path;
-            m_WorkingFolder = p_WorkingFolder;
+            WorkingFolder = p_WorkingFolder;
         }
 
         /// <summary>
@@ -69,7 +73,10 @@ namespace sfdx4csharpClient.Core
             startInfo.RedirectStandardError = true;
             startInfo.CreateNoWindow = true;
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            startInfo.WorkingDirectory = m_WorkingFolder;
+            if (!String.IsNullOrEmpty(WorkingFolder)) {
+                startInfo.WorkingDirectory = WorkingFolder;
+            }
+
             return startInfo;
         }
     }
