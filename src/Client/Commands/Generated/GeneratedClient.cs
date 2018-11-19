@@ -1,4 +1,4 @@
-// Generated on November 16th 2018, 9:30:08 am using sfdx-cli/6.40.0-384e0c6cf2 (windows-x64) node-v8.9.4. DO NOT MODIFY
+// Generated on November 19th 2018, 9:43:00 am using sfdx-cli/6.40.0-384e0c6cf2 (windows-x64) node-v8.9.4. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using System.Diagnostics;
@@ -48,7 +48,7 @@ namespace sfdx4csharpClient
           Debug.Assert(File.Exists(p_Path));
           Debug.Assert(string.IsNullOrEmpty(p_WorkingFolder) || Directory.Exists(p_WorkingFolder));
 
-		  m_CmdRunner = new CommandRunner(p_Path, p_WorkingFolder);
+          m_CmdRunner = new CommandRunner(p_Path, p_WorkingFolder);
           CommandExecutioner executioner = new CommandExecutioner(m_CmdRunner);
           this.Limits = new Limits(executioner);
           this.Lightning = new Lightning(executioner);
@@ -68,16 +68,16 @@ namespace sfdx4csharpClient
           this.Schema = new Schema(executioner);
           this.Package1 = new Package1(executioner);
       }
-	  
-	  /// <summary>
+
+      /// <summary>
       /// Changes the working folder of the SFDX client.
       /// </summary>
       /// <param name="p_WorkingFolder">The new working folder where to run SFDX commands.</param>
-	  public void ChangeWorkingFolder(string p_FolderPath)
-	  {
+      public void ChangeWorkingFolder(string p_FolderPath)
+      {
           Debug.Assert(!string.IsNullOrEmpty(p_FolderPath));
           Debug.Assert(Directory.Exists(p_FolderPath));
-		  m_CmdRunner.WorkingFolder = p_FolderPath;
-	  }
+          m_CmdRunner.WorkingFolder = p_FolderPath;
+      }
     }
 }
