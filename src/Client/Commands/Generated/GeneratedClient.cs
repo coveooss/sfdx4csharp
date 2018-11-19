@@ -1,4 +1,4 @@
-// Generated on November 2nd 2018, 11:11:11 am using sfdx-cli/6.38.0-0d66175ccf (windows-x64) node-v8.9.4. DO NOT MODIFY
+// Generated on November 19th 2018, 9:43:00 am using sfdx-cli/6.40.0-384e0c6cf2 (windows-x64) node-v8.9.4. DO NOT MODIFY
 // Copyright (c) 2005-2018, Coveo Solutions Inc.
 
 using System.Diagnostics;
@@ -34,35 +34,50 @@ namespace sfdx4csharpClient
       public Schema Schema { get; }
       public Package1 Package1 { get; }
 
-      private CommandExecutioner CommandExecutioner { get; }
+      private readonly CommandRunner m_CmdRunner;
 
       /// <summary>
       /// Initialize the modules that encapsulate the commands in the force namespace.
       /// </summary>
-      /// <param name="p_Path">File path to the SFDC CLI executable</param>
-      public GeneratedSFDXClient(string p_Path)
+      /// <param name="p_Path">File path to the SFDC CLI executable.</param>
+      /// <param name="p_WorkingFolder">The working folder where to run SFDX commands.</param>
+      public GeneratedSFDXClient(string p_Path,
+          string p_WorkingFolder = "")
       {
           Debug.Assert(!string.IsNullOrEmpty(p_Path));
           Debug.Assert(File.Exists(p_Path));
+          Debug.Assert(string.IsNullOrEmpty(p_WorkingFolder) || Directory.Exists(p_WorkingFolder));
 
-          CommandExecutioner = new CommandExecutioner(new CommandRunner(p_Path));
-          this.Limits = new Limits(CommandExecutioner);
-          this.Lightning = new Lightning(CommandExecutioner);
-          this.Data = new Data(CommandExecutioner);
-          this.Apex = new Apex(CommandExecutioner);
-          this.Doc = new Doc(CommandExecutioner);
-          this.Visualforce = new Visualforce(CommandExecutioner);
-          this.Mdapi = new Mdapi(CommandExecutioner);
-          this.Source = new Source(CommandExecutioner);
-          this.Org = new Org(CommandExecutioner);
-          this.Package = new Package(CommandExecutioner);
-          this.User = new User(CommandExecutioner);
-          this.Project = new Project(CommandExecutioner);
-          this.Config = new Config(CommandExecutioner);
-          this.Auth = new Auth(CommandExecutioner);
-          this.Alias = new Alias(CommandExecutioner);
-          this.Schema = new Schema(CommandExecutioner);
-          this.Package1 = new Package1(CommandExecutioner);
-        }
+          m_CmdRunner = new CommandRunner(p_Path, p_WorkingFolder);
+          CommandExecutioner executioner = new CommandExecutioner(m_CmdRunner);
+          this.Limits = new Limits(executioner);
+          this.Lightning = new Lightning(executioner);
+          this.Data = new Data(executioner);
+          this.Apex = new Apex(executioner);
+          this.Doc = new Doc(executioner);
+          this.Visualforce = new Visualforce(executioner);
+          this.Mdapi = new Mdapi(executioner);
+          this.Source = new Source(executioner);
+          this.Org = new Org(executioner);
+          this.Package = new Package(executioner);
+          this.User = new User(executioner);
+          this.Project = new Project(executioner);
+          this.Config = new Config(executioner);
+          this.Auth = new Auth(executioner);
+          this.Alias = new Alias(executioner);
+          this.Schema = new Schema(executioner);
+          this.Package1 = new Package1(executioner);
+      }
+
+      /// <summary>
+      /// Changes the working folder of the SFDX client.
+      /// </summary>
+      /// <param name="p_WorkingFolder">The new working folder where to run SFDX commands.</param>
+      public void ChangeWorkingFolder(string p_FolderPath)
+      {
+          Debug.Assert(!string.IsNullOrEmpty(p_FolderPath));
+          Debug.Assert(Directory.Exists(p_FolderPath));
+          m_CmdRunner.WorkingFolder = p_FolderPath;
+      }
     }
 }
