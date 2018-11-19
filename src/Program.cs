@@ -19,16 +19,20 @@ namespace sfdx4csharp
             Debug.Assert(cliPath != null);
 
             CommandRunner runner = new CommandRunner(cliPath);
-            string version = runner.RunCommand("--version");
+            string version = runner.RunCommand("--version").RawOutput;
             Console.WriteLine($"Using SFDX version: {version}");
 
             Console.WriteLine("Simple debug test using api:display command.");
             var client = new SFDXClient(cliPath);
-            var response = client.Doc.CommandsDisplay(new DocCommandsDisplayOptions {
-                json = true
+
+            var response = client.Doc.CommandsDisplay(new DocCommandsDisplayOptions());
+
+            // Example when not using the json flag. responseWithoutJson.Result will be null.
+            var responseWithoutJson = client.Doc.CommandsDisplay(new DocCommandsDisplayOptions {
+                json = false
             });
 
-            string commandNamespace = response.First["command"].ToString();
+            string commandNamespace = response.Result.First["command"].ToString();
             Debug.Assert(commandNamespace.Equals("api:display"));
 
             string projectFolder = "C:\\TmpSfdxProject";

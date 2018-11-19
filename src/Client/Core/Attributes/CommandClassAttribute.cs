@@ -34,7 +34,7 @@ namespace sfdx4csharpClient.Core.Attributes
         {
             Debug.Assert(p_Type != null);
 
-            var attribute = (CommandClassAttribute) GetCustomAttribute(p_Type, typeof(CommandClassAttribute));
+            var attribute = (CommandClassAttribute)GetCustomAttribute(p_Type, typeof(CommandClassAttribute));
             return attribute?.m_Value;
         }
     }

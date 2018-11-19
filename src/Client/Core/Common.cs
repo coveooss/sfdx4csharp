@@ -1,6 +1,7 @@
 namespace sfdx4csharp.Client.Core
 {
-    public enum LogLevel {
+    public enum LogLevel
+    {
         trace,
         debug,
         info,

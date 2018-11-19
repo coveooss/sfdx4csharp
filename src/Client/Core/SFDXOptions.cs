@@ -12,7 +12,10 @@ namespace sfdx4csharpClient.Core
         /// <summary>
         /// Format output as JSON.
         /// </summary>
+        /// <value>
+        /// The json property gets/sets the --json flag. The default value is true.
+        /// </value>
         [SwitchName("--json")]
-        public bool? Json => true;
+        public bool json { get; set; } = true;
     }
 }

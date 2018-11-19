@@ -22,43 +22,53 @@ namespace sfdx4csharpClient.Core
         /// Constructor.
         /// </summary>
         /// <param name="p_Path">SFDX CLI path.</param>
+        /// <param name="p_WorkingFolder">The working folder where to run SFDX commands.</param>
         public CommandRunner(string p_Path,
             string p_WorkingFolder = "")
         {
             Debug.Assert(!string.IsNullOrEmpty(p_Path));
 
-            m_SFDXPath = p_Path;
-            WorkingFolder = p_WorkingFolder;
+            m_SFDXPath = FormatPath(p_Path);
+            WorkingFolder = FormatPath(p_WorkingFolder);
         }
 
         /// <summary>
         /// Executes a command in a separate process and return the output.
         /// </summary>
         /// <param name="p_Command">Command to execute.</param>
-        /// <returns>Output of the command.</returns>
-        public string RunCommand(string p_Command)
+        /// <returns>SFDX output informations.</returns>
+        public SFDXOutput RunCommand(string p_Command)
         {
             Debug.Assert(!string.IsNullOrEmpty(p_Command));
 
-            string outText;
-            string errText;
-            using (var process = Process.Start(GetProcessValues(p_Command))) {
-                if (process == null) {
+            SFDXOutput output = new SFDXOutput()
+            {
+                Command = p_Command
+            };
+
+            using (var process = Process.Start(GetProcessValues(p_Command)))
+            {
+                if (process == null)
+                {
                     throw new NullReferenceException(nameof(process));
                 }
 
                 var outTask = Task.Run(() => process.StandardOutput.ReadToEndAsync());
                 var errTask = Task.Run(() => process.StandardError.ReadToEndAsync());
                 process.WaitForExit();
-                outText = outTask.Result;
-                errText = errTask.Result;
+                output.RawOutput = outTask.Result;
+                output.RawError = errTask.Result;
             }
 
-            if (!string.IsNullOrEmpty(outText)) {
-                return outText;
-            }
+            return output;
+        }
 
-            throw new Exception(errText);
+        private string FormatPath(string p_Path)
+        {
+            Debug.Assert(p_Path != null);
+
+            bool isEscaped = p_Path.StartsWith("\"") && p_Path.EndsWith("\"");
+            return (p_Path.Contains(" ") && !isEscaped) ? string.Format("\"{0}\"", p_Path) : p_Path;
         }
 
         private ProcessStartInfo GetProcessValues(string p_Command)
@@ -66,7 +76,6 @@ namespace sfdx4csharpClient.Core
             Debug.Assert(!string.IsNullOrEmpty(p_Command));
 
             var startInfo = new ProcessStartInfo(m_SFDXPath, p_Command);
-            startInfo.EnvironmentVariables["SFDX_CONTENT_TYPE"] = "JSON";
             startInfo.EnvironmentVariables["SFDX_AUTOUPDATE_DISABLE"] = "true";
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;

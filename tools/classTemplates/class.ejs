@@ -1,81 +1,81 @@
 // Generated on <%= getCurrentFormatedDate() %> using <%= cliVersion %>. DO NOT MODIFY
 // Copyright (c) 2005-<%= new Date().getFullYear() %>, Coveo Solutions Inc.
 
-using Newtonsoft.Json.Linq;
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
 using sfdx4csharpClient.Core.Attributes;
 <%
-  escapeForComments = function(element, numberOfSpaces = 4) {
-    if (element === undefined) {
-      return element;
+    escapeForComments = function(element, numberOfSpaces = 8) {
+        if (element === undefined) {
+            return element;
+        }
+        var spaces = new Array(numberOfSpaces + 1).join(" ");
+        return element.replace(/\*\//g, "* /").replace(/\n/g, "\n" + spaces + "/// ");
     }
-    var spaces = new Array(numberOfSpaces + 1).join(" ");
-    return element.replace(/\*\//g, "* /").replace(/\n/g, "\n" + spaces + "/// ");
-  }
 %>
 namespace sfdx4csharpClient
 {<% 
-  _.each(functionDefinitions, function(functionDef) { %>
-  /// <summary>
-  /// Options for the method <%= functionDef.name %> of class <%= className %>.
-  /// </summary>
-  public class <%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options : SFDXOptions {<% 
-    var numberOfParameters = functionDef.parameters.length;
-    _.each(functionDef.parameters, function(functionParameter, index) {
-      
-      // Preprocessing types for C#.
-      functionParameter.type = functionParameter.type.replace('IStringKeyPair[] | string[] | string', 'string');
-      functionParameter.type = functionParameter.type.replace('Boolean', 'bool');
-      functionParameter.type = functionParameter.type.replace('loglevel', 'LogLevel');
-      functionParameter.type = functionParameter.type.replace('number', 'int');
-
-      if(functionParameter.name == 'namespace')  {
-        functionParameter.name = '@namespace';
-      }
-
-      // String in C# are optional by default.
-      if(functionParameter.type == 'string') {
-        functionParameter.optional = false;
-      }
-  %>
+    _.each(functionDefinitions, function(functionDef) { %>
     /// <summary>
-    /// <%= functionParameter.optional ? '[Optional]' : '[Required]' %> <%= escapeForComments(functionParameter.description) %>
-    /// </summary>  
-    [SwitchName("<%= functionParameter.flagKey %>")]
-    public <%= functionParameter.type %><% if(functionParameter.optional){ %>?<% } %> <%= functionParameter.name %>  {get; set;}
-  <% }) %>}
-  <% }) %>
-
-  /// <summary>
-  /// <%= className %>
-  /// </summary>
-  [CommandClass("<%= apiCommandClass %>")]
-  public class <%= className %> : SFDXCommand {
-
-    /// Constructor.
-    public <%= className %>(CommandExecutioner p_CommandExecutioner)
-        : base(p_CommandExecutioner)
-    {
-    }
-
-    <% _.each(functionDefinitions, function(functionDef) { 
-      var capitalizedFunctionName = capitalizeFirstLetter(functionDef.name);
-      %>
-    /// <summary>
-    /// <%= escapeForComments(functionDef.shortDescription) %>
+    /// Options for the method <%= functionDef.name %> of class <%= className %>.
     /// </summary>
-    /// <remarks>
-    /// <%= escapeForComments(functionDef.description) %>
-    /// </remarks>
-    /// <example>  
-    /// <%= escapeForComments(functionDef.help) %>
-    /// <%= escapeForComments(functionDef.example) %>
-    /// </example>
-    [Command("<%= functionDef.apiCommand %>")]
-      public JToken <%= capitalizedFunctionName %>(<%= className %><%= capitalizedFunctionName %>Options p_Options<% if(isAllOptionalParameters(functionDef.parameters)) {%> = null<%} %>) {
-        return ExecuteCommand<<%= className %><%= capitalizedFunctionName %>Options, JToken>(nameof(<%= capitalizedFunctionName %>), p_Options);      
-      }
-    <% }) %>
-  }
+    public class <%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options : SFDXOptions
+    {<%
+        _.each(functionDef.parameters, function(functionParameter, index) {
+            if(functionParameter.name == 'json'){
+                // Skip this parameter, it will be handle by SFDXOptions
+                return;
+            }
+            
+            // Preprocessing types for C#.
+            functionParameter.type = functionParameter.type.replace('IStringKeyPair[] | string[] | string', 'string');
+            functionParameter.type = functionParameter.type.replace('Boolean', 'bool');
+            functionParameter.type = functionParameter.type.replace('loglevel', 'LogLevel');
+            functionParameter.type = functionParameter.type.replace('number', 'int');
+
+            if(functionParameter.name == 'namespace')  {
+                functionParameter.name = '@namespace';
+            }
+
+            // String in C# are optional by default.
+            if(functionParameter.type == 'string') {
+                functionParameter.optional = false;
+            }%>
+        /// <summary>
+        /// <%= functionParameter.optional ? '[Optional]' : '[Required]' %> <%= escapeForComments(functionParameter.description) %>
+        /// </summary>
+        [SwitchName("<%= functionParameter.flagKey %>")]
+        public <%= functionParameter.type %><% if(functionParameter.optional){ %>?<% } %> <%= functionParameter.name %> { get; set; }
+<% }) %>    }
+<% }) %>
+    /// <summary>
+    /// <%= className %>
+    /// </summary>
+    [CommandClass("<%= apiCommandClass %>")]
+    public class <%= className %> : SFDXCommand
+    {
+        /// Constructor.
+        public <%= className %>(CommandExecutioner p_CommandExecutioner)
+                : base(p_CommandExecutioner)
+        {
+        }
+<% _.each(functionDefinitions, function(functionDef) { 
+    var capitalizedFunctionName = capitalizeFirstLetter(functionDef.name);
+%>
+        /// <summary>
+        /// <%= escapeForComments(functionDef.shortDescription) %>
+        /// </summary>
+        /// <remarks>
+        /// <%= escapeForComments(functionDef.description) %>
+        /// </remarks>
+        /// <example>
+        /// <%= escapeForComments(functionDef.help) %>
+        /// <%= escapeForComments(functionDef.example) %>
+        /// </example>
+        [Command("<%= functionDef.apiCommand %>")]
+        public SFDXResponse <%= capitalizedFunctionName %>(<%= className %><%= capitalizedFunctionName %>Options p_Options<% if(isAllOptionalParameters(functionDef.parameters)) {%> = null<%} %>)
+        {
+            return ExecuteCommand<<%= className %><%= capitalizedFunctionName %>Options>(nameof(<%= capitalizedFunctionName %>), p_Options);
+        }
+<% }) %>    }
 }

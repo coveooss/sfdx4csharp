@@ -5,9 +5,9 @@ using Newtonsoft.Json.Linq;
 namespace sfdx4csharpClient.Core
 {
     /// <summary>
-    /// SFDX CLI Response's wrapper
+    /// SFDX CLI Json Response's wrapper
     /// </summary>
-    public class SFDXResponse
+    public class SFDXJsonResponse
     {
         /// <summary>
         /// Deserialized from cli output. Represents the parsed output of the executed command.
@@ -17,6 +17,6 @@ namespace sfdx4csharpClient.Core
         /// <summary>
         /// Deserialized from cli output. Represents the status code from the executed command.
         /// </summary>
-        public SFDXOutput AdditionalInfo { get; set; }
+        public int Status { get; set; }
     }
 }
