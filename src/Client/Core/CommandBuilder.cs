@@ -24,14 +24,15 @@ namespace sfdx4csharpClient.Core
             T p_RequestOptions)
         {
             Debug.Assert(p_Command != null);
-                        
+
             string options = BuildOptions(p_RequestOptions);
             return string.IsNullOrEmpty(options) ? p_Command : p_Command + " " + options;
         }
 
         private static string BuildOptions(T p_RequestOptions)
-        {            
-            if(p_RequestOptions == null) {
+        {
+            if (p_RequestOptions == null)
+            {
                 return "";
             }
 
@@ -50,7 +51,8 @@ namespace sfdx4csharpClient.Core
             var apiSwitchName = SwitchNameAttribute.GetSwitchNameValue(p_Prop);
             var propValue = p_Prop.GetValue(p_RequestOptions);
             var boolValue = propValue as bool?;
-            if (boolValue != null) {
+            if (boolValue != null)
+            {
                 return boolValue.Value ? apiSwitchName : null;
             }
             return apiSwitchName + " " + propValue;

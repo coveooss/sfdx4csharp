@@ -1,8 +1,6 @@
 ﻿// Copyright (c) 2005-2018, Coveo Solutions Inc.
 
-using System;
 using System.Diagnostics;
-using System.Reflection;
 
 namespace sfdx4csharpClient.Core
 {
@@ -30,12 +28,11 @@ namespace sfdx4csharpClient.Core
         /// <typeparam name="T">Type of the command's method options.</typeparam>
         /// <param name="p_Command">Current command's method.</param>
         /// <param name="p_RequestOptions">Current command's method options.</param>
-        /// <returns>String output from console.</returns>
-        public string Execute<T>(string p_Command,
-            T p_RequestOptions) where T : SFDXOptions
+        /// <returns>SFDX output informations.</returns>
+        public SFDXOutput Execute<T>(string p_Command, T p_RequestOptions) where T : SFDXOptions
         {
             Debug.Assert(p_Command != null);
-                        
+
             string completeCommand = CommandBuilder<T>.Build(p_Command, p_RequestOptions);
             return m_CommandRunner.RunCommand(completeCommand);
         }

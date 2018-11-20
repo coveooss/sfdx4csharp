@@ -20,7 +20,7 @@ namespace sfdx4csharpClient.Core
             m_CommandExecutioner = p_CommandExecutioner;
         }
 
-        protected TResult ExecuteCommand<TOptions, TResult>(string p_MethodName,
+        protected SFDXResponse ExecuteCommand<TOptions>(string p_MethodName,
             TOptions p_Options) where TOptions : SFDXOptions
         {
             Debug.Assert(p_MethodName != null);
@@ -30,9 +30,14 @@ namespace sfdx4csharpClient.Core
 
             string apiCommandClass = CommandClassAttribute.GetCommandClassValue(GetType());
             string apiCommand = CommandAttribute.GetCommandValue(methodInfo);
+            string command = $"{apiCommandClass}:{apiCommand}";
 
-            var json = m_CommandExecutioner.Execute($"{apiCommandClass}:{apiCommand}", p_Options);
-            return ResponseParser.Parse<TResult>(json);
+            SFDXOutput output = m_CommandExecutioner.Execute(command, p_Options);
+            return new SFDXResponse()
+            {
+                AdditionalInfo = output,
+                Result = p_Options.json ? ResponseParser.Parse(output.RawOutput) : null
+            };
         }
     }
 }
