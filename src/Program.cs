@@ -32,6 +32,8 @@ namespace sfdx4csharp
                 json = false
             });
 
+            client.Org.List();
+
             string commandNamespace = response.Result.First["command"].ToString();
             Debug.Assert(commandNamespace.Equals("api:display"));
 

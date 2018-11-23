@@ -21,7 +21,7 @@ namespace sfdx4csharpClient.Core
         }
 
         protected SFDXResponse ExecuteCommand<TOptions>(string p_MethodName,
-            TOptions p_Options) where TOptions : SFDXOptions
+            TOptions p_Options) where TOptions : SFDXOptions, new()
         {
             Debug.Assert(p_MethodName != null);
 
@@ -32,11 +32,11 @@ namespace sfdx4csharpClient.Core
             string apiCommand = CommandAttribute.GetCommandValue(methodInfo);
             string command = $"{apiCommandClass}:{apiCommand}";
 
-            SFDXOutput output = m_CommandExecutioner.Execute(command, p_Options);
-            return new SFDXResponse()
-            {
+            SFDXOptions options = p_Options ?? new TOptions();
+            SFDXOutput output = m_CommandExecutioner.Execute(command, options);
+            return new SFDXResponse {
                 AdditionalInfo = output,
-                Result = p_Options.json ? ResponseParser.Parse(output.RawOutput) : null
+                Result = options.json ? ResponseParser.Parse(output.RawOutput) : null
             };
         }
     }
