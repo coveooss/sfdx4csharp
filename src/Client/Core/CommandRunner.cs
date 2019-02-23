@@ -76,7 +76,6 @@ namespace sfdx4csharpClient.Core
             Debug.Assert(!string.IsNullOrEmpty(p_Command));
 
             var startInfo = new ProcessStartInfo(m_SFDXPath, p_Command);
-            startInfo.EnvironmentVariables["SFDX_AUTOUPDATE_DISABLE"] = "true";
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
             startInfo.RedirectStandardError = true;
