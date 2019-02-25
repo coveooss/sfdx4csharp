@@ -5,3 +5,4 @@ node_modules
 commands.json
 package-lock.json
 .vs/
+**/Generated/
