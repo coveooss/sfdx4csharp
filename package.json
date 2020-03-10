@@ -1,13 +1,43 @@
 {
-  "name": "sfdx4csharp",
-  "version": "0.1.0",
-  "dependencies": {
-    "sfdx-generator": "^4.0.0",
-    "underscore": "^1.9.1",
-    "moment": "^2.22.2"
+  "name": "sfdx4csharp-generator",
+  "version": "0.7.0",
+  "description": "A node wrapper for Salesforce DX",
+  "keywords": [
+    "sfdx",
+    "wrapper",
+    "salesforce",
+    "generator",
+    "dx"
+  ],
+  "main": "./generator/dist/js/index.js",
+  "author": "Marc-Antoine Veilleux <maveilleux@coveo.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coveooss/sfdx4csharp.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.16.0"
   },
   "scripts": {
-    "run-generator": "node tools/generate-files.js",
-    "generate": "sfdx force:doc:commands:display --json > tools/commands.json && npm run run-generator"
+    "fetch-commands": "sfdx force:doc:commands:display --json > generator/dist/commands.json",
+    "lint-generator": "tslint -t codeFrame 'generator/**/*.ts'",
+    "compile-generator": "npm run lint-generator && rimraf generator/dist && rimraf src/Client/Commands/Generated/* && tsc",
+    "run-generator": "node generator/dist/js/index.js",
+    "generate": "npm run compile-generator && npm run fetch-commands && npm run run-generator"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^7.0.0",
+    "@types/node": "^10.17.17",
+    "@types/underscore": "^1.9.4",
+    "fs-extra": "^7.0.1",
+    "lodash.camelcase": "^4.3.0",
+    "prettier": "^1.19.1",
+    "sfdx-cli": "7.43.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.8.3",
+    "underscore": "^1.9.2"
   }
 }

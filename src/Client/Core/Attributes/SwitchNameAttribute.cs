@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2005-2018, Coveo Solutions Inc.
+﻿// Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using System;
 using System.Diagnostics;

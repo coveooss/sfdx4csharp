@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2005-2018, Coveo Solutions Inc.
+﻿// Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using System;
 using System.Diagnostics;
@@ -24,18 +24,6 @@ namespace sfdx4csharp
 
             Console.WriteLine("Simple debug test using api:display command.");
             var client = new SFDXClient(cliPath);
-
-            var response = client.Doc.CommandsDisplay(new DocCommandsDisplayOptions());
-
-            // Example when not using the json flag. responseWithoutJson.Result will be null.
-            var responseWithoutJson = client.Doc.CommandsDisplay(new DocCommandsDisplayOptions {
-                json = false
-            });
-
-            client.Org.List();
-
-            string commandNamespace = response.Result.First["command"].ToString();
-            Debug.Assert(commandNamespace.Equals("api:display"));
 
             string projectFolder = "C:\\TmpSfdxProject";
             if (Directory.Exists(projectFolder)) {
@@ -69,8 +57,7 @@ namespace sfdx4csharp
                 targetusername = "Toto"
             });
 
-            Console.WriteLine("Press any key to exit.");
-            Console.ReadKey();
+            Console.WriteLine("Dummy run done!");
         }
     }
 }
