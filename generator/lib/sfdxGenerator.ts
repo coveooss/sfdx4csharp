@@ -8,7 +8,7 @@ import {
 import * as fs from "fs-extra";
 import * as _ from "underscore";
 import * as path from "path";
-import { exec, ExecOptions } from "child_process";
+import { exec } from "child_process";
 
 export interface IGeneratorOptions {
   SFDXPath: string;
@@ -47,14 +47,18 @@ export class Generator {
         return;
       }
 
-      const className = this.capitalizeFirstLetter(this.extractClassNameFromTopic(result.topic));
+      const className = this.capitalizeFirstLetter(
+        this.extractClassNameFromTopic(result.topic)
+      );
 
       // Check if existing, else creates it.
       if (!classDefinitions[className]) {
         classDefinitions[className] = {
           apiCommandClass: result.topic,
           className: className,
-          fileName: formatFileName(this.extractClassNameFromTopic(result.topic)),
+          fileName: formatFileName(
+            this.extractClassNameFromTopic(result.topic)
+          ),
           functionDefinitions: []
         };
       }
@@ -90,7 +94,9 @@ export class Generator {
     fs.mkdirSync(this.options.outputDirectory);
 
     _.forEach(classDefinitions, classDefinition => {
-      let classImplementation = classTemplate(this.addTemplateHelper(classDefinition));
+      let classImplementation = classTemplate(
+        this.addTemplateHelper(classDefinition)
+      );
       fs.writeFileSync(
         path.format({
           dir: this.options.outputDirectory,
@@ -106,7 +112,9 @@ export class Generator {
     };
 
     const templateSFDXFile = fs
-      .readFileSync(path.resolve(this.options.templateDirectory, "sfdxClass.ejs"))
+      .readFileSync(
+        path.resolve(this.options.templateDirectory, "sfdxClass.ejs")
+      )
       .toString();
     const sfdxClassTemplate = _.template(templateSFDXFile);
 
@@ -201,7 +209,11 @@ export class Generator {
   }
 
   private addTemplateHelper(element: Object): any {
-    return _.extend({ cliVersion: this.cliVersion }, element, this.templateHelpers);
+    return _.extend(
+      { cliVersion: this.cliVersion },
+      element,
+      this.templateHelpers
+    );
   }
 
   private async initializeCliVersion() {
@@ -258,7 +270,9 @@ export class Generator {
     return new Promise<string>((resolve, reject) => {
       const fullCommand = this.options.SFDXPath + " " + command;
       exec(fullCommand, { maxBuffer: 512 * 1024 }, (error, stdout) => {
-        error ? reject(error) : resolve(this.cleanOutputFromUpdateMessage(stdout));
+        error
+          ? reject(error)
+          : resolve(this.cleanOutputFromUpdateMessage(stdout));
       });
     });
   }

@@ -57,8 +57,7 @@ namespace sfdx4csharp
                 targetusername = "Toto"
             });
 
-            Console.WriteLine("Press any key to exit.");
-            Console.ReadKey();
+            Console.WriteLine("Dummy run done!");
         }
     }
 }

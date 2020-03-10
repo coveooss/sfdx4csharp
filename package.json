@@ -25,10 +25,11 @@
     "node": ">=12.16.0"
   },
   "scripts": {
-    "lint": "tslint -t codeFrame 'generator/**/*.ts'",
-    "build": "npm run lint && rimraf generator/dist && rimraf src/Client/Commands/Generated/* && tsc",
-    "run-generator": "node generator/tools/generate-files.js",
-    "generate": "npm run build && sfdx force:doc:commands:display --json > generator/commands.json && npm run run-generator"
+    "fetch-commands": "sfdx force:doc:commands:display --json > generator/dist/commands.json",
+    "lint-generator": "tslint -t codeFrame 'generator/**/*.ts'",
+    "compile-generator": "npm run lint-generator && rimraf generator/dist && rimraf src/Client/Commands/Generated/* && tsc",
+    "run-generator": "node generator/dist/js/index.js",
+    "generate": "npm run compile-generator && npm run fetch-commands && npm run run-generator"
   },
   "lint-staged": {
     "generator/**/*.ts": [
