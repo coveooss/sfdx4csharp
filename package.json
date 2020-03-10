@@ -9,12 +9,7 @@
     "generator",
     "dx"
   ],
-  "main": "./generator/dist/sfdx-generator.umd.js",
-  "module": "./generator/dist/sfdx-generator.cjs.js",
-  "typings": "./generator/dist/types/sfdx-generator.d.ts",
-  "files": [
-    "generator/dist"
-  ],
+  "main": "./generator/dist/js/index.js",
   "author": "Marc-Antoine Veilleux <maveilleux@coveo.com>",
   "repository": {
     "type": "git",
@@ -31,18 +26,11 @@
     "run-generator": "node generator/dist/js/index.js",
     "generate": "npm run compile-generator && npm run fetch-commands && npm run run-generator"
   },
-  "lint-staged": {
-    "generator/**/*.ts": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "devDependencies": {
     "@types/fs-extra": "^7.0.0",
     "@types/node": "^10.17.17",
     "@types/underscore": "^1.9.4",
     "fs-extra": "^7.0.1",
-    "lint-staged": "^7.3.0",
     "lodash.camelcase": "^4.3.0",
     "prettier": "^1.19.1",
     "sfdx-cli": "7.43.1",

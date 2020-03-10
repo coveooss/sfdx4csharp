@@ -7,14 +7,11 @@
         "strict": true,
         "sourceMap": true,
         "declaration": true,
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
         "declarationDir": "generator/dist/types",
         "outDir": "generator/dist/js",
         "typeRoots": [
           "node_modules/@types"
-        ],
-        "skipLibCheck": true
+        ]
     },
     "include": [
       "generator"
