@@ -1,4 +1,4 @@
-// Generated on March 9th 2020 using sfdx-cli/7.43.1 win32-x64 node-v8.15.0. DO NOT MODIFY
+// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
 // Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
@@ -13,28 +13,22 @@ namespace sfdx4csharpClient
     public class VisualforceComponentCreateOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] The Visualforce component name. The name can be up to 40 characters and must start with a letter.
-        /// </summary>
-        [SwitchName("--componentname")]
-        public string componentname { get; set; }
-
-        /// <summary>
         /// [Required] The label saved in the metadata for the Visualforce component.
         /// </summary>
         [SwitchName("--label")]
         public string label { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] The Visualforce component name. The name can be up to 40 characters and must start with a letter.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--componentname")]
+        public string componentname { get; set; }
 
         /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
@@ -43,10 +37,16 @@ namespace sfdx4csharpClient
         public string template { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--outputdir")]
+        public string outputdir { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
     }
 
     /// <summary>
@@ -55,28 +55,22 @@ namespace sfdx4csharpClient
     public class VisualforcePageCreateOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] The Visualforce page name. The name can be up to 40 characters and must start with a letter.
-        /// </summary>
-        [SwitchName("--pagename")]
-        public string pagename { get; set; }
-
-        /// <summary>
         /// [Required] The label saved in the metadata for the Visualforce page.
         /// </summary>
         [SwitchName("--label")]
         public string label { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] The Visualforce page name. The name can be up to 40 characters and must start with a letter.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--pagename")]
+        public string pagename { get; set; }
 
         /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
@@ -85,10 +79,16 @@ namespace sfdx4csharpClient
         public string template { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--outputdir")]
+        public string outputdir { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
     }
 
     /// <summary>

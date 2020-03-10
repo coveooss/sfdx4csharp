@@ -1,4 +1,4 @@
-// Generated on March 9th 2020 using sfdx-cli/7.43.1 win32-x64 node-v8.15.0. DO NOT MODIFY
+// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
 // Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
@@ -19,16 +19,10 @@ namespace sfdx4csharpClient
         public string sobjecttype { get; set; }
 
         /// <summary>
-        /// [Optional] Execute using Tooling API.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--usetoolingapi")]
-        public bool? usetoolingapi { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -37,10 +31,16 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Execute using Tooling API.
+        /// </summary>
+        [SwitchName("--usetoolingapi")]
+        public bool? usetoolingapi { get; set; }
     }
 
     /// <summary>
@@ -55,10 +55,10 @@ namespace sfdx4csharpClient
         public string sobjecttypecategory { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -67,10 +67,10 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
     }
 
     /// <summary>

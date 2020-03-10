@@ -1,4 +1,4 @@
-// Generated on March 9th 2020 using sfdx-cli/7.43.1 win32-x64 node-v8.15.0. DO NOT MODIFY
+// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
 // Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
@@ -19,34 +19,10 @@ namespace sfdx4csharpClient
         public string projectname { get; set; }
 
         /// <summary>
-        /// [Required] The login URL for the Salesforce instance being used. Normally defaults to https://login.salesforce.com.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--loginurl")]
-        public string loginurl { get; set; }
-
-        /// <summary>
-        /// [Optional] Generates a default manifest (package.xml) for fetching Apex, Visualforce, Lightning components, and static resources.
-        /// </summary>
-        [SwitchName("--manifest")]
-        public bool? manifest { get; set; }
-
-        /// <summary>
-        /// [Required] The default package directory name. Metadata items such as classes and Lightning bundles are placed inside this folder.
-        /// </summary>
-        [SwitchName("--defaultpackagedir")]
-        public string defaultpackagedir { get; set; }
-
-        /// <summary>
-        /// [Required] The namespace associated with this project and any connected scratch orgs.
-        /// </summary>
-        [SwitchName("--namespace")]
-        public string @namespace { get; set; }
-
-        /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
-        /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] The template to use to create the project. Supplied parameter values or default values are filled into a copy of the template.
@@ -55,10 +31,34 @@ namespace sfdx4csharpClient
         public string template { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--outputdir")]
+        public string outputdir { get; set; }
+
+        /// <summary>
+        /// [Required] The namespace associated with this project and any connected scratch orgs.
+        /// </summary>
+        [SwitchName("--namespace")]
+        public string @namespace { get; set; }
+
+        /// <summary>
+        /// [Required] The default package directory name. Metadata items such as classes and Lightning bundles are placed inside this folder.
+        /// </summary>
+        [SwitchName("--defaultpackagedir")]
+        public string defaultpackagedir { get; set; }
+
+        /// <summary>
+        /// [Optional] Generates a default manifest (package.xml) for fetching Apex, Visualforce, Lightning components, and static resources.
+        /// </summary>
+        [SwitchName("--manifest")]
+        public bool? manifest { get; set; }
+
+        /// <summary>
+        /// [Required] The login URL for the Salesforce instance being used. Normally defaults to https://login.salesforce.com.
+        /// </summary>
+        [SwitchName("--loginurl")]
+        public string loginurl { get; set; }
     }
 
     /// <summary>
@@ -67,16 +67,16 @@ namespace sfdx4csharpClient
     public class ProjectUpgradeOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] Run all upgrades, even if the project definition files have already been upgraded.
-        /// </summary>
-        [SwitchName("--forceupgrade")]
-        public bool? forceupgrade { get; set; }
-
-        /// <summary>
         /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Optional] Run all upgrades, even if the project definition files have already been upgraded.
+        /// </summary>
+        [SwitchName("--forceupgrade")]
+        public bool? forceupgrade { get; set; }
     }
 
     /// <summary>

@@ -4,8 +4,6 @@
 Coveo Salesforce DX C# wrapper.
 
 ## Important NPM tasks
-
-* `npm run run-generator`: Generates the wrapper classes.
 * `npm run generate`: Loads documentation from sfdx-cli and then generates the wrapper classes.
 
 ## Basic usage

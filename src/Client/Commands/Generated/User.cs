@@ -1,4 +1,4 @@
-// Generated on March 9th 2020 using sfdx-cli/7.43.1 win32-x64 node-v8.15.0. DO NOT MODIFY
+// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
 // Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
@@ -19,10 +19,28 @@ namespace sfdx4csharpClient
         public string expression { get; set; }
 
         /// <summary>
-        /// [Required] Sets an alias for the created username to reference within the CLI.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--setalias")]
-        public string setalias { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+        /// </summary>
+        [SwitchName("--targetdevhubusername")]
+        public string targetdevhubusername { get; set; }
+
+        /// <summary>
+        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// </summary>
+        [SwitchName("--targetusername")]
+        public string targetusername { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
 
         /// <summary>
         /// [Required] File path to a user definition.
@@ -31,28 +49,10 @@ namespace sfdx4csharpClient
         public string definitionfile { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Sets an alias for the created username to reference within the CLI.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
-
-        /// <summary>
-        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
-
-        /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--setalias")]
+        public string setalias { get; set; }
     }
 
     /// <summary>
@@ -61,16 +61,10 @@ namespace sfdx4csharpClient
     public class UserDisplayOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
@@ -79,10 +73,16 @@ namespace sfdx4csharpClient
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] A username or alias for the target org. Overrides the default target org.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--targetusername")]
+        public string targetusername { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
     }
 
     /// <summary>
@@ -91,16 +91,10 @@ namespace sfdx4csharpClient
     public class UserListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
@@ -109,10 +103,16 @@ namespace sfdx4csharpClient
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] A username or alias for the target org. Overrides the default target org.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--targetusername")]
+        public string targetusername { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
     }
 
     /// <summary>
@@ -121,22 +121,10 @@ namespace sfdx4csharpClient
     public class UserPasswordGenerateOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] A comma-separated list of usernames for which to generate passwords.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--onbehalfof")]
-        public string onbehalfof { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
@@ -145,10 +133,22 @@ namespace sfdx4csharpClient
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] A username or alias for the target org. Overrides the default target org.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--targetusername")]
+        public string targetusername { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] A comma-separated list of usernames for which to generate passwords.
+        /// </summary>
+        [SwitchName("--onbehalfof")]
+        public string onbehalfof { get; set; }
     }
 
     /// <summary>
@@ -163,16 +163,10 @@ namespace sfdx4csharpClient
         public string permsetname { get; set; }
 
         /// <summary>
-        /// [Required] Comma-separated list of usernames or aliases to assign the permission set to.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--onbehalfof")]
-        public string onbehalfof { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -181,10 +175,16 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] Comma-separated list of usernames or aliases to assign the permission set to.
+        /// </summary>
+        [SwitchName("--onbehalfof")]
+        public string onbehalfof { get; set; }
     }
 
     /// <summary>

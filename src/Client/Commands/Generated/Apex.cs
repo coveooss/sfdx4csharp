@@ -1,4 +1,4 @@
-// Generated on March 9th 2020 using sfdx-cli/7.43.1 win32-x64 node-v8.15.0. DO NOT MODIFY
+// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
 // Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
@@ -19,16 +19,10 @@ namespace sfdx4csharpClient
         public string classname { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
-        /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
@@ -37,10 +31,16 @@ namespace sfdx4csharpClient
         public string template { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--outputdir")]
+        public string outputdir { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
     }
 
     /// <summary>
@@ -49,16 +49,10 @@ namespace sfdx4csharpClient
     public class ApexExecuteOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] Path to a local file that contains Apex code.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--apexcodefile")]
-        public string apexcodefile { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -67,10 +61,16 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] Path to a local file that contains Apex code.
+        /// </summary>
+        [SwitchName("--apexcodefile")]
+        public string apexcodefile { get; set; }
     }
 
     /// <summary>
@@ -79,10 +79,28 @@ namespace sfdx4csharpClient
     public class ApexLogGetOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] Number of most recent logs to display.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--number")]
-        public int? number { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// </summary>
+        [SwitchName("--targetusername")]
+        public string targetusername { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Applies default colors to noteworthy log lines.
+        /// </summary>
+        [SwitchName("--color")]
+        public bool? color { get; set; }
 
         /// <summary>
         /// [Required] ID of the log to display.
@@ -91,28 +109,10 @@ namespace sfdx4csharpClient
         public string logid { get; set; }
 
         /// <summary>
-        /// [Optional] Applies default colors to noteworthy log lines.
+        /// [Optional] Number of most recent logs to display.
         /// </summary>
-        [SwitchName("--color")]
-        public bool? color { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
-
-        /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--number")]
+        public int? number { get; set; }
     }
 
     /// <summary>
@@ -121,10 +121,10 @@ namespace sfdx4csharpClient
     public class ApexLogListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -133,10 +133,10 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
     }
 
     /// <summary>
@@ -145,28 +145,10 @@ namespace sfdx4csharpClient
     public class ApexLogTailOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] Skips trace flag setup. Assumes that a trace flag and debug level are fully set up.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--skiptraceflag")]
-        public bool? skiptraceflag { get; set; }
-
-        /// <summary>
-        /// [Required] Debug level to set on the DEVELOPER_LOG trace flag for your user.
-        /// </summary>
-        [SwitchName("--debuglevel")]
-        public string debuglevel { get; set; }
-
-        /// <summary>
-        /// [Optional] Applies default colors to noteworthy log lines.
-        /// </summary>
-        [SwitchName("--color")]
-        public bool? color { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -175,10 +157,28 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Applies default colors to noteworthy log lines.
+        /// </summary>
+        [SwitchName("--color")]
+        public bool? color { get; set; }
+
+        /// <summary>
+        /// [Required] Debug level to set on the DEVELOPER_LOG trace flag for your user.
+        /// </summary>
+        [SwitchName("--debuglevel")]
+        public string debuglevel { get; set; }
+
+        /// <summary>
+        /// [Optional] Skips trace flag setup. Assumes that a trace flag and debug level are fully set up.
+        /// </summary>
+        [SwitchName("--skiptraceflag")]
+        public bool? skiptraceflag { get; set; }
     }
 
     /// <summary>
@@ -193,40 +193,10 @@ namespace sfdx4csharpClient
         public string testrunid { get; set; }
 
         /// <summary>
-        /// [Required] Format to use when displaying results. If you also specify the --json flag, --json overrides this parameter.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--resultformat")]
-        public string resultformat { get; set; }
-
-        /// <summary>
-        /// [Optional] Displays Apex test processing details. If JSON format is specified, processing details aren’t displayed.
-        /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
-
-        /// <summary>
-        /// [Optional] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
-        /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
-
-        /// <summary>
-        /// [Required] Directory to store test run files.
-        /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
-
-        /// <summary>
-        /// [Optional] Retrieves code coverage results.
-        /// </summary>
-        [SwitchName("--codecoverage")]
-        public bool? codecoverage { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -235,10 +205,40 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Retrieves code coverage results.
+        /// </summary>
+        [SwitchName("--codecoverage")]
+        public bool? codecoverage { get; set; }
+
+        /// <summary>
+        /// [Required] Directory to store test run files.
+        /// </summary>
+        [SwitchName("--outputdir")]
+        public string outputdir { get; set; }
+
+        /// <summary>
+        /// [Optional] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
+        /// </summary>
+        [SwitchName("--wait")]
+        public int? wait { get; set; }
+
+        /// <summary>
+        /// [Optional] Displays Apex test processing details. If JSON format is specified, processing details aren’t displayed.
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? verbose { get; set; }
+
+        /// <summary>
+        /// [Required] Format to use when displaying results. If you also specify the --json flag, --json overrides this parameter.
+        /// </summary>
+        [SwitchName("--resultformat")]
+        public string resultformat { get; set; }
     }
 
     /// <summary>
@@ -247,16 +247,46 @@ namespace sfdx4csharpClient
     public class ApexTestRunOptions : SFDXOptions
     {
         /// <summary>
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// </summary>
+        [SwitchName("--targetusername")]
+        public string targetusername { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] Comma-separated list of Apex test class names to run. You can specify only one of classnames, suitenames, or tests.
+        /// </summary>
+        [SwitchName("--classnames")]
+        public string classnames { get; set; }
+
+        /// <summary>
+        /// [Required] Comma-separated list of Apex test suite names to run. You can only specify one of classnames, suitenames, or tests.
+        /// </summary>
+        [SwitchName("--suitenames")]
+        public string suitenames { get; set; }
+
+        /// <summary>
+        /// [Required] Comma-separated list of Apex test class names or IDs and test methods, if applicable, to run. You can only specify one of classnames, suitenames, or tests.
+        /// </summary>
+        [SwitchName("--tests")]
+        public string tests { get; set; }
+
+        /// <summary>
         /// [Optional] Retrieves code coverage results.
         /// </summary>
         [SwitchName("--codecoverage")]
         public bool? codecoverage { get; set; }
-
-        /// <summary>
-        /// [Required] Format to use when displaying results. If you also specify the --json flag, --json overrides this parameter.
-        /// </summary>
-        [SwitchName("--resultformat")]
-        public string resultformat { get; set; }
 
         /// <summary>
         /// [Required] Directory to store test run files.
@@ -274,28 +304,10 @@ namespace sfdx4csharpClient
         public string testlevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Optional] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
         /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
-
-        /// <summary>
-        /// [Required] Comma-separated list of Apex test class names to run. You can specify only one of classnames, suitenames, or tests.
-        /// </summary>
-        [SwitchName("--classnames")]
-        public string classnames { get; set; }
-
-        /// <summary>
-        /// [Optional] Displays Apex test processing details. If JSON format is specified, processing details aren’t displayed.
-        /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
-
-        /// <summary>
-        /// [Optional] Runs test methods from a single Apex class synchronously. If you don't specify this flag, tests are run asynchronously.
-        /// </summary>
-        [SwitchName("--synchronous")]
-        public bool? synchronous { get; set; }
+        [SwitchName("--wait")]
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Optional] Specifies how long to wait (in minutes) for Apex pre-compilation to complete before running the tests or timing out.
@@ -304,34 +316,22 @@ namespace sfdx4csharpClient
         public int? precompilewait { get; set; }
 
         /// <summary>
-        /// [Optional] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
+        /// [Optional] Runs test methods from a single Apex class synchronously. If you don't specify this flag, tests are run asynchronously.
         /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
+        [SwitchName("--synchronous")]
+        public bool? synchronous { get; set; }
 
         /// <summary>
-        /// [Required] Comma-separated list of Apex test suite names to run. You can only specify one of classnames, suitenames, or tests.
+        /// [Optional] Displays Apex test processing details. If JSON format is specified, processing details aren’t displayed.
         /// </summary>
-        [SwitchName("--suitenames")]
-        public string suitenames { get; set; }
+        [SwitchName("--verbose")]
+        public bool? verbose { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Format to use when displaying results. If you also specify the --json flag, --json overrides this parameter.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Comma-separated list of Apex test class names or IDs and test methods, if applicable, to run. You can only specify one of classnames, suitenames, or tests.
-        /// </summary>
-        [SwitchName("--tests")]
-        public string tests { get; set; }
+        [SwitchName("--resultformat")]
+        public string resultformat { get; set; }
     }
 
     /// <summary>
@@ -346,28 +346,10 @@ namespace sfdx4csharpClient
         public string triggername { get; set; }
 
         /// <summary>
-        /// [Required] The events that cause the trigger to fire.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--triggerevents")]
-        public string triggerevents { get; set; }
-
-        /// <summary>
-        /// [Required] The sObject to create an Apex trigger on.
-        /// </summary>
-        [SwitchName("--sobject")]
-        public string sobject { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
-        /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
@@ -376,10 +358,28 @@ namespace sfdx4csharpClient
         public string template { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--outputdir")]
+        public string outputdir { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] The sObject to create an Apex trigger on.
+        /// </summary>
+        [SwitchName("--sobject")]
+        public string sobject { get; set; }
+
+        /// <summary>
+        /// [Required] The events that cause the trigger to fire.
+        /// </summary>
+        [SwitchName("--triggerevents")]
+        public string triggerevents { get; set; }
     }
 
     /// <summary>

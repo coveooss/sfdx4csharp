@@ -1,4 +1,4 @@
-// Generated on March 9th 2020 using sfdx-cli/7.43.1 win32-x64 node-v8.15.0. DO NOT MODIFY
+// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
 // Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
@@ -19,17 +19,16 @@ namespace sfdx4csharpClient
         public string rootdir { get; set; }
 
         /// <summary>
-        /// [Required] A comma-separated list of paths to the local source files to convert. The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its sub-directories).
-        /// If you specify this parameter, don’t specify --manifest or --metadata.If the comma-separated list you’re supplying contains spaces, enclose the entire comma-separated list in one set of double quotes.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--metadatapath")]
-        public string metadatapath { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A comma-separated list of metadata component names to convert.
+        /// [Required] The directory to store your files in after they’re converted to the source format. Can be an absolute or relative path.
         /// </summary>
-        [SwitchName("--metadata")]
-        public string metadata { get; set; }
+        [SwitchName("--outputdir")]
+        public string outputdir { get; set; }
 
         /// <summary>
         /// [Required] The complete path to the manifest (package.xml) file that specifies the metadata types to convert.
@@ -39,16 +38,17 @@ namespace sfdx4csharpClient
         public string manifest { get; set; }
 
         /// <summary>
-        /// [Required] The directory to store your files in after they’re converted to the source format. Can be an absolute or relative path.
+        /// [Required] A comma-separated list of metadata component names to convert.
         /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--metadata")]
+        public string metadata { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] A comma-separated list of paths to the local source files to convert. The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its sub-directories).
+        /// If you specify this parameter, don’t specify --manifest or --metadata.If the comma-separated list you’re supplying contains spaces, enclose the entire comma-separated list in one set of double quotes.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--metadatapath")]
+        public string metadatapath { get; set; }
     }
 
     /// <summary>
@@ -56,6 +56,47 @@ namespace sfdx4csharpClient
     /// </summary>
     public class MdapiDeployOptions : SFDXOptions
     {
+        /// <summary>
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// </summary>
+        [SwitchName("--targetusername")]
+        public string targetusername { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Validates the deployed metadata and runs all Apex tests, but prevents the deployment from being saved to the org.
+        /// If you change a field type from Master-Detail to Lookup or vice versa, that change isn’t supported when using the --checkonly parameter to test a deployment (validation). This kind of change isn’t supported for test deployments to avoid the risk of data loss or corruption. If a change that isn’t supported for test deployments is included in a deployment package, the test deployment fails and issues an error.
+        /// If your deployment package changes a field type from Master-Detail to Lookup or vice versa, you can still validate the changes prior to deploying to Production by performing a full deployment to another test Sandbox. A full deployment includes a validation of the changes as part of the deployment process.
+        /// Note: A Metadata API deployment that includes Master-Detail relationships deletes all detail records in the Recycle Bin in the following cases.
+        /// 1. For a deployment with a new Master-Detail field, soft delete (send to the Recycle Bin) all detail records before proceeding to deploy the Master-Detail field, or the deployment fails. During the deployment, detail records are permanently deleted from the Recycle Bin and cannot be recovered.
+        /// 2. For a deployment that converts a Lookup field relationship to a Master-Detail relationship, detail records must reference a master record or be soft-deleted (sent to the Recycle Bin) for the deployment to succeed. However, a successful deployment permanently deletes any detail records in the Recycle Bin.
+        /// </summary>
+        [SwitchName("--checkonly")]
+        public bool? checkonly { get; set; }
+
+        /// <summary>
+        /// [Required] The root of the directory tree that contains the files to deploy. The root must contain a valid package.xml file describing the entities in the directory structure. Required to initiate a deployment if you don’t use --zipfile. If you specify both --zipfile and --deploydir, a zip file of the contents of the --deploydir directory is written to the location specified by --zipfile.
+        /// </summary>
+        [SwitchName("--deploydir")]
+        public string deploydir { get; set; }
+
+        /// <summary>
+        /// [Optional] The number of minutes to wait for the command to complete. The default is –1 (no limit). 0
+        /// </summary>
+        [SwitchName("--wait")]
+        public int? wait { get; set; }
+
         /// <summary>
         /// [Required] Specifies which level of deployment tests to run. Valid values are:
         /// NoTestRun—No tests are run. This test level applies only to deployments to development environments, such as sandbox, Developer Edition, or trial orgs. This test level is the default for development environments.
@@ -68,28 +109,23 @@ namespace sfdx4csharpClient
         public string testlevel { get; set; }
 
         /// <summary>
-        /// [Required] The path to the .zip file of metadata files to deploy. You must indicate this option or --deploydir.If you specify both --zipfile and --deploydir, a .zip file of the contents of the deploy directory is created at the path specified for the .zip file.
-        /// </summary>
-        [SwitchName("--zipfile")]
-        public string zipfile { get; set; }
-
-        /// <summary>
         /// [Required] Lists the Apex classes containing the deployment tests to run. Use this parameter when you set --testlevel to RunSpecifiedTests.
         /// </summary>
         [SwitchName("--runtests")]
         public string runtests { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Optional] Ignores the deploy errors, and continues with the deploy operation. The default is false. Keep this parameter set to false when deploying to a production org. If set to true, components without errors are deployed, and components with errors are skipped.
         /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        [SwitchName("--ignoreerrors")]
+        public bool? ignoreerrors { get; set; }
 
         /// <summary>
-        /// [Optional] Indicates that you want verbose output from the deploy operation.
+        /// [Optional] If a warning occurs and ignoreWarnings is set to true, the success field in DeployMessage is true. When ignoreWarnings is set to false, success is set to false, and the warning is treated like an error.
+        /// This field is available in API version 18.0 and later. Prior to version 18.0, there was no distinction between warnings and errors. All problems were treated as errors and prevented a successful deployment.
         /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
+        [SwitchName("--ignorewarnings")]
+        public bool? ignorewarnings { get; set; }
 
         /// <summary>
         /// [Required] Specifies the ID of a package with recently validated components to run a Quick Deploy. Deploying a validation helps you shorten your deployment time because tests aren’t rerun. If you have a recent successful validation, you can deploy the validated components without running tests. A validation doesn’t save any components in the org. You use a validation only to check the success or failure messages that you would receive with an actual deployment. To validate your components, add the -c | --checkonly flag when you run "sfdx force:mdapi:deploy". This flag sets the checkOnly="true" parameter for your deployment. Before deploying a recent validation, ensure that the following requirements are met:
@@ -103,52 +139,16 @@ namespace sfdx4csharpClient
         public string validateddeployrequestid { get; set; }
 
         /// <summary>
-        /// [Optional] If a warning occurs and ignoreWarnings is set to true, the success field in DeployMessage is true. When ignoreWarnings is set to false, success is set to false, and the warning is treated like an error.
-        /// This field is available in API version 18.0 and later. Prior to version 18.0, there was no distinction between warnings and errors. All problems were treated as errors and prevented a successful deployment.
+        /// [Optional] Indicates that you want verbose output from the deploy operation.
         /// </summary>
-        [SwitchName("--ignorewarnings")]
-        public bool? ignorewarnings { get; set; }
+        [SwitchName("--verbose")]
+        public bool? verbose { get; set; }
 
         /// <summary>
-        /// [Optional] Ignores the deploy errors, and continues with the deploy operation. The default is false. Keep this parameter set to false when deploying to a production org. If set to true, components without errors are deployed, and components with errors are skipped.
+        /// [Required] The path to the .zip file of metadata files to deploy. You must indicate this option or --deploydir.If you specify both --zipfile and --deploydir, a .zip file of the contents of the deploy directory is created at the path specified for the .zip file.
         /// </summary>
-        [SwitchName("--ignoreerrors")]
-        public bool? ignoreerrors { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Optional] The number of minutes to wait for the command to complete. The default is –1 (no limit). 0
-        /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
-
-        /// <summary>
-        /// [Required] The root of the directory tree that contains the files to deploy. The root must contain a valid package.xml file describing the entities in the directory structure. Required to initiate a deployment if you don’t use --zipfile. If you specify both --zipfile and --deploydir, a zip file of the contents of the --deploydir directory is written to the location specified by --zipfile.
-        /// </summary>
-        [SwitchName("--deploydir")]
-        public string deploydir { get; set; }
-
-        /// <summary>
-        /// [Optional] Validates the deployed metadata and runs all Apex tests, but prevents the deployment from being saved to the org.
-        /// If you change a field type from Master-Detail to Lookup or vice versa, that change isn’t supported when using the --checkonly parameter to test a deployment (validation). This kind of change isn’t supported for test deployments to avoid the risk of data loss or corruption. If a change that isn’t supported for test deployments is included in a deployment package, the test deployment fails and issues an error.
-        /// If your deployment package changes a field type from Master-Detail to Lookup or vice versa, you can still validate the changes prior to deploying to Production by performing a full deployment to another test Sandbox. A full deployment includes a validation of the changes as part of the deployment process.
-        /// Note: A Metadata API deployment that includes Master-Detail relationships deletes all detail records in the Recycle Bin in the following cases.
-        /// 1. For a deployment with a new Master-Detail field, soft delete (send to the Recycle Bin) all detail records before proceeding to deploy the Master-Detail field, or the deployment fails. During the deployment, detail records are permanently deleted from the Recycle Bin and cannot be recovered.
-        /// 2. For a deployment that converts a Lookup field relationship to a Master-Detail relationship, detail records must reference a master record or be soft-deleted (sent to the Recycle Bin) for the deployment to succeed. However, a successful deployment permanently deletes any detail records in the Recycle Bin.
-        /// </summary>
-        [SwitchName("--checkonly")]
-        public bool? checkonly { get; set; }
+        [SwitchName("--zipfile")]
+        public string zipfile { get; set; }
     }
 
     /// <summary>
@@ -157,10 +157,22 @@ namespace sfdx4csharpClient
     public class MdapiDeployCancelOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] The job ID (requestId) of the deployment you want to cancel. If not specified, the default value is the ID of the most recent metadata deployment you ran using Salesforce CLI.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--jobid")]
-        public string jobid { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// </summary>
+        [SwitchName("--targetusername")]
+        public string targetusername { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
 
         /// <summary>
         /// [Optional] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
@@ -169,22 +181,10 @@ namespace sfdx4csharpClient
         public int? wait { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] The job ID (requestId) of the deployment you want to cancel. If not specified, the default value is the ID of the most recent metadata deployment you ran using Salesforce CLI.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
-
-        /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--jobid")]
+        public string jobid { get; set; }
     }
 
     /// <summary>
@@ -193,22 +193,16 @@ namespace sfdx4csharpClient
     public class MdapiDeployReportOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] Indicates that you want verbose output for deploy results.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] The job ID (asyncId) of the deployment you want to check. If not specified, the default value is the ID of the most recent metadata deployment you ran using Salesforce CLI. Use with -w to resume waiting.
+        /// [Required] A username or alias for the target org. Overrides the default target org.
         /// </summary>
-        [SwitchName("--jobid")]
-        public string jobid { get; set; }
-
-        /// <summary>
-        /// [Optional] The number of minutes to wait for the command to complete. The default is –1 (no limit). 0
-        /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
+        [SwitchName("--targetusername")]
+        public string targetusername { get; set; }
 
         /// <summary>
         /// [Required] Override the API version used for API requests made by this command.
@@ -217,16 +211,22 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Optional] The number of minutes to wait for the command to complete. The default is –1 (no limit). 0
         /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        [SwitchName("--wait")]
+        public int? wait { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] The job ID (asyncId) of the deployment you want to check. If not specified, the default value is the ID of the most recent metadata deployment you ran using Salesforce CLI. Use with -w to resume waiting.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--jobid")]
+        public string jobid { get; set; }
+
+        /// <summary>
+        /// [Optional] Indicates that you want verbose output for deploy results.
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? verbose { get; set; }
     }
 
     /// <summary>
@@ -235,22 +235,10 @@ namespace sfdx4csharpClient
     public class MdapiDescribemetadataOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The path to the file where the results of the command are stored. Directing the output to a file makes it easier to extract relevant information for your package.xml manifest file. The default output destination is the console.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--filterknown")]
-        public bool? filterknown { get; set; }
-
-        /// <summary>
-        /// [Required] Filters all the known metadata from the result such that all that is left are the types not yet fully supported by the CLI.
-        /// </summary>
-        [SwitchName("--resultfile")]
-        public string resultfile { get; set; }
-
-        /// <summary>
-        /// [Required] The API version to use. The default is the latest API version (47.0).
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -259,10 +247,22 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] The API version to use. The default is the latest API version (47.0).
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] Filters all the known metadata from the result such that all that is left are the types not yet fully supported by the CLI.
+        /// </summary>
+        [SwitchName("--resultfile")]
+        public string resultfile { get; set; }
+
+        /// <summary>
+        /// [Optional] The path to the file where the results of the command are stored. Directing the output to a file makes it easier to extract relevant information for your package.xml manifest file. The default output destination is the console.
+        /// </summary>
+        [SwitchName("--filterknown")]
+        public bool? filterknown { get; set; }
     }
 
     /// <summary>
@@ -277,22 +277,10 @@ namespace sfdx4csharpClient
         public string metadatatype { get; set; }
 
         /// <summary>
-        /// [Required] The folder associated with the component. This parameter is required for components that use folders, such as Dashboard, Document, EmailTemplate, or Report. The folder name value is case-sensitive.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--folder")]
-        public string folder { get; set; }
-
-        /// <summary>
-        /// [Required] The path to the file where the results of the command are stored. The default output destination is the console.
-        /// </summary>
-        [SwitchName("--resultfile")]
-        public string resultfile { get; set; }
-
-        /// <summary>
-        /// [Required] The API version to use. The default is the latest API version (47.0).
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -301,10 +289,22 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] The API version to use. The default is the latest API version (47.0).
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] The path to the file where the results of the command are stored. The default output destination is the console.
+        /// </summary>
+        [SwitchName("--resultfile")]
+        public string resultfile { get; set; }
+
+        /// <summary>
+        /// [Required] The folder associated with the component. This parameter is required for components that use folders, such as Dashboard, Document, EmailTemplate, or Report. The folder name value is case-sensitive.
+        /// </summary>
+        [SwitchName("--folder")]
+        public string folder { get; set; }
     }
 
     /// <summary>
@@ -319,46 +319,16 @@ namespace sfdx4csharpClient
         public string retrievetargetdir { get; set; }
 
         /// <summary>
-        /// [Optional] Specifies whether only a single package is being retrieved (true) or more than one package (false).
-        /// </summary>
-        [SwitchName("--singlepackage")]
-        public bool? singlepackage { get; set; }
-
-        /// <summary>
-        /// [Required] A comma-separated list of package names to retrieve.
-        /// </summary>
-        [SwitchName("--packagenames")]
-        public string packagenames { get; set; }
-
-        /// <summary>
-        /// [Required] The source directory to use instead of the default package directory specified in sfdx-project.json
-        /// </summary>
-        [SwitchName("--sourcedir")]
-        public string sourcedir { get; set; }
-
-        /// <summary>
-        /// [Optional] Indicates that you want verbose output from the retrieve operation.
-        /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
-
-        /// <summary>
-        /// [Required] The complete path for the manifest file that specifies the components to retrieve.
-        /// </summary>
-        [SwitchName("--unpackaged")]
-        public string unpackaged { get; set; }
-
-        /// <summary>
         /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Optional] The number of minutes to wait for the command to complete.
+        /// [Required] A username or alias for the target org. Overrides the default target org.
         /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
+        [SwitchName("--targetusername")]
+        public string targetusername { get; set; }
 
         /// <summary>
         /// [Required] Use to override the default, which is the latest version supported by your CLI plug-in, with the version in your package.xml file.
@@ -367,22 +337,16 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Optional] The number of minutes to wait for the command to complete.
         /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
-    }
+        [SwitchName("--wait")]
+        public int? wait { get; set; }
 
-    /// <summary>
-    /// Options for the method retrieveReport of class Mdapi.
-    /// </summary>
-    public class MdapiRetrieveReportOptions : SFDXOptions
-    {
         /// <summary>
-        /// [Required] The job ID (asyncId) of the retrieve you want to check. If not specified, the default value is the ID of the most recent metadata retrieval you ran using Salesforce CLI. You must specify a --retrievetargetdir. Use with --wait to resume waiting.
+        /// [Required] The complete path for the manifest file that specifies the components to retrieve.
         /// </summary>
-        [SwitchName("--jobid")]
-        public string jobid { get; set; }
+        [SwitchName("--unpackaged")]
+        public string unpackaged { get; set; }
 
         /// <summary>
         /// [Optional] Indicates that you want verbose output from the retrieve operation.
@@ -391,22 +355,34 @@ namespace sfdx4csharpClient
         public bool? verbose { get; set; }
 
         /// <summary>
-        /// [Required] The root of the directory structure where the retrieved .zip or metadata files are put.
+        /// [Required] The source directory to use instead of the default package directory specified in sfdx-project.json
         /// </summary>
-        [SwitchName("--retrievetargetdir")]
-        public string retrievetargetdir { get; set; }
+        [SwitchName("--sourcedir")]
+        public string sourcedir { get; set; }
 
         /// <summary>
-        /// [Optional] The number of minutes to wait for the command to complete. -1
+        /// [Required] A comma-separated list of package names to retrieve.
         /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
+        [SwitchName("--packagenames")]
+        public string packagenames { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Optional] Specifies whether only a single package is being retrieved (true) or more than one package (false).
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--singlepackage")]
+        public bool? singlepackage { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method retrieveReport of class Mdapi.
+    /// </summary>
+    public class MdapiRetrieveReportOptions : SFDXOptions
+    {
+        /// <summary>
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -415,10 +391,34 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] The number of minutes to wait for the command to complete. -1
+        /// </summary>
+        [SwitchName("--wait")]
+        public int? wait { get; set; }
+
+        /// <summary>
+        /// [Required] The root of the directory structure where the retrieved .zip or metadata files are put.
+        /// </summary>
+        [SwitchName("--retrievetargetdir")]
+        public string retrievetargetdir { get; set; }
+
+        /// <summary>
+        /// [Optional] Indicates that you want verbose output from the retrieve operation.
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? verbose { get; set; }
+
+        /// <summary>
+        /// [Required] The job ID (asyncId) of the retrieve you want to check. If not specified, the default value is the ID of the most recent metadata retrieval you ran using Salesforce CLI. You must specify a --retrievetargetdir. Use with --wait to resume waiting.
+        /// </summary>
+        [SwitchName("--jobid")]
+        public string jobid { get; set; }
     }
 
     /// <summary>

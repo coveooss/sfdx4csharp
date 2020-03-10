@@ -1,4 +1,4 @@
-// Generated on March 9th 2020 using sfdx-cli/7.43.1 win32-x64 node-v8.15.0. DO NOT MODIFY
+// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
 // Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
@@ -25,16 +25,16 @@ namespace sfdx4csharpClient
     public class DocCommandsListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] Lists docopt usage strings instead of command names and descriptions.
-        /// </summary>
-        [SwitchName("--usage")]
-        public bool? usage { get; set; }
-
-        /// <summary>
         /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Optional] Lists docopt usage strings instead of command names and descriptions.
+        /// </summary>
+        [SwitchName("--usage")]
+        public bool? usage { get; set; }
     }
 
     /// <summary>

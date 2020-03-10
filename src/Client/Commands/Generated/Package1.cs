@@ -1,4 +1,4 @@
-// Generated on March 9th 2020 using sfdx-cli/7.43.1 win32-x64 node-v8.15.0. DO NOT MODIFY
+// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
 // Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
@@ -25,48 +25,6 @@ namespace sfdx4csharpClient
         public string packageid { get; set; }
 
         /// <summary>
-        /// [Required] Package version description.
-        /// </summary>
-        [SwitchName("--description")]
-        public string description { get; set; }
-
-        /// <summary>
-        /// [Optional] Minutes to wait for the package version to be created. The default is 2 minutes.
-        /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
-
-        /// <summary>
-        /// [Required] Installation key for creating the key-protected package. The default is null.
-        /// </summary>
-        [SwitchName("--installationkey")]
-        public string installationkey { get; set; }
-
-        /// <summary>
-        /// [Required] The post-install instructions URL. The contents of the post-installation instructions URL are displayed in the UI after installation of the package version.
-        /// </summary>
-        [SwitchName("--postinstallurl")]
-        public string postinstallurl { get; set; }
-
-        /// <summary>
-        /// [Required] The release notes URL. This link is displayed in the package installation UI to provide release notes for this package version to subscribers.
-        /// </summary>
-        [SwitchName("--releasenotesurl")]
-        public string releasenotesurl { get; set; }
-
-        /// <summary>
-        /// [Optional] Creates a managed package version. To create a beta version, don’t include this parameter.
-        /// </summary>
-        [SwitchName("--managedreleased")]
-        public bool? managedreleased { get; set; }
-
-        /// <summary>
-        /// [Required] Package version in major.minor format, for example, 3.2.
-        /// </summary>
-        [SwitchName("--version")]
-        public string version { get; set; }
-
-        /// <summary>
         /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
         [SwitchName("--loglevel")]
@@ -83,6 +41,48 @@ namespace sfdx4csharpClient
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] Package version description.
+        /// </summary>
+        [SwitchName("--description")]
+        public string description { get; set; }
+
+        /// <summary>
+        /// [Required] Package version in major.minor format, for example, 3.2.
+        /// </summary>
+        [SwitchName("--version")]
+        public string version { get; set; }
+
+        /// <summary>
+        /// [Optional] Creates a managed package version. To create a beta version, don’t include this parameter.
+        /// </summary>
+        [SwitchName("--managedreleased")]
+        public bool? managedreleased { get; set; }
+
+        /// <summary>
+        /// [Required] The release notes URL. This link is displayed in the package installation UI to provide release notes for this package version to subscribers.
+        /// </summary>
+        [SwitchName("--releasenotesurl")]
+        public string releasenotesurl { get; set; }
+
+        /// <summary>
+        /// [Required] The post-install instructions URL. The contents of the post-installation instructions URL are displayed in the UI after installation of the package version.
+        /// </summary>
+        [SwitchName("--postinstallurl")]
+        public string postinstallurl { get; set; }
+
+        /// <summary>
+        /// [Required] Installation key for creating the key-protected package. The default is null.
+        /// </summary>
+        [SwitchName("--installationkey")]
+        public string installationkey { get; set; }
+
+        /// <summary>
+        /// [Optional] Minutes to wait for the package version to be created. The default is 2 minutes.
+        /// </summary>
+        [SwitchName("--wait")]
+        public int? wait { get; set; }
     }
 
     /// <summary>
@@ -97,10 +97,10 @@ namespace sfdx4csharpClient
         public string requestid { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -109,10 +109,10 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
     }
 
     /// <summary>
@@ -127,10 +127,10 @@ namespace sfdx4csharpClient
         public string packageversionid { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -139,10 +139,10 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
     }
 
     /// <summary>
@@ -151,16 +151,10 @@ namespace sfdx4csharpClient
     public class Package1VersionListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] Metadata package ID (starts with 033) whose package versions you want to list. If not specified, shows all versions for all packages (managed and unmanaged) in the org.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--packageid")]
-        public string packageid { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -169,10 +163,16 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] Metadata package ID (starts with 033) whose package versions you want to list. If not specified, shows all versions for all packages (managed and unmanaged) in the org.
+        /// </summary>
+        [SwitchName("--packageid")]
+        public string packageid { get; set; }
     }
 
     /// <summary>

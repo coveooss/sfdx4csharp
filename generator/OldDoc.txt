@@ -1,0 +1,29 @@
+# SFDX javascript wrapper.
+A typescript tool that generates SFDX wrappers
+
+### Usage
+ ```
+  const sfdxGenerator = require('../compiled/sfdx-generator.js');
+  const path = require('path');
+  const root = path.resolve(__dirname, './..');
+  
+  // Using sfdx from dev dependencies instead of global;
+  const sfdxPath = path.resolve(root, './node_modules/.bin/sfdx.cmd');
+  
+  const generator = new sfdxGenerator.Generator({
+    SFDXPath: 'sfdx',
+    outputDirectory: path.resolve(root, './generated'),
+    templateDirectory: path.resolve(root, './templatesExample'),
+    fileExtension: '.ts'
+  });
+
+  // Generate files using sfdx output.
+  generator.generate().then(() => {
+    console.log('Generating done');
+  });
+ ```
+
+### Dev scripts
+ - `npm run generate`: Generate wrapper classes using the SFDX executable in path.
+
+Made with :heart:

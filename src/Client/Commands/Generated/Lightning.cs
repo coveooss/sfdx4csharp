@@ -1,4 +1,4 @@
-// Generated on March 9th 2020 using sfdx-cli/7.43.1 win32-x64 node-v8.15.0. DO NOT MODIFY
+// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
 // Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
@@ -19,22 +19,10 @@ namespace sfdx4csharpClient
         public string appname { get; set; }
 
         /// <summary>
-        /// [Optional] 
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--internal")]
-        public bool? _internal { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
-        /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
@@ -43,10 +31,22 @@ namespace sfdx4csharpClient
         public string template { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--outputdir")]
+        public string outputdir { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] 
+        /// </summary>
+        [SwitchName("--internal")]
+        public bool? _internal { get; set; }
     }
 
     /// <summary>
@@ -61,28 +61,10 @@ namespace sfdx4csharpClient
         public string componentname { get; set; }
 
         /// <summary>
-        /// [Optional] 
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--internal")]
-        public bool? _internal { get; set; }
-
-        /// <summary>
-        /// [Required] The type of the new Lightning component.
-        /// </summary>
-        [SwitchName("--type")]
-        public string type { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
-        /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
@@ -91,10 +73,28 @@ namespace sfdx4csharpClient
         public string template { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--outputdir")]
+        public string outputdir { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] The type of the new Lightning component.
+        /// </summary>
+        [SwitchName("--type")]
+        public string type { get; set; }
+
+        /// <summary>
+        /// [Optional] 
+        /// </summary>
+        [SwitchName("--internal")]
+        public bool? _internal { get; set; }
     }
 
     /// <summary>
@@ -109,22 +109,10 @@ namespace sfdx4csharpClient
         public string eventname { get; set; }
 
         /// <summary>
-        /// [Optional] 
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--internal")]
-        public bool? _internal { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
-        /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
@@ -133,10 +121,22 @@ namespace sfdx4csharpClient
         public string template { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--outputdir")]
+        public string outputdir { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] 
+        /// </summary>
+        [SwitchName("--internal")]
+        public bool? _internal { get; set; }
     }
 
     /// <summary>
@@ -151,22 +151,10 @@ namespace sfdx4csharpClient
         public string interfacename { get; set; }
 
         /// <summary>
-        /// [Optional] 
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--internal")]
-        public bool? _internal { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
-        /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
@@ -175,10 +163,22 @@ namespace sfdx4csharpClient
         public string template { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--outputdir")]
+        public string outputdir { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] 
+        /// </summary>
+        [SwitchName("--internal")]
+        public bool? _internal { get; set; }
     }
 
     /// <summary>
@@ -187,28 +187,10 @@ namespace sfdx4csharpClient
     public class LightningLintOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] Exit with error code 1 if there are lint issues. The default exits without an error code.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--exit")]
-        public bool? exit { get; set; }
-
-        /// <summary>
-        /// [Optional] Report both warnings and errors. The default is to report only errors.
-        /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
-
-        /// <summary>
-        /// [Required] Path to a custom ESLint configuration file. Only code style rules are used, while the rest are ignored. For example: --config path/to/.eslintrc.
-        /// </summary>
-        [SwitchName("--config")]
-        public string config { get; set; }
-
-        /// <summary>
-        /// [Required] A “glob” pattern used to add specific files to the analysis. For example, to only analyse your controller files, use --files ** /*Controller.js. When specified, this value overrides the --ignore flag. The default is all .js files.
-        /// </summary>
-        [SwitchName("--files")]
-        public string files { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A “glob” pattern used to filter folders (and their contents) out of the analysis. For example: --ignore ** /foo/**.
@@ -217,10 +199,28 @@ namespace sfdx4csharpClient
         public string ignore { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] A “glob” pattern used to add specific files to the analysis. For example, to only analyse your controller files, use --files ** /*Controller.js. When specified, this value overrides the --ignore flag. The default is all .js files.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--files")]
+        public string files { get; set; }
+
+        /// <summary>
+        /// [Required] Path to a custom ESLint configuration file. Only code style rules are used, while the rest are ignored. For example: --config path/to/.eslintrc.
+        /// </summary>
+        [SwitchName("--config")]
+        public string config { get; set; }
+
+        /// <summary>
+        /// [Optional] Report both warnings and errors. The default is to report only errors.
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? verbose { get; set; }
+
+        /// <summary>
+        /// [Optional] Exit with error code 1 if there are lint issues. The default exits without an error code.
+        /// </summary>
+        [SwitchName("--exit")]
+        public bool? exit { get; set; }
     }
 
     /// <summary>
@@ -235,16 +235,10 @@ namespace sfdx4csharpClient
         public string testname { get; set; }
 
         /// <summary>
-        /// [Optional] 
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--internal")]
-        public bool? _internal { get; set; }
-
-        /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
-        /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
@@ -253,10 +247,16 @@ namespace sfdx4csharpClient
         public string template { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--outputdir")]
+        public string outputdir { get; set; }
+
+        /// <summary>
+        /// [Optional] 
+        /// </summary>
+        [SwitchName("--internal")]
+        public bool? _internal { get; set; }
     }
 
     /// <summary>
@@ -265,28 +265,10 @@ namespace sfdx4csharpClient
     public class LightningTestInstallOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] Type of LTS unmanaged package to install. 'jasmine' and 'mocha' contains the essentials for development, 'full' contains both, and adds sample components and tests in the package. 'full' is best for 'kicking the tires' of LTS.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--packagetype")]
-        public string packagetype { get; set; }
-
-        /// <summary>
-        /// [Required] The release version of LTS unmanaged package you want to install.
-        /// </summary>
-        [SwitchName("--releaseversion")]
-        public string releaseversion { get; set; }
-
-        /// <summary>
-        /// [Optional] Maximum number of minutes to wait for installation status.
-        /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -295,10 +277,28 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Maximum number of minutes to wait for installation status.
+        /// </summary>
+        [SwitchName("--wait")]
+        public int? wait { get; set; }
+
+        /// <summary>
+        /// [Required] The release version of LTS unmanaged package you want to install.
+        /// </summary>
+        [SwitchName("--releaseversion")]
+        public string releaseversion { get; set; }
+
+        /// <summary>
+        /// [Required] Type of LTS unmanaged package to install. 'jasmine' and 'mocha' contains the essentials for development, 'full' contains both, and adds sample components and tests in the package. 'full' is best for 'kicking the tires' of LTS.
+        /// </summary>
+        [SwitchName("--packagetype")]
+        public string packagetype { get; set; }
     }
 
     /// <summary>
@@ -307,34 +307,22 @@ namespace sfdx4csharpClient
     public class LightningTestRunOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] Format to use when displaying results. If you also specify the --json flag, --json overrides this parameter.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--resultformat")]
-        public string resultformat { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Optional] Time, in milliseconds, to wait for the results element to be present in the DOM, before failing and moving on to the next test.
+        /// [Required] A username or alias for the target org. Overrides the default target org.
         /// </summary>
-        [SwitchName("--timeout")]
-        public int? timeout { get; set; }
+        [SwitchName("--targetusername")]
+        public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] Leaves browser open after the test finishes so that you can view the test suite results.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--leavebrowseropen")]
-        public bool? leavebrowseropen { get; set; }
-
-        /// <summary>
-        /// [Required] Path to a test configuration file to configure WebDriver and other settings. For details, see the LTS documentation.
-        /// </summary>
-        [SwitchName("--configfile")]
-        public string configfile { get; set; }
-
-        /// <summary>
-        /// [Required] Directory path to store test run artifacts: log files, test results, and so on.
-        /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
 
         /// <summary>
         /// [Required] Name of your Lightning test application. The name is case insensitive, and ".app" is optional, so "Test" and "test.app" are equivalent.
@@ -344,22 +332,34 @@ namespace sfdx4csharpClient
         public string appname { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Directory path to store test run artifacts: log files, test results, and so on.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--outputdir")]
+        public string outputdir { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Path to a test configuration file to configure WebDriver and other settings. For details, see the LTS documentation.
         /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        [SwitchName("--configfile")]
+        public string configfile { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Leaves browser open after the test finishes so that you can view the test suite results.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--leavebrowseropen")]
+        public bool? leavebrowseropen { get; set; }
+
+        /// <summary>
+        /// [Optional] Time, in milliseconds, to wait for the results element to be present in the DOM, before failing and moving on to the next test.
+        /// </summary>
+        [SwitchName("--timeout")]
+        public int? timeout { get; set; }
+
+        /// <summary>
+        /// [Required] Format to use when displaying results. If you also specify the --json flag, --json overrides this parameter.
+        /// </summary>
+        [SwitchName("--resultformat")]
+        public string resultformat { get; set; }
     }
 
     /// <summary>

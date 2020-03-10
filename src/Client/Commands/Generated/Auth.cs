@@ -1,4 +1,4 @@
-// Generated on March 9th 2020 using sfdx-cli/7.43.1 win32-x64 node-v8.15.0. DO NOT MODIFY
+// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
 // Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
@@ -13,28 +13,10 @@ namespace sfdx4csharpClient
     public class AuthDeviceLoginOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] set an alias for the authenticated org
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--setalias")]
-        public string setalias { get; set; }
-
-        /// <summary>
-        /// [Optional] set the authenticated org as the default username that all commands run against
-        /// </summary>
-        [SwitchName("--setdefaultusername")]
-        public bool? setdefaultusername { get; set; }
-
-        /// <summary>
-        /// [Optional] set the authenticated org as the default Dev Hub org for scratch org creation
-        /// </summary>
-        [SwitchName("--setdefaultdevhubusername")]
-        public bool? setdefaultdevhubusername { get; set; }
-
-        /// <summary>
-        /// [Required] login URL of the instance the org is on
-        /// </summary>
-        [SwitchName("--instanceurl")]
-        public string instanceurl { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] OAuth client ID (aka consumer key)
@@ -43,10 +25,28 @@ namespace sfdx4csharpClient
         public string clientid { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] login URL of the instance the org is on
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--instanceurl")]
+        public string instanceurl { get; set; }
+
+        /// <summary>
+        /// [Optional] set the authenticated org as the default Dev Hub org for scratch org creation
+        /// </summary>
+        [SwitchName("--setdefaultdevhubusername")]
+        public bool? setdefaultdevhubusername { get; set; }
+
+        /// <summary>
+        /// [Optional] set the authenticated org as the default username that all commands run against
+        /// </summary>
+        [SwitchName("--setdefaultusername")]
+        public bool? setdefaultusername { get; set; }
+
+        /// <summary>
+        /// [Required] set an alias for the authenticated org
+        /// </summary>
+        [SwitchName("--setalias")]
+        public string setalias { get; set; }
     }
 
     /// <summary>
@@ -55,10 +55,10 @@ namespace sfdx4csharpClient
     public class AuthJwtGrantOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] The authentication username.
+        /// [Required] The OAuth client ID (sometimes referred to as the consumer key).
         /// </summary>
-        [SwitchName("--username")]
-        public string username { get; set; }
+        [SwitchName("--clientid")]
+        public string clientid { get; set; }
 
         /// <summary>
         /// [Required] Path to a file containing the private key.
@@ -67,34 +67,16 @@ namespace sfdx4csharpClient
         public string jwtkeyfile { get; set; }
 
         /// <summary>
-        /// [Required] The OAuth client ID (sometimes referred to as the consumer key).
+        /// [Required] The authentication username.
         /// </summary>
-        [SwitchName("--clientid")]
-        public string clientid { get; set; }
+        [SwitchName("--username")]
+        public string username { get; set; }
 
         /// <summary>
-        /// [Optional] Do not prompt for auth confirmation in demo mode.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--noprompt")]
-        public bool? noprompt { get; set; }
-
-        /// <summary>
-        /// [Required] Sets an alias for the authenticated org.
-        /// </summary>
-        [SwitchName("--setalias")]
-        public string setalias { get; set; }
-
-        /// <summary>
-        /// [Optional] Sets the authenticated org as the default username that all commands run against.
-        /// </summary>
-        [SwitchName("--setdefaultusername")]
-        public bool? setdefaultusername { get; set; }
-
-        /// <summary>
-        /// [Optional] Sets the authenticated org as the default Dev Hub org for scratch org creation.
-        /// </summary>
-        [SwitchName("--setdefaultdevhubusername")]
-        public bool? setdefaultdevhubusername { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] The login URL of the Salesforce instance that the org lives on.
@@ -103,10 +85,28 @@ namespace sfdx4csharpClient
         public string instanceurl { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Sets the authenticated org as the default Dev Hub org for scratch org creation.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--setdefaultdevhubusername")]
+        public bool? setdefaultdevhubusername { get; set; }
+
+        /// <summary>
+        /// [Optional] Sets the authenticated org as the default username that all commands run against.
+        /// </summary>
+        [SwitchName("--setdefaultusername")]
+        public bool? setdefaultusername { get; set; }
+
+        /// <summary>
+        /// [Required] Sets an alias for the authenticated org.
+        /// </summary>
+        [SwitchName("--setalias")]
+        public string setalias { get; set; }
+
+        /// <summary>
+        /// [Optional] Do not prompt for auth confirmation in demo mode.
+        /// </summary>
+        [SwitchName("--noprompt")]
+        public bool? noprompt { get; set; }
     }
 
     /// <summary>
@@ -127,22 +127,10 @@ namespace sfdx4csharpClient
     public class AuthLogoutOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] Do not prompt for confirmation.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--noprompt")]
-        public bool? noprompt { get; set; }
-
-        /// <summary>
-        /// [Optional] Includes all authenticated orgs: for example, Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
-        /// </summary>
-        [SwitchName("--all")]
-        public bool? all { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -151,10 +139,22 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Includes all authenticated orgs: for example, Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
+        /// </summary>
+        [SwitchName("--all")]
+        public bool? all { get; set; }
+
+        /// <summary>
+        /// [Optional] Do not prompt for confirmation.
+        /// </summary>
+        [SwitchName("--noprompt")]
+        public bool? noprompt { get; set; }
     }
 
     /// <summary>
@@ -169,22 +169,10 @@ namespace sfdx4csharpClient
         public string sfdxurlfile { get; set; }
 
         /// <summary>
-        /// [Optional] Do not prompt for auth confirmation in demo mode.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--noprompt")]
-        public bool? noprompt { get; set; }
-
-        /// <summary>
-        /// [Required] Sets an alias for the authenticated org.
-        /// </summary>
-        [SwitchName("--setalias")]
-        public string setalias { get; set; }
-
-        /// <summary>
-        /// [Optional] Sets the authenticated org as the default username that all commands run against.
-        /// </summary>
-        [SwitchName("--setdefaultusername")]
-        public bool? setdefaultusername { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Optional] Sets the authenticated org as the default Dev Hub org for scratch org creation.
@@ -193,10 +181,22 @@ namespace sfdx4csharpClient
         public bool? setdefaultdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Sets the authenticated org as the default username that all commands run against.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--setdefaultusername")]
+        public bool? setdefaultusername { get; set; }
+
+        /// <summary>
+        /// [Required] Sets an alias for the authenticated org.
+        /// </summary>
+        [SwitchName("--setalias")]
+        public string setalias { get; set; }
+
+        /// <summary>
+        /// [Optional] Do not prompt for auth confirmation in demo mode.
+        /// </summary>
+        [SwitchName("--noprompt")]
+        public bool? noprompt { get; set; }
     }
 
     /// <summary>
@@ -205,40 +205,10 @@ namespace sfdx4csharpClient
     public class AuthWebLoginOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] Do not prompt for auth confirmation in demo mode.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--noprompt")]
-        public bool? noprompt { get; set; }
-
-        /// <summary>
-        /// [Optional] Disables masking of user input (for use with problematic terminals).
-        /// </summary>
-        [SwitchName("--disablemasking")]
-        public bool? disablemasking { get; set; }
-
-        /// <summary>
-        /// [Required] Sets an alias for the authenticated org.
-        /// </summary>
-        [SwitchName("--setalias")]
-        public string setalias { get; set; }
-
-        /// <summary>
-        /// [Optional] Sets the authenticated org as the default username that all commands run against.
-        /// </summary>
-        [SwitchName("--setdefaultusername")]
-        public bool? setdefaultusername { get; set; }
-
-        /// <summary>
-        /// [Optional] Sets the authenticated org as the default Dev Hub org for scratch org creation.
-        /// </summary>
-        [SwitchName("--setdefaultdevhubusername")]
-        public bool? setdefaultdevhubusername { get; set; }
-
-        /// <summary>
-        /// [Required] The login URL of the Salesforce instance that the org lives on.
-        /// </summary>
-        [SwitchName("--instanceurl")]
-        public string instanceurl { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] The OAuth client ID (sometimes referred to as the consumer key).
@@ -247,10 +217,40 @@ namespace sfdx4csharpClient
         public string clientid { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] The login URL of the Salesforce instance that the org lives on.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--instanceurl")]
+        public string instanceurl { get; set; }
+
+        /// <summary>
+        /// [Optional] Sets the authenticated org as the default Dev Hub org for scratch org creation.
+        /// </summary>
+        [SwitchName("--setdefaultdevhubusername")]
+        public bool? setdefaultdevhubusername { get; set; }
+
+        /// <summary>
+        /// [Optional] Sets the authenticated org as the default username that all commands run against.
+        /// </summary>
+        [SwitchName("--setdefaultusername")]
+        public bool? setdefaultusername { get; set; }
+
+        /// <summary>
+        /// [Required] Sets an alias for the authenticated org.
+        /// </summary>
+        [SwitchName("--setalias")]
+        public string setalias { get; set; }
+
+        /// <summary>
+        /// [Optional] Disables masking of user input (for use with problematic terminals).
+        /// </summary>
+        [SwitchName("--disablemasking")]
+        public bool? disablemasking { get; set; }
+
+        /// <summary>
+        /// [Optional] Do not prompt for auth confirmation in demo mode.
+        /// </summary>
+        [SwitchName("--noprompt")]
+        public bool? noprompt { get; set; }
     }
 
     /// <summary>

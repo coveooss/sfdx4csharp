@@ -1,4 +1,4 @@
-// Generated on March 9th 2020 using sfdx-cli/7.43.1 win32-x64 node-v8.15.0. DO NOT MODIFY
+// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
 // Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
@@ -13,10 +13,10 @@ namespace sfdx4csharpClient
     public class PackageCreateOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] Name of the package to create.
+        /// [Required] The path to the directory that contains the contents of the package.
         /// </summary>
-        [SwitchName("--name")]
-        public string name { get; set; }
+        [SwitchName("--path")]
+        public string path { get; set; }
 
         /// <summary>
         /// [Required] Package type for the package.
@@ -27,28 +27,16 @@ namespace sfdx4csharpClient
         public string packagetype { get; set; }
 
         /// <summary>
-        /// [Required] The path to the directory that contains the contents of the package.
+        /// [Required] Name of the package to create.
         /// </summary>
-        [SwitchName("--path")]
-        public string path { get; set; }
+        [SwitchName("--name")]
+        public string name { get; set; }
 
         /// <summary>
-        /// [Optional] Creates the package with no namespace. Available only for unlocked packages. Useful when you’re migrating an existing org to packages. But, use a namespaced package for new metadata.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--nonamespace")]
-        public bool? nonamespace { get; set; }
-
-        /// <summary>
-        /// [Required] Description of the package.
-        /// </summary>
-        [SwitchName("--description")]
-        public string description { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
@@ -57,10 +45,22 @@ namespace sfdx4csharpClient
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] Description of the package.
+        /// </summary>
+        [SwitchName("--description")]
+        public string description { get; set; }
+
+        /// <summary>
+        /// [Optional] Creates the package with no namespace. Available only for unlocked packages. Useful when you’re migrating an existing org to packages. But, use a namespaced package for new metadata.
+        /// </summary>
+        [SwitchName("--nonamespace")]
+        public bool? nonamespace { get; set; }
     }
 
     /// <summary>
@@ -69,16 +69,10 @@ namespace sfdx4csharpClient
     public class PackageHammertestListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] The ID of the package version to list test results for (starts with 04t).
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--packageversionid")]
-        public string packageversionid { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -87,10 +81,16 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] The ID of the package version to list test results for (starts with 04t).
+        /// </summary>
+        [SwitchName("--packageversionid")]
+        public string packageversionid { get; set; }
     }
 
     /// <summary>
@@ -106,16 +106,10 @@ namespace sfdx4csharpClient
         public string requestid { get; set; }
 
         /// <summary>
-        /// [Optional] Hides Apex test failures, reporting only a results summary.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--summary")]
-        public bool? summary { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -124,10 +118,16 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Hides Apex test failures, reporting only a results summary.
+        /// </summary>
+        [SwitchName("--summary")]
+        public bool? summary { get; set; }
     }
 
     /// <summary>
@@ -142,22 +142,40 @@ namespace sfdx4csharpClient
         public string packageversionids { get; set; }
 
         /// <summary>
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// </summary>
+        [SwitchName("--targetusername")]
+        public string targetusername { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
         /// [Required] A comma-separated list of one or more subscriber org IDs (each starts with 00D) to run the hammer test on. Either -s or -f is required.
         /// </summary>
         [SwitchName("--subscriberorgs")]
         public string subscriberorgs { get; set; }
 
         /// <summary>
-        /// [Required] After package upgrade validation, runs the Apex tests in the subscriber org that implement an interface exposed from a managed package.  The parameter value for interface name must be fully qualified.
+        /// [Required] The path to a file containing a list of subscriber orgs IDs (each starts with 00D), one per line, to run the hammer test on. Either -s or -f required.
         /// </summary>
-        [SwitchName("--apextestinterface")]
-        public string apextestinterface { get; set; }
+        [SwitchName("--subscriberfile")]
+        public string subscriberfile { get; set; }
 
         /// <summary>
-        /// [Optional] After successfully testing the package upgrade, runs the Apex tests in the package version in each subscriber org.
+        /// [Required] The earliest date and time when the package upgrade test can run (in GMT, in the YYYY-MM-DD HH:mm:ss format).
         /// </summary>
-        [SwitchName("--apextests")]
-        public bool? apextests { get; set; }
+        [SwitchName("--scheduledrundatetime")]
+        public string scheduledrundatetime { get; set; }
 
         /// <summary>
         /// [Optional] Runs the package ISV Hammer test in the upcoming Salesforce preview version.
@@ -167,17 +185,23 @@ namespace sfdx4csharpClient
         public bool? preview { get; set; }
 
         /// <summary>
-        /// [Required] The earliest date and time when the package upgrade test can run (in GMT, in the YYYY-MM-DD HH:mm:ss format).
+        /// [Optional] After successfully testing the package upgrade, runs the Apex tests in the package version in each subscriber org.
         /// </summary>
-        [SwitchName("--scheduledrundatetime")]
-        public string scheduledrundatetime { get; set; }
+        [SwitchName("--apextests")]
+        public bool? apextests { get; set; }
 
         /// <summary>
-        /// [Required] The path to a file containing a list of subscriber orgs IDs (each starts with 00D), one per line, to run the hammer test on. Either -s or -f required.
+        /// [Required] After package upgrade validation, runs the Apex tests in the subscriber org that implement an interface exposed from a managed package.  The parameter value for interface name must be fully qualified.
         /// </summary>
-        [SwitchName("--subscriberfile")]
-        public string subscriberfile { get; set; }
+        [SwitchName("--apextestinterface")]
+        public string apextestinterface { get; set; }
+    }
 
+    /// <summary>
+    /// Options for the method install of class Package.
+    /// </summary>
+    public class PackageInstallOptions : SFDXOptions
+    {
         /// <summary>
         /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
@@ -195,13 +219,19 @@ namespace sfdx4csharpClient
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
-    }
 
-    /// <summary>
-    /// Options for the method install of class Package.
-    /// </summary>
-    public class PackageInstallOptions : SFDXOptions
-    {
+        /// <summary>
+        /// [Optional] Maximum number of minutes to wait for installation status. The default is 0.
+        /// </summary>
+        [SwitchName("--wait")]
+        public int? wait { get; set; }
+
+        /// <summary>
+        /// [Required] Installation key for installing a key-protected package. The default is null.
+        /// </summary>
+        [SwitchName("--installationkey")]
+        public string installationkey { get; set; }
+
         /// <summary>
         /// [Optional] Maximum number of minutes to wait for the Subscriber Package Version ID to become available in the target org before canceling the install request. The default is 0.
         /// </summary>
@@ -209,10 +239,22 @@ namespace sfdx4csharpClient
         public int? publishwait { get; set; }
 
         /// <summary>
-        /// [Required] For package upgrades, specifies whether to mark all removed components as deprecated (DeprecateOnly), to delete removed components that can be safely deleted and deprecate the others (Mixed), or to delete all removed components, except for custom objects and custom fields, that don't have dependencies (Delete).
+        /// [Optional] Allows the following without an explicit confirmation response: 1) Remote Site Settings and Content Security Policy websites to send or receive data, and 2) --upgradetype Delete to proceed.
         /// </summary>
-        [SwitchName("--upgradetype")]
-        public string upgradetype { get; set; }
+        [SwitchName("--noprompt")]
+        public bool? noprompt { get; set; }
+
+        /// <summary>
+        /// [Required] The ID (starts with 04t) or alias of the package version to install.
+        /// </summary>
+        [SwitchName("--package")]
+        public string package { get; set; }
+
+        /// <summary>
+        /// [Required] For unlocked packages only, specifies whether to compile all Apex in the org and package, or only the Apex in the package.
+        /// </summary>
+        [SwitchName("--apexcompile")]
+        public string apexcompile { get; set; }
 
         /// <summary>
         /// [Required] Security access type for the installed package.
@@ -222,52 +264,10 @@ namespace sfdx4csharpClient
         public string securitytype { get; set; }
 
         /// <summary>
-        /// [Required] For unlocked packages only, specifies whether to compile all Apex in the org and package, or only the Apex in the package.
+        /// [Required] For package upgrades, specifies whether to mark all removed components as deprecated (DeprecateOnly), to delete removed components that can be safely deleted and deprecate the others (Mixed), or to delete all removed components, except for custom objects and custom fields, that don't have dependencies (Delete).
         /// </summary>
-        [SwitchName("--apexcompile")]
-        public string apexcompile { get; set; }
-
-        /// <summary>
-        /// [Required] The ID (starts with 04t) or alias of the package version to install.
-        /// </summary>
-        [SwitchName("--package")]
-        public string package { get; set; }
-
-        /// <summary>
-        /// [Optional] Allows the following without an explicit confirmation response: 1) Remote Site Settings and Content Security Policy websites to send or receive data, and 2) --upgradetype Delete to proceed.
-        /// </summary>
-        [SwitchName("--noprompt")]
-        public bool? noprompt { get; set; }
-
-        /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Installation key for installing a key-protected package. The default is null.
-        /// </summary>
-        [SwitchName("--installationkey")]
-        public string installationkey { get; set; }
-
-        /// <summary>
-        /// [Optional] Maximum number of minutes to wait for installation status. The default is 0.
-        /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        [SwitchName("--upgradetype")]
+        public string upgradetype { get; set; }
     }
 
     /// <summary>
@@ -282,10 +282,10 @@ namespace sfdx4csharpClient
         public string requestid { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -294,10 +294,10 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
     }
 
     /// <summary>
@@ -306,10 +306,10 @@ namespace sfdx4csharpClient
     public class PackageInstalledListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -318,10 +318,10 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
     }
 
     /// <summary>
@@ -330,16 +330,10 @@ namespace sfdx4csharpClient
     public class PackageListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] Displays extended package details.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
@@ -348,10 +342,16 @@ namespace sfdx4csharpClient
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Displays extended package details.
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? verbose { get; set; }
     }
 
     /// <summary>
@@ -360,22 +360,10 @@ namespace sfdx4csharpClient
     public class PackageUninstallOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] The ID (starts with 04t) or alias of the package version to uninstall.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--package")]
-        public string package { get; set; }
-
-        /// <summary>
-        /// [Optional] Maximum number of minutes to wait for uninstall status. The default is 0.
-        /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -384,10 +372,22 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Maximum number of minutes to wait for uninstall status. The default is 0.
+        /// </summary>
+        [SwitchName("--wait")]
+        public int? wait { get; set; }
+
+        /// <summary>
+        /// [Required] The ID (starts with 04t) or alias of the package version to uninstall.
+        /// </summary>
+        [SwitchName("--package")]
+        public string package { get; set; }
     }
 
     /// <summary>
@@ -402,10 +402,10 @@ namespace sfdx4csharpClient
         public string requestid { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target org. Overrides the default target org.
@@ -414,10 +414,10 @@ namespace sfdx4csharpClient
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
     }
 
     /// <summary>
@@ -432,22 +432,10 @@ namespace sfdx4csharpClient
         public string package { get; set; }
 
         /// <summary>
-        /// [Required] New description of the package.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--description")]
-        public string description { get; set; }
-
-        /// <summary>
-        /// [Required] New name of the package.
-        /// </summary>
-        [SwitchName("--name")]
-        public string name { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
@@ -456,10 +444,22 @@ namespace sfdx4csharpClient
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] New name of the package.
+        /// </summary>
+        [SwitchName("--name")]
+        public string name { get; set; }
+
+        /// <summary>
+        /// [Required] New description of the package.
+        /// </summary>
+        [SwitchName("--description")]
+        public string description { get; set; }
     }
 
     /// <summary>
@@ -468,16 +468,76 @@ namespace sfdx4csharpClient
     public class PackageVersionCreateOptions : SFDXOptions
     {
         /// <summary>
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+        /// </summary>
+        [SwitchName("--targetdevhubusername")]
+        public string targetdevhubusername { get; set; }
+
+        /// <summary>
+        /// [Required] Override the API version used for API requests made by this command.
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] The ID (starts with 0Ho) or alias of the package to create a version of.
+        /// </summary>
+        [SwitchName("--package")]
+        public string package { get; set; }
+
+        /// <summary>
+        /// [Required] The path to the directory that contains the contents of the package.
+        /// </summary>
+        [SwitchName("--path")]
+        public string path { get; set; }
+
+        /// <summary>
+        /// [Required] The path to a definition file similar to scratch org definition file that contains the list of features and org preferences that the metadata of the package version depends on.
+        /// </summary>
+        [SwitchName("--definitionfile")]
+        public string definitionfile { get; set; }
+
+        /// <summary>
+        /// [Required] The package version’s branch.
+        /// </summary>
+        [SwitchName("--branch")]
+        public string branch { get; set; }
+
+        /// <summary>
+        /// [Required] The package version’s tag.
+        /// </summary>
+        [SwitchName("--tag")]
+        public string tag { get; set; }
+
+        /// <summary>
+        /// [Required] Installation key for creating the key-protected package. Either an --installationkey value or the --installationkeybypass flag is required.
+        /// </summary>
+        [SwitchName("--installationkey")]
+        public string installationkey { get; set; }
+
+        /// <summary>
+        /// [Optional] Bypasses the installation key requirement. If you bypass this requirement, anyone can install your package. Either an --installationkey value or the --installationkeybypass flag is required.
+        /// </summary>
+        [SwitchName("--installationkeybypass")]
+        public bool? installationkeybypass { get; set; }
+
+        /// <summary>
+        /// [Optional] Specifies that the temp files are preserved that would otherwise be deleted
+        /// </summary>
+        [SwitchName("--preserve")]
+        public bool? preserve { get; set; }
+
+        /// <summary>
         /// [Optional] Specifies that the sfdx-project.json file should be validated against JSON schema.
         /// </summary>
         [SwitchName("--validateschema")]
         public bool? validateschema { get; set; }
-
-        /// <summary>
-        /// [Required] The uninstall script name. The uninstall script is an Apex class within this package that is run in the installing org after uninstallations of this package.
-        /// </summary>
-        [SwitchName("--uninstallscript")]
-        public string uninstallscript { get; set; }
 
         /// <summary>
         /// [Optional] The number of minutes to wait for the package version to be created.
@@ -492,22 +552,10 @@ namespace sfdx4csharpClient
         public string buildinstance { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
-
-        /// <summary>
         /// [Required] The source org ID used to copy the org shape for the build org.
         /// </summary>
         [SwitchName("--sourceorg")]
         public string sourceorg { get; set; }
-
-        /// <summary>
-        /// [Required] The ID (starts with 0Ho) or alias of the package to create a version of.
-        /// </summary>
-        [SwitchName("--package")]
-        public string package { get; set; }
 
         /// <summary>
         /// [Required] The name of the package version to be created. Overrides the sfdx-project.json value.
@@ -516,22 +564,10 @@ namespace sfdx4csharpClient
         public string versionname { get; set; }
 
         /// <summary>
-        /// [Required] The path to a definition file similar to scratch org definition file that contains the list of features and org preferences that the metadata of the package version depends on.
-        /// </summary>
-        [SwitchName("--definitionfile")]
-        public string definitionfile { get; set; }
-
-        /// <summary>
         /// [Required] The version number of the package version to be created. Overrides the sfdx-project.json value.
         /// </summary>
         [SwitchName("--versionnumber")]
         public string versionnumber { get; set; }
-
-        /// <summary>
-        /// [Required] The package version’s tag.
-        /// </summary>
-        [SwitchName("--tag")]
-        public string tag { get; set; }
 
         /// <summary>
         /// [Required] The description of the package version to be created. Overrides the sfdx-project.json value.
@@ -540,28 +576,10 @@ namespace sfdx4csharpClient
         public string versiondescription { get; set; }
 
         /// <summary>
-        /// [Optional] Bypasses the installation key requirement. If you bypass this requirement, anyone can install your package. Either an --installationkey value or the --installationkeybypass flag is required.
+        /// [Optional] Calculate and store the code coverage percentage by running the Apex tests included in this package version. Managed packages must use this option and meet the code coverage requirements to promote the version.
         /// </summary>
-        [SwitchName("--installationkeybypass")]
-        public bool? installationkeybypass { get; set; }
-
-        /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] The post-install script name. The post-install script is an Apex class within this package that is run in the installing org after installations or upgrades of this package version.
-        /// </summary>
-        [SwitchName("--postinstallscript")]
-        public string postinstallscript { get; set; }
-
-        /// <summary>
-        /// [Required] The post-install instructions URL. The contents of the post-installation instructions URL are displayed in the UI after installation of the package version.
-        /// </summary>
-        [SwitchName("--postinstallurl")]
-        public string postinstallurl { get; set; }
+        [SwitchName("--codecoverage")]
+        public bool? codecoverage { get; set; }
 
         /// <summary>
         /// [Required] The release notes URL. This link is displayed in the package installation UI to provide release notes for this package version to subscribers.
@@ -570,40 +588,22 @@ namespace sfdx4csharpClient
         public string releasenotesurl { get; set; }
 
         /// <summary>
-        /// [Optional] Calculate and store the code coverage percentage by running the Apex tests included in this package version. Managed packages must use this option and meet the code coverage requirements to promote the version.
+        /// [Required] The post-install instructions URL. The contents of the post-installation instructions URL are displayed in the UI after installation of the package version.
         /// </summary>
-        [SwitchName("--codecoverage")]
-        public bool? codecoverage { get; set; }
+        [SwitchName("--postinstallurl")]
+        public string postinstallurl { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] The post-install script name. The post-install script is an Apex class within this package that is run in the installing org after installations or upgrades of this package version.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--postinstallscript")]
+        public string postinstallscript { get; set; }
 
         /// <summary>
-        /// [Optional] Specifies that the temp files are preserved that would otherwise be deleted
+        /// [Required] The uninstall script name. The uninstall script is an Apex class within this package that is run in the installing org after uninstallations of this package.
         /// </summary>
-        [SwitchName("--preserve")]
-        public bool? preserve { get; set; }
-
-        /// <summary>
-        /// [Required] Installation key for creating the key-protected package. Either an --installationkey value or the --installationkeybypass flag is required.
-        /// </summary>
-        [SwitchName("--installationkey")]
-        public string installationkey { get; set; }
-
-        /// <summary>
-        /// [Required] The package version’s branch.
-        /// </summary>
-        [SwitchName("--branch")]
-        public string branch { get; set; }
-
-        /// <summary>
-        /// [Required] The path to the directory that contains the contents of the package.
-        /// </summary>
-        [SwitchName("--path")]
-        public string path { get; set; }
+        [SwitchName("--uninstallscript")]
+        public string uninstallscript { get; set; }
     }
 
     /// <summary>
@@ -612,22 +612,10 @@ namespace sfdx4csharpClient
     public class PackageVersionCreateListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] Filters the list based on the status of version creation requests.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--status")]
-        public string status { get; set; }
-
-        /// <summary>
-        /// [Optional] Filters the list based on the specified maximum number of days since the request was created (starting at 00:00:00 of first day to now; 0 for today).
-        /// </summary>
-        [SwitchName("--createdlastdays")]
-        public int? createdlastdays { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
@@ -636,10 +624,22 @@ namespace sfdx4csharpClient
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Filters the list based on the specified maximum number of days since the request was created (starting at 00:00:00 of first day to now; 0 for today).
+        /// </summary>
+        [SwitchName("--createdlastdays")]
+        public int? createdlastdays { get; set; }
+
+        /// <summary>
+        /// [Required] Filters the list based on the status of version creation requests.
+        /// </summary>
+        [SwitchName("--status")]
+        public string status { get; set; }
     }
 
     /// <summary>
@@ -654,10 +654,10 @@ namespace sfdx4csharpClient
         public string packagecreaterequestid { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
@@ -666,10 +666,10 @@ namespace sfdx4csharpClient
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
     }
 
     /// <summary>
@@ -678,52 +678,16 @@ namespace sfdx4csharpClient
     public class PackageVersionListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] Displays limited package version details.
-        /// </summary>
-        [SwitchName("--concise")]
-        public bool? concise { get; set; }
-
-        /// <summary>
-        /// [Optional] Displays extended package version details.
-        /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
-
-        /// <summary>
-        /// [Required] Orders the list by the specified package version fields.
-        /// </summary>
-        [SwitchName("--orderby")]
-        public string orderby { get; set; }
-
-        /// <summary>
-        /// [Optional] Displays released versions only (IsReleased=true).
-        /// </summary>
-        [SwitchName("--released")]
-        public bool? released { get; set; }
-
-        /// <summary>
-        /// [Required] Filters results on the specified comma-delimited packages (aliases or 0Ho IDs).
-        /// </summary>
-        [SwitchName("--packages")]
-        public string packages { get; set; }
-
-        /// <summary>
-        /// [Optional] Lists the items modified in the specified last number of days, starting at 00:00:00 of first day to now. Use 0 for today.
-        /// </summary>
-        [SwitchName("--modifiedlastdays")]
-        public int? modifiedlastdays { get; set; }
-
-        /// <summary>
         /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Optional] Filters the list based on the specified maximum number of days since the request was created (starting at 00:00:00 of first day to now; 0 for today).
+        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
         /// </summary>
-        [SwitchName("--createdlastdays")]
-        public int? createdlastdays { get; set; }
+        [SwitchName("--targetdevhubusername")]
+        public string targetdevhubusername { get; set; }
 
         /// <summary>
         /// [Required] Override the API version used for API requests made by this command.
@@ -732,10 +696,46 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+        /// [Optional] Filters the list based on the specified maximum number of days since the request was created (starting at 00:00:00 of first day to now; 0 for today).
         /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
+        [SwitchName("--createdlastdays")]
+        public int? createdlastdays { get; set; }
+
+        /// <summary>
+        /// [Optional] Displays limited package version details.
+        /// </summary>
+        [SwitchName("--concise")]
+        public bool? concise { get; set; }
+
+        /// <summary>
+        /// [Optional] Lists the items modified in the specified last number of days, starting at 00:00:00 of first day to now. Use 0 for today.
+        /// </summary>
+        [SwitchName("--modifiedlastdays")]
+        public int? modifiedlastdays { get; set; }
+
+        /// <summary>
+        /// [Required] Filters results on the specified comma-delimited packages (aliases or 0Ho IDs).
+        /// </summary>
+        [SwitchName("--packages")]
+        public string packages { get; set; }
+
+        /// <summary>
+        /// [Optional] Displays released versions only (IsReleased=true).
+        /// </summary>
+        [SwitchName("--released")]
+        public bool? released { get; set; }
+
+        /// <summary>
+        /// [Required] Orders the list by the specified package version fields.
+        /// </summary>
+        [SwitchName("--orderby")]
+        public string orderby { get; set; }
+
+        /// <summary>
+        /// [Optional] Displays extended package version details.
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? verbose { get; set; }
     }
 
     /// <summary>
@@ -750,16 +750,10 @@ namespace sfdx4csharpClient
         public string package { get; set; }
 
         /// <summary>
-        /// [Optional] Do not prompt to confirm setting the package version as released.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--noprompt")]
-        public bool? noprompt { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
@@ -768,10 +762,16 @@ namespace sfdx4csharpClient
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Do not prompt to confirm setting the package version as released.
+        /// </summary>
+        [SwitchName("--noprompt")]
+        public bool? noprompt { get; set; }
     }
 
     /// <summary>
@@ -786,16 +786,10 @@ namespace sfdx4csharpClient
         public string package { get; set; }
 
         /// <summary>
-        /// [Optional] Displays extended package version details.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
@@ -804,10 +798,16 @@ namespace sfdx4csharpClient
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Displays extended package version details.
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? verbose { get; set; }
     }
 
     /// <summary>
@@ -822,40 +822,10 @@ namespace sfdx4csharpClient
         public string package { get; set; }
 
         /// <summary>
-        /// [Required] The new installation key for the key-protected package. The default is null.
+        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
-        [SwitchName("--installationkey")]
-        public string installationkey { get; set; }
-
-        /// <summary>
-        /// [Required] The new package version tag.
-        /// </summary>
-        [SwitchName("--tag")]
-        public string tag { get; set; }
-
-        /// <summary>
-        /// [Required] The new package version branch.
-        /// </summary>
-        [SwitchName("--branch")]
-        public string branch { get; set; }
-
-        /// <summary>
-        /// [Required] The new package version description.
-        /// </summary>
-        [SwitchName("--versiondescription")]
-        public string versiondescription { get; set; }
-
-        /// <summary>
-        /// [Required] The new package version name.
-        /// </summary>
-        [SwitchName("--versionname")]
-        public string versionname { get; set; }
-
-        /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
 
         /// <summary>
         /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
@@ -864,10 +834,40 @@ namespace sfdx4csharpClient
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Override the API version used for API requests made by this command.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] The new package version name.
+        /// </summary>
+        [SwitchName("--versionname")]
+        public string versionname { get; set; }
+
+        /// <summary>
+        /// [Required] The new package version description.
+        /// </summary>
+        [SwitchName("--versiondescription")]
+        public string versiondescription { get; set; }
+
+        /// <summary>
+        /// [Required] The new package version branch.
+        /// </summary>
+        [SwitchName("--branch")]
+        public string branch { get; set; }
+
+        /// <summary>
+        /// [Required] The new package version tag.
+        /// </summary>
+        [SwitchName("--tag")]
+        public string tag { get; set; }
+
+        /// <summary>
+        /// [Required] The new installation key for the key-protected package. The default is null.
+        /// </summary>
+        [SwitchName("--installationkey")]
+        public string installationkey { get; set; }
     }
 
     /// <summary>

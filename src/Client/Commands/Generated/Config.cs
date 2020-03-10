@@ -1,4 +1,4 @@
-// Generated on March 9th 2020 using sfdx-cli/7.43.1 win32-x64 node-v8.15.0. DO NOT MODIFY
+// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
 // Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
@@ -13,16 +13,16 @@ namespace sfdx4csharpClient
     public class ConfigGetOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] Emit additional command output to stdout.
-        /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
-
-        /// <summary>
         /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Optional] Emit additional command output to stdout.
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? verbose { get; set; }
     }
 
     /// <summary>
@@ -49,16 +49,16 @@ namespace sfdx4csharpClient
         public string expression { get; set; }
 
         /// <summary>
-        /// [Optional] Sets the configuration variables globally, so they can be used from any directory.
-        /// </summary>
-        [SwitchName("--global")]
-        public bool? global { get; set; }
-
-        /// <summary>
         /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Optional] Sets the configuration variables globally, so they can be used from any directory.
+        /// </summary>
+        [SwitchName("--global")]
+        public bool? global { get; set; }
     }
 
     /// <summary>

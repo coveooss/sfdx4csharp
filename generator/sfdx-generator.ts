@@ -8,7 +8,6 @@ import {
 import * as fs from "fs-extra";
 import * as _ from "underscore";
 import * as path from "path";
-import * as moment from "moment";
 import { exec, ExecOptions } from "child_process";
 
 export interface IGeneratorOptions {
@@ -123,9 +122,10 @@ export class Generator {
 
   private extractParameters(result: Result): IParameterDefinition[] {
     let parameters = _.map(result.flags, flag => {
-      let paramName = flag.name 
+      let paramName = flag.name;
       if (paramName.toLowerCase() === "internal") {
-        paramName = "_" + paramName
+        // Keyword "internal" is a reserved Keyword in C#.
+        paramName = "_" + paramName;
       }
       let parameter: IParameterDefinition = {
         name: paramName,
@@ -179,11 +179,6 @@ export class Generator {
     }
 
     return "string";
-  }
-
-  private extractApiCommandFromCommand(command: string): string {
-    const splitElements = command.split(":");
-    return splitElements.slice(1, splitElements.length).join(":");
   }
 
   private extractClassNameFromTopic(topic: string): string {
@@ -240,9 +235,7 @@ export class Generator {
   }
 
   private getCurrentFormatedDate(): string {
-    // Something is weird with moment and typescript. We must call default on the function.
-    // https://github.com/aurelia/skeleton-navigation/issues/606
-    return moment().format("MMMM Do YYYY");
+    return new Date().toDateString();
   }
 
   private parse<T>(response: string): T {
