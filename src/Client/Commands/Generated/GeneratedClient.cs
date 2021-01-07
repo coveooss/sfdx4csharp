@@ -81,12 +81,13 @@ namespace sfdx4csharpClient
             Debug.Assert(Directory.Exists(p_FolderPath));
             m_CmdRunner.WorkingFolder = p_FolderPath;
         }
-		
+
         /// <summary>
         /// Changes the home folder of the SFDX client. 
-		/// This is the directory where it looks for the .sfdx folder
+        /// This is the directory where it looks for the .sfdx folder
         /// </summary>
         /// <param name="p_HomeFolderPath">The new home folder where the .sfdx folder is located.</param>
+        /// <remarks>Only works on Windows</remarks>
         public void ChangeHomeFolder(string p_HomeFolderPath)
         {
             Debug.Assert(!string.IsNullOrEmpty(p_HomeFolderPath));
