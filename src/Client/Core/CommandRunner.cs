@@ -19,17 +19,23 @@ namespace sfdx4csharpClient.Core
         public string WorkingFolder { get; set; }
 
         /// <summary>
+        /// The home folder where sfdx will look for the '.sfdx' folder.
+        /// </summary>
+        public string HomeFolder { get; set; }
+
+        /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="p_Path">SFDX CLI path.</param>
         /// <param name="p_WorkingFolder">The working folder where to run SFDX commands.</param>
         public CommandRunner(string p_Path,
-            string p_WorkingFolder = "")
+                             string p_WorkingFolder = "")
         {
             Debug.Assert(!string.IsNullOrEmpty(p_Path));
 
             m_SFDXPath = FormatPath(p_Path);
             WorkingFolder = FormatPath(p_WorkingFolder);
+            HomeFolder = "";
         }
 
         /// <summary>
@@ -83,6 +89,11 @@ namespace sfdx4csharpClient.Core
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
             if (!String.IsNullOrEmpty(WorkingFolder)) {
                 startInfo.WorkingDirectory = WorkingFolder;
+            }
+
+            if (!String.IsNullOrEmpty(HomeFolder)) {
+                // This only works on Windows at the moment.
+                startInfo.EnvironmentVariables["USERPROFILE"] = HomeFolder;
             }
 
             return startInfo;

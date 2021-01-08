@@ -1,4 +1,4 @@
-// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
+// Generated on Wed Dec 23 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.7.0. DO NOT MODIFY
 // Copyright (c) 2005-2020, Coveo Solutions Inc.
 
 using System.Diagnostics;
@@ -80,6 +80,18 @@ namespace sfdx4csharpClient
             Debug.Assert(!string.IsNullOrEmpty(p_FolderPath));
             Debug.Assert(Directory.Exists(p_FolderPath));
             m_CmdRunner.WorkingFolder = p_FolderPath;
+        }
+
+        /// <summary>
+        /// Changes the home folder of the SFDX client. 
+        /// This is the directory where it looks for the .sfdx folder
+        /// </summary>
+        /// <param name="p_HomeFolderPath">The new home folder where the .sfdx folder is located, or null/empty to revert back to the default.</param>
+        /// <remarks>Only works on Windows.</remarks>
+        public void ChangeHomeFolder(string p_HomeFolderPath)
+        {
+            Debug.Assert(string.IsNullOrEmpty(p_HomeFolderPath) || Directory.Exists(p_HomeFolderPath));
+            m_CmdRunner.HomeFolder = p_HomeFolderPath;
         }
     }
 }
