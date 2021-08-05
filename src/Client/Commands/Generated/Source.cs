@@ -661,10 +661,10 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] Reset to a specific SourceMember revision counter number
+        /// [Optional] Reset to a specific SourceMember revision counter number
         /// </summary>
         [SwitchName("--revision")]
-        public string revision { get; set; }
+        public int? revision { get; set; }
 
         /// <summary>
         /// [Optional] Do not prompt for source tracking override confirmation

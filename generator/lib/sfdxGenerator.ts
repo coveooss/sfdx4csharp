@@ -200,7 +200,7 @@ export class Generator {
         return "Boolean";
       }
 
-      if (flag.type === "number" || flag.type === "minutes" || flag.kind === "number" || flag.kind === "minutes") {
+      if (flag.type === "number" || flag.type === "minutes" || flag.kind === "number" || flag.kind === "minutes" || flag.kind === "integer") {
         return "number";
       }
     }

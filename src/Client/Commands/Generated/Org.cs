@@ -169,10 +169,10 @@ namespace sfdx4csharpClient
         public int? wait { get; set; }
 
         /// <summary>
-        /// [Required] Duration of the scratch org (in days) (default:7, min:1, max:30)
+        /// [Optional] Duration of the scratch org (in days) (default:7, min:1, max:30)
         /// </summary>
         [SwitchName("--durationdays")]
-        public string durationdays { get; set; }
+        public int? durationdays { get; set; }
     }
 
     /// <summary>

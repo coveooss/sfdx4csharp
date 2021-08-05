@@ -175,16 +175,16 @@ namespace sfdx4csharpClient
         public string onbehalfof { get; set; }
 
         /// <summary>
-        /// [Required] Number of characters in the generated password; valid values are between 8 and 1000
+        /// [Optional] Number of characters in the generated password; valid values are between 8 and 1000
         /// </summary>
         [SwitchName("--length")]
-        public string length { get; set; }
+        public int? length { get; set; }
 
         /// <summary>
-        /// [Required] Level of password complexity or strength; the higher the value, the stronger the password
+        /// [Optional] Level of password complexity or strength; the higher the value, the stronger the password
         /// </summary>
         [SwitchName("--complexity")]
-        public string complexity { get; set; }
+        public int? complexity { get; set; }
     }
 
     /// <summary>
