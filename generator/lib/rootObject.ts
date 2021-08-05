@@ -1,5 +1,6 @@
 export interface Flag {
   name: string;
+  kind: string;
   char: string;
   description: string;
   longDescription: string;

@@ -67,10 +67,10 @@ namespace sfdx4csharpClient
         public string setalias { get; set; }
 
         /// <summary>
-        /// [Required] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
+        /// [Optional] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
     }
 
     /// <summary>
@@ -163,10 +163,10 @@ namespace sfdx4csharpClient
         public string env { get; set; }
 
         /// <summary>
-        /// [Required] The streaming client socket timeout (in minutes)
+        /// [Optional] The streaming client socket timeout (in minutes)
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Required] Duration of the scratch org (in days) (default:7, min:1, max:30)
@@ -631,10 +631,10 @@ namespace sfdx4csharpClient
         public string setalias { get; set; }
 
         /// <summary>
-        /// [Required] The number of minutes to wait for the org to be ready while polling for its creation status.
+        /// [Optional] The number of minutes to wait for the org to be ready while polling for its creation status.
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
     }
 
     /// <summary>

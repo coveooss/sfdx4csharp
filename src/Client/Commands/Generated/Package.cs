@@ -161,10 +161,10 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] Maximum number of minutes to wait for installation status. The default is 0.
+        /// [Optional] Maximum number of minutes to wait for installation status. The default is 0.
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Required] Installation key for installing a key-protected package. The default is null.
@@ -173,10 +173,10 @@ namespace sfdx4csharpClient
         public string installationkey { get; set; }
 
         /// <summary>
-        /// [Required] Maximum number of minutes to wait for the Subscriber Package Version ID to become available in the target org before canceling the install request. The default is 0.
+        /// [Optional] Maximum number of minutes to wait for the Subscriber Package Version ID to become available in the target org before canceling the install request. The default is 0.
         /// </summary>
         [SwitchName("--publishwait")]
-        public string publishwait { get; set; }
+        public int? publishwait { get; set; }
 
         /// <summary>
         /// [Optional] Allows the following without an explicit confirmation response: 1) Remote Site Settings and Content Security Policy websites to send or receive data, and 2) --upgradetype Delete to proceed.
@@ -342,10 +342,10 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] Maximum number of minutes to wait for uninstall status. The default is 0.
+        /// [Optional] Maximum number of minutes to wait for uninstall status. The default is 0.
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Required] The ID (starts with 04t) or alias of the package version to uninstall.
@@ -528,10 +528,10 @@ namespace sfdx4csharpClient
         public bool? validateschema { get; set; }
 
         /// <summary>
-        /// [Required] The number of minutes to wait for the package version to be created.
+        /// [Optional] The number of minutes to wait for the package version to be created.
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Required] The instance where the package version will be created——for example, NA50.
@@ -630,10 +630,10 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] Filters the list based on the specified maximum number of days since the request was created (starting at 00:00:00 of first day to now; 0 for today).
+        /// [Optional] Filters the list based on the specified maximum number of days since the request was created (starting at 00:00:00 of first day to now; 0 for today).
         /// </summary>
         [SwitchName("--createdlastdays")]
-        public string createdlastdays { get; set; }
+        public int? createdlastdays { get; set; }
 
         /// <summary>
         /// [Required] Filters the list based on the status of version creation requests.
@@ -805,10 +805,10 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] Filters the list based on the specified maximum number of days since the request was created (starting at 00:00:00 of first day to now; 0 for today).
+        /// [Optional] Filters the list based on the specified maximum number of days since the request was created (starting at 00:00:00 of first day to now; 0 for today).
         /// </summary>
         [SwitchName("--createdlastdays")]
-        public string createdlastdays { get; set; }
+        public int? createdlastdays { get; set; }
 
         /// <summary>
         /// [Optional] Displays limited package version details.
@@ -817,10 +817,10 @@ namespace sfdx4csharpClient
         public bool? concise { get; set; }
 
         /// <summary>
-        /// [Required] Lists the items modified in the specified last number of days, starting at 00:00:00 of first day to now. Use 0 for today.
+        /// [Optional] Lists the items modified in the specified last number of days, starting at 00:00:00 of first day to now. Use 0 for today.
         /// </summary>
         [SwitchName("--modifiedlastdays")]
-        public string modifiedlastdays { get; set; }
+        public int? modifiedlastdays { get; set; }
 
         /// <summary>
         /// [Required] Filters results on the specified comma-delimited packages (aliases or 0Ho IDs).

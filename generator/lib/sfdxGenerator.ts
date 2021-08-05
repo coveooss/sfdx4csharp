@@ -142,6 +142,10 @@ export class Generator {
       if ("longDescription" in configs[key]) {
         flags[key]["longDescription"] = configs[key]["longDescription"];
       }
+
+      if ("kind" in configs[key]) {
+        flags[key]["kind"] = configs[key]["kind"];
+      }
     }
 
     for (const key in flags) {
@@ -150,7 +154,7 @@ export class Generator {
         flag.longDescription ?? flag.description ?? ("No description for " + key)
       );
 
-      let paramName = key;
+      let paramName = key === "protected" ? "isprotected" : key;
       if (paramName.toLowerCase() === "internal") {
         // Keyword "internal" is a reserved Keyword in C#.
         paramName = "_" + paramName;
@@ -191,12 +195,12 @@ export class Generator {
 
   private extractType(flag: Flag): string {
     if (flag.type) {
-      if (flag.type === "boolean") {
+      if (flag.type === "boolean" || flag.kind === "boolean") {
         // Workaround for the flag noprompt in force:package:version:promote (was 'flag;' instead of 'flag')
         return "Boolean";
       }
 
-      if (flag.type === "number" || flag.type === "minutes") {
+      if (flag.type === "number" || flag.type === "minutes" || flag.kind === "number" || flag.kind === "minutes") {
         return "number";
       }
     }

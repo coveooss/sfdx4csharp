@@ -91,10 +91,10 @@ namespace sfdx4csharpClient
         public string picklistvalues { get; set; }
 
         /// <summary>
-        /// [Required] The number of decimal places to use for Number or Percent fields. The value must be greater than or equal to zero.
+        /// [Optional] The number of decimal places to use for Number or Percent fields. The value must be greater than or equal to zero.
         /// </summary>
         [SwitchName("--decimalplaces")]
-        public string decimalplaces { get; set; }
+        public int? decimalplaces { get; set; }
 
         /// <summary>
         /// [Required] The label for the field.
@@ -226,7 +226,7 @@ namespace sfdx4csharpClient
         /// [Required] Protect the record when it is in a managed package. Protected records can only be accessed by code in the same managed package namespace.
         /// </summary>
         [SwitchName("--protected")]
-        public string protected { get; set; }
+        public string isprotected { get; set; }
 
         /// <summary>
         /// [Required] The directory to pull the custom metadata type definition from.

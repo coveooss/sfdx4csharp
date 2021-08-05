@@ -85,10 +85,10 @@ namespace sfdx4csharpClient
         public string installationkey { get; set; }
 
         /// <summary>
-        /// [Required] Minutes to wait for the package version to be created. The default is 2 minutes.
+        /// [Optional] Minutes to wait for the package version to be created. The default is 2 minutes.
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
     }
 
     /// <summary>

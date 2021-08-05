@@ -121,10 +121,10 @@ namespace sfdx4csharpClient
         public string logid { get; set; }
 
         /// <summary>
-        /// [Required] Number of most recent logs to display
+        /// [Optional] Number of most recent logs to display
         /// </summary>
         [SwitchName("--number")]
-        public string number { get; set; }
+        public int? number { get; set; }
 
         /// <summary>
         /// [Required] The location can be an absolute path or relative to the current working directory. The default is the current directory.

@@ -108,10 +108,10 @@ namespace sfdx4csharpClient
         public bool? noprompt { get; set; }
 
         /// <summary>
-        /// [Required] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
+        /// [Optional] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Required] A comma-separated list of paths to the local metadata to delete. The supplied paths can be a single file (in which case the operation is applied to only one file) or a folder (in which case the operation is applied to all metadata types in the directory and its sub-directories).
@@ -169,10 +169,10 @@ namespace sfdx4csharpClient
         public bool? soapdeploy { get; set; }
 
         /// <summary>
-        /// [Required] Wait time for command to finish in minutes
+        /// [Optional] Wait time for command to finish in minutes
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Required] Deployment testing level
@@ -259,10 +259,10 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] Wait time for command to finish in minutes
+        /// [Optional] Wait time for command to finish in minutes
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Required] Job ID of the deployment you want to cancel; defaults to your most recent CLI deployment if not specified
@@ -301,10 +301,10 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] Wait time for command to finish in minutes
+        /// [Optional] Wait time for command to finish in minutes
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Required] Job ID of the deployment you want to check; defaults to your most recent CLI deployment if not specified
@@ -415,10 +415,10 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] The number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
+        /// [Optional] The number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Optional] Runs the pull command even if conflicts exist. Changes in the scratch org overwrite changes in the project.
@@ -475,10 +475,10 @@ namespace sfdx4csharpClient
         public bool? replacetokens { get; set; }
 
         /// <summary>
-        /// [Required] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
+        /// [Optional] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
     }
 
     /// <summary>
@@ -517,10 +517,10 @@ namespace sfdx4csharpClient
         public string sourcepath { get; set; }
 
         /// <summary>
-        /// [Required] Wait time for command to finish in minutes
+        /// [Optional] Wait time for command to finish in minutes
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Required] File path for manifest (package.xml) of components to retrieve

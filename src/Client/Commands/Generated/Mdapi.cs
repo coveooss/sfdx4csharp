@@ -104,10 +104,10 @@ namespace sfdx4csharpClient
         public string deploydir { get; set; }
 
         /// <summary>
-        /// [Required] The number of minutes to wait for the command to complete. The default is –1 (no limit). 0
+        /// [Optional] The number of minutes to wait for the command to complete. The default is –1 (no limit). 0
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Required] Specifies which level of deployment tests to run. Valid values are:
@@ -205,10 +205,10 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
+        /// [Optional] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Required] The job ID (requestId) of the deployment you want to cancel. If not specified, the default value is the ID of the most recent metadata deployment you ran using Salesforce CLI.
@@ -247,10 +247,10 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] The number of minutes to wait for the command to complete. The default is –1 (no limit). 0
+        /// [Optional] The number of minutes to wait for the command to complete. The default is –1 (no limit). 0
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Required] The job ID (id field value for AsyncResult) of the deployment you want to check. The job ID is required if you haven’t previously deployed using Salesforce CLI. If you deploy using Salesforce CLI and don’t specify ajob ID, we use the ID of the most recent metadata deployment.
@@ -391,10 +391,10 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] The number of minutes to wait for the command to complete.
+        /// [Optional] The number of minutes to wait for the command to complete.
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Required] The complete path for the manifest file that specifies the components to retrieve.
@@ -457,10 +457,10 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] The number of minutes to wait for the command to complete. -1
+        /// [Optional] The number of minutes to wait for the command to complete. -1
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Required] The root of the directory structure where the retrieved .zip or metadata files are put.

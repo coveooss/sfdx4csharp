@@ -49,10 +49,10 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] The number of minutes to wait for the command to complete before displaying the results
+        /// [Optional] The number of minutes to wait for the command to complete before displaying the results
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
     }
 
     /// <summary>
@@ -145,10 +145,10 @@ namespace sfdx4csharpClient
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] The number of minutes to wait for the command to complete before displaying the results
+        /// [Optional] The number of minutes to wait for the command to complete before displaying the results
         /// </summary>
         [SwitchName("--wait")]
-        public string wait { get; set; }
+        public int? wait { get; set; }
 
         /// <summary>
         /// [Optional] Run batches in serial mode
