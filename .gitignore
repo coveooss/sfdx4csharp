@@ -8,3 +8,5 @@ package-lock.json
 .vscode
 compiled
 dist
+
+src/sfdx4csharp.csproj.user

@@ -1,5 +1,5 @@
-// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
-// Copyright (c) 2005-2020, Coveo Solutions Inc.
+// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
+// Copyright (c) 2005-2021, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -8,45 +8,105 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method deviceLogin of class Auth.
+    /// Options for the method accesstokenStore of class Auth.
     /// </summary>
-    public class AuthDeviceLoginOptions : SFDXOptions
+    public class AuthAccesstokenStoreOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("")]
+        public string expression { get; set; }
 
         /// <summary>
-        /// [Required] OAuth client ID (aka consumer key)
-        /// </summary>
-        [SwitchName("--clientid")]
-        public string clientid { get; set; }
-
-        /// <summary>
-        /// [Required] login URL of the instance the org is on
+        /// [Required] The login URL of the instance the org lives on
         /// </summary>
         [SwitchName("--instanceurl")]
         public string instanceurl { get; set; }
 
         /// <summary>
-        /// [Optional] set the authenticated org as the default Dev Hub org for scratch org creation
+        /// [Optional] Logging level for this command invocation
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Optional] Set the authenticated org as the default dev hub org for scratch org creation
         /// </summary>
         [SwitchName("--setdefaultdevhubusername")]
         public bool? setdefaultdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] set the authenticated org as the default username that all commands run against
+        /// [Optional] Set the authenticated org as the default username that all commands run against
         /// </summary>
         [SwitchName("--setdefaultusername")]
         public bool? setdefaultusername { get; set; }
 
         /// <summary>
-        /// [Required] set an alias for the authenticated org
+        /// [Required] Set an alias for the authenticated org
         /// </summary>
         [SwitchName("--setalias")]
         public string setalias { get; set; }
+
+        /// <summary>
+        /// [Optional] Do not prompt for confirmation
+        /// </summary>
+        [SwitchName("--noprompt")]
+        public bool? noprompt { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method deviceLogin of class Auth.
+    /// </summary>
+    public class AuthDeviceLoginOptions : SFDXOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] OAuth client ID (sometimes called the consumer key)
+        /// </summary>
+        [SwitchName("--clientid")]
+        public string clientid { get; set; }
+
+        /// <summary>
+        /// [Required] The login URL of the instance the org lives on
+        /// </summary>
+        [SwitchName("--instanceurl")]
+        public string instanceurl { get; set; }
+
+        /// <summary>
+        /// [Optional] Set the authenticated org as the default dev hub org for scratch org creation
+        /// </summary>
+        [SwitchName("--setdefaultdevhubusername")]
+        public bool? setdefaultdevhubusername { get; set; }
+
+        /// <summary>
+        /// [Optional] Set the authenticated org as the default username that all commands run against
+        /// </summary>
+        [SwitchName("--setdefaultusername")]
+        public bool? setdefaultusername { get; set; }
+
+        /// <summary>
+        /// [Required] Set an alias for the authenticated org
+        /// </summary>
+        [SwitchName("--setalias")]
+        public string setalias { get; set; }
+
+        /// <summary>
+        /// [Optional] Disable masking of user input (for use with problematic terminals)
+        /// </summary>
+        [SwitchName("--disablemasking")]
+        public bool? disablemasking { get; set; }
     }
 
     /// <summary>
@@ -55,55 +115,61 @@ namespace sfdx4csharpClient
     public class AuthJwtGrantOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] The OAuth client ID (sometimes referred to as the consumer key).
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Required] OAuth client ID (sometimes called the consumer key)
         /// </summary>
         [SwitchName("--clientid")]
         public string clientid { get; set; }
 
         /// <summary>
-        /// [Required] Path to a file containing the private key.
+        /// [Required] Path to a file containing the private key
         /// </summary>
         [SwitchName("--jwtkeyfile")]
         public string jwtkeyfile { get; set; }
 
         /// <summary>
-        /// [Required] The authentication username.
+        /// [Required] Authentication username
         /// </summary>
         [SwitchName("--username")]
         public string username { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] The login URL of the Salesforce instance that the org lives on.
+        /// [Required] The login URL of the instance the org lives on
         /// </summary>
         [SwitchName("--instanceurl")]
         public string instanceurl { get; set; }
 
         /// <summary>
-        /// [Optional] Sets the authenticated org as the default Dev Hub org for scratch org creation.
+        /// [Optional] Set the authenticated org as the default dev hub org for scratch org creation
         /// </summary>
         [SwitchName("--setdefaultdevhubusername")]
         public bool? setdefaultdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] Sets the authenticated org as the default username that all commands run against.
+        /// [Optional] Set the authenticated org as the default username that all commands run against
         /// </summary>
         [SwitchName("--setdefaultusername")]
         public bool? setdefaultusername { get; set; }
 
         /// <summary>
-        /// [Required] Sets an alias for the authenticated org.
+        /// [Required] Set an alias for the authenticated org
         /// </summary>
         [SwitchName("--setalias")]
         public string setalias { get; set; }
 
         /// <summary>
-        /// [Optional] Do not prompt for auth confirmation in demo mode.
+        /// [Optional] Do not prompt for auth confirmation in demo mode
         /// </summary>
         [SwitchName("--noprompt")]
         public bool? noprompt { get; set; }
@@ -115,7 +181,13 @@ namespace sfdx4csharpClient
     public class AuthListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
@@ -127,19 +199,25 @@ namespace sfdx4csharpClient
     public class AuthLogoutOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -151,7 +229,7 @@ namespace sfdx4csharpClient
         public bool? all { get; set; }
 
         /// <summary>
-        /// [Optional] Do not prompt for confirmation.
+        /// [Optional] Do not prompt for confirmation
         /// </summary>
         [SwitchName("--noprompt")]
         public bool? noprompt { get; set; }
@@ -163,37 +241,43 @@ namespace sfdx4csharpClient
     public class AuthSfdxurlStoreOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] Path to a file containing the SFDX URL.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Required] Path to a file containing the sfdx url
         /// </summary>
         [SwitchName("--sfdxurlfile")]
         public string sfdxurlfile { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Optional] Sets the authenticated org as the default Dev Hub org for scratch org creation.
+        /// [Optional] Set the authenticated org as the default dev hub org for scratch org creation
         /// </summary>
         [SwitchName("--setdefaultdevhubusername")]
         public bool? setdefaultdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] Sets the authenticated org as the default username that all commands run against.
+        /// [Optional] Set the authenticated org as the default username that all commands run against
         /// </summary>
         [SwitchName("--setdefaultusername")]
         public bool? setdefaultusername { get; set; }
 
         /// <summary>
-        /// [Required] Sets an alias for the authenticated org.
+        /// [Required] Set an alias for the authenticated org
         /// </summary>
         [SwitchName("--setalias")]
         public string setalias { get; set; }
 
         /// <summary>
-        /// [Optional] Do not prompt for auth confirmation in demo mode.
+        /// [Optional] Do not prompt for auth confirmation in demo mode
         /// </summary>
         [SwitchName("--noprompt")]
         public bool? noprompt { get; set; }
@@ -205,49 +289,55 @@ namespace sfdx4csharpClient
     public class AuthWebLoginOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] The OAuth client ID (sometimes referred to as the consumer key).
+        /// [Required] OAuth client ID (sometimes called the consumer key)
         /// </summary>
         [SwitchName("--clientid")]
         public string clientid { get; set; }
 
         /// <summary>
-        /// [Required] The login URL of the Salesforce instance that the org lives on.
+        /// [Required] The login URL of the instance the org lives on
         /// </summary>
         [SwitchName("--instanceurl")]
         public string instanceurl { get; set; }
 
         /// <summary>
-        /// [Optional] Sets the authenticated org as the default Dev Hub org for scratch org creation.
+        /// [Optional] Set the authenticated org as the default dev hub org for scratch org creation
         /// </summary>
         [SwitchName("--setdefaultdevhubusername")]
         public bool? setdefaultdevhubusername { get; set; }
 
         /// <summary>
-        /// [Optional] Sets the authenticated org as the default username that all commands run against.
+        /// [Optional] Set the authenticated org as the default username that all commands run against
         /// </summary>
         [SwitchName("--setdefaultusername")]
         public bool? setdefaultusername { get; set; }
 
         /// <summary>
-        /// [Required] Sets an alias for the authenticated org.
+        /// [Required] Set an alias for the authenticated org
         /// </summary>
         [SwitchName("--setalias")]
         public string setalias { get; set; }
 
         /// <summary>
-        /// [Optional] Disables masking of user input (for use with problematic terminals).
+        /// [Optional] Disable masking of user input (for use with problematic terminals)
         /// </summary>
         [SwitchName("--disablemasking")]
         public bool? disablemasking { get; set; }
 
         /// <summary>
-        /// [Optional] Do not prompt for auth confirmation in demo mode.
+        /// [Optional] Do not prompt for auth confirmation in demo mode
         /// </summary>
         [SwitchName("--noprompt")]
         public bool? noprompt { get; set; }
@@ -256,7 +346,7 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Auth
     /// </summary>
-    [CommandClass("force:auth")]
+    [CommandClass("auth")]
     public class Auth : SFDXCommand
     {
         /// Constructor.
@@ -266,14 +356,40 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// authorize an org using a device code
+        /// authorize an org using an existing Salesforce access token
+        /// By default, the command runs interactively and asks you for the access token. If you previously authorized the org, the command prompts whether you want to overwrite the local file. Specify --noprompt to not be prompted.
+        /// To use the command in a CI/CD script, set the SFDX_ACCESS_TOKEN environment variable to the access token. Then run the command with the --noprompt parameter. "<org id>!<accesstoken>"
         /// </summary>
         /// <remarks>
-        /// Authorize an org using a device code. You must open a browser, navigate to the verification URL, and enter the code. Log in, if not already logged in, and you’ll be prompted to allow the device to connect to the org.
+        /// authorize an org using an existing Salesforce access token
+        /// By default, the command runs interactively and asks you for the access token. If you previously authorized the org, the command prompts whether you want to overwrite the local file. Specify --noprompt to not be prompted.
+        /// To use the command in a CI/CD script, set the SFDX_ACCESS_TOKEN environment variable to the access token. Then run the command with the --noprompt parameter. "<org id>!<accesstoken>"
         /// </remarks>
         /// <example>
         /// 
-        /// force:auth:device:login [-i <string>] [-r <url>] [-d] [-s] [-a <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// sfdx auth:accesstoken:store --instanceurl https://mycompany.my.salesforce.com
+        /// export SFDX_ACCESS_TOKEN=00Dxx0000000000!xxxxx
+        /// sfdx auth:accesstoken:store --instanceurl https://dev-hub.my.salesforce.com --noprompt
+        /// auth:accesstoken:store -r <url> [-s] [-s] [-a <string>] [-p] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// </example>
+        [Command("accesstoken:store")]
+        public SFDXResponse AccesstokenStore(AuthAccesstokenStoreOptions p_Options)
+        {
+            return ExecuteCommand<AuthAccesstokenStoreOptions>(nameof(AccesstokenStore), p_Options);
+        }
+
+        /// <summary>
+        /// authorize an org using a device code
+        /// </summary>
+        /// <remarks>
+        /// authorize an org using a device code
+        /// </remarks>
+        /// <example>
+        /// 
+        /// sfdx auth:device:login -d -a TestOrg1
+        /// sfdx auth:device:login -i <OAuth client id>
+        /// sfdx auth:device:login -r https://test.salesforce.com
+        /// auth:device:login [-i <string>] [-r <url>] [-d] [-s] [-a <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("device:login")]
         public SFDXResponse DeviceLogin(AuthDeviceLoginOptions p_Options)
@@ -283,20 +399,20 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// authorize an org using the JWT flow
+        /// Use a certificate associated with your private key that has been uploaded to a personal connected app.
+        /// If you specify an --instanceurl value, this value overrides the sfdcLoginUrl value in your sfdx-project.json file. To specify a My Domain URL, use the format MyDomainName.my.salesforce.com (not MyDomainName.lightning.force.com). To specify a sandbox, set --instanceurl to https://test.salesforce.com.
         /// </summary>
         /// <remarks>
-        /// Authorizes a Salesforce org using the JWT flow.
+        /// authorize an org using the JWT flow
+        /// Use a certificate associated with your private key that has been uploaded to a personal connected app.
+        /// If you specify an --instanceurl value, this value overrides the sfdcLoginUrl value in your sfdx-project.json file. To specify a My Domain URL, use the format MyDomainName.my.salesforce.com (not MyDomainName.lightning.force.com). To specify a sandbox, set --instanceurl to https://test.salesforce.com.
         /// </remarks>
         /// <example>
-        /// Authorizes a Salesforce org using a certificate associated with your private key that has been uploaded to a personal connected app.
         /// 
-        /// If you specify an --instanceurl value, this value overrides the sfdcLoginUrl value in your sfdx-project.json file. To specify a My Domain URL, use the format <yourdomain>.my.salesforce.com (not <yourdomain>.lightning.force.com).
-        /// 
-        /// Examples:
-        ///    $ sfdx force:auth:jwt:grant -u me@my.org -f <path to jwt key file> -i <OAuth client id>
-        ///    $ sfdx force:auth:jwt:grant -u me@my.org -f <path to jwt key file> -i <OAuth client id> -s -a MyDefaultOrg
-        ///    $ sfdx force:auth:jwt:grant -u me@acme.org -f <path to jwt key file> -i <OAuth client id> -r https://acme.my.salesforce.com
-        /// force:auth:jwt:grant -u <string> -f <filepath> -i <string> [-r <url>] [-d] [-s] [-a <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// sfdx auth:jwt:grant -u me@my.org -f <path to jwt key file> -i <OAuth client id>
+        /// sfdx auth:jwt:grant -u me@my.org -f <path to jwt key file> -i <OAuth client id> -s -a MyDefaultOrg
+        /// sfdx auth:jwt:grant -u me@acme.org -f <path to jwt key file> -i <OAuth client id> -r https://acme.my.salesforce.com
+        /// auth:jwt:grant -u <string> -f <filepath> -i <string> [-r <url>] [-d] [-s] [-a <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("jwt:grant")]
         public SFDXResponse JwtGrant(AuthJwtGrantOptions p_Options)
@@ -312,27 +428,28 @@ namespace sfdx4csharpClient
         /// </remarks>
         /// <example>
         /// 
-        /// force:auth:list [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// auth:list [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("list")]
-        public SFDXResponse List(AuthListOptions p_Options = null)
+        public SFDXResponse List(AuthListOptions p_Options)
         {
             return ExecuteCommand<AuthListOptions>(nameof(List), p_Options);
         }
 
         /// <summary>
         /// log out from authorized orgs
+        /// By default, this command logs you out from your default scratch org.
         /// </summary>
         /// <remarks>
-        /// Logs you out from one or all of your authorized Salesforce orgs.
+        /// log out from authorized orgs
+        /// By default, this command logs you out from your default scratch org.
         /// </remarks>
         /// <example>
-        /// By default, this command logs you out from your default scratch org.
-        /// Examples:
-        ///    $ sfdx force:auth:logout -u me@my.org
-        ///    $ sfdx force:auth:logout -a
-        ///    $ sfdx force:auth:logout -p
-        /// force:auth:logout [-a] [-p] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// 
+        /// sfdx auth:logout -u me@my.org
+        /// sfdx auth:logout -a
+        /// sfdx auth:logout -p
+        /// auth:logout [-a] [-p] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("logout")]
         public SFDXResponse Logout(AuthLogoutOptions p_Options)
@@ -341,20 +458,36 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// authorize an org using an SFDX auth URL
+        /// Authorize an org using an SFDX auth URL
+        /// Authorize a Salesforce org using an SFDX auth URL stored within a file. The URL must have the format "force://<refreshToken>@<instanceUrl>" or "force://<clientId>:<clientSecret>:<refreshToken>@<instanceUrl>".
+        /// You have three options when creating the auth file. The easiest option is to redirect the output of the `sfdx force:org:display --verbose --json` command into a file.
+        /// For example, using an org you have already authorized:
+        /// 
+        ///     $ sfdx force:org:display -u <DevHub> --verbose --json > authFile.json
+        ///     $ sfdx auth:sfdxurl:store -f authFile.json
+        /// 
+        /// The resulting JSON file contains the URL in the sfdxAuthUrl property inside of a results object.
+        /// You can also create a JSON file that has a top-level property named sfdxAuthUrl whose value is the auth URL.
+        /// Finally, you can create a normal text file that includes just the URL and nothing else.
         /// </summary>
         /// <remarks>
-        /// Authorizes a Salesforce org using an SFDX auth URL.
+        /// Authorize an org using an SFDX auth URL
+        /// Authorize a Salesforce org using an SFDX auth URL stored within a file. The URL must have the format "force://<refreshToken>@<instanceUrl>" or "force://<clientId>:<clientSecret>:<refreshToken>@<instanceUrl>".
+        /// You have three options when creating the auth file. The easiest option is to redirect the output of the `sfdx force:org:display --verbose --json` command into a file.
+        /// For example, using an org you have already authorized:
+        /// 
+        ///     $ sfdx force:org:display -u <DevHub> --verbose --json > authFile.json
+        ///     $ sfdx auth:sfdxurl:store -f authFile.json
+        /// 
+        /// The resulting JSON file contains the URL in the sfdxAuthUrl property inside of a results object.
+        /// You can also create a JSON file that has a top-level property named sfdxAuthUrl whose value is the auth URL.
+        /// Finally, you can create a normal text file that includes just the URL and nothing else.
         /// </remarks>
         /// <example>
-        /// Authorize a Salesforce org using an SFDX auth URL stored within a file.
-        /// The file must have the format "force://<refreshToken>@<instanceUrl>" or "force://<clientId>:<clientSecret>:<refreshToken>@<instanceUrl>".
-        /// The file must contain only the URL or be a JSON file that has a top-level property named sfdxAuthUrl.
         /// 
-        /// Examples:
-        ///    $ sfdx force:auth:sfdxurl:store -f <path to sfdxAuthUrl file>
-        ///    $ sfdx force:auth:sfdxurl:store -f <path to sfdxAuthUrl file> -s -a MyDefaultOrg
-        /// force:auth:sfdxurl:store -f <filepath> [-d] [-s] [-a <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// sfdx auth:sfdxurl:store -f <path to sfdxAuthUrl file>
+        /// sfdx auth:sfdxurl:store -f <path to sfdxAuthUrl file> -s -a MyDefaultOrg
+        /// auth:sfdxurl:store -f <filepath> [-d] [-s] [-a <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("sfdxurl:store")]
         public SFDXResponse SfdxurlStore(AuthSfdxurlStoreOptions p_Options)
@@ -364,18 +497,18 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// authorize an org using the web login flow
+        /// If you specify an --instanceurl value, this value overrides the sfdcLoginUrl value in your sfdx-project.json file. To specify a My Domain URL, use the format MyDomainName.my.salesforce.com (not MyDomainName.lightning.force.com). To log in to a sandbox, set --instanceurl to https://test.salesforce.com.
         /// </summary>
         /// <remarks>
-        /// Authorizes a Salesforce org by opening a browser so you can log in through salesforce.com.
+        /// authorize an org using the web login flow
+        /// If you specify an --instanceurl value, this value overrides the sfdcLoginUrl value in your sfdx-project.json file. To specify a My Domain URL, use the format MyDomainName.my.salesforce.com (not MyDomainName.lightning.force.com). To log in to a sandbox, set --instanceurl to https://test.salesforce.com.
         /// </remarks>
         /// <example>
-        /// To log in to a sandbox, set --instanceurl to https://test.salesforce.com.
         /// 
-        /// Examples:
-        ///    $ sfdx force:auth:web:login -a TestOrg1
-        ///    $ sfdx force:auth:web:login -i <OAuth client id>
-        ///    $ sfdx force:auth:web:login -r https://test.salesforce.com
-        /// force:auth:web:login [-i <string>] [-r <url>] [-d] [-s] [-a <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// sfdx auth:web:login -a TestOrg1
+        /// sfdx auth:web:login -i <OAuth client id>
+        /// sfdx auth:web:login -r https://test.salesforce.com
+        /// auth:web:login [-i <string>] [-r <url>] [-d] [-s] [-a <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("web:login")]
         public SFDXResponse WebLogin(AuthWebLoginOptions p_Options)

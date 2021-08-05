@@ -1,4 +1,4 @@
-import { RootObject, Result, Flag } from "./rootObject";
+import { Result, Flag } from "./rootObject";
 import {
   IClassDefinition,
   IFunctionDefinition,
@@ -31,7 +31,7 @@ export class Generator {
 
     // If no JSON is passed, use SFDX to gather it.
     if (json === undefined) {
-      json = await this.runCommand("force:doc:commands:display --json");
+      json = await this.runCommand("commands --json");
     }
 
     let formatFileName = (defaultFileName: string): string => {
@@ -40,37 +40,43 @@ export class Generator {
         : defaultFileName;
     };
 
-    const rootObject = this.parse<RootObject>(json);
+    const rootObject = this.parse<Result[]>(json);
     const classDefinitions: { [id: string]: IClassDefinition } = {};
-    rootObject.result.forEach(result => {
-      if (!result.command) {
+    rootObject.forEach(result => {
+      const topic = this.extractTopicFromId(result.id);
+      if (topic === result.id) {
         return;
       }
 
-      const className = this.capitalizeFirstLetter(
-        this.extractClassNameFromTopic(result.topic)
-      );
-
       // Check if existing, else creates it.
+      const className = this.extractClassNameFromTopic(topic);
       if (!classDefinitions[className]) {
         classDefinitions[className] = {
-          apiCommandClass: result.topic,
-          className: className,
-          fileName: formatFileName(
-            this.extractClassNameFromTopic(result.topic)
-          ),
+          apiCommandClass: topic,
+          className: this.capitalizeFirstLetter(className),
+          fileName: formatFileName(className),
           functionDefinitions: []
         };
       }
 
+      const command = result.id.substring(topic.length + 1);
+      let examples = result.examples?.join("\n") ?? "";
+      if (result.usage){
+        if (examples !== ""){
+          examples += "\n";
+        }
+
+        examples += result.usage;
+      }
+
       let functionDefinition: IFunctionDefinition = {
-        apiCommand: result.command,
-        name: this.extractFunctionNameFromCommand(result.command),
+        apiCommand: command,
+        name: this.extractFunctionNameFromCommand(command),
         parameters: this.extractParameters(result),
         returnType: this.extractReturnType(result),
         shortDescription: result.description,
-        description: result.longDescription,
-        example: result.usage,
+        description: result.description,
+        example: examples,
         help: result.help
       };
 
@@ -129,32 +135,49 @@ export class Generator {
   }
 
   private extractParameters(result: Result): IParameterDefinition[] {
-    let parameters = _.map(result.flags, flag => {
-      let paramName = flag.name;
+    let parameters = [];
+    let flags = result.flags;
+    const configs = result.flagsConfig;
+    for (const key in configs){
+      if ("longDescription" in configs[key]) {
+        flags[key]["longDescription"] = configs[key]["longDescription"];
+      }
+
+      if ("kind" in configs[key]) {
+        flags[key]["kind"] = configs[key]["kind"];
+      }
+    }
+
+    for (const key in flags) {
+      const flag = flags[key];
+      const desription = this.capitalizeFirstLetter(
+        flag.longDescription ?? flag.description ?? ("No description for " + key)
+      );
+
+      let paramName = key === "protected" ? "isprotected" : key;
       if (paramName.toLowerCase() === "internal") {
         // Keyword "internal" is a reserved Keyword in C#.
         paramName = "_" + paramName;
       }
       let parameter: IParameterDefinition = {
         name: paramName,
-        flagKey: "--" + flag.name,
+        flagKey: "--" + key,
         type: this.extractType(flag),
-        description: flag.longDescription,
+        description: desription,
         optional: !flag.required
       };
 
-      return parameter;
+      parameters.push(parameter);
+    }
+
+    parameters.push({
+      name: "expression",
+      description: "Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.",
+      flagKey: "",
+      optional: false,
+      type: "IStringKeyPair[] | string[] | string"
     });
 
-    if (result.variableArgs) {
-      parameters.push({
-        name: "expression",
-        description: "The key pair expression for the command",
-        flagKey: "",
-        optional: !result.variableArgsRequired,
-        type: "IStringKeyPair[] | string[] | string"
-      });
-    }
     return parameters.sort((a, b) => {
       if (a.optional && b.optional) {
         // Empty flag key should always be on top of other optional parameters.
@@ -172,12 +195,12 @@ export class Generator {
 
   private extractType(flag: Flag): string {
     if (flag.type) {
-      if (flag.type === "boolean") {
+      if (flag.type === "boolean" || flag.kind === "boolean") {
         // Workaround for the flag noprompt in force:package:version:promote (was 'flag;' instead of 'flag')
         return "Boolean";
       }
 
-      if (flag.type === "number" || flag.type === "minutes") {
+      if (flag.type === "number" || flag.type === "minutes" || flag.kind === "number" || flag.kind === "minutes" || flag.kind === "integer") {
         return "number";
       }
     }
@@ -189,8 +212,21 @@ export class Generator {
     return "string";
   }
 
+  private extractTopicFromId(id: string): string {
+    const idParts = id.split(":");
+    if (!idParts[1] || idParts[0] !== "force"){
+      return idParts[0];
+    }
+
+    return idParts[0] + ":" + idParts[1];
+  }
+
   private extractClassNameFromTopic(topic: string): string {
     const topicParts = topic.split(":");
+    if (!topicParts[1] || topicParts[0] !== "force"){
+      return topicParts[0];
+    }
+
     return topicParts[1];
   }
 

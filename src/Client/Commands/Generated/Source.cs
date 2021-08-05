@@ -1,5 +1,5 @@
-// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
-// Copyright (c) 2005-2020, Coveo Solutions Inc.
+// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
+// Copyright (c) 2005-2021, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -13,45 +13,49 @@ namespace sfdx4csharpClient
     public class SourceConvertOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A directory other than the default package directory that contains the source-formatted files to convert.
+        /// [Required] A source directory other than the default package to convert
         /// </summary>
         [SwitchName("--rootdir")]
         public string rootdir { get; set; }
 
         /// <summary>
-        /// [Required] The output directory to store the Metadata API–formatted metadata files in.
+        /// [Required] Output directory to store the Metadata API–formatted files in
         /// </summary>
         [SwitchName("--outputdir")]
         public string outputdir { get; set; }
 
         /// <summary>
-        /// [Required] The name of the package to associate with the metadata-formatted files.
+        /// [Required] Name of the package to associate with the metadata-formatted files
         /// </summary>
         [SwitchName("--packagename")]
         public string packagename { get; set; }
 
         /// <summary>
-        /// [Required] The complete path to the manifest (package.xml) file that specifies the metadata types to convert.
-        /// If you specify this parameter, don’t specify --metadata or --sourcepath.
+        /// [Required] File path to manifest (package.xml) of metadata types to convert.
         /// </summary>
         [SwitchName("--manifest")]
         public string manifest { get; set; }
 
         /// <summary>
-        /// [Required] A comma-separated list of paths to the local source files to convert. The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its sub-directories).
-        /// If you specify this parameter, don’t specify --manifest or --metadata.
+        /// [Required] Comma-separated list of paths to the local source files to convert
         /// </summary>
         [SwitchName("--sourcepath")]
         public string sourcepath { get; set; }
 
         /// <summary>
-        /// [Required] A comma-separated list of metadata component names to convert.
+        /// [Required] Comma-separated list of metadata component names to convert
         /// </summary>
         [SwitchName("--metadata")]
         public string metadata { get; set; }
@@ -63,19 +67,25 @@ namespace sfdx4csharpClient
     public class SourceDeleteOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -123,103 +133,97 @@ namespace sfdx4csharpClient
     public class SourceDeployOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Optional] Validates the deployed metadata and runs all Apex tests, but prevents the deployment from being saved to the org.
-        /// If you change a field type from Master-Detail to Lookup or vice versa, that change isn’t supported when using the --checkonly parameter to test a deployment (validation). This kind of change isn’t supported for test deployments to avoid the risk of data loss or corruption. If a change that isn’t supported for test deployments is included in a deployment package, the test deployment fails and issues an error.
-        /// If your deployment package changes a field type from Master-Detail to Lookup or vice versa, you can still validate the changes prior to deploying to Production by performing a full deployment to another test Sandbox. A full deployment includes a validation of the changes as part of the deployment process.
-        /// Note: A Metadata API deployment that includes Master-Detail relationships deletes all detail records in the Recycle Bin in the following cases.
-        /// 1. For a deployment with a new Master-Detail field, soft delete (send to the Recycle Bin) all detail records before proceeding to deploy the Master-Detail field, or the deployment fails. During the deployment, detail records are permanently deleted from the Recycle Bin and cannot be recovered.
-        /// 2. For a deployment that converts a Lookup field relationship to a Master-Detail relationship, detail records must reference a master record or be soft-deleted (sent to the Recycle Bin) for the deployment to succeed. However, a successful deployment permanently deletes any detail records in the Recycle Bin.
+        /// [Optional] Validate deploy but don’t save to the org
         /// </summary>
         [SwitchName("--checkonly")]
         public bool? checkonly { get; set; }
 
         /// <summary>
-        /// [Optional] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
+        /// [Optional] Deploy metadata with SOAP API instead of REST API
+        /// </summary>
+        [SwitchName("--soapdeploy")]
+        public bool? soapdeploy { get; set; }
+
+        /// <summary>
+        /// [Optional] Wait time for command to finish in minutes
         /// </summary>
         [SwitchName("--wait")]
         public int? wait { get; set; }
 
         /// <summary>
-        /// [Required] Specifies which level of deployment tests to run. Valid values are:
-        /// NoTestRun—No tests are run. This test level applies only to deployments to development environments, such as sandbox, Developer Edition, or trial orgs. This test level is the default for development environments.
-        /// RunSpecifiedTests—Runs only the tests that you specify in the --runtests option. Code coverage requirements differ from the default coverage requirements when using this test level. Executed tests must comprise a minimum of 75% code coverage for each class and trigger in the deployment package. This coverage is computed for each class and trigger individually and is different than the overall coverage percentage.
-        /// RunLocalTests—All tests in your org are run, except the ones that originate from installed managed packages. This test level is the default for production deployments that include Apex classes or triggers.
-        /// RunAllTestsInOrg—All tests in your org are run, including tests of managed packages.
-        /// If you don’t specify a test level, the default behavior depends on the contents of your deployment package. For more information, see “Running Tests in a Deployment” in the Metadata API Developer Guide.
+        /// [Required] Deployment testing level
         /// </summary>
         [SwitchName("--testlevel")]
         public string testlevel { get; set; }
 
         /// <summary>
-        /// [Required] Lists the Apex classes containing the deployment tests to run. Use this parameter when you set --testlevel to RunSpecifiedTests.
+        /// [Required] Tests to run if --testlevel RunSpecifiedTests
         /// </summary>
         [SwitchName("--runtests")]
         public string runtests { get; set; }
 
         /// <summary>
-        /// [Optional] Ignores the deploy errors, and continues with the deploy operation. The default is false. Keep this parameter set to false when deploying to a production org. If set to true, components without errors are deployed, and components with errors are skipped.
+        /// [Optional] Ignore any errors and do not roll back deployment
         /// </summary>
         [SwitchName("--ignoreerrors")]
         public bool? ignoreerrors { get; set; }
 
         /// <summary>
-        /// [Optional] If a warning occurs and ignoreWarnings is set to true, the success field in DeployMessage is true. When ignoreWarnings is set to false, success is set to false, and the warning is treated like an error.
-        /// This field is available in API version 18.0 and later. Prior to version 18.0, there was no distinction between warnings and errors. All problems were treated as errors and prevented a successful deployment.
+        /// [Optional] Whether a warning will allow a deployment to complete successfully
         /// </summary>
         [SwitchName("--ignorewarnings")]
         public bool? ignorewarnings { get; set; }
 
         /// <summary>
-        /// [Required] Specifies the ID of a package with recently validated components to run a Quick Deploy. Deploying a validation helps you shorten your deployment time because tests aren’t rerun. If you have a recent successful validation, you can deploy the validated components without running tests. A validation doesn’t save any components in the org. You use a validation only to check the success or failure messages that you would receive with an actual deployment. To validate your components, add the -c | --checkonly flag when you run "sfdx force:mdapi:deploy". This flag sets the checkOnly="true" parameter for your deployment. Before deploying a recent validation, ensure that the following requirements are met:
-        /// 1. The components have been validated successfully for the target environment within the last 10 days.
-        /// 2. As part of the validation, Apex tests in the target org have passed.
-        /// 3. Code coverage requirements are met.
-        ///      - If all tests in the org or all local tests are run, overall code coverage is at least 75%, and Apex triggers have some coverage.
-        ///      - If specific tests are run with the RunSpecifiedTests test level, each class and trigger that was deployed is covered by at least 75% individually.
+        /// [Required] Deploy request ID of the validated deployment to run a Quick Deploy
         /// </summary>
         [SwitchName("--validateddeployrequestid")]
         public string validateddeployrequestid { get; set; }
 
         /// <summary>
-        /// [Optional] Indicates that you want verbose output from the deploy operation.
+        /// [Optional] Verbose output of deploy result
         /// </summary>
         [SwitchName("--verbose")]
         public bool? verbose { get; set; }
 
         /// <summary>
-        /// [Required] A comma-separated list of names of metadata components to deploy to the org.
+        /// [Required] Comma-separated list of metadata component names
         /// </summary>
         [SwitchName("--metadata")]
         public string metadata { get; set; }
 
         /// <summary>
-        /// [Required] A comma-separated list of paths to the local source files to deploy. The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its sub-directories).
-        /// If you specify this parameter, don’t specify --manifest or --metadata.
+        /// [Required] Comma-separated list of source file paths to deploy
         /// </summary>
         [SwitchName("--sourcepath")]
         public string sourcepath { get; set; }
 
         /// <summary>
-        /// [Required] The complete path for the manifest (package.xml) file that specifies the components to deploy.
-        /// If you specify this parameter, don’t specify --metadata or --sourcepath.
+        /// [Required] File path for manifest (package.xml) of components to deploy
         /// </summary>
         [SwitchName("--manifest")]
         public string manifest { get; set; }
@@ -231,31 +235,37 @@ namespace sfdx4csharpClient
     public class SourceDeployCancelOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Optional] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
+        /// [Optional] Wait time for command to finish in minutes
         /// </summary>
         [SwitchName("--wait")]
         public int? wait { get; set; }
 
         /// <summary>
-        /// [Required] The job ID (requestId) of the deployment you want to cancel. If not specified, the default value is the ID of the most recent source deployment you ran using Salesforce CLI.
+        /// [Required] Job ID of the deployment you want to cancel; defaults to your most recent CLI deployment if not specified
         /// </summary>
         [SwitchName("--jobid")]
         public string jobid { get; set; }
@@ -267,34 +277,70 @@ namespace sfdx4csharpClient
     public class SourceDeployReportOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Optional] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
+        /// [Optional] Wait time for command to finish in minutes
         /// </summary>
         [SwitchName("--wait")]
         public int? wait { get; set; }
 
         /// <summary>
-        /// [Required] The job ID (asyncId) of the deployment you want to check. If not specified, the default value is the ID of the most recent metadata deployment you ran using Salesforce CLI. Use with -w to resume waiting.
+        /// [Required] Job ID of the deployment you want to check; defaults to your most recent CLI deployment if not specified
         /// </summary>
         [SwitchName("--jobid")]
         public string jobid { get; set; }
+
+        /// <summary>
+        /// [Optional] Verbose output of deploy result
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? verbose { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method ignoredList of class Source.
+    /// </summary>
+    public class SourceIgnoredListOptions : SFDXOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] File or directory of files that the command checks for foreceignored files
+        /// </summary>
+        [SwitchName("--sourcepath")]
+        public string sourcepath { get; set; }
     }
 
     /// <summary>
@@ -303,31 +349,37 @@ namespace sfdx4csharpClient
     public class SourceOpenOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] File to edit.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Required] File to edit
         /// </summary>
         [SwitchName("--sourcefile")]
         public string sourcefile { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Optional] Generate a navigation URL path, but don’t launch a browser-based editor.
+        /// [Optional] Generate a navigation URL; don’t launch the editor
         /// </summary>
         [SwitchName("--urlonly")]
         public bool? urlonly { get; set; }
@@ -339,19 +391,25 @@ namespace sfdx4csharpClient
     public class SourcePullOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -375,19 +433,25 @@ namespace sfdx4csharpClient
     public class SourcePushOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -423,56 +487,61 @@ namespace sfdx4csharpClient
     public class SourceRetrieveOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Use to override the default, which is the latest version supported by your CLI plug-in, with the version in your package.xml file.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Optional] Number of minutes to wait for the command to complete and display results to the terminal window. If the command continues to run after the wait period, the CLI returns control of the terminal window to you. The default is 33 minutes.
-        /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
-
-        /// <summary>
-        /// [Required] The complete path for the manifest (package.xml) file that specifies the components to retrieve.
-        /// If you specify this parameter, don’t specify --metadata or --sourcepath.
-        /// </summary>
-        [SwitchName("--manifest")]
-        public string manifest { get; set; }
-
-        /// <summary>
-        /// [Required] A comma-separated list of names of metadata components to retrieve from the org.
-        /// </summary>
-        [SwitchName("--metadata")]
-        public string metadata { get; set; }
-
-        /// <summary>
-        /// [Required] A comma-separated list of package names to retrieve.
-        /// </summary>
-        [SwitchName("--packagenames")]
-        public string packagenames { get; set; }
-
-        /// <summary>
-        /// [Required] A comma-separated list of file paths for source to retrieve from the org. The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all source files in the directory and its sub-directories).
+        /// [Required] Comma-separated list of source file paths to retrieve
         /// </summary>
         [SwitchName("--sourcepath")]
         public string sourcepath { get; set; }
 
         /// <summary>
-        /// [Optional] Indicates that you want verbose output from the retrieve operation.
+        /// [Optional] Wait time for command to finish in minutes
+        /// </summary>
+        [SwitchName("--wait")]
+        public int? wait { get; set; }
+
+        /// <summary>
+        /// [Required] File path for manifest (package.xml) of components to retrieve
+        /// </summary>
+        [SwitchName("--manifest")]
+        public string manifest { get; set; }
+
+        /// <summary>
+        /// [Required] Comma-separated list of metadata component names
+        /// </summary>
+        [SwitchName("--metadata")]
+        public string metadata { get; set; }
+
+        /// <summary>
+        /// [Required] A comma-separated list of packages to retrieve
+        /// </summary>
+        [SwitchName("--packagenames")]
+        public string packagenames { get; set; }
+
+        /// <summary>
+        /// [Optional] Verbose output of retrieve result
         /// </summary>
         [SwitchName("--verbose")]
         public bool? verbose { get; set; }
@@ -484,19 +553,25 @@ namespace sfdx4csharpClient
     public class SourceStatusOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -521,6 +596,84 @@ namespace sfdx4csharpClient
     }
 
     /// <summary>
+    /// Options for the method trackingClear of class Source.
+    /// </summary>
+    public class SourceTrackingClearOptions : SFDXOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] Username or alias for the target org; overrides default target org
+        /// </summary>
+        [SwitchName("--targetusername")]
+        public string targetusername { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Do not prompt for source tracking override confirmation
+        /// </summary>
+        [SwitchName("--noprompt")]
+        public bool? noprompt { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method trackingReset of class Source.
+    /// </summary>
+    public class SourceTrackingResetOptions : SFDXOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] Username or alias for the target org; overrides default target org
+        /// </summary>
+        [SwitchName("--targetusername")]
+        public string targetusername { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--apiversion")]
+        public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Optional] Reset to a specific SourceMember revision counter number
+        /// </summary>
+        [SwitchName("--revision")]
+        public int? revision { get; set; }
+
+        /// <summary>
+        /// [Optional] Do not prompt for source tracking override confirmation
+        /// </summary>
+        [SwitchName("--noprompt")]
+        public bool? noprompt { get; set; }
+    }
+
+    /// <summary>
     /// Source
     /// </summary>
     [CommandClass("force:source")]
@@ -536,18 +689,12 @@ namespace sfdx4csharpClient
         /// convert source into Metadata API format
         /// </summary>
         /// <remarks>
-        /// Converts source-formatted files into metadata that you can deploy using Metadata API.
+        /// convert source into Metadata API format
         /// </remarks>
         /// <example>
-        /// To convert source-formatted files into the metadata format, so that you can deploy them using Metadata API, run "sfdx force:source:convert". Then deploy the metadata using "sfdx force:mdapi:deploy".
         /// 
-        /// To convert Metadata API–formatted files into the source format, run "sfdx force:mdapi:convert".
-        /// 
-        /// To specify a package name that includes spaces, enclose the name in single quotes.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:source:convert -r path/to/source
-        ///    $ sfdx force:source:convert -r path/to/source -d path/to/outputdir -n 'My Package'
+        /// $ sfdx force:source:convert -r path/to/source
+        /// $ sfdx force:source:convert -r path/to/source -d path/to/outputdir -n 'My Package'
         /// force:source:convert [-r <directory>] [-d <directory>] [-n <string>] [-p <array> | -x <string> | -m <array>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("convert")]
@@ -558,12 +705,30 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// delete source from your project and from a non-source-tracked org
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// Use this command to delete components from orgs that don’t have source tracking.
+        /// To remove deleted items from scratch orgs, which have change tracking, use "sfdx force:source:push".
+        /// 
+        /// Examples:
+        ///    $ sfdx force:source:delete -p path/to/source
+        ///    $ sfdx force:source:delete -m <metadata>
         /// </summary>
         /// <remarks>
-        /// Deletes source files from your project and from a non-source-tracked org, such as a sandbox.
+        /// delete source from your project and from a non-source-tracked org
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// Use this command to delete components from orgs that don’t have source tracking.
+        /// To remove deleted items from scratch orgs, which have change tracking, use "sfdx force:source:push".
+        /// 
+        /// Examples:
+        ///    $ sfdx force:source:delete -p path/to/source
+        ///    $ sfdx force:source:delete -m <metadata>
         /// </remarks>
         /// <example>
-        /// Use this command to delete components from orgs that don’t have source tracking, such as sandboxes.
+        /// Use this command to delete components from orgs that don’t have source tracking.
         /// To remove deleted items from scratch orgs, which have change tracking, use "sfdx force:source:push".
         /// 
         /// Examples:
@@ -581,50 +746,22 @@ namespace sfdx4csharpClient
         /// deploy source to an org
         /// </summary>
         /// <remarks>
-        /// Deploys metadata in source format to an org.
+        /// deploy source to an org
         /// </remarks>
         /// <example>
-        /// Use this command to deploy source (metadata that’s in source format) to an org.
-        /// To take advantage of change tracking with scratch orgs, use "sfdx force:source:push".
-        /// To deploy metadata that’s in metadata format, use "sfdx force:mdapi:deploy".
         /// 
-        /// The source you deploy overwrites the corresponding metadata in your org. This command does not attempt to merge your source with the versions in your org.
-        /// 
-        /// To run the command asynchronously, set --wait to 0, which immediately returns the job ID. This way, you can continue to use the CLI.
-        /// To check the status of the job, use force:source:deploy:report.
-        /// 
-        /// If the comma-separated list you’re supplying contains spaces, enclose the entire comma-separated list in one set of double quotes.
-        /// 
-        /// Examples:
-        /// 
-        /// To deploy the source files in a directory:
-        ///    $ sfdx force:source:deploy -p path/to/source
-        /// To deploy a specific Apex class and the objects whose source is in a directory:
-        ///    $ sfdx force:source:deploy -p path/to/apex/classes/MyClass.cls,path/to/source/objects
-        /// To deploy source files in a comma-separated list that contains spaces:
-        ///    $ sfdx force:source:deploy -p "path/to/objects/MyCustomObject/fields/MyField.field-meta.xml, path/to/apex/classes"
-        /// 
-        /// To deploy all Apex classes:
-        ///    $ sfdx force:source:deploy -m ApexClass
-        /// To deploy a specific Apex class:
-        ///    $ sfdx force:source:deploy -m ApexClass:MyApexClass
-        /// To deploy all custom objects and Apex classes:
-        ///    $ sfdx force:source:deploy -m CustomObject,ApexClass
-        /// To deploy all Apex classes and two specific profiles (one of which has a space in its name):
-        ///    $ sfdx force:source:deploy -m "ApexClass, Profile:My Profile, Profile: AnotherProfile"
-        /// 
-        /// To deploy all components listed in a manifest:
-        ///    $ sfdx force:source:deploy -x path/to/package.xml
-        /// 
-        /// To run the tests that aren’t in any managed packages as part of a deployment:
-        ///    $ sfdx force:source:deploy -m ApexClass -l RunLocalTests
-        /// 
-        /// To check whether a deployment would succeed (to prepare for Quick Deploy):
-        ///    $ sfdx force:source:deploy -m ApexClass -l RunAllTestsInOrg -c
-        /// 
-        /// To deploy an already validated deployment (Quick Deploy):
-        ///     $ sfdx force:source:deploy -q 0Af9A00000FTM6pSAH
-        /// force:source:deploy [-w <minutes>] [-q <id> | -x <filepath> | -m <array> | -p <array> | -c | -l NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg | -r <array> | -o | -g] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// $ sfdx force:source:deploy -p path/to/source
+        /// $ sfdx force:source:deploy -p "path/to/apex/classes/MyClass.cls,path/to/source/objects"
+        /// $ sfdx force:source:deploy -p "path/to/objects/MyCustomObject/fields/MyField.field-meta.xml, path/to/apex/classes"
+        /// $ sfdx force:source:deploy -m ApexClass
+        /// $ sfdx force:source:deploy -m ApexClass:MyApexClass
+        /// $ sfdx force:source:deploy -m "CustomObject,ApexClass"
+        /// $ sfdx force:source:deploy -m "ApexClass, Profile:My Profile, Profile: AnotherProfile"
+        /// $ sfdx force:source:deploy -x path/to/package.xml
+        /// $ sfdx force:source:deploy -m ApexClass -l RunLocalTests
+        /// $ sfdx force:source:deploy -m ApexClass -l RunAllTestsInOrg -c
+        /// $ sfdx force:source:deploy -q 0Af9A00000FTM6pSAH
+        /// force:source:deploy [--soapdeploy] [-w <minutes>] [-q <id> | -x <filepath> | -m <array> | -p <array> | -c | -l NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg | -r <array> | -o | -g] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("deploy")]
         public SFDXResponse Deploy(SourceDeployOptions p_Options)
@@ -636,25 +773,13 @@ namespace sfdx4csharpClient
         /// cancel a source deployment
         /// </summary>
         /// <remarks>
-        /// Cancels an asynchronous source deployment.
+        /// cancel a source deployment
         /// </remarks>
         /// <example>
-        /// Use this command to cancel a specified asynchronous source deployment. You can also specify a wait time (in minutes) to check for updates to the canceled deploy status.
         /// 
-        /// To run the command asynchronously, set --wait to 0, which immediately returns the job ID. This way, you can continue to use the CLI.
-        /// To check the status of the job, use force:source:deploy:report.
-        /// 
-        /// Examples:
-        /// 
-        /// Deploy a directory of files to the org
-        ///   $ sfdx force:source:deploy -d <directory>
-        /// Now cancel this deployment and wait two minutes
-        ///   $ sfdx force:source:deploy:cancel -w 2
-        /// 
-        /// If you have multiple deployments in progress and want to cancel a specific one, specify the job ID
-        ///   $ sfdx force:source:deploy:cancel -i <jobid>
-        /// Check the status of the cancel job
-        ///   $ sfdx force:source:deploy:report
+        /// $ sfdx force:source:deploy:cancel
+        /// $ sfdx force:source:deploy:cancel -w 2
+        /// $ sfdx force:source:deploy:cancel -i <jobid>
         /// force:source:deploy:cancel [-w <minutes>] [-i <id>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("deploy:cancel")]
@@ -667,23 +792,19 @@ namespace sfdx4csharpClient
         /// check the status of a metadata deployment
         /// </summary>
         /// <remarks>
-        /// Checks the current status of an asynchronous metadata deployment.
+        /// check the status of a metadata deployment
         /// </remarks>
         /// <example>
-        /// Specify the job ID for the deploy you want to check. You can also specify a wait time (minutes) to check for updates to the deploy status.
-        /// 
-        /// Examples:
         /// 
         /// Deploy a directory of files to the org
-        ///   $ sfdx force:source:deploy -d <directory>
+        ///  $ sfdx force:source:deploy -d <directory>
         /// Now cancel this deployment and wait two minutes
-        ///   $ sfdx force:source:deploy:cancel -w 2
-        /// 
+        ///  $ sfdx force:source:deploy:cancel -w 2
         /// If you have multiple deployments in progress and want to cancel a specific one, specify the job ID
-        ///   $ sfdx force:source:deploy:cancel -i <jobid>
+        ///  $ sfdx force:source:deploy:cancel -i <jobid>
         /// Check the status of the cancel job
-        ///   $ sfdx force:source:deploy:report
-        /// force:source:deploy:report [-w <minutes>] [-i <id>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        ///  $ sfdx force:source:deploy:report
+        /// force:source:deploy:report [-w <minutes>] [-i <id>] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("deploy:report")]
         public SFDXResponse DeployReport(SourceDeployReportOptions p_Options)
@@ -692,19 +813,42 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// edit a Lightning Page with Lightning App Builder
+        /// check your local project package directories for forceignored files
+        /// 
+        /// Check your local project's package directories for forceignored files.
+        /// 
+        /// Use the --sourcepath parameter to limit the check to a specific file or directory. If you specify a directory, the command checks all sub-directories recursively.
         /// </summary>
         /// <remarks>
+        /// check your local project package directories for forceignored files
+        /// 
+        /// Check your local project's package directories for forceignored files.
+        /// 
+        /// Use the --sourcepath parameter to limit the check to a specific file or directory. If you specify a directory, the command checks all sub-directories recursively.
+        /// </remarks>
+        /// <example>
+        /// 
+        /// force:source:ignored:list [-p <filepath>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// </example>
+        [Command("ignored:list")]
+        public SFDXResponse IgnoredList(SourceIgnoredListOptions p_Options)
+        {
+            return ExecuteCommand<SourceIgnoredListOptions>(nameof(IgnoredList), p_Options);
+        }
+
+        /// <summary>
+        /// edit a Lightning Page with Lightning App Builder
+        /// Opens the specified Lightning Page in Lightning App Builder. Lightning Page files have the suffix .flexipage-meta.xml, and are stored in the flexipages directory. If you specify a different type of file, this command opens your org’s home page.
+        /// </summary>
+        /// <remarks>
+        /// edit a Lightning Page with Lightning App Builder
         /// Opens the specified Lightning Page in Lightning App Builder. Lightning Page files have the suffix .flexipage-meta.xml, and are stored in the flexipages directory. If you specify a different type of file, this command opens your org’s home page.
         /// </remarks>
         /// <example>
-        /// The file opens in your default browser.
-        /// If no browser-based editor is available for the selected file, this command opens your org’s home page.
-        /// To generate a URL for the browser-based editor but not open the editor, use --urlonly.
         /// 
-        /// Examples:
-        ///    $ sfdx force:source:open -f Property_Record_Page.flexipage-meta.xml
-        ///    $ sfdx force:source:open -f Property_Record_Page.flexipage-meta.xml -r
+        /// $ sfdx force:source:open -f path/to/source
+        /// $ sfdx force:source:open -r -f path/to/source
+        /// $ sfdx force:source:open -f path/to/source -u my-user@my-org.com
         /// force:source:open -f <filepath> [-r] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("open")]
@@ -715,9 +859,17 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// pull source from the scratch org to the project
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// If the command detects a conflict, it displays the conflicts but does not complete the process. After reviewing the conflict, rerun the command with the --forceoverwrite parameter.
         /// </summary>
         /// <remarks>
-        /// Pulls changed source from the scratch org to your project to keep them in sync.
+        /// pull source from the scratch org to the project
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// If the command detects a conflict, it displays the conflicts but does not complete the process. After reviewing the conflict, rerun the command with the --forceoverwrite parameter.
         /// </remarks>
         /// <example>
         /// If the command detects a conflict, it displays the conflicts but does not complete the process. After reviewing the conflict, rerun the command with the --forceoverwrite parameter.
@@ -731,9 +883,17 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// push source to a scratch org from the project
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// If the command detects a conflict, it displays the conflicts but does not complete the process. After reviewing the conflict, rerun the command with the --forceoverwrite parameter.
         /// </summary>
         /// <remarks>
-        /// Pushes changed source from your project to a scratch org to keep them in sync.
+        /// push source to a scratch org from the project
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// If the command detects a conflict, it displays the conflicts but does not complete the process. After reviewing the conflict, rerun the command with the --forceoverwrite parameter.
         /// </remarks>
         /// <example>
         /// If the command detects a conflict, it displays the conflicts but does not complete the process. After reviewing the conflict, rerun the command with the --forceoverwrite parameter.
@@ -749,47 +909,21 @@ namespace sfdx4csharpClient
         /// retrieve source from an org
         /// </summary>
         /// <remarks>
-        /// Retrieves metadata in source format from an org to your local Salesforce DX project.
+        /// retrieve source from an org
         /// </remarks>
         /// <example>
-        /// Use this command to retrieve source (metadata that’s in source format) from an org.
-        /// To take advantage of change tracking with scratch orgs, use "sfdx force:source:pull".
-        /// To retrieve metadata that’s in metadata format, use "sfdx force:mdapi:retrieve".
         /// 
-        /// The source you retrieve overwrites the corresponding source files in your local project. This command does not attempt to merge the source from your org with your local source files.
-        /// 
-        /// If the comma-separated list you’re supplying contains spaces, enclose the entire comma-separated list in one set of double quotes.
-        /// 
-        /// Examples:
-        /// 
-        /// To retrieve the source files in a directory:
-        ///    $ sfdx force:source:retrieve -p path/to/source
-        /// To retrieve a specific Apex class and the objects whose source is in a directory:
-        ///    $ sfdx force:source:retrieve -p path/to/apex/classes/MyClass.cls,path/to/source/objects
-        /// To retrieve source files in a comma-separated list that contains spaces:
-        ///    $ sfdx force:source:retrieve -p "path/to/objects/MyCustomObject/fields/MyField.field-meta.xml, path/to/apex/classes"
-        /// 
-        /// To retrieve all Apex classes:
-        ///    $ sfdx force:source:retrieve -m ApexClass
-        /// To retrieve a specific Apex class:
-        ///    $ sfdx force:source:retrieve -m ApexClass:MyApexClass
-        /// To retrieve all custom objects and Apex classes:
-        ///    $ sfdx force:source:retrieve -m CustomObject,ApexClass
-        /// To retrieve all Apex classes and two specific profiles (one of which has a space in its name):
-        ///    $ sfdx force:source:retrieve -m "ApexClass, Profile:My Profile, Profile: AnotherProfile"
-        /// 
-        /// To retrieve all metadata components listed in a manifest:
-        ///    $ sfdx force:source:retrieve -x path/to/package.xml
-        /// 
-        /// To retrieve metadata from a package or multiple packages:
-        ///    $ sfdx force:source:retrieve -n MyPackageName
-        ///    $ sfdx force:source:retrieve -n "Package1, PackageName With Spaces, Package3"
-        /// 
-        /// To retrieve all metadata from a package and specific components that aren’t in the package, specify both -n | --packagenames and one other scoping parameter:
-        ///    $ sfdx force:source:retrieve -n MyPackageName -p path/to/apex/classes
-        ///    $ sfdx force:source:retrieve -n MyPackageName -m ApexClass:MyApexClass
-        ///    $ sfdx force:source:retrieve -n MyPackageName -x path/to/package.xml
-        /// force:source:retrieve [-w <minutes>] [-x <filepath> | -m <array> | -p <array>] [-n <array>] [-u <string>] [-a <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// sfdx force:source:retrieve -p path/to/source
+        /// sfdx force:source:retrieve -p "path/to/apex/classes/MyClass.cls,path/to/source/objects"
+        /// sfdx force:source:retrieve -p "path/to/objects/MyCustomObject/fields/MyField.field-meta.xml, path/to/apex/classes"
+        /// sfdx force:source:retrieve -m ApexClass
+        /// sfdx force:source:retrieve -m ApexClass:MyApexClass
+        /// sfdx force:source:retrieve -m "CustomObject,ApexClass"
+        /// sfdx force:source:retrieve -x path/to/package.xml
+        /// sfdx force:source:retrieve -n "Package1, PackageName With Spaces, Package3"
+        /// sfdx force:source:retrieve -n MyPackageName -p path/to/apex/classes
+        /// sfdx force:source:retrieve -n MyPackageName -x path/to/package.xml
+        /// force:source:retrieve [-p <array> | -x <filepath> | -m <array>] [-w <minutes>] [-n <array>] [-u <string>] [-a <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("retrieve")]
         public SFDXResponse Retrieve(SourceRetrieveOptions p_Options)
@@ -799,9 +933,25 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// list local changes and/or changes in a scratch org
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// Examples:
+        ///    $ sfdx force:source:status -l
+        ///    $ sfdx force:source:status -r
+        ///    $ sfdx force:source:status -a
+        ///    $ sfdx force:source:status -a -u me@example.com --json
         /// </summary>
         /// <remarks>
-        /// Lists changes that have been made locally, in a scratch org, or both.
+        /// list local changes and/or changes in a scratch org
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// Examples:
+        ///    $ sfdx force:source:status -l
+        ///    $ sfdx force:source:status -r
+        ///    $ sfdx force:source:status -a
+        ///    $ sfdx force:source:status -a -u me@example.com --json
         /// </remarks>
         /// <example>
         /// Examples:
@@ -815,6 +965,60 @@ namespace sfdx4csharpClient
         public SFDXResponse Status(SourceStatusOptions p_Options)
         {
             return ExecuteCommand<SourceStatusOptions>(nameof(Status), p_Options);
+        }
+
+        /// <summary>
+        /// clear all local source tracking information
+        /// 
+        /// WARNING: This command deletes or overwrites all existing source tracking files. Use with extreme caution.
+        /// 
+        /// Clears all local source tracking information. When you next run force:source:status, the CLI displays all local and remote files as changed, and any files with the same name are listed as conflicts.
+        /// </summary>
+        /// <remarks>
+        /// clear all local source tracking information
+        /// 
+        /// WARNING: This command deletes or overwrites all existing source tracking files. Use with extreme caution.
+        /// 
+        /// Clears all local source tracking information. When you next run force:source:status, the CLI displays all local and remote files as changed, and any files with the same name are listed as conflicts.
+        /// </remarks>
+        /// <example>
+        /// 
+        /// force:source:tracking:clear [-p] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// </example>
+        [Command("tracking:clear")]
+        public SFDXResponse TrackingClear(SourceTrackingClearOptions p_Options)
+        {
+            return ExecuteCommand<SourceTrackingClearOptions>(nameof(TrackingClear), p_Options);
+        }
+
+        /// <summary>
+        /// reset local and remote source tracking
+        /// 
+        /// WARNING: This command deletes or overwrites all existing source tracking files. Use with extreme caution.
+        /// 
+        /// Resets local and remote source tracking so that the CLI no longer registers differences between your local files and those in the org. When you next run force:source:status, the CLI returns no results, even though conflicts might actually exist. The CLI then resumes tracking new source changes as usual.
+        /// 
+        /// Use the --revision parameter to reset source tracking to a specific revision number of an org source member. To get the revision number, query the SourceMember Tooling API object with the force:data:soql:query command. For example:
+        ///   $ sfdx force:data:soql:query -q "SELECT MemberName, MemberType, RevisionCounter FROM SourceMember" -t
+        /// </summary>
+        /// <remarks>
+        /// reset local and remote source tracking
+        /// 
+        /// WARNING: This command deletes or overwrites all existing source tracking files. Use with extreme caution.
+        /// 
+        /// Resets local and remote source tracking so that the CLI no longer registers differences between your local files and those in the org. When you next run force:source:status, the CLI returns no results, even though conflicts might actually exist. The CLI then resumes tracking new source changes as usual.
+        /// 
+        /// Use the --revision parameter to reset source tracking to a specific revision number of an org source member. To get the revision number, query the SourceMember Tooling API object with the force:data:soql:query command. For example:
+        ///   $ sfdx force:data:soql:query -q "SELECT MemberName, MemberType, RevisionCounter FROM SourceMember" -t
+        /// </remarks>
+        /// <example>
+        /// 
+        /// force:source:tracking:reset [-r <integer>] [-p] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// </example>
+        [Command("tracking:reset")]
+        public SFDXResponse TrackingReset(SourceTrackingResetOptions p_Options)
+        {
+            return ExecuteCommand<SourceTrackingResetOptions>(nameof(TrackingReset), p_Options);
         }
     }
 }

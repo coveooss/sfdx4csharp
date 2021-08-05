@@ -4,6 +4,7 @@
 Coveo Salesforce DX C# wrapper.
 
 ## Important NPM tasks
+* `npm install`: Installs the dependencies.
 * `npm run generate`: Loads documentation from sfdx-cli and then generates the wrapper classes.
 
 ## Basic usage

@@ -1,5 +1,5 @@
-// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
-// Copyright (c) 2005-2020, Coveo Solutions Inc.
+// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
+// Copyright (c) 2005-2021, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -13,13 +13,19 @@ namespace sfdx4csharpClient
     public class MdapiConvertOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Required] The root directory that contains the metadata you retrieved using Metadata API.
         /// </summary>
         [SwitchName("--rootdir")]
         public string rootdir { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
@@ -57,19 +63,25 @@ namespace sfdx4csharpClient
     public class MdapiDeployOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -149,6 +161,18 @@ namespace sfdx4csharpClient
         /// </summary>
         [SwitchName("--zipfile")]
         public string zipfile { get; set; }
+
+        /// <summary>
+        /// [Optional] Indicates that the specified .zip file points to a directory structure for a single package. By default, the CLI assumes the directory is structured for a set of packages.
+        /// </summary>
+        [SwitchName("--singlepackage")]
+        public bool? singlepackage { get; set; }
+
+        /// <summary>
+        /// [Optional] Deploy metadata with SOAP API instead of the default REST API. Because SOAP API has a lower .ZIP file size limit (400 MB uncompressed, 39 MB compressed), Salesforce recommends REST API deployment. This flag provides backwards compatibility with API version 50.0 and earlier when deploy used SOAP API by default.
+        /// </summary>
+        [SwitchName("--soapdeploy")]
+        public bool? soapdeploy { get; set; }
     }
 
     /// <summary>
@@ -157,19 +181,25 @@ namespace sfdx4csharpClient
     public class MdapiDeployCancelOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -193,19 +223,25 @@ namespace sfdx4csharpClient
     public class MdapiDeployReportOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -217,7 +253,7 @@ namespace sfdx4csharpClient
         public int? wait { get; set; }
 
         /// <summary>
-        /// [Required] The job ID (asyncId) of the deployment you want to check. If not specified, the default value is the ID of the most recent metadata deployment you ran using Salesforce CLI. Use with -w to resume waiting.
+        /// [Required] The job ID (id field value for AsyncResult) of the deployment you want to check. The job ID is required if you haven’t previously deployed using Salesforce CLI. If you deploy using Salesforce CLI and don’t specify ajob ID, we use the ID of the most recent metadata deployment.
         /// </summary>
         [SwitchName("--jobid")]
         public string jobid { get; set; }
@@ -235,19 +271,25 @@ namespace sfdx4csharpClient
     public class MdapiDescribemetadataOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] The API version to use. The default is the latest API version (47.0).
+        /// [Required] The API version to use. The default is the latest API version.
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -271,25 +313,31 @@ namespace sfdx4csharpClient
     public class MdapiListmetadataOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Required] The metadata type to be retrieved, such as CustomObject or Report. The metadata type value is case-sensitive.
         /// </summary>
         [SwitchName("--metadatatype")]
         public string metadatatype { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] The API version to use. The default is the latest API version (47.0).
+        /// [Required] The API version to use. The default is the latest API version
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -313,19 +361,25 @@ namespace sfdx4csharpClient
     public class MdapiRetrieveOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Required] The root of the directory structure where the retrieved .zip or metadata files are put.
         /// </summary>
         [SwitchName("--retrievetargetdir")]
         public string retrievetargetdir { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
@@ -367,7 +421,7 @@ namespace sfdx4csharpClient
         public string packagenames { get; set; }
 
         /// <summary>
-        /// [Optional] Specifies whether only a single package is being retrieved (true) or more than one package (false).
+        /// [Optional] Indicates that the specified .zip file points to a directory structure for a single package. By default, the CLI assumes the directory is structured for a set of packages.
         /// </summary>
         [SwitchName("--singlepackage")]
         public bool? singlepackage { get; set; }
@@ -379,19 +433,25 @@ namespace sfdx4csharpClient
     public class MdapiRetrieveReportOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -435,9 +495,29 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// convert metadata from the Metadata API format into the source format
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// To use Salesforce CLI to work with components that you retrieved via Metadata API, first convert your files from the metadata format to the source format using "sfdx force:mdapi:convert".
+        /// 
+        /// To convert files from the source format back to the metadata format, so that you can deploy them using "sfdx force:mdapi:deploy", run "sfdx force:source:convert".
+        /// 
+        /// Examples:
+        ///    $ sfdx force:mdapi:convert -r path/to/metadata
+        ///    $ sfdx force:mdapi:convert -r path/to/metadata -d path/to/outputdir
         /// </summary>
         /// <remarks>
-        /// Converts metadata retrieved via Metadata API into the source format used in Salesforce DX projects.
+        /// convert metadata from the Metadata API format into the source format
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// To use Salesforce CLI to work with components that you retrieved via Metadata API, first convert your files from the metadata format to the source format using "sfdx force:mdapi:convert".
+        /// 
+        /// To convert files from the source format back to the metadata format, so that you can deploy them using "sfdx force:mdapi:deploy", run "sfdx force:source:convert".
+        /// 
+        /// Examples:
+        ///    $ sfdx force:mdapi:convert -r path/to/metadata
+        ///    $ sfdx force:mdapi:convert -r path/to/metadata -d path/to/outputdir
         /// </remarks>
         /// <example>
         /// To use Salesforce CLI to work with components that you retrieved via Metadata API, first convert your files from the metadata format to the source format using "sfdx force:mdapi:convert".
@@ -457,15 +537,23 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// deploy metadata to an org using Metadata API
+        /// 
+        /// Specify the location of the files to deploy as a .zip file or by the root of the directory tree containing the files. To check the status of a deployment, specify its job ID. To run quick deploy of a recently validated package, use --validateddeployrequestid with the validated ID.
+        /// 
+        /// To wait for the command to finish running no matter how long the deployment takes, set --wait to -1: "sfdx force mdapi:deploy -w -1 ...".
         /// </summary>
         /// <remarks>
-        /// Deploys file representations of components into an org by creating or updating the components they represent. You can deploy and retrieve up to 10,000 files or 400 MB (39 MB compressed) at one time. The default target username is the admin user for the default scratch org.
+        /// deploy metadata to an org using Metadata API
+        /// 
+        /// Specify the location of the files to deploy as a .zip file or by the root of the directory tree containing the files. To check the status of a deployment, specify its job ID. To run quick deploy of a recently validated package, use --validateddeployrequestid with the validated ID.
+        /// 
+        /// To wait for the command to finish running no matter how long the deployment takes, set --wait to -1: "sfdx force mdapi:deploy -w -1 ...".
         /// </remarks>
         /// <example>
         /// Specify the location of the files to deploy as a .zip file or by the root of the directory tree containing the files. To check the status of a deployment, specify its job ID. To run quick deploy of a recently validated package, use --validateddeployrequestid with the validated ID.
         /// 
         /// To wait for the command to finish running no matter how long the deployment takes, set --wait to -1: "sfdx force mdapi:deploy -w -1 ...".
-        /// force:mdapi:deploy [-c] [-d <directory> | -f <filepath>] [-w <minutes>] [-l NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [-r <array>] [-o] [-g] [-q <id>] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// force:mdapi:deploy [-c] [-d <directory> | -f <filepath>] [-w <minutes>] [-l NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [-r <array>] [-o] [-g] [-q <id>] [-s] [--soapdeploy] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("deploy")]
         public SFDXResponse Deploy(MdapiDeployOptions p_Options)
@@ -475,9 +563,37 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// cancel a metadata deployment
+        /// 
+        /// Use this command to cancel a specified asynchronous metadata deployment. You can also specify a wait time (in minutes) to check for updates to the canceled deploy status.
+        /// 
+        /// Examples:
+        /// 
+        /// Deploy a directory of files to the org
+        ///   $ sfdx force:mdapi:deploy -d <directory>
+        /// Now cancel this deployment and wait two minutes
+        ///   $ sfdx force:mdapi:deploy:cancel -w 2
+        /// 
+        /// If you have multiple deployments in progress and want to cancel a specific one, specify the job ID
+        ///   $ sfdx force:mdapi:deploy:cancel -i <jobid>
+        /// Check the status of the cancel job
+        ///   $ sfdx force:mdapi:deploy:report
         /// </summary>
         /// <remarks>
-        /// Cancels an asynchronous metadata deployment.
+        /// cancel a metadata deployment
+        /// 
+        /// Use this command to cancel a specified asynchronous metadata deployment. You can also specify a wait time (in minutes) to check for updates to the canceled deploy status.
+        /// 
+        /// Examples:
+        /// 
+        /// Deploy a directory of files to the org
+        ///   $ sfdx force:mdapi:deploy -d <directory>
+        /// Now cancel this deployment and wait two minutes
+        ///   $ sfdx force:mdapi:deploy:cancel -w 2
+        /// 
+        /// If you have multiple deployments in progress and want to cancel a specific one, specify the job ID
+        ///   $ sfdx force:mdapi:deploy:cancel -i <jobid>
+        /// Check the status of the cancel job
+        ///   $ sfdx force:mdapi:deploy:report
         /// </remarks>
         /// <example>
         /// Use this command to cancel a specified asynchronous metadata deployment. You can also specify a wait time (in minutes) to check for updates to the canceled deploy status.
@@ -503,9 +619,13 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// check the status of a metadata deployment
+        /// 
+        /// Specify the job ID for the deploy you want to check. You can also specify a wait time (minutes) to check for updates to the deploy status.
         /// </summary>
         /// <remarks>
-        /// Checks the current status of an asynchronous metadata deployment.
+        /// check the status of a metadata deployment
+        /// 
+        /// Specify the job ID for the deploy you want to check. You can also specify a wait time (minutes) to check for updates to the deploy status.
         /// </remarks>
         /// <example>
         /// Specify the job ID for the deploy you want to check. You can also specify a wait time (minutes) to check for updates to the deploy status.
@@ -519,9 +639,25 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// display the metadata types enabled for your org
+        /// 
+        /// The default target username is the admin user for the default scratch org. The username must have the Modify All Data permission or the Modify Metadata permission (Beta). For more information about permissions, see Salesforce Help.
+        /// 
+        /// Examples:
+        ///    $ sfdx force:mdapi:describemetadata -a 43.0
+        ///    $ sfdx force:mdapi:describemetadata -u me@example.com
+        ///    $ sfdx force:mdapi:describemetadata -f /path/to/outputfilename.txt
+        ///    $ sfdx force:mdapi:describemetadata -u me@example.com -f /path/to/outputfilename.txt
         /// </summary>
         /// <remarks>
-        /// Displays details about metadata types enabled for your org. Use this information to identify the syntax needed for a <name> element in package.xml. The most recent API version is the default, or you can specify an older version.
+        /// display the metadata types enabled for your org
+        /// 
+        /// The default target username is the admin user for the default scratch org. The username must have the Modify All Data permission or the Modify Metadata permission (Beta). For more information about permissions, see Salesforce Help.
+        /// 
+        /// Examples:
+        ///    $ sfdx force:mdapi:describemetadata -a 43.0
+        ///    $ sfdx force:mdapi:describemetadata -u me@example.com
+        ///    $ sfdx force:mdapi:describemetadata -f /path/to/outputfilename.txt
+        ///    $ sfdx force:mdapi:describemetadata -u me@example.com -f /path/to/outputfilename.txt
         /// </remarks>
         /// <example>
         /// The default target username is the admin user for the default scratch org. The username must have the Modify All Data permission or the Modify Metadata permission (Beta). For more information about permissions, see Salesforce Help.
@@ -541,9 +677,35 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// display properties of metadata components of a specified type
+        /// 
+        /// The default target username is the admin user for the default scratch org.
+        /// 
+        /// Examples:
+        ///    $ sfdx force:mdapi:listmetadata -m CustomObject
+        ///    $ sfdx force:mdapi:listmetadata -m CustomObject -a 43.0
+        ///    $ sfdx force:mdapi:listmetadata -m CustomObject -u me@example.com
+        ///    $ sfdx force:mdapi:listmetadata -m CustomObject -f /path/to/outputfilename.txt
+        ///    $ sfdx force:mdapi:listmetadata -m Dashboard --folder foldername
+        ///    $ sfdx force:mdapi:listmetadata -m Dashboard --folder foldername -a 43.0
+        ///    $ sfdx force:mdapi:listmetadata -m Dashboard --folder foldername -u me@example.com
+        ///    $ sfdx force:mdapi:listmetadata -m Dashboard --folder foldername -f /path/to/outputfilename.txt
+        ///    $ sfdx force:mdapi:listmetadata -m CustomObject -u me@example.com -f /path/to/outputfilename.txt
         /// </summary>
         /// <remarks>
-        /// Displays properties of metadata components of a specified type. This call is useful when you want to identify individual components in your manifest file or if you want a high-level view of particular components in your organization. For example, you could use this target to return a list of names of all Layout components in your org, then use this information in a retrieve operation that returns a subset of these components.
+        /// display properties of metadata components of a specified type
+        /// 
+        /// The default target username is the admin user for the default scratch org.
+        /// 
+        /// Examples:
+        ///    $ sfdx force:mdapi:listmetadata -m CustomObject
+        ///    $ sfdx force:mdapi:listmetadata -m CustomObject -a 43.0
+        ///    $ sfdx force:mdapi:listmetadata -m CustomObject -u me@example.com
+        ///    $ sfdx force:mdapi:listmetadata -m CustomObject -f /path/to/outputfilename.txt
+        ///    $ sfdx force:mdapi:listmetadata -m Dashboard --folder foldername
+        ///    $ sfdx force:mdapi:listmetadata -m Dashboard --folder foldername -a 43.0
+        ///    $ sfdx force:mdapi:listmetadata -m Dashboard --folder foldername -u me@example.com
+        ///    $ sfdx force:mdapi:listmetadata -m Dashboard --folder foldername -f /path/to/outputfilename.txt
+        ///    $ sfdx force:mdapi:listmetadata -m CustomObject -u me@example.com -f /path/to/outputfilename.txt
         /// </remarks>
         /// <example>
         /// The default target username is the admin user for the default scratch org.
@@ -568,9 +730,13 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// retrieve metadata from an org using Metadata API
+        /// 
+        /// The default target username is the admin user for the default scratch org. You can retrieve and deploy up to 10,000 files or 400 MB (39 MB compressed) at one time.
         /// </summary>
         /// <remarks>
-        /// Uses Metadata API to retrieve a .zip of XML files that represent metadata from the targeted org. The default target username is the admin user for the default scratch org. You can retrieve and deploy up to 10,000 files or 400 MB (39 MB compressed) at one time.
+        /// retrieve metadata from an org using Metadata API
+        /// 
+        /// The default target username is the admin user for the default scratch org. You can retrieve and deploy up to 10,000 files or 400 MB (39 MB compressed) at one time.
         /// </remarks>
         /// <example>
         /// The default target username is the admin user for the default scratch org. You can retrieve and deploy up to 10,000 files or 400 MB (39 MB compressed) at one time.
@@ -584,9 +750,13 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// check the status of a metadata retrieval
+        /// 
+        /// Specify the job ID and a target directory for the retrieve you want to check. You can also specify a wait time (minutes) to check for updates to the deploy status. If the retrieve was successful, the resulting zip file will be saved to the location passed in with the retrieve target parameter.
         /// </summary>
         /// <remarks>
-        /// Check the status of an asynchronous metadata retrieval.
+        /// check the status of a metadata retrieval
+        /// 
+        /// Specify the job ID and a target directory for the retrieve you want to check. You can also specify a wait time (minutes) to check for updates to the deploy status. If the retrieve was successful, the resulting zip file will be saved to the location passed in with the retrieve target parameter.
         /// </remarks>
         /// <example>
         /// Specify the job ID and a target directory for the retrieve you want to check. You can also specify a wait time (minutes) to check for updates to the deploy status. If the retrieve was successful, the resulting zip file will be saved to the location passed in with the retrieve target parameter.

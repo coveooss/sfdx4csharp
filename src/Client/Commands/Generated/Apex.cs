@@ -1,5 +1,5 @@
-// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
-// Copyright (c) 2005-2020, Coveo Solutions Inc.
+// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
+// Copyright (c) 2005-2021, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -13,13 +13,19 @@ namespace sfdx4csharpClient
     public class ApexClassCreateOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Required] The name of the new Apex class. The name can be up to 40 characters and must start with a letter.
         /// </summary>
         [SwitchName("--classname")]
         public string classname { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
@@ -37,7 +43,7 @@ namespace sfdx4csharpClient
         public string outputdir { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -49,25 +55,31 @@ namespace sfdx4csharpClient
     public class ApexExecuteOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] Path to a local file that contains Apex code.
+        /// [Required] Path to a local file that contains Apex code
         /// </summary>
         [SwitchName("--apexcodefile")]
         public string apexcodefile { get; set; }
@@ -79,40 +91,46 @@ namespace sfdx4csharpClient
     public class ApexLogGetOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Optional] Applies default colors to noteworthy log lines.
-        /// </summary>
-        [SwitchName("--color")]
-        public bool? color { get; set; }
-
-        /// <summary>
-        /// [Required] ID of the log to display.
+        /// [Required] Id of the log to display
         /// </summary>
         [SwitchName("--logid")]
         public string logid { get; set; }
 
         /// <summary>
-        /// [Optional] Number of most recent logs to display.
+        /// [Optional] Number of most recent logs to display
         /// </summary>
         [SwitchName("--number")]
         public int? number { get; set; }
+
+        /// <summary>
+        /// [Required] The location can be an absolute path or relative to the current working directory. The default is the current directory.
+        /// </summary>
+        [SwitchName("--outputdir")]
+        public string outputdir { get; set; }
     }
 
     /// <summary>
@@ -121,19 +139,25 @@ namespace sfdx4csharpClient
     public class ApexLogListOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -145,37 +169,43 @@ namespace sfdx4csharpClient
     public class ApexLogTailOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Optional] Applies default colors to noteworthy log lines.
+        /// [Optional] Colorize noteworthy log lines
         /// </summary>
         [SwitchName("--color")]
         public bool? color { get; set; }
 
         /// <summary>
-        /// [Required] Debug level to set on the DEVELOPER_LOG trace flag for your user.
+        /// [Required] Debug level for trace flag
         /// </summary>
         [SwitchName("--debuglevel")]
         public string debuglevel { get; set; }
 
         /// <summary>
-        /// [Optional] Skips trace flag setup. Assumes that a trace flag and debug level are fully set up.
+        /// [Optional] Skip trace flag setup
         /// </summary>
         [SwitchName("--skiptraceflag")]
         public bool? skiptraceflag { get; set; }
@@ -187,58 +217,64 @@ namespace sfdx4csharpClient
     public class ApexTestReportOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] The ID of test run.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Required] The ID of the test run
         /// </summary>
         [SwitchName("--testrunid")]
         public string testrunid { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Permissible values are: trace, debug, info, warn, error, fatal, TRACE, DEBUG, INFO, WARN, ERROR, FATAL
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Optional] Retrieves code coverage results.
+        /// [Optional] Retrieves code coverage results
         /// </summary>
         [SwitchName("--codecoverage")]
         public bool? codecoverage { get; set; }
 
         /// <summary>
-        /// [Required] Directory to store test run files.
+        /// [Required] Directory to store test result files
         /// </summary>
         [SwitchName("--outputdir")]
         public string outputdir { get; set; }
 
         /// <summary>
-        /// [Optional] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
-        /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
-
-        /// <summary>
-        /// [Optional] Displays Apex test processing details. If JSON format is specified, processing details aren’t displayed.
-        /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
-
-        /// <summary>
-        /// [Required] Format to use when displaying results. If you also specify the --json flag, --json overrides this parameter.
+        /// [Required] Permissible values are: human, tap, junit, json
         /// </summary>
         [SwitchName("--resultformat")]
         public string resultformat { get; set; }
+
+        /// <summary>
+        /// [Required] Sets the streaming client socket timeout in minutes; specify a longer wait time if timeouts occur frequently
+        /// </summary>
+        [SwitchName("--wait")]
+        public string wait { get; set; }
+
+        /// <summary>
+        /// [Optional] Display Apex test processing details; if JSON is specified, processing details aren't displayed
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? verbose { get; set; }
     }
 
     /// <summary>
@@ -247,49 +283,37 @@ namespace sfdx4csharpClient
     public class ApexTestRunOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Permissible values are: trace, debug, info, warn, error, fatal, TRACE, DEBUG, INFO, WARN, ERROR, FATAL
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] Comma-separated list of Apex test class names to run. You can specify only one of classnames, suitenames, or tests.
-        /// </summary>
-        [SwitchName("--classnames")]
-        public string classnames { get; set; }
-
-        /// <summary>
-        /// [Required] Comma-separated list of Apex test suite names to run. You can only specify one of classnames, suitenames, or tests.
-        /// </summary>
-        [SwitchName("--suitenames")]
-        public string suitenames { get; set; }
-
-        /// <summary>
-        /// [Required] Comma-separated list of Apex test class names or IDs and test methods, if applicable, to run. You can only specify one of classnames, suitenames, or tests.
-        /// </summary>
-        [SwitchName("--tests")]
-        public string tests { get; set; }
-
-        /// <summary>
-        /// [Optional] Retrieves code coverage results.
+        /// [Optional] Retrieves code coverage results
         /// </summary>
         [SwitchName("--codecoverage")]
         public bool? codecoverage { get; set; }
 
         /// <summary>
-        /// [Required] Directory to store test run files.
+        /// [Required] Directory to store test run files
         /// </summary>
         [SwitchName("--outputdir")]
         public string outputdir { get; set; }
@@ -298,40 +322,58 @@ namespace sfdx4csharpClient
         /// [Required] Specifies which tests to run, using one of these TestLevel enum values:
         /// RunSpecifiedTests—Only the tests that you specify are run.
         /// RunLocalTests—All tests in your org are run, except the ones that originate from installed managed packages.
-        /// RunAllTestsInOrg—All tests are in your org and in installed managed packages are run.
+        /// RunAllTestsInOrg—All tests are in your org and in installed managed packages are run
         /// </summary>
         [SwitchName("--testlevel")]
         public string testlevel { get; set; }
 
         /// <summary>
-        /// [Optional] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
+        /// [Required] Comma-separated list of Apex test class names to run; if you select --classnames, you can't specify --suitenames or --tests
+        /// </summary>
+        [SwitchName("--classnames")]
+        public string classnames { get; set; }
+
+        /// <summary>
+        /// [Required] Permissible values are: human, tap, junit, json
+        /// </summary>
+        [SwitchName("--resultformat")]
+        public string resultformat { get; set; }
+
+        /// <summary>
+        /// [Required] Comma-separated list of Apex test suite names to run; if you select --suitenames, you can't specify --classnames or --tests
+        /// </summary>
+        [SwitchName("--suitenames")]
+        public string suitenames { get; set; }
+
+        /// <summary>
+        /// [Required] Comma-separated list of Apex test class names or IDs and, if applicable, test methods to run; if you specify --tests, you can't specify --classnames or --suitenames
+        /// </summary>
+        [SwitchName("--tests")]
+        public string tests { get; set; }
+
+        /// <summary>
+        /// [Required] Sets the streaming client socket timeout in minutes; specify a longer wait time if timeouts occur frequently
         /// </summary>
         [SwitchName("--wait")]
-        public int? wait { get; set; }
+        public string wait { get; set; }
 
         /// <summary>
-        /// [Optional] Specifies how long to wait (in minutes) for Apex pre-compilation to complete before running the tests or timing out.
-        /// </summary>
-        [SwitchName("--precompilewait")]
-        public int? precompilewait { get; set; }
-
-        /// <summary>
-        /// [Optional] Runs test methods from a single Apex class synchronously. If you don't specify this flag, tests are run asynchronously.
+        /// [Optional] Runs test methods from a single Apex class synchronously; if not specified, tests are run ansynchronously
         /// </summary>
         [SwitchName("--synchronous")]
         public bool? synchronous { get; set; }
 
         /// <summary>
-        /// [Optional] Displays Apex test processing details. If JSON format is specified, processing details aren’t displayed.
+        /// [Optional] Display Apex test processing details; if JSON is specified, processing details aren't displayed
         /// </summary>
         [SwitchName("--verbose")]
         public bool? verbose { get; set; }
 
         /// <summary>
-        /// [Required] Format to use when displaying results. If you also specify the --json flag, --json overrides this parameter.
+        /// [Optional] Display detailed code coverage per test
         /// </summary>
-        [SwitchName("--resultformat")]
-        public string resultformat { get; set; }
+        [SwitchName("--detailedcoverage")]
+        public bool? detailedcoverage { get; set; }
     }
 
     /// <summary>
@@ -340,13 +382,19 @@ namespace sfdx4csharpClient
     public class ApexTriggerCreateOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Required] The name of the new Apex trigger. The name can be up to 40 characters and must start with a letter.
         /// </summary>
         [SwitchName("--triggername")]
         public string triggername { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
@@ -364,7 +412,7 @@ namespace sfdx4csharpClient
         public string outputdir { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -401,7 +449,10 @@ namespace sfdx4csharpClient
         /// 
         /// </summary>
         /// <remarks>
-        /// Creates an Apex class in the specified directory or the current working directory. If you don’t explicitly set the API version, it defaults to the current API version. The .cls file and associated metadata file are created.
+        /// create an Apex class
+        /// If not supplied, the apiversion, template, and outputdir use default values.
+        /// The outputdir can be an absolute path or relative to the current working directory.
+        /// 
         /// </remarks>
         /// <example>
         /// If not supplied, the apiversion, template, and outputdir use default values.
@@ -411,6 +462,8 @@ namespace sfdx4csharpClient
         ///    $ sfdx force:apex:class:create -n MyClass
         ///    $ sfdx force:apex:class:create -n MyClass -d classes
         /// 
+        /// $ sfdx force:apex:class:create -n MyClass
+        /// $ sfdx force:apex:class:create -n MyClass -d classes
         /// force:apex:class:create -n <string> [-t <string>] [-d <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("class:create")]
@@ -420,23 +473,29 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// execute anonymous Apex code
-        /// </summary>
-        /// <remarks>
-        /// Executes one or more lines of anonymous Apex code, or executes the code in a local file.
-        /// </remarks>
-        /// <example>
-        /// Executes one or more lines of Apex code, or executes the code in a local file.
-        /// Before you enter code, run this command with no parameters to get a prompt.
-        /// From the prompt, all commands are executed in a single execute anonymous request.
+        /// executes anonymous Apex code
+        /// Executes one or more lines of anonymous Apex code entered on the command line, or executes the code in a local file.
+        /// If you don’t run this command from within a Salesforce DX project, —-targetusername is required.
+        /// To execute your code interactively, run this command with no parameters. At the prompt, enter all your Apex code; press CTRL-D when you're finished. Your code is then executed in a single execute anonymous request.
         /// For more information, see "Anonymous Blocks" in the Apex Developer Guide.
         /// 
-        /// Examples:
-        ///    $ sfdx force:apex:execute -f ~/test.apex
         /// 
-        ///    $ sfdx force:apex:execute 
-        ///    >> Start typing Apex code. Press the Enter key after each line, 
-        ///    >> then press CTRL+D when finished.
+        /// </summary>
+        /// <remarks>
+        /// executes anonymous Apex code
+        /// Executes one or more lines of anonymous Apex code entered on the command line, or executes the code in a local file.
+        /// If you don’t run this command from within a Salesforce DX project, —-targetusername is required.
+        /// To execute your code interactively, run this command with no parameters. At the prompt, enter all your Apex code; press CTRL-D when you're finished. Your code is then executed in a single execute anonymous request.
+        /// For more information, see "Anonymous Blocks" in the Apex Developer Guide.
+        /// 
+        /// 
+        /// </remarks>
+        /// <example>
+        /// 
+        /// $ sfdx force:apex:execute -u testusername@salesforce.org -f ~/test.apex
+        /// $ sfdx force:apex:execute -f ~/test.apex
+        /// $ sfdx force:apex:execute 
+        /// Start typing Apex code. Press the Enter key after each line, then press CTRL+D when finished.
         /// force:apex:execute [-f <filepath>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("execute")]
@@ -446,25 +505,30 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// fetch the last debug log
+        /// fetch debug logs
+        /// Fetches the specified log or given number of most recent logs from the scratch org. 
+        /// To get the IDs for your debug logs, run "sfdx force:apex:log:list". 
+        /// Use the --logid parameter to return a specific log. 
+        /// Use the --number parameter to return the specified number of recent logs.
+        /// Use the --outputdir parameter to specify the directory to store the logs in.
+        /// Executing this command without parameters returns the most recent log.
         /// </summary>
         /// <remarks>
-        /// Fetches the last debug log.
+        /// fetch debug logs
+        /// Fetches the specified log or given number of most recent logs from the scratch org. 
+        /// To get the IDs for your debug logs, run "sfdx force:apex:log:list". 
+        /// Use the --logid parameter to return a specific log. 
+        /// Use the --number parameter to return the specified number of recent logs.
+        /// Use the --outputdir parameter to specify the directory to store the logs in.
+        /// Executing this command without parameters returns the most recent log.
         /// </remarks>
         /// <example>
-        /// When you execute this command in a project, it fetches the specified log or given number of last logs from your default scratch org.
         /// 
-        /// To get the IDs for your debug logs, run "sfdx force:apex:log:list".
-        /// 
-        /// To specify a count of logs to return, use the --number parameter to return the most recent logs.
-        /// 
-        /// Executing this command without parameters returns the most recent log.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:apex:log:get -i <log id>
-        ///    $ sfdx force:apex:log:get -i <log id> -u me@my.org
-        ///    $ sfdx force:apex:log:get -n 2 -c
-        /// force:apex:log:get [-c] [-i <id> | -n <number>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// $ sfdx force:apex:log:get -i <log id>
+        /// $ sfdx force:apex:log:get -i <log id> -u me@my.org
+        /// $ sfdx force:apex:log:get -n 2 -c
+        /// $ sfdx force:apex:log:get -d Users/Desktop/logs -n 2
+        /// force:apex:log:get [-i <id>] [-n <number>] [-d <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("log:get")]
         public SFDXResponse LogGet(ApexLogGetOptions p_Options)
@@ -473,17 +537,19 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// list debug logs
+        /// display a list of IDs and general information about debug logs
+        /// Run this command in a project to list the IDs and general information for all debug logs in your default org.
+        /// To fetch a specific log from your org, obtain the ID from this command's output, then run the “sfdx force:apex:log:get” command.
         /// </summary>
         /// <remarks>
-        /// Displays a list of debug log IDs, along with general information about the logs.
+        /// display a list of IDs and general information about debug logs
+        /// Run this command in a project to list the IDs and general information for all debug logs in your default org.
+        /// To fetch a specific log from your org, obtain the ID from this command's output, then run the “sfdx force:apex:log:get” command.
         /// </remarks>
         /// <example>
-        /// When you execute this command in a project, it lists the log IDs for your default scratch org.
         /// 
-        /// Examples:
-        ///    $ sfdx force:apex:log:list
-        ///    $ sfdx force:apex:log:list -u me@my.org
+        /// $ sfdx force:apex:log:list
+        /// $ sfdx force:apex:log:list -u me@my.org
         /// force:apex:log:list [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("log:list")]
@@ -493,28 +559,16 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// start debug logging and display logs
+        /// 
         /// </summary>
         /// <remarks>
-        /// Activates debug logging and displays logs in the terminal. You can also pipe the logs to a file.
+        /// 
         /// </remarks>
         /// <example>
-        /// Tails logs from your target org for 30 minutes.
         /// 
-        /// If a DEVELOPER_LOG trace flag does not exist, this command creates one in the target org.
-        /// 
-        /// If the active trace flag's expiration date is within this command's timeout window, the command sets the trace flag's expiration date to 30 minutes from the current time.
-        /// 
-        /// The --debuglevel parameter assigns a debug level to the active DEVELOPER_LOG trace flag.
-        /// 
-        /// Use --skiptraceflag to skip trace flag setup, including setting expiration date and debug level. Include this flag only if there is an active user-based trace flag for your user.
-        /// 
-        /// The --json parameter emits log lines in JSON, but does not follow the standard Salesforce CLI JSON format (which includes status and result values).
-        /// 
-        /// Examples:
-        ///    $ sfdx force:apex:log:tail
-        ///    $ sfdx force:apex:log:tail --debuglevel MyDebugLevel
-        ///    $ sfdx force:apex:log:tail -c -s
+        /// sfdx force:apex:log:tail
+        /// sfdx force:apex:log:tail --debuglevel MyDebugLevel
+        /// sfdx force:apex:log:tail -c -s
         /// force:apex:log:tail [-c] [-d <string>] [-s] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("log:tail")]
@@ -524,19 +578,20 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// display test results
+        /// display test results for a specific asynchronous test run
+        /// Provide a test run ID to display test results for an enqueued or completed asynchronous test run. The test run ID is displayed after running the "sfdx force:apex:test:run" command.
         /// </summary>
         /// <remarks>
-        /// Displays the test results for a specific test run.
+        /// display test results for a specific asynchronous test run
+        /// Provide a test run ID to display test results for an enqueued or completed asynchronous test run. The test run ID is displayed after running the "sfdx force:apex:test:run" command.
         /// </remarks>
         /// <example>
-        /// Displays test results for an enqueued or completed asynchronous Apex test run.
         /// 
-        /// Examples:
-        ///    $ sfdx force:apex:test:report -i <test run id>
-        ///    $ sfdx force:apex:test:report -i <test run id> -r junit
-        ///    $ sfdx force:apex:test:report -i <test run id> -c --json
-        /// force:apex:test:report -i <id> [-c] [-d <directory>] [-w <minutes>] [-r human|tap|junit|json] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// $ sfdx force:apex:test:report -i <test run id>
+        /// $ sfdx force:apex:test:report -i <test run id> -r junit
+        /// $ sfdx force:apex:test:report -i <test run id> -c --json
+        /// $ sfdx force:apex:test:report -i <test run id> -c -d <path to outputdir> -u me@myorg
+        /// force:apex:test:report -i <string> [-c] [-d <string>] [-r human|tap|junit|json] [-w <string>] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("test:report")]
         public SFDXResponse TestReport(ApexTestReportOptions p_Options)
@@ -546,24 +601,26 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// invoke Apex tests
+        /// Specify which tests to run by using the --classnames, --suites, or --tests parameters. Alternatively, use the --testlevel parameter to run all the tests in your org, local tests, or specified tests.
+        /// To see code coverage results, use the --codecoverage parameter with --resultformat. The output displays a high-level summary of the test run and the code coverage values for classes in your org. If you specify human-readable result format, use the --detailedcoverage parameter to see detailed coverage results for each test method run.
+        /// 
+        /// NOTE: The testRunCoverage value (JSON and JUnit result formats) is a percentage of the covered lines and total lines from all the Apex classes evaluated by the tests in this run.
         /// </summary>
         /// <remarks>
-        /// Runs Apex tests.
+        /// invoke Apex tests
+        /// Specify which tests to run by using the --classnames, --suites, or --tests parameters. Alternatively, use the --testlevel parameter to run all the tests in your org, local tests, or specified tests.
+        /// To see code coverage results, use the --codecoverage parameter with --resultformat. The output displays a high-level summary of the test run and the code coverage values for classes in your org. If you specify human-readable result format, use the --detailedcoverage parameter to see detailed coverage results for each test method run.
+        /// 
+        /// NOTE: The testRunCoverage value (JSON and JUnit result formats) is a percentage of the covered lines and total lines from all the Apex classes evaluated by the tests in this run.
         /// </remarks>
         /// <example>
-        /// By default, runs all Apex tests in the org’s namespace.
         /// 
-        /// To run specific test classes, specify class names or suite names, or set a --testlevel value.
-        /// 
-        /// To run specific test methods, use --tests.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:apex:test:run
-        ///    $ sfdx force:apex:test:run -n MyClassTest,MyOtherClassTest -r human
-        ///    $ sfdx force:apex:test:run -s MySuite,MyOtherSuite -c --json
-        ///    $ sfdx force:apex:test:run -t MyClassTest.testCoolFeature,MyClassTest.testAwesomeFeature,AnotherClassTest,namespace.TheirClassTest.testThis -r human
-        ///    $ sfdx force:apex:test:run -l RunLocalTests -d <path to outputdir> -u me@my.org
-        /// force:apex:test:run [-n <array> | -s <array> | -t <array>] [-c] [-d <directory>] [-l RunLocalTests|RunAllTestsInOrg|RunSpecifiedTests] [-w <minutes>] [-y] [-r human|tap|junit|json] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// $ sfdx force:apex:test:run
+        /// $ sfdx force:apex:test:run -n "MyClassTest,MyOtherClassTest" -r human
+        /// $ sfdx force:apex:test:run -s "MySuite,MyOtherSuite" -c -v --json
+        /// $ sfdx force:apex:test:run -t "MyClassTest.testCoolFeature,MyClassTest.testAwesomeFeature,AnotherClassTest,namespace.TheirClassTest.testThis" -r human
+        /// $ sfdx force:apex:test:run -l RunLocalTests -d <path to outputdir> -u me@my.org
+        /// force:apex:test:run [-d <string>] [-l RunLocalTests|RunAllTestsInOrg|RunSpecifiedTests] [-n <string>] [-r human|tap|junit|json] [-s <string>] [-t <string>] [-w <string>] [-y] [-v -c] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("test:run")]
         public SFDXResponse TestRun(ApexTestRunOptions p_Options)
@@ -578,7 +635,10 @@ namespace sfdx4csharpClient
         /// 
         /// </summary>
         /// <remarks>
-        /// Creates an Apex trigger in the specified directory or the current working directory. If you don’t explicitly set the API version, it defaults to the current API version. The .trigger file and associated metadata file are created.
+        /// create an Apex trigger
+        /// If not supplied, the apiversion, template, and outputdir use default values.
+        /// The outputdir can be an absolute path or relative to the current working directory.
+        /// 
         /// </remarks>
         /// <example>
         /// If not supplied, the apiversion, template, and outputdir use default values.
@@ -586,9 +646,12 @@ namespace sfdx4csharpClient
         /// 
         /// Examples:
         ///    $ sfdx force:apex:trigger:create -n MyTrigger
-        ///    $ sfdx force:apex:trigger:create -n MyTrigger -s Account -e 'before insert, after insert'
+        ///    $ sfdx force:apex:trigger:create -n MyTrigger -s Account -e 'before insert,after insert'
         ///    $ sfdx force:apex:trigger:create -n MyTrigger -d triggers
         /// 
+        /// $ sfdx force:apex:trigger:create -n MyTrigger
+        /// $ sfdx force:apex:trigger:create -n MyTrigger -s Account -e 'before insert,after insert'
+        /// $ sfdx force:apex:trigger:create -n MyTrigger -d triggers
         /// force:apex:trigger:create -n <string> [-t <string>] [-d <string>] [-s <string>] [-e <array>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("trigger:create")]

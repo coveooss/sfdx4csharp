@@ -1,5 +1,5 @@
-// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
-// Copyright (c) 2005-2020, Coveo Solutions Inc.
+// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
+// Copyright (c) 2005-2021, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -13,6 +13,12 @@ namespace sfdx4csharpClient
     public class Package1VersionCreateOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Required] Package version name.
         /// </summary>
         [SwitchName("--name")]
@@ -25,19 +31,19 @@ namespace sfdx4csharpClient
         public string packageid { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -91,25 +97,31 @@ namespace sfdx4csharpClient
     public class Package1VersionCreateGetOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Required] The ID of the PackageUploadRequest.
         /// </summary>
         [SwitchName("--requestid")]
         public string requestid { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -121,25 +133,31 @@ namespace sfdx4csharpClient
     public class Package1VersionDisplayOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Required] ID (starts with 04t) of the metadata package version whose details you want to display.
         /// </summary>
         [SwitchName("--packageversionid")]
         public string packageversionid { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -151,19 +169,25 @@ namespace sfdx4csharpClient
     public class Package1VersionListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -189,9 +213,17 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// create a first-generation package version in the release org
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// The package version is based on the contents of the specified metadata package. Omit -m if you want to create an unmanaged package version.
         /// </summary>
         /// <remarks>
-        /// Creates a first-generation package version in the release org.
+        /// create a first-generation package version in the release org
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// The package version is based on the contents of the specified metadata package. Omit -m if you want to create an unmanaged package version.
         /// </remarks>
         /// <example>
         /// The package version is based on the contents of the specified metadata package. Omit -m if you want to create an unmanaged package version.
@@ -205,9 +237,17 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// retrieve the status of a package version creation request
+        /// 
+        /// Examples:
+        ///    $ sfdx force:package:version:create:report -i 08c...
+        ///    $ sfdx force:package:version:create:report -i 08c... -v devhub@example.com
         /// </summary>
         /// <remarks>
-        /// Retrieves the status of a package version creation request.
+        /// retrieve the status of a package version creation request
+        /// 
+        /// Examples:
+        ///    $ sfdx force:package:version:create:report -i 08c...
+        ///    $ sfdx force:package:version:create:report -i 08c... -v devhub@example.com
         /// </remarks>
         /// <example>
         /// Examples:
@@ -223,9 +263,17 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// display details about a first-generation package version
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// Display detailed information about an individual package version, including metadata package ID, name, the release state, and build number.
         /// </summary>
         /// <remarks>
-        /// Displays detailed information about an individual first-generation package version.
+        /// display details about a first-generation package version
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// Display detailed information about an individual package version, including metadata package ID, name, the release state, and build number.
         /// </remarks>
         /// <example>
         /// Display detailed information about an individual package version, including metadata package ID, name, the release state, and build number.
@@ -239,9 +287,17 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// list package versions for the specified first-generation package or for the org
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// If a metadata package ID is specified, lists all versions of the specified package. Otherwise, lists all package versions for the org. For each package version, the list includes the package version ID, metadata package ID, name, version number, and release state.
         /// </summary>
         /// <remarks>
-        /// Lists the versions for the specified package or all first-generation packages in the org.
+        /// list package versions for the specified first-generation package or for the org
+        /// 
+        /// NOTE: This command must be run from within a project.
+        /// 
+        /// If a metadata package ID is specified, lists all versions of the specified package. Otherwise, lists all package versions for the org. For each package version, the list includes the package version ID, metadata package ID, name, version number, and release state.
         /// </remarks>
         /// <example>
         /// If a metadata package ID is specified, lists all versions of the specified package. Otherwise, lists all package versions for the org. For each package version, the list includes the package version ID, metadata package ID, name, version number, and release state.

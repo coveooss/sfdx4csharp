@@ -1,5 +1,5 @@
-// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
-// Copyright (c) 2005-2020, Coveo Solutions Inc.
+// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
+// Copyright (c) 2005-2021, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -13,6 +13,12 @@ namespace sfdx4csharpClient
     public class VisualforceComponentCreateOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Required] The label saved in the metadata for the Visualforce component.
         /// </summary>
         [SwitchName("--label")]
@@ -25,7 +31,7 @@ namespace sfdx4csharpClient
         public string componentname { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
@@ -43,7 +49,7 @@ namespace sfdx4csharpClient
         public string outputdir { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -54,6 +60,12 @@ namespace sfdx4csharpClient
     /// </summary>
     public class VisualforcePageCreateOptions : SFDXOptions
     {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
         /// <summary>
         /// [Required] The label saved in the metadata for the Visualforce page.
         /// </summary>
@@ -67,7 +79,7 @@ namespace sfdx4csharpClient
         public string pagename { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
@@ -85,7 +97,7 @@ namespace sfdx4csharpClient
         public string outputdir { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -110,7 +122,10 @@ namespace sfdx4csharpClient
         /// 
         /// </summary>
         /// <remarks>
-        /// Creates a Visualforce component in the specified directory or the current working directory. The command creates the .component file and associated metadata file.
+        /// create a Visualforce component
+        /// If not supplied, the apiversion, template, and outputdir use default values.
+        /// The outputdir can be an absolute path or relative to the current working directory.
+        /// 
         /// </remarks>
         /// <example>
         /// If not supplied, the apiversion, template, and outputdir use default values.
@@ -120,6 +135,8 @@ namespace sfdx4csharpClient
         ///    $ sfdx force:visualforce:component:create -n mycomponent -l mylabel
         ///    $ sfdx force:visualforce:component:create -n mycomponent -l mylabel -d components
         /// 
+        /// $ sfdx force:visualforce:component:create -n mycomponent -l mylabel
+        /// $ sfdx force:visualforce:component:create -n mycomponent -l mylabel -d components
         /// force:visualforce:component:create -n <string> -l <string> [-t <string>] [-d <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("component:create")]
@@ -135,7 +152,10 @@ namespace sfdx4csharpClient
         /// 
         /// </summary>
         /// <remarks>
-        /// Creates a Visualforce page in the specified directory or the current working directory. The command creates the .page file and associated metadata file.
+        /// create a Visualforce page
+        /// If not supplied, the apiversion, template, and outputdir use default values.
+        /// The outputdir can be an absolute path or relative to the current working directory.
+        /// 
         /// </remarks>
         /// <example>
         /// If not supplied, the apiversion, template, and outputdir use default values.
@@ -145,6 +165,8 @@ namespace sfdx4csharpClient
         ///    $ sfdx force:visualforce:page:create -n mypage -l mylabel
         ///    $ sfdx force:visualforce:page:create -n mypage -l mylabel -d pages
         /// 
+        /// $ sfdx force:visualforce:page:create -n mypage -l mylabel
+        /// $ sfdx force:visualforce:page:create -n mypage -l mylabel -d pages
         /// force:visualforce:page:create -n <string> -l <string> [-t <string>] [-d <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("page:create")]

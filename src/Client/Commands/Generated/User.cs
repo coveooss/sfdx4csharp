@@ -1,5 +1,5 @@
-// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
-// Copyright (c) 2005-2020, Coveo Solutions Inc.
+// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
+// Copyright (c) 2005-2021, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -13,46 +13,52 @@ namespace sfdx4csharpClient
     public class UserCreateOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] The key pair expression for the command
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string expression { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
         /// </summary>
         [SwitchName("--targetdevhubusername")]
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] File path to a user definition.
+        /// [Required] Set an alias for the created username to reference within the CLI
+        /// </summary>
+        [SwitchName("--setalias")]
+        public string setalias { get; set; }
+
+        /// <summary>
+        /// [Required] File path to a user definition
         /// </summary>
         [SwitchName("--definitionfile")]
         public string definitionfile { get; set; }
 
         /// <summary>
-        /// [Required] Sets an alias for the created username to reference within the CLI.
+        /// [Optional] Force the username, if specified in the definition file or at the command line, to be unique by appending the org ID
         /// </summary>
-        [SwitchName("--setalias")]
-        public string setalias { get; set; }
+        [SwitchName("--setuniqueusername")]
+        public bool? setuniqueusername { get; set; }
     }
 
     /// <summary>
@@ -61,25 +67,31 @@ namespace sfdx4csharpClient
     public class UserDisplayOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
         /// </summary>
         [SwitchName("--targetdevhubusername")]
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -91,25 +103,31 @@ namespace sfdx4csharpClient
     public class UserListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
         /// </summary>
         [SwitchName("--targetdevhubusername")]
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -121,34 +139,52 @@ namespace sfdx4csharpClient
     public class UserPasswordGenerateOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
         /// </summary>
         [SwitchName("--targetdevhubusername")]
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] A comma-separated list of usernames for which to generate passwords.
+        /// [Required] Comma-separated list of usernames or aliases to assign the password to
         /// </summary>
         [SwitchName("--onbehalfof")]
         public string onbehalfof { get; set; }
+
+        /// <summary>
+        /// [Optional] Number of characters in the generated password; valid values are between 8 and 1000
+        /// </summary>
+        [SwitchName("--length")]
+        public int? length { get; set; }
+
+        /// <summary>
+        /// [Optional] Level of password complexity or strength; the higher the value, the stronger the password
+        /// </summary>
+        [SwitchName("--complexity")]
+        public int? complexity { get; set; }
     }
 
     /// <summary>
@@ -157,31 +193,37 @@ namespace sfdx4csharpClient
     public class UserPermsetAssignOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] The name of the permission set to assign.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Required] Comma-separated list of permission sets to assign
         /// </summary>
         [SwitchName("--permsetname")]
         public string permsetname { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] Comma-separated list of usernames or aliases to assign the permission set to.
+        /// [Required] Comma-separated list of usernames or aliases to assign the permission set to
         /// </summary>
         [SwitchName("--onbehalfof")]
         public string onbehalfof { get; set; }
@@ -201,19 +243,19 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// create a user for a scratch org
+        /// Create a user for a scratch org, optionally setting an alias for use by the CLI, assigning permission sets (e.g., permsets=ps1,ps2), generating a password (e.g., generatepassword=true), and setting User sObject fields.
         /// </summary>
         /// <remarks>
-        /// Creates a user for a scratch org.
+        /// create a user for a scratch org
+        /// Create a user for a scratch org, optionally setting an alias for use by the CLI, assigning permission sets (e.g., permsets=ps1,ps2), generating a password (e.g., generatepassword=true), and setting User sObject fields.
         /// </remarks>
         /// <example>
-        /// Create a user for a scratch org, optionally setting an alias for use by the CLI, assigning permission sets (e.g., permsets=ps1,ps2), generating a password (e.g., generatepassword=true), and setting User sObject fields.
         /// 
-        /// Examples:
-        ///    $ sfdx force:user:create
-        ///    $ sfdx force:user:create -a testuser1 -f config/project-user-def.json
-        ///    $ sfdx force:user:create username=testuser1@my.org email=me@my.org permsets=DreamHouse
-        ///    $ sfdx force:user:create -f config/project-user-def.json email=me@my.org generatepassword=true
-        /// force:user:create [name=value...] [-f <filepath>] [-a <string>] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// sfdx force:user:create
+        /// sfdx force:user:create -a testuser1 -f config/project-user-def.json profileName='Chatter Free User'
+        /// sfdx force:user:create username=testuser1@my.org email=me@my.org permsets=DreamHouse
+        /// sfdx force:user:create -f config/project-user-def.json email=me@my.org generatepassword=true
+        /// force:user:create [name=value...] [-a <string>] [-f <string>] [-s] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("create")]
         public SFDXResponse Create(UserCreateOptions p_Options)
@@ -223,15 +265,16 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// displays information about a user of a scratch org
+        /// Output includes the profile name, org ID, access token, instance URL, login URL, and alias if applicable.
         /// </summary>
         /// <remarks>
-        /// Displays information about a user of a scratch org that the Salesforce CLI has created or authenticated.
+        /// displays information about a user of a scratch org
+        /// Output includes the profile name, org ID, access token, instance URL, login URL, and alias if applicable.
         /// </remarks>
         /// <example>
-        /// Output includes the profile name, org ID, access token, instance URL, login URL, and alias if applicable.
-        /// Examples:
-        ///    $ sfdx force:user:display
-        ///    $ sfdx force:user:display -u me@my.org --json
+        /// 
+        /// sfdx force:user:display
+        /// sfdx force:user:display -u me@my.org --json
         /// force:user:display [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("display")]
@@ -241,17 +284,18 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// lists all users of a scratch org
+        /// list all authenticated users of an org
+        /// The original scratch org admin is marked with "(A)"
         /// </summary>
         /// <remarks>
-        /// Lists all users of a scratch org that the Salesforce CLI has created or authenticated.
+        /// list all authenticated users of an org
+        /// The original scratch org admin is marked with "(A)"
         /// </remarks>
         /// <example>
-        /// The original scratch org admin is marked with "(A)"
-        /// Examples:
-        ///    $ sfdx force:user:list
-        ///    $ sfdx force:user:list -u me@my.org --json
-        ///    $ sfdx force:user:list --json > tmp/MyUserList.json
+        /// 
+        /// sfdx force:user:list
+        /// sfdx force:user:list -u me@my.org --json
+        /// sfdx force:user:list --json > tmp/MyUserList.json
         /// force:user:list [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("list")]
@@ -262,22 +306,48 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// generate a password for scratch org users
-        /// </summary>
-        /// <remarks>
-        /// Generates a password for scratch org users. Targets the usernames listed with the --onbehalfof parameter or the --targetusername parameter. Defaults to the defaultusername.
-        /// </remarks>
-        /// <example>
-        /// Generates and sets a random password for one or more scratch org users.
+        /// Generates and sets a random password for one or more scratch org users. Targets the usernames listed with the --onbehalfof parameter or the --targetusername parameter. Defaults to the defaultusername.
         /// 
         /// If you haven’t set a default Dev Hub, or if your scratch org isn’t associated with your default Dev Hub, --targetdevhubusername is required.
         /// 
-        /// To see a password that was previously generated, run "sfdx force:user:display".
+        /// To change the password strength, set the --complexity parameter to a value between 0 and 5. 
+        /// Each value specifies the types of characters used in the generated password: 
         /// 
-        /// Examples:
-        ///    $ sfdx force:user:password:generate
-        ///    $ sfdx force:user:password:generate -u me@my.org --json
-        ///    $ sfdx force:user:password:generate -o user1@my.org,user2@my.org,user3@my.org
-        /// force:user:password:generate [-o <array>] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// 0 - lower case letters only.
+        /// 1 - lower case letters and numbers only.
+        /// 2 - lower case letters and symbols only.
+        /// 3 - lower and upper case letters and numbers only
+        /// 4 - lower and upper case letters and symbols only
+        /// 5 - lower and upper case letters and numbers and symbols only 
+        /// 
+        /// To see a password that was previously generated, run "sfdx force:user:display".
+        /// </summary>
+        /// <remarks>
+        /// generate a password for scratch org users
+        /// Generates and sets a random password for one or more scratch org users. Targets the usernames listed with the --onbehalfof parameter or the --targetusername parameter. Defaults to the defaultusername.
+        /// 
+        /// If you haven’t set a default Dev Hub, or if your scratch org isn’t associated with your default Dev Hub, --targetdevhubusername is required.
+        /// 
+        /// To change the password strength, set the --complexity parameter to a value between 0 and 5. 
+        /// Each value specifies the types of characters used in the generated password: 
+        /// 
+        /// 0 - lower case letters only.
+        /// 1 - lower case letters and numbers only.
+        /// 2 - lower case letters and symbols only.
+        /// 3 - lower and upper case letters and numbers only
+        /// 4 - lower and upper case letters and symbols only
+        /// 5 - lower and upper case letters and numbers and symbols only 
+        /// 
+        /// To see a password that was previously generated, run "sfdx force:user:display".
+        /// </remarks>
+        /// <example>
+        /// 
+        /// sfdx force:user:password:generate
+        /// sfdx force:user:password:generate -l 12
+        /// sfdx force:user:password:generate -c 3
+        /// sfdx force:user:password:generate -u me@my.org --json
+        /// sfdx force:user:password:generate -o "user1@my.org,user2@my.org,user3@my.org"
+        /// force:user:password:generate [-o <array>] [-l <integer>] [-c <integer>] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("password:generate")]
         public SFDXResponse PasswordGenerate(UserPasswordGenerateOptions p_Options)
@@ -287,18 +357,18 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// assign a permission set to one or more users of an org
+        /// To specify an alias for the -u or -o parameter, use the username alias you set with the "alias:set" CLI command, not the User.Alias value of the org user.
         /// </summary>
         /// <remarks>
-        /// Assigns a named permission set to one or more users of an org.
+        /// assign a permission set to one or more users of an org
+        /// To specify an alias for the -u or -o parameter, use the username alias you set with the "alias:set" CLI command, not the User.Alias value of the org user.
         /// </remarks>
         /// <example>
-        /// Defaults to the defaultusername.
         /// 
-        /// Examples:
-        ///    $ sfdx force:user:permset:assign -n DreamHouse
-        ///    $ sfdx force:user:permset:assign -n DreamHouse -u me@my.org
-        ///    $ sfdx force:user:permset:assign -n DreamHouse -o user1@my.org,user2,user3
-        /// force:user:permset:assign -n <string> [-o <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// sfdx force:user:permset:assign -n "DreamHouse, LargeDreamHouse"
+        /// sfdx force:user:permset:assign -n DreamHouse -u me@my.org
+        /// sfdx force:user:permset:assign -n DreamHouse -o "user1@my.org,user2,user3"
+        /// force:user:permset:assign -n <array> [-o <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("permset:assign")]
         public SFDXResponse PermsetAssign(UserPermsetAssignOptions p_Options)
