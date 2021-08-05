@@ -8,9 +8,9 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method templateCreate of class Analytics.
+    /// Options for the method create of class Staticresource.
     /// </summary>
-    public class AnalyticsTemplateCreateOptions : SFDXOptions
+    public class StaticresourceCreateOptions : SFDXOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
@@ -19,16 +19,22 @@ namespace sfdx4csharpClient
         public string expression { get; set; }
 
         /// <summary>
-        /// [Required] The name of the Analytics template.
+        /// [Required] The name of the new static resource. This name can contain only underscores and alphanumeric characters, and must be unique in your org. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores.
         /// </summary>
-        [SwitchName("--templatename")]
-        public string templatename { get; set; }
+        [SwitchName("--resourcename")]
+        public string resourcename { get; set; }
 
         /// <summary>
         /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] The content type of the generated static resource. This must be a valid MIME type such as application/json, application/javascript, application/zip, text/plain, text/css, etc.
+        /// </summary>
+        [SwitchName("--contenttype")]
+        public string contenttype { get; set; }
 
         /// <summary>
         /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
@@ -44,25 +50,25 @@ namespace sfdx4csharpClient
     }
 
     /// <summary>
-    /// Analytics
+    /// Staticresource
     /// </summary>
-    [CommandClass("force:analytics")]
-    public class Analytics : SFDXCommand
+    [CommandClass("force:staticresource")]
+    public class Staticresource : SFDXCommand
     {
         /// Constructor.
-        public Analytics(CommandExecutioner p_CommandExecutioner)
+        public Staticresource(CommandExecutioner p_CommandExecutioner)
                 : base(p_CommandExecutioner)
         {
         }
 
         /// <summary>
-        /// add an Analytics template to your workspace
+        /// create a static resource
         /// If not supplied, the apiversion, template, and outputdir use default values.
         /// The outputdir can be an absolute path or relative to the current working directory.
         /// 
         /// </summary>
         /// <remarks>
-        /// add an Analytics template to your workspace
+        /// create a static resource
         /// If not supplied, the apiversion, template, and outputdir use default values.
         /// The outputdir can be an absolute path or relative to the current working directory.
         /// 
@@ -72,15 +78,19 @@ namespace sfdx4csharpClient
         /// The outputdir can be an absolute path or relative to the current working directory.
         /// 
         /// Examples:
-        ///    $ sfdx force:analytics:template:create -n myTemplate -d outputdir
+        ///    $ sfdx force:staticresource:create -n MyResource
+        ///    $ sfdx force:staticresource:create -n MyResource --contenttype application/json
+        ///    $ sfdx force:staticresource:create -n MyResource -d staticresources
         /// 
-        /// $ sfdx force:analytics:template:create -n myTemplate -d outputdir
-        /// force:analytics:template:create -n <string> [-d <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// $ sfdx force:staticresource:create -n MyResource
+        /// $ sfdx force:staticresource:create -n MyResource --contenttype application/json
+        /// $ sfdx force:staticresource:create -n MyResource -d staticresources
+        /// force:staticresource:create -n <string> [--contenttype <string>] [-d <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
-        [Command("template:create")]
-        public SFDXResponse TemplateCreate(AnalyticsTemplateCreateOptions p_Options)
+        [Command("create")]
+        public SFDXResponse Create(StaticresourceCreateOptions p_Options)
         {
-            return ExecuteCommand<AnalyticsTemplateCreateOptions>(nameof(TemplateCreate), p_Options);
+            return ExecuteCommand<StaticresourceCreateOptions>(nameof(Create), p_Options);
         }
     }
 }

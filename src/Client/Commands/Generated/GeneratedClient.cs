@@ -1,5 +1,5 @@
-// Generated on Wed Dec 23 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.7.0. DO NOT MODIFY
-// Copyright (c) 2005-2020, Coveo Solutions Inc.
+// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
+// Copyright (c) 2005-2021, Coveo Solutions Inc.
 
 using System.Diagnostics;
 using System.IO;
@@ -17,12 +17,13 @@ namespace sfdx4csharpClient
     public class GeneratedSFDXClient
     {
         public Alias Alias { get; }
-        public Analytics Analytics { get; }
-        public Apex Apex { get; }
         public Auth Auth { get; }
         public Config Config { get; }
+        public Analytics Analytics { get; }
+        public Apex Apex { get; }
+        public Cmdt Cmdt { get; }
+        public Community Community { get; }
         public Data Data { get; }
-        public Doc Doc { get; }
         public Lightning Lightning { get; }
         public Limits Limits { get; }
         public Mdapi Mdapi { get; }
@@ -32,8 +33,10 @@ namespace sfdx4csharpClient
         public Project Project { get; }
         public Schema Schema { get; }
         public Source Source { get; }
+        public Staticresource Staticresource { get; }
         public User User { get; }
         public Visualforce Visualforce { get; }
+        public Plugins Plugins { get; }
 
         private readonly CommandRunner m_CmdRunner;
 
@@ -52,12 +55,13 @@ namespace sfdx4csharpClient
             m_CmdRunner = new CommandRunner(p_Path, p_WorkingFolder);
             CommandExecutioner executioner = new CommandExecutioner(m_CmdRunner);
             this.Alias = new Alias(executioner);
-            this.Analytics = new Analytics(executioner);
-            this.Apex = new Apex(executioner);
             this.Auth = new Auth(executioner);
             this.Config = new Config(executioner);
+            this.Analytics = new Analytics(executioner);
+            this.Apex = new Apex(executioner);
+            this.Cmdt = new Cmdt(executioner);
+            this.Community = new Community(executioner);
             this.Data = new Data(executioner);
-            this.Doc = new Doc(executioner);
             this.Lightning = new Lightning(executioner);
             this.Limits = new Limits(executioner);
             this.Mdapi = new Mdapi(executioner);
@@ -67,8 +71,10 @@ namespace sfdx4csharpClient
             this.Project = new Project(executioner);
             this.Schema = new Schema(executioner);
             this.Source = new Source(executioner);
+            this.Staticresource = new Staticresource(executioner);
             this.User = new User(executioner);
             this.Visualforce = new Visualforce(executioner);
+            this.Plugins = new Plugins(executioner);
         }
 
         /// <summary>
@@ -81,7 +87,7 @@ namespace sfdx4csharpClient
             Debug.Assert(Directory.Exists(p_FolderPath));
             m_CmdRunner.WorkingFolder = p_FolderPath;
         }
-
+		
         /// <summary>
         /// Changes the home folder of the SFDX client. 
         /// This is the directory where it looks for the .sfdx folder

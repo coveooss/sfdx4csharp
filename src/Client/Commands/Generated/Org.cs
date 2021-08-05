@@ -1,5 +1,5 @@
-// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
-// Copyright (c) 2005-2020, Coveo Solutions Inc.
+// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
+// Copyright (c) 2005-2021, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -13,31 +13,31 @@ namespace sfdx4csharpClient
     public class OrgCloneOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Required] The type of org to create. Only "sandbox" is supported.
         /// </summary>
         [SwitchName("--type")]
         public string type { get; set; }
 
         /// <summary>
-        /// [Required] The key pair expression for the command
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -67,10 +67,10 @@ namespace sfdx4csharpClient
         public string setalias { get; set; }
 
         /// <summary>
-        /// [Optional] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
+        /// [Required] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
         /// </summary>
         [SwitchName("--wait")]
-        public int? wait { get; set; }
+        public string wait { get; set; }
     }
 
     /// <summary>
@@ -79,100 +79,100 @@ namespace sfdx4csharpClient
     public class OrgCreateOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] The key pair expression for the command
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string expression { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
         /// </summary>
         [SwitchName("--targetdevhubusername")]
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] The type of org to create. The creation of sandbox orgs is available as a beta release.
+        /// [Required] Type of org to create
         /// </summary>
         [SwitchName("--type")]
         public string type { get; set; }
 
         /// <summary>
-        /// [Required] The path to an org definition file. Either --definitionfile or a vararg value for edition (for example, edition=Developer) is required. Varargs override the values in the scratch org definition file.
+        /// [Required] Path to an org definition file
         /// </summary>
         [SwitchName("--definitionfile")]
         public string definitionfile { get; set; }
 
         /// <summary>
-        /// [Required] Org definition in JSON format. Either --definitionfile or --definitionjson is required.
+        /// [Required] Org definition in JSON format
         /// </summary>
         [SwitchName("--definitionjson")]
         public string definitionjson { get; set; }
 
         /// <summary>
-        /// [Optional] Creates the scratch org with no namespace. Scratch orgs without a namespace are useful when testing installations of packages with namespaces.
+        /// [Optional] Create the scratch org with no namespace
         /// </summary>
         [SwitchName("--nonamespace")]
         public bool? nonamespace { get; set; }
 
         /// <summary>
-        /// [Optional] Prevents the inclusion of second-generation package ancestors in the scratch org.
+        /// [Optional] Do not include second-generation package ancestors in the scratch org
         /// </summary>
         [SwitchName("--noancestors")]
         public bool? noancestors { get; set; }
 
         /// <summary>
-        /// [Required] A connected app consumer key, as configured in your Dev Hub or production org. This parameter is not supported for sandbox org creation.
+        /// [Required] Connected app consumer key; not supported for sandbox org creation
         /// </summary>
         [SwitchName("--clientid")]
         public string clientid { get; set; }
 
         /// <summary>
-        /// [Optional] Sets the created org as the default username.
+        /// [Optional] Set the created org as the default username
         /// </summary>
         [SwitchName("--setdefaultusername")]
         public bool? setdefaultusername { get; set; }
 
         /// <summary>
-        /// [Required] An alias for the created org.
+        /// [Required] Alias for the created org
         /// </summary>
         [SwitchName("--setalias")]
         public string setalias { get; set; }
 
         /// <summary>
-        /// [Required] Environment where the scratch org is created: sandbox*,virtual,prototype.
+        /// [Required] Environment where the scratch org is created: sandbox*,virtual,prototype
         /// </summary>
         [SwitchName("--env")]
         public string env { get; set; }
 
         /// <summary>
-        /// [Optional] Sets the streaming client socket timeout, in minutes. If the streaming client socket has no contact from the server for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
+        /// [Required] The streaming client socket timeout (in minutes)
         /// </summary>
         [SwitchName("--wait")]
-        public int? wait { get; set; }
+        public string wait { get; set; }
 
         /// <summary>
-        /// [Optional] Sets the duration of the scratch org, in days. Valid values are from 1-30. The default is 7 days.
+        /// [Required] Duration of the scratch org (in days) (default:7, min:1, max:30)
         /// </summary>
         [SwitchName("--durationdays")]
-        public int? durationdays { get; set; }
+        public string durationdays { get; set; }
     }
 
     /// <summary>
@@ -181,31 +181,37 @@ namespace sfdx4csharpClient
     public class OrgDeleteOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
         /// </summary>
         [SwitchName("--targetdevhubusername")]
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Optional] No prompt to confirm deletion.
+        /// [Optional] No prompt to confirm deletion
         /// </summary>
         [SwitchName("--noprompt")]
         public bool? noprompt { get; set; }
@@ -217,25 +223,31 @@ namespace sfdx4csharpClient
     public class OrgDisplayOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Optional] Emit additional command output to stdout.
+        /// [Optional] Emit additional command output to stdout
         /// </summary>
         [SwitchName("--verbose")]
         public bool? verbose { get; set; }
@@ -247,34 +259,46 @@ namespace sfdx4csharpClient
     public class OrgListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Optional] Lists more information about each org.
+        /// [Optional] List more information about each org'
         /// </summary>
         [SwitchName("--verbose")]
         public bool? verbose { get; set; }
 
         /// <summary>
-        /// [Optional] Lists all authenticated orgs, including expired, deleted, and unknown-status scratch orgs.
+        /// [Optional] Include expired, deleted, and unknown-status scratch orgs
         /// </summary>
         [SwitchName("--all")]
         public bool? all { get; set; }
 
         /// <summary>
-        /// [Optional] Remove all local org authorizations for deleted or expired orgs.
+        /// [Optional] Remove all local org authorizations for non-active orgs
         /// </summary>
         [SwitchName("--clean")]
         public bool? clean { get; set; }
 
         /// <summary>
-        /// [Optional] Do not prompt for confirmation.
+        /// [Optional] Do not prompt for confirmation
         /// </summary>
         [SwitchName("--noprompt")]
         public bool? noprompt { get; set; }
+
+        /// <summary>
+        /// [Optional] Skip retrieving the connection status of non-scratch orgs
+        /// </summary>
+        [SwitchName("--skipconnectionstatus")]
+        public bool? skipconnectionstatus { get; set; }
     }
 
     /// <summary>
@@ -283,31 +307,37 @@ namespace sfdx4csharpClient
     public class OrgOpenOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Required] Navigation URL path (not including domain).
+        /// [Required] Navigation URL path
         /// </summary>
         [SwitchName("--path")]
         public string path { get; set; }
 
         /// <summary>
-        /// [Optional] Displays a navigation URL, but doesn’t launch your browser.
+        /// [Optional] Display navigation URL, but don’t launch browser
         /// </summary>
         [SwitchName("--urlonly")]
         public bool? urlonly { get; set; }
@@ -319,19 +349,25 @@ namespace sfdx4csharpClient
     public class OrgShapeCreateOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -343,25 +379,31 @@ namespace sfdx4csharpClient
     public class OrgShapeDeleteOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Optional] Do not prompt for confirmation.
+        /// [Optional] Do not prompt for confirmation
         /// </summary>
         [SwitchName("--noprompt")]
         public bool? noprompt { get; set; }
@@ -373,13 +415,19 @@ namespace sfdx4csharpClient
     public class OrgShapeListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Optional] Lists more information about each org shape.
+        /// [Optional] List more information about each org shape
         /// </summary>
         [SwitchName("--verbose")]
         public bool? verbose { get; set; }
@@ -390,6 +438,12 @@ namespace sfdx4csharpClient
     /// </summary>
     public class OrgSnapshotCreateOptions : SFDXOptions
     {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
         /// <summary>
         /// [Required] The unique name of the snapshot. Use this name to create scratch orgs from the snapshot.
         /// </summary>
@@ -403,19 +457,19 @@ namespace sfdx4csharpClient
         public string sourceorg { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
         /// </summary>
         [SwitchName("--targetdevhubusername")]
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -433,25 +487,31 @@ namespace sfdx4csharpClient
     public class OrgSnapshotDeleteOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Required] The name or ID (starts with 0Oo) of the snapshot to delete.
         /// </summary>
         [SwitchName("--snapshot")]
         public string snapshot { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
         /// </summary>
         [SwitchName("--targetdevhubusername")]
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -463,25 +523,31 @@ namespace sfdx4csharpClient
     public class OrgSnapshotGetOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Required] The name or ID (starts with 0Oo) of the snapshot to retrieve.
         /// </summary>
         [SwitchName("--snapshot")]
         public string snapshot { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
         /// </summary>
         [SwitchName("--targetdevhubusername")]
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -493,19 +559,25 @@ namespace sfdx4csharpClient
     public class OrgSnapshotListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target Dev Hub org. Overrides the default Dev Hub org.
+        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
         /// </summary>
         [SwitchName("--targetdevhubusername")]
         public string targetdevhubusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -517,25 +589,31 @@ namespace sfdx4csharpClient
     public class OrgStatusOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Required] The name of the sandbox org whose creation status you want to check.
         /// </summary>
         [SwitchName("--sandboxname")]
         public string sandboxname { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
@@ -553,10 +631,10 @@ namespace sfdx4csharpClient
         public string setalias { get; set; }
 
         /// <summary>
-        /// [Optional] The number of minutes to wait for the org to be ready while polling for its creation status.
+        /// [Required] The number of minutes to wait for the org to be ready while polling for its creation status.
         /// </summary>
         [SwitchName("--wait")]
-        public int? wait { get; set; }
+        public string wait { get; set; }
     }
 
     /// <summary>
@@ -581,7 +659,13 @@ namespace sfdx4csharpClient
         ///    $ sfdx force:org:clone -t sandbox sandboxName=DevSbx1 sourceSandboxName=Sbx2Clone -u prodOrg -a MyDevSandbox
         /// </summary>
         /// <remarks>
-        /// Clones a sandbox org using values specified in a configuration file or key=value pairs that you specify on the command line. Values specified on the command line override values in the configuration file.
+        /// clone a sandbox org
+        /// 
+        /// Specify a configuration file with a sourceSandboxName or provide key=value pairs while cloning a sandbox. The --targetusername (-u) must be a production org with sandbox licenses. The —type (-t) is required if cloning a sandbox.
+        /// 
+        /// Examples:
+        ///    $ sfdx force:org:clone -t sandbox -f config/dev-sandbox-def.json -u prodOrg -a MyDevSandbox
+        ///    $ sfdx force:org:clone -t sandbox sandboxName=DevSbx1 sourceSandboxName=Sbx2Clone -u prodOrg -a MyDevSandbox
         /// </remarks>
         /// <example>
         /// Specify a configuration file with a sourceSandboxName or provide key=value pairs while cloning a sandbox. The --targetusername (-u) must be a production org with sandbox licenses. The —type (-t) is required if cloning a sandbox.
@@ -598,10 +682,10 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// create a scratch or sandbox org
+        /// Creates a scratch org or a sandbox org using the values specified in a configuration file or key=value pairs that you specify on the command line. Values specified on the command line override values in the configuration file.
         /// </summary>
         /// <remarks>
-        /// Creates a scratch org or a sandbox org using the values specified in a configuration file or key=value pairs that you specify on the command line. Values specified on the command line override values in the configuration file. This release contains a beta version of the sandbox CLI operations, which means it’s a high-quality feature with known limitations.
+        /// Creates a scratch org or a sandbox org using the values specified in a configuration file or key=value pairs that you specify on the command line. Values specified on the command line override values in the configuration file.
         /// </remarks>
         /// <example>
         /// Specify a configuration file or provide key=value pairs while creating a scratch org or a sandbox. When creating scratch orgs, —targetdevhubusername (-v) must be a Dev Hub org. When creating sandboxes, the --targetusername (-u) must be a production org with sandbox licenses. The —type (-t) is required if creating a sandbox.
@@ -611,7 +695,7 @@ namespace sfdx4csharpClient
         ///    $ sfdx force:org:create edition=Developer -a MyScratchOrg -s -v devHub
         ///    $ sfdx force:org:create -f config/enterprise-scratch-def.json -a ScratchOrgWithOverrides username=testuser1@mycompany.org
         ///    $ sfdx force:org:create -t sandbox -f config/dev-sandbox-def.json -a MyDevSandbox -u prodOrg
-        /// force:org:create [name=value...] [-t scratch|sandbox] [-f <filepath>] [-n] [-c] [-i <string>] [-s] [-a <string>] [-w <minutes>] [-d <number>] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// force:org:create [name=value...] [-t scratch|sandbox] [-f <filepath>] [-n] [-c] [-i <string>] [-s] [-a <string>] [-w <minutes>] [-d <integer>] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("create")]
         public SFDXResponse Create(OrgCreateOptions p_Options)
@@ -623,7 +707,7 @@ namespace sfdx4csharpClient
         /// mark a scratch or sandbox org for deletion
         /// </summary>
         /// <remarks>
-        /// Marks a scratch or sandbox org for deletion.
+        /// mark a scratch or sandbox org for deletion
         /// </remarks>
         /// <example>
         /// To mark the org for deletion without being prompted to confirm, specify --noprompt. 
@@ -640,21 +724,23 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// get org description
+        /// get the description for the current or target org
+        /// Output includes your access token, client Id, connected status, org ID, instance URL, username, and alias, if applicable.
+        /// Use --verbose to include the SFDX auth URL.
+        /// Including --verbose displays the sfdxAuthUrl property only if you authenticated to the org using auth:web:login (not auth:jwt:grant)
         /// </summary>
         /// <remarks>
-        /// Gets the description for the current or target org.
+        /// get the description for the current or target org
+        /// Output includes your access token, client Id, connected status, org ID, instance URL, username, and alias, if applicable.
+        /// Use --verbose to include the SFDX auth URL.
+        /// Including --verbose displays the sfdxAuthUrl property only if you authenticated to the org using auth:web:login (not auth:jwt:grant)
         /// </remarks>
         /// <example>
-        /// Output includes your access token, client ID, connected status, org ID, instance URL, username, and alias, if applicable. 
         /// 
-        /// Use --verbose to include the SFDX auth URL. Including --verbose displays the sfdxAuthUrl property only if you authenticated to the org using force:auth:web:login (not force:auth:jwt:grant).
-        /// 
-        /// Examples:
-        ///    $ sfdx force:org:display
-        ///    $ sfdx force:org:display -u me@my.org
-        ///    $ sfdx force:org:display -u TestOrg1 --json
-        ///    $ sfdx force:org:display -u TestOrg1 --json > tmp/MyOrgDesc.json
+        /// sfdx force:org:display
+        /// sfdx force:org:display -u me@my.org
+        /// sfdx force:org:display -u TestOrg1 --json
+        /// sfdx force:org:display -u TestOrg1 --json > tmp/MyOrgDesc.json
         /// force:org:display [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("display")]
@@ -667,52 +753,39 @@ namespace sfdx4csharpClient
         /// list all orgs you’ve created or authenticated to
         /// </summary>
         /// <remarks>
-        /// Lists all orgs that the Salesforce CLI has created or authenticated to.
+        /// list all orgs you’ve created or authenticated to
         /// </remarks>
         /// <example>
-        /// Examples:
-        ///    $ sfdx force:org:list
-        ///    $ sfdx force:org:list --verbose --json
-        ///    $ sfdx force:org:list --verbose --json > tmp/MyOrgList.json
-        /// force:org:list [--all] [--clean] [-p] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// 
+        /// sfdx force:org:list
+        /// sfdx force:org:list --verbose --json
+        /// sfdx force:org:list --verbose --json > tmp/MyOrgList.json
+        /// force:org:list [--all] [-p --clean] [--skipconnectionstatus] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("list")]
-        public SFDXResponse List(OrgListOptions p_Options = null)
+        public SFDXResponse List(OrgListOptions p_Options)
         {
             return ExecuteCommand<OrgListOptions>(nameof(List), p_Options);
         }
 
         /// <summary>
-        /// open an org in your browser
-        /// Opens your default scratch org, or another org that you specify.
-        /// 
-        /// To open a specific page, specify the portion of the URL after "yourInstance.salesforce.com/" as --path. 
+        /// open your default scratch org, or another specified org
+        /// To open a specific page, specify the portion of the URL after "yourInstance.salesforce.com/" as --path.
         /// For example, specify "--path lightning" to open Lightning Experience, or specify "--path /apex/YourPage" to open a Visualforce page.
-        /// 
-        /// To generate a URL but not launch your browser, specify --urlonly.
-        /// 
-        /// Examples:
-        ///   $ sfdx force:org:open
-        ///   $ sfdx force:org:open -u me@my.org
-        ///   $ sfdx force:org:open -u MyTestOrg1
-        ///   $ sfdx force:org:open -r -p lightning
+        /// To generate a URL but not launch it in your browser, specify --urlonly.
         /// </summary>
         /// <remarks>
-        /// Opens an org in your browser.
+        /// open your default scratch org, or another specified org
+        /// To open a specific page, specify the portion of the URL after "yourInstance.salesforce.com/" as --path.
+        /// For example, specify "--path lightning" to open Lightning Experience, or specify "--path /apex/YourPage" to open a Visualforce page.
+        /// To generate a URL but not launch it in your browser, specify --urlonly.
         /// </remarks>
         /// <example>
-        /// Opens your default scratch org, or another org that you specify.
         /// 
-        /// To open a specific page, specify the portion of the URL after "yourInstance.salesforce.com/" as --path. 
-        /// For example, specify "--path lightning" to open Lightning Experience, or specify "--path /apex/YourPage" to open a Visualforce page.
-        /// 
-        /// To generate a URL but not launch your browser, specify --urlonly.
-        /// 
-        /// Examples:
-        ///   $ sfdx force:org:open
-        ///   $ sfdx force:org:open -u me@my.org
-        ///   $ sfdx force:org:open -u MyTestOrg1
-        ///   $ sfdx force:org:open -r -p lightning
+        /// sfdx force:org:open
+        /// sfdx force:org:open -u me@my.org
+        /// sfdx force:org:open -u MyTestOrg1
+        /// sfdx force:org:open -r -p lightning
         /// force:org:open [-p <string>] [-r] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("open")]
@@ -722,16 +795,16 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// create a snapshot of org edition, features, and licenses
+        /// Create a scratch org configuration (shape) based on the specified source org
         /// </summary>
         /// <remarks>
-        /// Creates a snapshot of org edition, features, and licenses to use for scratch org creation, allowing your scratch org to look like another org for testing.
+        /// Create a scratch org configuration (shape) based on the specified source org
         /// </remarks>
         /// <example>
-        /// Examples:
-        ///    $ sfdx force:org:shape:create -u me@my.org
-        ///    $ sfdx force:org:shape:create -u me@my.org --json --loglevel debug
-        /// force:org:shape:create [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// 
+        /// sfdx force:org:shape:create -u me@my.org
+        /// sfdx force:org:shape:create -u me@my.org --json --loglevel debug
+        /// force:org:shape:create [name=value...] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("shape:create")]
         public SFDXResponse ShapeCreate(OrgShapeCreateOptions p_Options)
@@ -743,14 +816,14 @@ namespace sfdx4csharpClient
         /// delete all org shapes for a target org
         /// </summary>
         /// <remarks>
-        /// Deletes all org shapes that you’ve created for an org using the Salesforce CLI.
+        /// delete all org shapes for a target org
         /// </remarks>
         /// <example>
-        /// Examples:
-        ///    $ sfdx force:org:shape:delete -u me@my.org
-        ///    $ sfdx force:org:shape:delete -u MyOrgAlias -p
-        ///    $ sfdx force:org:shape:delete -u me@my.org --json
-        ///    $ sfdx force:org:shape:delete -u me@my.org -p --json > tmp/MyOrgShapeDelete.json
+        /// 
+        /// sfdx force:org:shape:delete -u me@my.org
+        /// sfdx force:org:shape:delete -u MyOrgAlias -p
+        /// sfdx force:org:shape:delete -u me@my.org --json
+        /// sfdx force:org:shape:delete -u me@my.org -p --json > tmp/MyOrgShapeDelete.json
         /// force:org:shape:delete [-p] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("shape:delete")]
@@ -763,26 +836,50 @@ namespace sfdx4csharpClient
         /// list all org shapes you’ve created
         /// </summary>
         /// <remarks>
-        /// Lists all org shapes that you’ve created using the Salesforce CLI.
+        /// list all org shapes you’ve created
         /// </remarks>
         /// <example>
-        /// Examples:
-        ///    $ sfdx force:org:shape:list
-        ///    $ sfdx force:org:shape:list --json
-        ///    $ sfdx force:org:shape:list --json > tmp/MyOrgShapeList.json
+        /// 
+        /// sfdx force:org:shape:list
+        /// sfdx force:org:shape:list --json
+        /// sfdx force:org:shape:list --json > tmp/MyOrgShapeList.json
         /// force:org:shape:list [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("shape:list")]
-        public SFDXResponse ShapeList(OrgShapeListOptions p_Options = null)
+        public SFDXResponse ShapeList(OrgShapeListOptions p_Options)
         {
             return ExecuteCommand<OrgShapeListOptions>(nameof(ShapeList), p_Options);
         }
 
         /// <summary>
         /// snapshot a scratch org
+        /// 
+        /// A snapshot is a point-in-time export of a scratch org. The export is stored in Salesforce and referenced by its unique name in a scratch definition file.
+        /// 
+        /// Use "sfdx force:org:snapshot:get" to get details, including status, about a snapshot creation request.
+        /// 
+        /// With "snapshot" in your scratch org definition file, use "sfdx force:org:create" to create a scratch org from a snapshot.
+        /// 
+        /// Examples:
+        /// 
+        ///    $ sfdx force:org:snapshot:create --sourceorg 00Dxx0000000000 --snapshotname Dependencies --description "Contains PackageA v1.1.0"
+        /// 
+        ///    $ sfdx force:org:snapshot:create -o myuser@myorg -n NightlyBranch -d "Contains PkgA v2.1.0 and PkgB 3.3.0"
         /// </summary>
         /// <remarks>
-        /// Creates a snapshot of a scratch org.
+        /// snapshot a scratch org
+        /// 
+        /// A snapshot is a point-in-time export of a scratch org. The export is stored in Salesforce and referenced by its unique name in a scratch definition file.
+        /// 
+        /// Use "sfdx force:org:snapshot:get" to get details, including status, about a snapshot creation request.
+        /// 
+        /// With "snapshot" in your scratch org definition file, use "sfdx force:org:create" to create a scratch org from a snapshot.
+        /// 
+        /// Examples:
+        /// 
+        ///    $ sfdx force:org:snapshot:create --sourceorg 00Dxx0000000000 --snapshotname Dependencies --description "Contains PackageA v1.1.0"
+        /// 
+        ///    $ sfdx force:org:snapshot:create -o myuser@myorg -n NightlyBranch -d "Contains PkgA v2.1.0 and PkgB 3.3.0"
         /// </remarks>
         /// <example>
         /// A snapshot is a point-in-time export of a scratch org. The export is stored in Salesforce and referenced by its unique name in a scratch definition file.
@@ -806,9 +903,21 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// delete a scratch org snapshot
+        /// 
+        /// Examples:
+        /// 
+        ///    $ sfdx force:org:snapshot:delete --snapshot 0Oo...
+        /// 
+        ///    $ sfdx force:org:snapshot:delete -s BaseSnapshot
         /// </summary>
         /// <remarks>
-        /// Deletes a scratch org snapshot.
+        /// delete a scratch org snapshot
+        /// 
+        /// Examples:
+        /// 
+        ///    $ sfdx force:org:snapshot:delete --snapshot 0Oo...
+        /// 
+        ///    $ sfdx force:org:snapshot:delete -s BaseSnapshot
         /// </remarks>
         /// <example>
         /// Examples:
@@ -826,9 +935,29 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// get details about a scratch org snapshot
+        /// 
+        /// Use "sfdx force:org:snapshot:create" to create a snapshot.
+        /// 
+        /// Use "sfdx force:org:snapshot:list" to retrieve all snapshots.
+        /// 
+        /// Examples:
+        /// 
+        ///    $ sfdx force:org:snapshot:get --snapshot 0Oo...
+        /// 
+        ///    $ sfdx force:org:snapshot:get -s Dependencies
         /// </summary>
         /// <remarks>
-        /// Retrieves details about a scratch org snapshot.
+        /// get details about a scratch org snapshot
+        /// 
+        /// Use "sfdx force:org:snapshot:create" to create a snapshot.
+        /// 
+        /// Use "sfdx force:org:snapshot:list" to retrieve all snapshots.
+        /// 
+        /// Examples:
+        /// 
+        ///    $ sfdx force:org:snapshot:get --snapshot 0Oo...
+        /// 
+        ///    $ sfdx force:org:snapshot:get -s Dependencies
         /// </remarks>
         /// <example>
         /// Use "sfdx force:org:snapshot:create" to create a snapshot.
@@ -850,9 +979,29 @@ namespace sfdx4csharpClient
 
         /// <summary>
         /// list scratch org snapshots
+        /// 
+        /// Use "sfdx force:org:snapshot:get" to get details about a snapshot request.
+        /// 
+        /// Use "sfdx force:org:snapshot:create" to create a snapshot.
+        /// 
+        /// Examples:
+        /// 
+        ///    $ sfdx force:org:snapshot:list
+        /// 
+        ///    $ sfdx force:org:snapshot:list -v OtherDevHub@example.com
         /// </summary>
         /// <remarks>
-        /// Lists scratch org snapshots for your Dev Hub.
+        /// list scratch org snapshots
+        /// 
+        /// Use "sfdx force:org:snapshot:get" to get details about a snapshot request.
+        /// 
+        /// Use "sfdx force:org:snapshot:create" to create a snapshot.
+        /// 
+        /// Examples:
+        /// 
+        ///    $ sfdx force:org:snapshot:list
+        /// 
+        ///    $ sfdx force:org:snapshot:list -v OtherDevHub@example.com
         /// </remarks>
         /// <example>
         /// Use "sfdx force:org:snapshot:get" to get details about a snapshot request.
@@ -882,7 +1031,13 @@ namespace sfdx4csharpClient
         ///    $ sfdx force:org:status -n YourSandboxName -w 10
         /// </summary>
         /// <remarks>
-        /// Reports sandbox org creation status. If the org is ready, authenticates to the org.
+        /// report sandbox org creation status and authenticate to org
+        /// 
+        /// Use this command to check the status of your sandbox org creation and, if the org is ready, authenticate to the org.
+        /// To specify the number of minutes that the command will wait for the sandbox org creation to complete before returning control of the terminal to you, include a -w | --wait value.
+        /// 
+        /// Examples:
+        ///    $ sfdx force:org:status -n YourSandboxName -w 10
         /// </remarks>
         /// <example>
         /// Use this command to check the status of your sandbox org creation and, if the org is ready, authenticate to the org.

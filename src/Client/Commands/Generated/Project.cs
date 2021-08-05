@@ -1,5 +1,5 @@
-// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
-// Copyright (c) 2005-2020, Coveo Solutions Inc.
+// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
+// Copyright (c) 2005-2021, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -13,13 +13,19 @@ namespace sfdx4csharpClient
     public class ProjectCreateOptions : SFDXOptions
     {
         /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
         /// [Required] The name for the new project. Any valid folder name is accepted.
         /// </summary>
         [SwitchName("--projectname")]
         public string projectname { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
@@ -62,24 +68,6 @@ namespace sfdx4csharpClient
     }
 
     /// <summary>
-    /// Options for the method upgrade of class Project.
-    /// </summary>
-    public class ProjectUpgradeOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Optional] Run all upgrades, even if the project definition files have already been upgraded.
-        /// </summary>
-        [SwitchName("--forceupgrade")]
-        public bool? forceupgrade { get; set; }
-    }
-
-    /// <summary>
     /// Project
     /// </summary>
     [CommandClass("force:project")]
@@ -98,7 +86,10 @@ namespace sfdx4csharpClient
         /// 
         /// </summary>
         /// <remarks>
-        /// Creates a Salesforce DX project in the specified directory or the current working directory. The command creates the necessary configuration files and folders.
+        /// create a Salesforce DX project
+        /// If not supplied, the apiversion, template, and outputdir use default values.
+        /// The outputdir can be an absolute path or relative to the current working directory.
+        /// 
         /// </remarks>
         /// <example>
         /// If not supplied, the apiversion, template, and outputdir use default values.
@@ -110,30 +101,16 @@ namespace sfdx4csharpClient
         ///    $ sfdx force:project:create --projectname mywork --defaultpackagedir myapp --manifest
         ///    $ sfdx force:project:create --projectname mywork --template empty
         /// 
+        /// $ sfdx force:project:create --projectname mywork
+        /// $ sfdx force:project:create --projectname mywork --defaultpackagedir myapp
+        /// $ sfdx force:project:create --projectname mywork --defaultpackagedir myapp --manifest
+        /// $ sfdx force:project:create --projectname mywork --template empty
         /// force:project:create -n <string> [-t <string>] [-d <string>] [-s <string>] [-p <string>] [-x] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("create")]
         public SFDXResponse Create(ProjectCreateOptions p_Options)
         {
             return ExecuteCommand<ProjectCreateOptions>(nameof(Create), p_Options);
-        }
-
-        /// <summary>
-        /// update project config files to the latest format
-        /// </summary>
-        /// <remarks>
-        /// Updates project configuration and definition files to the latest format.
-        /// </remarks>
-        /// <example>
-        /// Examples:
-        ///  $   sfdx force:project:upgrade
-        ///  $   sfdx force:project:upgrade -f
-        /// force:project:upgrade [-f] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
-        /// </example>
-        [Command("upgrade")]
-        public SFDXResponse Upgrade(ProjectUpgradeOptions p_Options = null)
-        {
-            return ExecuteCommand<ProjectUpgradeOptions>(nameof(Upgrade), p_Options);
         }
     }
 }

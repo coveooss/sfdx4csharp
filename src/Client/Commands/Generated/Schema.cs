@@ -1,5 +1,5 @@
-// Generated on Tue Mar 10 2020 using sfdx-cli/7.43.1 win32-x64 node-v12.16.1. DO NOT MODIFY
-// Copyright (c) 2005-2020, Coveo Solutions Inc.
+// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
+// Copyright (c) 2005-2021, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -13,31 +13,37 @@ namespace sfdx4csharpClient
     public class SchemaSobjectDescribeOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] The API name of the object to describe.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string expression { get; set; }
+
+        /// <summary>
+        /// [Required] The API name of the object to describe
         /// </summary>
         [SwitchName("--sobjecttype")]
         public string sobjecttype { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
 
         /// <summary>
-        /// [Optional] Execute using Tooling API.
+        /// [Optional] Execute with Tooling API
         /// </summary>
         [SwitchName("--usetoolingapi")]
         public bool? usetoolingapi { get; set; }
@@ -49,28 +55,34 @@ namespace sfdx4csharpClient
     public class SchemaSobjectListOptions : SFDXOptions
     {
         /// <summary>
-        /// [Required] The type of objects to list: all, custom, or standard.
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
-        [SwitchName("--sobjecttypecategory")]
-        public string sobjecttypecategory { get; set; }
+        [SwitchName("")]
+        public string expression { get; set; }
 
         /// <summary>
-        /// [Optional] The logging level for this command invocation. Logs are stored in $HOME/.sfdx/sfdx.log.
+        /// [Optional] Logging level for this command invocation
         /// </summary>
         [SwitchName("--loglevel")]
         public LogLevel? loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A username or alias for the target org. Overrides the default target org.
+        /// [Required] Username or alias for the target org; overrides default target org
         /// </summary>
         [SwitchName("--targetusername")]
         public string targetusername { get; set; }
 
         /// <summary>
-        /// [Required] Override the API version used for API requests made by this command.
+        /// [Required] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--apiversion")]
         public string apiversion { get; set; }
+
+        /// <summary>
+        /// [Required] The type of objects to list (all|custom|standard)
+        /// </summary>
+        [SwitchName("--sobjecttypecategory")]
+        public string sobjecttypecategory { get; set; }
     }
 
     /// <summary>
@@ -86,16 +98,16 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// describe an object
+        /// displays the metadata for a standard or custom object
         /// </summary>
         /// <remarks>
-        /// Displays the metadata for a standard or custom object.
+        /// displays the metadata for a standard or custom object
         /// </remarks>
         /// <example>
-        /// Examples:
-        ///    $ sfdx force:schema:sobject:describe -s Account
-        ///    $ sfdx force:schema:sobject:describe -s MyObject__c
-        ///    $ sfdx force:schema:sobject:describe -s ApexClass -t
+        /// 
+        /// sfdx force:schema:sobject:describe -s Account
+        /// sfdx force:schema:sobject:describe -s MyObject__c
+        /// sfdx force:schema:sobject:describe -s ApexClass -t
         /// force:schema:sobject:describe -s <string> [-t] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("sobject:describe")]
@@ -108,16 +120,14 @@ namespace sfdx4csharpClient
         /// list all objects of a specified category
         /// </summary>
         /// <remarks>
-        /// Lists all objects of a specified sObject category.
+        /// list all objects of a specified category
         /// </remarks>
         /// <example>
-        /// Lists all objects, custom objects, or standard objects in the org.
         /// 
-        /// Examples:
-        ///    $ sfdx force:schema:sobject:list -c all
-        ///    $ sfdx force:schema:sobject:list -c custom
-        ///    $ sfdx force:schema:sobject:list -c standard
-        /// force:schema:sobject:list -c <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// sfdx force:schema:sobject:list -c all
+        /// sfdx force:schema:sobject:list -c custom
+        /// sfdx force:schema:sobject:list -c standard
+        /// force:schema:sobject:list [-c <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("sobject:list")]
         public SFDXResponse SobjectList(SchemaSobjectListOptions p_Options)
