@@ -34,6 +34,7 @@ limitations under the License.
     <OutputType>Exe</OutputType>
     <TargetFrameworks>net6.0</TargetFrameworks>
     <NoWin32Manifest>true</NoWin32Manifest>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
