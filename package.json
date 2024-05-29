@@ -1,8 +1,10 @@
 {
   "name": "sfdx4csharp-generator",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "A node wrapper for Salesforce DX",
   "keywords": [
+    "sf",
+    "cli",
     "sfdx",
     "wrapper",
     "salesforce",
@@ -20,20 +22,20 @@
     "node": ">=12.16.0"
   },
   "scripts": {
-    "fetch-commands": "sfdx commands --json > generator/dist/commands.json",
+    "fetch-commands": "sf commands --json > generator/dist/commands.json",
     "lint-generator": "tslint -t codeFrame 'generator/**/*.ts'",
     "compile-generator": "npm run lint-generator && rimraf generator/dist && rimraf src/Client/Commands/Generated/* && tsc",
     "run-generator": "node generator/dist/js/index.js",
     "generate": "npm run compile-generator && npm run fetch-commands && npm run run-generator"
   },
   "devDependencies": {
+    "@salesforce/cli": "^2.0.0",
     "@types/fs-extra": "^7.0.0",
     "@types/node": "^10.17.17",
     "@types/underscore": "^1.9.4",
     "fs-extra": "^7.0.1",
     "lodash.camelcase": "^4.3.0",
     "prettier": "^1.19.1",
-    "sfdx-cli": "7.110.0",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",

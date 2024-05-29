@@ -49,7 +49,8 @@ export class Generator {
       }
 
       // Check if existing, else creates it.
-      const className = this.extractClassNameFromTopic(topic);
+      let className = this.extractClassNameFromTopic(topic);
+      className = this.beautifyName(className);
       if (!classDefinitions[className]) {
         classDefinitions[className] = {
           apiCommandClass: topic,
@@ -59,7 +60,7 @@ export class Generator {
         };
       }
 
-      const command = result.id.substring(topic.length + 1);
+      let command = result.id.substring(topic.length + 1);
       let examples = result.examples?.join("\n") ?? "";
       if (result.usage){
         if (examples !== ""){
@@ -69,9 +70,10 @@ export class Generator {
         examples += result.usage;
       }
 
+      let funcName = this.extractFunctionNameFromCommand(command)
       let functionDefinition: IFunctionDefinition = {
-        apiCommand: command,
-        name: this.extractFunctionNameFromCommand(command),
+        apiCommand: command.split(":").join(" "),
+        name: this.beautifyName(funcName),
         parameters: this.extractParameters(result),
         returnType: this.extractReturnType(result),
         shortDescription: result.description,
@@ -134,6 +136,17 @@ export class Generator {
     );
   }
 
+  private beautifyName(name: String): string {
+    let niceName = "";
+    for (var part of name.split("-")){
+      for (var part2 of part.split(" ")){
+        niceName = niceName.concat(this.capitalizeFirstLetter(part2));
+      }
+    }
+
+    return niceName;
+  }
+
   private extractParameters(result: Result): IParameterDefinition[] {
     let parameters = [];
     let flags = result.flags;
@@ -159,8 +172,9 @@ export class Generator {
         // Keyword "internal" is a reserved Keyword in C#.
         paramName = "_" + paramName;
       }
+
       let parameter: IParameterDefinition = {
-        name: paramName,
+        name: this.beautifyName(paramName),
         flagKey: "--" + key,
         type: this.extractType(flag),
         description: desription,
@@ -171,7 +185,7 @@ export class Generator {
     }
 
     parameters.push({
-      name: "expression",
+      name: "Expression",
       description: "Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.",
       flagKey: "",
       optional: false,
@@ -213,12 +227,16 @@ export class Generator {
   }
 
   private extractTopicFromId(id: string): string {
-    const idParts = id.split(":");
+    var curId = id;
+    if (curId.includes(" "))
+      curId = id.split(" ").join(":")
+
+    var idParts = curId.split(":");
     if (!idParts[1] || idParts[0] !== "force"){
       return idParts[0];
     }
 
-    return idParts[0] + ":" + idParts[1];
+    return idParts[0] + " " + idParts[1];
   }
 
   private extractClassNameFromTopic(topic: string): string {

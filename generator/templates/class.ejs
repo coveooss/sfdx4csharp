@@ -1,5 +1,4 @@
 // Generated on <%= getCurrentFormatedDate() %> using <%= cliVersion %>. DO NOT MODIFY
-// Copyright (c) 2005-<%= new Date().getFullYear() %>, Coveo Solutions Inc.
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -19,11 +18,11 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method <%= functionDef.name %> of class <%= className %>.
     /// </summary>
-    public class <%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options : SFDXOptions
+    public class <%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options : SfdxOptions
     {<%
         _.each(functionDef.parameters, function(functionParameter, index) {
             if(functionParameter.name == 'json'){
-                // Skip this parameter, it will be handle by SFDXOptions
+                // Skip this parameter, it will be handle by SfdxOptions
                 return;
             }
             
@@ -52,11 +51,11 @@ namespace sfdx4csharpClient
     /// <%= className %>
     /// </summary>
     [CommandClass("<%= apiCommandClass %>")]
-    public class <%= className %> : SFDXCommand
+    public class <%= className %> : SfdxCommand
     {
         /// Constructor.
-        public <%= className %>(CommandExecutioner p_CommandExecutioner)
-                : base(p_CommandExecutioner)
+        public <%= className %>(CommandExecutioner commandExecutioner)
+                : base(commandExecutioner)
         {
         }
 <% _.each(functionDefinitions, function(functionDef) { 
@@ -73,9 +72,9 @@ namespace sfdx4csharpClient
         /// <%= escapeForComments(functionDef.example) %>
         /// </example>
         [Command("<%= functionDef.apiCommand %>")]
-        public SFDXResponse <%= capitalizedFunctionName %>(<%= className %><%= capitalizedFunctionName %>Options p_Options<% if(isAllOptionalParameters(functionDef.parameters)) {%> = null<%} %>)
+        public SfdxResponse <%= capitalizedFunctionName %>(<%= className %><%= capitalizedFunctionName %>Options options<% if(isAllOptionalParameters(functionDef.parameters)) {%> = null<%} %>)
         {
-            return ExecuteCommand<<%= className %><%= capitalizedFunctionName %>Options>(nameof(<%= capitalizedFunctionName %>), p_Options);
+            return ExecuteCommand(nameof(<%= capitalizedFunctionName %>), options);
         }
 <% }) %>    }
 }
