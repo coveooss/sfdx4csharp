@@ -3,6 +3,10 @@
 # sfdx4csharp
 Coveo Salesforce DX C# wrapper.
 
+## How to use
+This lib is compiled and deployed to nuget. So add you can just add it to you your C# project and it should work.
+https://www.nuget.org/packages/sfdx4csharp
+
 ## Important NPM tasks
 * `npm install`: Installs the dependencies.
 * `npm run generate`: Loads documentation from sfdx-cli and then generates the wrapper classes.

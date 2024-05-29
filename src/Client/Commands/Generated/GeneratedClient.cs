@@ -1,5 +1,4 @@
-// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
-// Copyright (c) 2005-2021, Coveo Solutions Inc.
+// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using System.Diagnostics;
 using System.IO;
@@ -8,96 +7,112 @@ using sfdx4csharpClient.Core;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// A client using the Salesforce Developer Experience (SFDX) command-line interface.
+    /// A client using the Salesforce command-line interface (Salesforce CLI).
     /// </summary>
     /// <remarks>
-    /// In order to use this client, you need to install the sfdxcli on your machine.
-    /// How to: https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm
+    /// In order to use this client, you need to install the Salesforce CLI on your machine.
+    /// How to: https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm
     /// </remarks>
-    public class GeneratedSFDXClient
+    public class GeneratedSfdxClient
     {
         public Alias Alias { get; }
-        public Auth Auth { get; }
-        public Config Config { get; }
         public Analytics Analytics { get; }
         public Apex Apex { get; }
         public Cmdt Cmdt { get; }
         public Community Community { get; }
+        public Config Config { get; }
         public Data Data { get; }
+        public Deploy Deploy { get; }
+        public Dev Dev { get; }
+        public Env Env { get; }
+        public ForceData ForceData { get; }
+        public ForceLightning ForceLightning { get; }
+        public Generate Generate { get; }
+        public Info Info { get; }
         public Lightning Lightning { get; }
-        public Limits Limits { get; }
-        public Mdapi Mdapi { get; }
+        public Login Login { get; }
+        public Logout Logout { get; }
         public Org Org { get; }
         public Package1 Package1 { get; }
         public Package Package { get; }
-        public Project Project { get; }
-        public Schema Schema { get; }
-        public Source Source { get; }
-        public Staticresource Staticresource { get; }
-        public User User { get; }
-        public Visualforce Visualforce { get; }
         public Plugins Plugins { get; }
+        public Project Project { get; }
+        public Run Run { get; }
+        public Scanner Scanner { get; }
+        public Schema Schema { get; }
+        public Sobject Sobject { get; }
+        public StaticResource StaticResource { get; }
+        public Visualforce Visualforce { get; }
+        public Whoami Whoami { get; }
 
-        private readonly CommandRunner m_CmdRunner;
+        private readonly CommandRunner _cmdRunner;
 
         /// <summary>
         /// Initialize the modules that encapsulate the commands in the force namespace.
         /// </summary>
-        /// <param name="p_Path">File path to the SFDC CLI executable.</param>
-        /// <param name="p_WorkingFolder">The working folder where to run SFDX commands.</param>
-        public GeneratedSFDXClient(string p_Path,
-            string p_WorkingFolder = "")
+        /// <param name="path">File path to the SFDC CLI executable.</param>
+        /// <param name="workingFolder">The working folder where to run sfdx commands.</param>
+        public GeneratedSfdxClient(string path,
+            string workingFolder = "")
         {
-            Debug.Assert(!string.IsNullOrEmpty(p_Path));
-            Debug.Assert(File.Exists(p_Path));
-            Debug.Assert(string.IsNullOrEmpty(p_WorkingFolder) || Directory.Exists(p_WorkingFolder));
+            Debug.Assert(!string.IsNullOrEmpty(path));
+            Debug.Assert(File.Exists(path));
+            Debug.Assert(string.IsNullOrEmpty(workingFolder) || Directory.Exists(workingFolder));
 
-            m_CmdRunner = new CommandRunner(p_Path, p_WorkingFolder);
-            CommandExecutioner executioner = new CommandExecutioner(m_CmdRunner);
+            _cmdRunner = new CommandRunner(path, workingFolder);
+            CommandExecutioner executioner = new CommandExecutioner(_cmdRunner);
             this.Alias = new Alias(executioner);
-            this.Auth = new Auth(executioner);
-            this.Config = new Config(executioner);
             this.Analytics = new Analytics(executioner);
             this.Apex = new Apex(executioner);
             this.Cmdt = new Cmdt(executioner);
             this.Community = new Community(executioner);
+            this.Config = new Config(executioner);
             this.Data = new Data(executioner);
+            this.Deploy = new Deploy(executioner);
+            this.Dev = new Dev(executioner);
+            this.Env = new Env(executioner);
+            this.ForceData = new ForceData(executioner);
+            this.ForceLightning = new ForceLightning(executioner);
+            this.Generate = new Generate(executioner);
+            this.Info = new Info(executioner);
             this.Lightning = new Lightning(executioner);
-            this.Limits = new Limits(executioner);
-            this.Mdapi = new Mdapi(executioner);
+            this.Login = new Login(executioner);
+            this.Logout = new Logout(executioner);
             this.Org = new Org(executioner);
             this.Package1 = new Package1(executioner);
             this.Package = new Package(executioner);
-            this.Project = new Project(executioner);
-            this.Schema = new Schema(executioner);
-            this.Source = new Source(executioner);
-            this.Staticresource = new Staticresource(executioner);
-            this.User = new User(executioner);
-            this.Visualforce = new Visualforce(executioner);
             this.Plugins = new Plugins(executioner);
+            this.Project = new Project(executioner);
+            this.Run = new Run(executioner);
+            this.Scanner = new Scanner(executioner);
+            this.Schema = new Schema(executioner);
+            this.Sobject = new Sobject(executioner);
+            this.StaticResource = new StaticResource(executioner);
+            this.Visualforce = new Visualforce(executioner);
+            this.Whoami = new Whoami(executioner);
         }
 
         /// <summary>
-        /// Changes the working folder of the SFDX client.
+        /// Changes the working folder of the sfdx client.
         /// </summary>
-        /// <param name="p_WorkingFolder">The new working folder where to run SFDX commands.</param>
-        public void ChangeWorkingFolder(string p_FolderPath)
+        /// <param name="folderPath">The new working folder path where to run sfdx commands.</param>
+        public void ChangeWorkingFolder(string folderPath)
         {
-            Debug.Assert(!string.IsNullOrEmpty(p_FolderPath));
-            Debug.Assert(Directory.Exists(p_FolderPath));
-            m_CmdRunner.WorkingFolder = p_FolderPath;
+            Debug.Assert(!string.IsNullOrEmpty(folderPath));
+            Debug.Assert(Directory.Exists(folderPath));
+            _cmdRunner.WorkingFolder = folderPath;
         }
 		
         /// <summary>
-        /// Changes the home folder of the SFDX client. 
+        /// Changes the home folder of the sfdx client. 
         /// This is the directory where it looks for the .sfdx folder
         /// </summary>
-        /// <param name="p_HomeFolderPath">The new home folder where the .sfdx folder is located, or null/empty to revert back to the default.</param>
+        /// <param name="homeFolderPath">The new home folder where the .sfdx folder is located, or null/empty to revert back to the default.</param>
         /// <remarks>Only works on Windows.</remarks>
-        public void ChangeHomeFolder(string p_HomeFolderPath)
+        public void ChangeHomeFolder(string homeFolderPath)
         {
-            Debug.Assert(string.IsNullOrEmpty(p_HomeFolderPath) || Directory.Exists(p_HomeFolderPath));
-            m_CmdRunner.HomeFolder = p_HomeFolderPath;
+            Debug.Assert(string.IsNullOrEmpty(homeFolderPath) || Directory.Exists(homeFolderPath));
+            _cmdRunner.HomeFolder = homeFolderPath;
         }
     }
 }

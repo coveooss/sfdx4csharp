@@ -1,5 +1,4 @@
 // Generated on <%= getCurrentFormatedDate() %> using <%= cliVersion %>. DO NOT MODIFY
-// Copyright (c) 2005-<%= new Date().getFullYear() %>, Coveo Solutions Inc.
 
 using System.Diagnostics;
 using System.IO;
@@ -8,57 +7,57 @@ using sfdx4csharpClient.Core;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// A client using the Salesforce Developer Experience (SFDX) command-line interface.
+    /// A client using the Salesforce command-line interface (Salesforce CLI).
     /// </summary>
     /// <remarks>
-    /// In order to use this client, you need to install the sfdxcli on your machine.
-    /// How to: https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm
+    /// In order to use this client, you need to install the Salesforce CLI on your machine.
+    /// How to: https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm
     /// </remarks>
-    public class GeneratedSFDXClient
+    public class GeneratedSfdxClient
     {<% _.each(classDefinitions, function(classDefinition) { %>
         public <%= classDefinition.className %> <%= classDefinition.fileName %> { get; }<% }) %>
 
-        private readonly CommandRunner m_CmdRunner;
+        private readonly CommandRunner _cmdRunner;
 
         /// <summary>
         /// Initialize the modules that encapsulate the commands in the force namespace.
         /// </summary>
-        /// <param name="p_Path">File path to the SFDC CLI executable.</param>
-        /// <param name="p_WorkingFolder">The working folder where to run SFDX commands.</param>
-        public GeneratedSFDXClient(string p_Path,
-            string p_WorkingFolder = "")
+        /// <param name="path">File path to the SFDC CLI executable.</param>
+        /// <param name="workingFolder">The working folder where to run sfdx commands.</param>
+        public GeneratedSfdxClient(string path,
+            string workingFolder = "")
         {
-            Debug.Assert(!string.IsNullOrEmpty(p_Path));
-            Debug.Assert(File.Exists(p_Path));
-            Debug.Assert(string.IsNullOrEmpty(p_WorkingFolder) || Directory.Exists(p_WorkingFolder));
+            Debug.Assert(!string.IsNullOrEmpty(path));
+            Debug.Assert(File.Exists(path));
+            Debug.Assert(string.IsNullOrEmpty(workingFolder) || Directory.Exists(workingFolder));
 
-            m_CmdRunner = new CommandRunner(p_Path, p_WorkingFolder);
-            CommandExecutioner executioner = new CommandExecutioner(m_CmdRunner);<%
+            _cmdRunner = new CommandRunner(path, workingFolder);
+            CommandExecutioner executioner = new CommandExecutioner(_cmdRunner);<%
             _.each(classDefinitions, function(classDefinition) { %>
             this.<%= classDefinition.fileName %> = new <%= classDefinition.className %>(executioner);<% }) %>
         }
 
         /// <summary>
-        /// Changes the working folder of the SFDX client.
+        /// Changes the working folder of the sfdx client.
         /// </summary>
-        /// <param name="p_WorkingFolder">The new working folder where to run SFDX commands.</param>
-        public void ChangeWorkingFolder(string p_FolderPath)
+        /// <param name="folderPath">The new working folder path where to run sfdx commands.</param>
+        public void ChangeWorkingFolder(string folderPath)
         {
-            Debug.Assert(!string.IsNullOrEmpty(p_FolderPath));
-            Debug.Assert(Directory.Exists(p_FolderPath));
-            m_CmdRunner.WorkingFolder = p_FolderPath;
+            Debug.Assert(!string.IsNullOrEmpty(folderPath));
+            Debug.Assert(Directory.Exists(folderPath));
+            _cmdRunner.WorkingFolder = folderPath;
         }
 		
         /// <summary>
-        /// Changes the home folder of the SFDX client. 
+        /// Changes the home folder of the sfdx client. 
         /// This is the directory where it looks for the .sfdx folder
         /// </summary>
-        /// <param name="p_HomeFolderPath">The new home folder where the .sfdx folder is located, or null/empty to revert back to the default.</param>
+        /// <param name="homeFolderPath">The new home folder where the .sfdx folder is located, or null/empty to revert back to the default.</param>
         /// <remarks>Only works on Windows.</remarks>
-        public void ChangeHomeFolder(string p_HomeFolderPath)
+        public void ChangeHomeFolder(string homeFolderPath)
         {
-            Debug.Assert(string.IsNullOrEmpty(p_HomeFolderPath) || Directory.Exists(p_HomeFolderPath));
-            m_CmdRunner.HomeFolder = p_HomeFolderPath;
+            Debug.Assert(string.IsNullOrEmpty(homeFolderPath) || Directory.Exists(homeFolderPath));
+            _cmdRunner.HomeFolder = homeFolderPath;
         }
     }
 }

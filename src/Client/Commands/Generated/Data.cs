@@ -1,5 +1,4 @@
-// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
-// Copyright (c) 2005-2021, Coveo Solutions Inc.
+// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -8,853 +7,1183 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method bulkDelete of class Data.
+    /// Options for the method CreateRecord of class Data.
     /// </summary>
-    public class DataBulkDeleteOptions : SFDXOptions
+    public class DataCreateRecordOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The sObject type of the records you’re deleting
-        /// </summary>
-        [SwitchName("--sobjecttype")]
-        public string sobjecttype { get; set; }
-
-        /// <summary>
-        /// [Required] The path to the CSV file containing the ids of the records to delete
-        /// </summary>
-        [SwitchName("--csvfile")]
-        public string csvfile { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
-
-        /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Optional] The number of minutes to wait for the command to complete before displaying the results
-        /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method bulkStatus of class Data.
-    /// </summary>
-    public class DataBulkStatusOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Required] The ID of the job you want to view or of the job whose batch you want to view
-        /// </summary>
-        [SwitchName("--jobid")]
-        public string jobid { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
-
-        /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] The ID of the batch whose status you want to view
-        /// </summary>
-        [SwitchName("--batchid")]
-        public string batchid { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method bulkUpsert of class Data.
-    /// </summary>
-    public class DataBulkUpsertOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Required] The sObject type of the records you want to upsert
-        /// </summary>
-        [SwitchName("--sobjecttype")]
-        public string sobjecttype { get; set; }
-
-        /// <summary>
-        /// [Required] The path to the CSV file that defines the records to upsert
-        /// </summary>
-        [SwitchName("--csvfile")]
-        public string csvfile { get; set; }
-
-        /// <summary>
-        /// [Required] The column name of the external ID
-        /// </summary>
-        [SwitchName("--externalid")]
-        public string externalid { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
-
-        /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Optional] The number of minutes to wait for the command to complete before displaying the results
-        /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
-
-        /// <summary>
-        /// [Optional] Run batches in serial mode
-        /// </summary>
-        [SwitchName("--serial")]
-        public bool? serial { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method recordCreate of class Data.
-    /// </summary>
-    public class DataRecordCreateOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Required] The <fieldName>=<value> pairs you’re creating
+        /// [Required] No description for values
         /// </summary>
         [SwitchName("--values")]
-        public string values { get; set; }
+        public string Values { get; set; }
 
         /// <summary>
-        /// [Required] The type of the record you’re creating
+        /// [Required] No description for sobject
         /// </summary>
-        [SwitchName("--sobjecttype")]
-        public string sobjecttype { get; set; }
+        [SwitchName("--sobject")]
+        public string Sobject { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-org
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Optional] Create the record with tooling api
+        /// [Required] No description for loglevel
         /// </summary>
-        [SwitchName("--usetoolingapi")]
-        public bool? usetoolingapi { get; set; }
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
 
         /// <summary>
-        /// [Optional] Get API performance data
+        /// [Optional] No description for use-tooling-api
+        /// </summary>
+        [SwitchName("--use-tooling-api")]
+        public bool? UseToolingApi { get; set; }
+
+        /// <summary>
+        /// [Optional] Gets data on API performance metrics from the server. The data is stored in $HOME/.sfdx/apiPerformanceLog.json.
         /// </summary>
         [SwitchName("--perflog")]
-        public bool? perflog { get; set; }
+        public bool? Perflog { get; set; }
     }
 
     /// <summary>
-    /// Options for the method recordDelete of class Data.
+    /// Options for the method DeleteBulk of class Data.
     /// </summary>
-    public class DataRecordDeleteOptions : SFDXOptions
+    public class DataDeleteBulkOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The type of the record you’re deleting
+        /// [Required] No description for sobject
         /// </summary>
-        [SwitchName("--sobjecttype")]
-        public string sobjecttype { get; set; }
+        [SwitchName("--sobject")]
+        public string Sobject { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for file
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--file")]
+        public string File { get; set; }
 
         /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
+        /// [Required] No description for target-org
         /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] The ID of the record you’re deleting
+        /// [Required] No description for loglevel
         /// </summary>
-        [SwitchName("--sobjectid")]
-        public string sobjectid { get; set; }
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A list of <fieldName>=<value> pairs to search for
+        /// [Required] No description for wait
+        /// </summary>
+        [SwitchName("--wait")]
+        public string Wait { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for async
+        /// </summary>
+        [SwitchName("--async")]
+        public bool? Async { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for verbose
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? Verbose { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method DeleteRecord of class Data.
+    /// </summary>
+    public class DataDeleteRecordOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for sobject
+        /// </summary>
+        [SwitchName("--sobject")]
+        public string Sobject { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] No description for record-id
+        /// </summary>
+        [SwitchName("--record-id")]
+        public string RecordId { get; set; }
+
+        /// <summary>
+        /// [Required] No description for where
         /// </summary>
         [SwitchName("--where")]
-        public string where { get; set; }
+        public string Where { get; set; }
 
         /// <summary>
-        /// [Optional] Delete the record with Tooling API
+        /// [Optional] No description for use-tooling-api
         /// </summary>
-        [SwitchName("--usetoolingapi")]
-        public bool? usetoolingapi { get; set; }
+        [SwitchName("--use-tooling-api")]
+        public bool? UseToolingApi { get; set; }
 
         /// <summary>
-        /// [Optional] Get API performance data
+        /// [Optional] Gets data on API performance metrics from the server. The data is stored in $HOME/.sfdx/apiPerformanceLog.json.
         /// </summary>
         [SwitchName("--perflog")]
-        public bool? perflog { get; set; }
+        public bool? Perflog { get; set; }
     }
 
     /// <summary>
-    /// Options for the method recordGet of class Data.
+    /// Options for the method DeleteResume of class Data.
     /// </summary>
-    public class DataRecordGetOptions : SFDXOptions
+    public class DataDeleteResumeOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The type of the record you’re retrieving
+        /// [Required] No description for target-org
         /// </summary>
-        [SwitchName("--sobjecttype")]
-        public string sobjecttype { get; set; }
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for job-id
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--job-id")]
+        public string JobId { get; set; }
 
         /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
+        /// [Optional] No description for use-most-recent
         /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        [SwitchName("--use-most-recent")]
+        public bool? UseMostRecent { get; set; }
+
+        /// <summary>
+        /// [Required] No description for wait
+        /// </summary>
+        [SwitchName("--wait")]
+        public string Wait { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] The ID of the record you’re retrieving
-        /// </summary>
-        [SwitchName("--sobjectid")]
-        public string sobjectid { get; set; }
-
-        /// <summary>
-        /// [Required] A list of <fieldName>=<value> pairs to search for
-        /// </summary>
-        [SwitchName("--where")]
-        public string where { get; set; }
-
-        /// <summary>
-        /// [Optional] Retrieve the record with Tooling API
-        /// </summary>
-        [SwitchName("--usetoolingapi")]
-        public bool? usetoolingapi { get; set; }
-
-        /// <summary>
-        /// [Optional] Get API performance data
-        /// </summary>
-        [SwitchName("--perflog")]
-        public bool? perflog { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method recordUpdate of class Data.
-    /// </summary>
-    public class DataRecordUpdateOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Required] The <fieldName>=<value> pairs you’re updating
-        /// </summary>
-        [SwitchName("--values")]
-        public string values { get; set; }
-
-        /// <summary>
-        /// [Required] The sObject type of the record you’re updating
-        /// </summary>
-        [SwitchName("--sobjecttype")]
-        public string sobjecttype { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
-
-        /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] The ID of the record you’re updating
-        /// </summary>
-        [SwitchName("--sobjectid")]
-        public string sobjectid { get; set; }
-
-        /// <summary>
-        /// [Required] A list of <fieldName>=<value> pairs to search for
-        /// </summary>
-        [SwitchName("--where")]
-        public string where { get; set; }
-
-        /// <summary>
-        /// [Optional] Update the record with Tooling API
-        /// </summary>
-        [SwitchName("--usetoolingapi")]
-        public bool? usetoolingapi { get; set; }
-
-        /// <summary>
-        /// [Optional] Get API performance data
-        /// </summary>
-        [SwitchName("--perflog")]
-        public bool? perflog { get; set; }
+        public string Loglevel { get; set; }
     }
 
     /// <summary>
-    /// Options for the method soqlQuery of class Data.
+    /// Options for the method ExportBetaTree of class Data.
     /// </summary>
-    public class DataSoqlQueryOptions : SFDXOptions
+    public class DataExportBetaTreeOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] SOQL query to execute
+        /// [Required] No description for query
         /// </summary>
         [SwitchName("--query")]
-        public string query { get; set; }
+        public string Query { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-org
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Optional] Execute query with Tooling API
-        /// </summary>
-        [SwitchName("--usetoolingapi")]
-        public bool? usetoolingapi { get; set; }
-
-        /// <summary>
-        /// [Required] Result format emitted to stdout; --json flag overrides this parameter
-        /// </summary>
-        [SwitchName("--resultformat")]
-        public string resultformat { get; set; }
-
-        /// <summary>
-        /// [Optional] Get API performance data
-        /// </summary>
-        [SwitchName("--perflog")]
-        public bool? perflog { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method treeExport of class Data.
-    /// </summary>
-    public class DataTreeExportOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Required] Soql query, or filepath of file containing a soql query, to retrieve records
-        /// </summary>
-        [SwitchName("--query")]
-        public string query { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        public string Loglevel { get; set; }
 
         /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
-
-        /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Optional] Generate mulitple sobject tree files and a plan definition file for aggregated import
+        /// [Optional] No description for plan
         /// </summary>
         [SwitchName("--plan")]
-        public bool? plan { get; set; }
+        public bool? Plan { get; set; }
 
         /// <summary>
-        /// [Required] Prefix of generated files
+        /// [Required] No description for prefix
         /// </summary>
         [SwitchName("--prefix")]
-        public string prefix { get; set; }
+        public string Prefix { get; set; }
 
         /// <summary>
-        /// [Required] Directory to store files'
+        /// [Required] No description for output-dir
         /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--output-dir")]
+        public string OutputDir { get; set; }
     }
 
     /// <summary>
-    /// Options for the method treeImport of class Data.
+    /// Options for the method ExportTree of class Data.
     /// </summary>
-    public class DataTreeImportOptions : SFDXOptions
+    public class DataExportTreeOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for query
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--query")]
+        public string Query { get; set; }
 
         /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
+        /// [Required] No description for target-org
         /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] Comma-delimited, ordered paths of json files containing collection of record trees to insert
+        /// [Required] No description for loglevel
         /// </summary>
-        [SwitchName("--sobjecttreefiles")]
-        public string sobjecttreefiles { get; set; }
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
 
         /// <summary>
-        /// [Required] Path to plan to insert multiple data files that have master-detail relationships
+        /// [Optional] No description for plan
         /// </summary>
         [SwitchName("--plan")]
-        public string plan { get; set; }
+        public bool? Plan { get; set; }
 
         /// <summary>
-        /// [Required] If data file extension is not .json, provide content type (applies to all files)
+        /// [Required] No description for prefix
         /// </summary>
-        [SwitchName("--contenttype")]
-        public string contenttype { get; set; }
+        [SwitchName("--prefix")]
+        public string Prefix { get; set; }
 
         /// <summary>
-        /// [Optional] Display schema information for the --plan configuration file to stdout; if you use this option, all other options except --json are ignored
+        /// [Required] No description for output-dir
         /// </summary>
-        [SwitchName("--confighelp")]
-        public bool? confighelp { get; set; }
+        [SwitchName("--output-dir")]
+        public string OutputDir { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method GetRecord of class Data.
+    /// </summary>
+    public class DataGetRecordOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for sobject
+        /// </summary>
+        [SwitchName("--sobject")]
+        public string Sobject { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] No description for record-id
+        /// </summary>
+        [SwitchName("--record-id")]
+        public string RecordId { get; set; }
+
+        /// <summary>
+        /// [Required] No description for where
+        /// </summary>
+        [SwitchName("--where")]
+        public string Where { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for use-tooling-api
+        /// </summary>
+        [SwitchName("--use-tooling-api")]
+        public bool? UseToolingApi { get; set; }
+
+        /// <summary>
+        /// [Optional] Gets data on API performance metrics from the server. The data is stored in $HOME/.sfdx/apiPerformanceLog.json.
+        /// </summary>
+        [SwitchName("--perflog")]
+        public bool? Perflog { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method ImportBetaTree of class Data.
+    /// </summary>
+    public class DataImportBetaTreeOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] No description for files
+        /// </summary>
+        [SwitchName("--files")]
+        public string Files { get; set; }
+
+        /// <summary>
+        /// [Required] No description for plan
+        /// </summary>
+        [SwitchName("--plan")]
+        public string Plan { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method ImportTree of class Data.
+    /// </summary>
+    public class DataImportTreeOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] No description for files
+        /// </summary>
+        [SwitchName("--files")]
+        public string Files { get; set; }
+
+        /// <summary>
+        /// [Required] No description for plan
+        /// </summary>
+        [SwitchName("--plan")]
+        public string Plan { get; set; }
+
+        /// <summary>
+        /// [Required] No description for content-type
+        /// </summary>
+        [SwitchName("--content-type")]
+        public string ContentType { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for config-help
+        /// </summary>
+        [SwitchName("--config-help")]
+        public bool? ConfigHelp { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method Query of class Data.
+    /// </summary>
+    public class DataQueryOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] No description for query
+        /// </summary>
+        [SwitchName("--query")]
+        public string Query { get; set; }
+
+        /// <summary>
+        /// [Required] No description for file
+        /// </summary>
+        [SwitchName("--file")]
+        public string File { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for use-tooling-api
+        /// </summary>
+        [SwitchName("--use-tooling-api")]
+        public bool? UseToolingApi { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for bulk
+        /// </summary>
+        [SwitchName("--bulk")]
+        public bool? Bulk { get; set; }
+
+        /// <summary>
+        /// [Required] No description for wait
+        /// </summary>
+        [SwitchName("--wait")]
+        public string Wait { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for async
+        /// </summary>
+        [SwitchName("--async")]
+        public bool? Async { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for all-rows
+        /// </summary>
+        [SwitchName("--all-rows")]
+        public bool? AllRows { get; set; }
+
+        /// <summary>
+        /// [Required] No description for result-format
+        /// </summary>
+        [SwitchName("--result-format")]
+        public string ResultFormat { get; set; }
+
+        /// <summary>
+        /// [Optional] Gets data on API performance metrics from the server. The data is stored in $HOME/.sfdx/apiPerformanceLog.json.
+        /// </summary>
+        [SwitchName("--perflog")]
+        public bool? Perflog { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method QueryResume of class Data.
+    /// </summary>
+    public class DataQueryResumeOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] No description for result-format
+        /// </summary>
+        [SwitchName("--result-format")]
+        public string ResultFormat { get; set; }
+
+        /// <summary>
+        /// [Required] No description for bulk-query-id
+        /// </summary>
+        [SwitchName("--bulk-query-id")]
+        public string BulkQueryId { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for use-most-recent
+        /// </summary>
+        [SwitchName("--use-most-recent")]
+        public bool? UseMostRecent { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method UpdateRecord of class Data.
+    /// </summary>
+    public class DataUpdateRecordOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for values
+        /// </summary>
+        [SwitchName("--values")]
+        public string Values { get; set; }
+
+        /// <summary>
+        /// [Required] No description for sobject
+        /// </summary>
+        [SwitchName("--sobject")]
+        public string Sobject { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] No description for record-id
+        /// </summary>
+        [SwitchName("--record-id")]
+        public string RecordId { get; set; }
+
+        /// <summary>
+        /// [Required] No description for where
+        /// </summary>
+        [SwitchName("--where")]
+        public string Where { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for use-tooling-api
+        /// </summary>
+        [SwitchName("--use-tooling-api")]
+        public bool? UseToolingApi { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for perflog
+        /// </summary>
+        [SwitchName("--perflog")]
+        public bool? Perflog { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method UpsertBulk of class Data.
+    /// </summary>
+    public class DataUpsertBulkOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for external-id
+        /// </summary>
+        [SwitchName("--external-id")]
+        public string ExternalId { get; set; }
+
+        /// <summary>
+        /// [Required] No description for sobject
+        /// </summary>
+        [SwitchName("--sobject")]
+        public string Sobject { get; set; }
+
+        /// <summary>
+        /// [Required] No description for file
+        /// </summary>
+        [SwitchName("--file")]
+        public string File { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] No description for wait
+        /// </summary>
+        [SwitchName("--wait")]
+        public string Wait { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for async
+        /// </summary>
+        [SwitchName("--async")]
+        public bool? Async { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for verbose
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? Verbose { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method UpsertResume of class Data.
+    /// </summary>
+    public class DataUpsertResumeOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] No description for job-id
+        /// </summary>
+        [SwitchName("--job-id")]
+        public string JobId { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for use-most-recent
+        /// </summary>
+        [SwitchName("--use-most-recent")]
+        public bool? UseMostRecent { get; set; }
+
+        /// <summary>
+        /// [Required] No description for wait
+        /// </summary>
+        [SwitchName("--wait")]
+        public string Wait { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
     }
 
     /// <summary>
     /// Data
     /// </summary>
-    [CommandClass("force:data")]
-    public class Data : SFDXCommand
+    [CommandClass("data")]
+    public class Data : SfdxCommand
     {
         /// Constructor.
-        public Data(CommandExecutioner p_CommandExecutioner)
-                : base(p_CommandExecutioner)
+        public Data(CommandExecutioner commandExecutioner)
+                : base(commandExecutioner)
         {
         }
 
         /// <summary>
-        /// bulk delete records from a csv file
-        /// The file must be a CSV file with only one column: "Id".
-        /// One job can contain many batches, depending on the length of the CSV file.
-        /// Returns a job ID and a batch ID. Use these IDs to check job status with data:bulk:status.
+        /// You must specify a value for all required fields of the object.
         /// 
+        /// When specifying fields, use the format <fieldName>=<value>. Enclose all field-value pairs in one set of double quotation marks, delimited by spaces. Enclose values that contain spaces in single quotes.
         /// 
+        /// This command inserts a record into Salesforce objects by default. Use the --use-tooling-api flag to insert into a Tooling API object.
         /// </summary>
         /// <remarks>
-        /// bulk delete records from a csv file
-        /// The file must be a CSV file with only one column: "Id".
-        /// One job can contain many batches, depending on the length of the CSV file.
-        /// Returns a job ID and a batch ID. Use these IDs to check job status with data:bulk:status.
+        /// You must specify a value for all required fields of the object.
         /// 
+        /// When specifying fields, use the format <fieldName>=<value>. Enclose all field-value pairs in one set of double quotation marks, delimited by spaces. Enclose values that contain spaces in single quotes.
         /// 
+        /// This command inserts a record into Salesforce objects by default. Use the --use-tooling-api flag to insert into a Tooling API object.
         /// </remarks>
         /// <example>
         /// 
-        /// sfdx force:data:bulk:delete -s Account -f ./path/to/file.csv
-        /// sfdx force:data:bulk:delete -s MyObject__c -f ./path/to/file.csv
-        /// force:data:bulk:delete -f <filepath> -s <string> [-w <minutes>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Insert a record into the Account object of your default org; only the required Name field has a value:
+        /// <%= config.bin %> <%= command.id %> --sobject Account --values "Name=Acme"
+        /// Insert an Account record with values for two fields, one value contains a space; the command uses the org with alias "my-scratch":
+        /// <%= config.bin %> <%= command.id %> --sobject Account --values "Name='Universal Containers' Website=www.example.com" --target-org my-scratch
+        /// Insert a record into the Tooling API object TraceFlag:
+        /// <%= config.bin %> <%= command.id %> --use-tooling-api --sobject TraceFlag --values "DebugLevelId=7dl170000008U36AAE StartDate=2022-12-15T00:26:04.000+0000 ExpirationDate=2022-12-15T00:56:04.000+0000 LogType=CLASS_TRACING TracedEntityId=01p17000000R6bLAAS"
         /// </example>
-        [Command("bulk:delete")]
-        public SFDXResponse BulkDelete(DataBulkDeleteOptions p_Options)
+        [Command("create record")]
+        public SfdxResponse CreateRecord(DataCreateRecordOptions options)
         {
-            return ExecuteCommand<DataBulkDeleteOptions>(nameof(BulkDelete), p_Options);
+            return ExecuteCommand(nameof(CreateRecord), options);
         }
 
         /// <summary>
-        /// view the status of a bulk data load job or batch
-        /// Run this command using the job ID or batch ID returned from the force:data:bulk:delete or force:data:bulk:upsert commands.
+        /// The CSV file must have only one column ("Id") and then the list of record IDs you want to delete, one ID per line.
+        /// 
+        /// When you execute this command, it starts a job, displays the ID, and then immediately returns control of the terminal to you by default. If you prefer to wait, set the --wait flag to the number of minutes; if it times out, the command outputs the IDs. Use the job ID to check the status of the job with the "<%= config.bin %> data delete resume" command.
         /// </summary>
         /// <remarks>
-        /// view the status of a bulk data load job or batch
-        /// Run this command using the job ID or batch ID returned from the force:data:bulk:delete or force:data:bulk:upsert commands.
+        /// The CSV file must have only one column ("Id") and then the list of record IDs you want to delete, one ID per line.
+        /// 
+        /// When you execute this command, it starts a job, displays the ID, and then immediately returns control of the terminal to you by default. If you prefer to wait, set the --wait flag to the number of minutes; if it times out, the command outputs the IDs. Use the job ID to check the status of the job with the "<%= config.bin %> data delete resume" command.
         /// </remarks>
         /// <example>
         /// 
-        /// sfdx force:data:bulk:status -i 750xx000000005sAAA
-        /// sfdx force:data:bulk:status -i 750xx000000005sAAA -b 751xx000000005nAAA
-        /// force:data:bulk:status -i <string> [-b <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Bulk delete Account records from your default org using the list of IDs in the "files/delete.csv" file:
+        /// <%= config.bin %> <%= command.id %> --sobject Account --file files/delete.csv
+        /// Bulk delete records from a custom object in an org with alias my-scratch and wait 5 minutes for the command to complete:
+        /// <%= config.bin %> <%= command.id %> --sobject MyObject__c --file files/delete.csv --wait 5 --target-org my-scratch
         /// </example>
-        [Command("bulk:status")]
-        public SFDXResponse BulkStatus(DataBulkStatusOptions p_Options)
+        [Command("delete bulk")]
+        public SfdxResponse DeleteBulk(DataDeleteBulkOptions options)
         {
-            return ExecuteCommand<DataBulkStatusOptions>(nameof(BulkStatus), p_Options);
+            return ExecuteCommand(nameof(DeleteBulk), options);
         }
 
         /// <summary>
-        /// bulk upsert records from a CSV file
-        /// Inserts or updates records from a CSV file.
+        /// Specify the record you want to delete with either its ID or with a list of field-value pairs that identify the record. If your list of fields identifies more than one record, the delete fails; the error displays how many records were found.
         /// 
-        /// One job can contain many batches, depending on the length of the CSV file.
-        /// Returns a job ID and a batch ID. Use these IDs to check job status with data:bulk:status.
+        /// When specifying field-value pairs, use the format <fieldName>=<value>. Enclose all field-value pairs in one set of double quotation marks, delimited by spaces. Enclose values that contain spaces in single quotes.
         /// 
-        /// For information about formatting your CSV file, see "Prepare CSV Files" in the Bulk API Developer Guide. 
-        /// 
-        /// By default, the job runs the batches in parallel. Specify --serial to run them serially.
+        /// This command deletes a record from Salesforce objects by default. Use the --use-tooling-api flag to delete from a Tooling API object.
         /// </summary>
         /// <remarks>
-        /// bulk upsert records from a CSV file
-        /// Inserts or updates records from a CSV file.
+        /// Specify the record you want to delete with either its ID or with a list of field-value pairs that identify the record. If your list of fields identifies more than one record, the delete fails; the error displays how many records were found.
         /// 
-        /// One job can contain many batches, depending on the length of the CSV file.
-        /// Returns a job ID and a batch ID. Use these IDs to check job status with data:bulk:status.
+        /// When specifying field-value pairs, use the format <fieldName>=<value>. Enclose all field-value pairs in one set of double quotation marks, delimited by spaces. Enclose values that contain spaces in single quotes.
         /// 
-        /// For information about formatting your CSV file, see "Prepare CSV Files" in the Bulk API Developer Guide. 
-        /// 
-        /// By default, the job runs the batches in parallel. Specify --serial to run them serially.
+        /// This command deletes a record from Salesforce objects by default. Use the --use-tooling-api flag to delete from a Tooling API object.
         /// </remarks>
         /// <example>
         /// 
-        /// sfdx force:data:bulk:upsert -s MyObject__c -f ./path/to/file.csv -i MyField__c
-        /// sfdx force:data:bulk:upsert -s MyObject__c -f ./path/to/file.csv -i Id -w 2
-        /// force:data:bulk:upsert -i <string> -f <filepath> -s <string> [-w <minutes>] [-r] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Delete a record from Account with the specified (truncated) ID:
+        /// <%= config.bin %> <%= command.id %> --sobject Account --record-id 00180XX
+        /// Delete a record from Account whose name equals "Acme":
+        /// <%= config.bin %> <%= command.id %> --sobject Account --where "Name=Acme"
+        /// Delete a record from Account identified with two field values, one that contains a space; the command uses the org with alias "my-scratch":
+        /// <%= config.bin %> <%= command.id %> --sobject Account --where "Name='Universal Containers' Phone='(123) 456-7890'" --target-org myscratch
+        /// Delete a record from the Tooling API object TraceFlag with the specified (truncated) ID:
+        /// <%= config.bin %> <%= command.id %> --use-tooling-api --sobject TraceFlag --record-id 7tf8c
         /// </example>
-        [Command("bulk:upsert")]
-        public SFDXResponse BulkUpsert(DataBulkUpsertOptions p_Options)
+        [Command("delete record")]
+        public SfdxResponse DeleteRecord(DataDeleteRecordOptions options)
         {
-            return ExecuteCommand<DataBulkUpsertOptions>(nameof(BulkUpsert), p_Options);
+            return ExecuteCommand(nameof(DeleteRecord), options);
         }
 
         /// <summary>
-        /// creates and inserts a record
-        /// The format of a field-value pair is <fieldName>=<value>.
-        /// Enclose all field-value pairs in one set of double quotation marks, delimited by spaces.
-        /// Enclose values that contain spaces in single quotes.
-        /// 
-        /// To get data on API performance metrics, specify both --perflog and --json.
+        /// The command uses the job ID returned by the "<%= config.bin %> data delete bulk" command or the most recently-run bulk delete job.
         /// </summary>
         /// <remarks>
-        /// creates and inserts a record
-        /// The format of a field-value pair is <fieldName>=<value>.
-        /// Enclose all field-value pairs in one set of double quotation marks, delimited by spaces.
-        /// Enclose values that contain spaces in single quotes.
-        /// 
-        /// To get data on API performance metrics, specify both --perflog and --json.
+        /// The command uses the job ID returned by the "<%= config.bin %> data delete bulk" command or the most recently-run bulk delete job.
         /// </remarks>
         /// <example>
         /// 
-        /// sfdx force:data:record:create -s Account -v "Name=Acme"
-        /// sfdx force:data:record:create -s Account -v "Name='Universal Containers'"
-        /// sfdx force:data:record:create -s Account -v "Name='Universal Containers' Website=www.example.com"
-        /// sfdx force:data:record:create -t -s TraceFlag -v "DebugLevelId=7dl170000008U36AAE StartDate=2017-12-01T00:26:04.000+0000 ExpirationDate=2017-12-01T00:56:04.000+0000 LogType=CLASS_TRACING TracedEntityId=01p17000000R6bLAAS"
-        /// sfdx force:data:record:create -s Account -v "Name=Acme" --perflog --json
-        /// force:data:record:create -s <string> -v <string> [-t] [--perflog --json] [-u <string>] [--apiversion <string>] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Resume a bulk delete job from your default org using an ID:
+        /// <%= config.bin %> <%= command.id %> --job-id 750xx000000005sAAA
+        /// Resume the most recently run bulk delete job for an org with alias my-scratch:
+        /// <%= config.bin %> <%= command.id %> --use-most-recent --target-org my-scratch
         /// </example>
-        [Command("record:create")]
-        public SFDXResponse RecordCreate(DataRecordCreateOptions p_Options)
+        [Command("delete resume")]
+        public SfdxResponse DeleteResume(DataDeleteResumeOptions options)
         {
-            return ExecuteCommand<DataRecordCreateOptions>(nameof(RecordCreate), p_Options);
+            return ExecuteCommand(nameof(DeleteResume), options);
         }
 
         /// <summary>
-        /// deletes a single record
-        /// Specify an sObject type and either an ID or a list of <fieldName>=<value> pairs.
-        /// The format of a field-value pair is <fieldName>=<value>.
-        /// Enclose all field-value pairs in one set of double quotation marks, delimited by spaces.
-        /// Enclose values that contain spaces in single quotes.
+        /// Specify a SOQL query, either directly at the command line or read from a file, to retrieve the data you want to export. The exported data is written to JSON files in sObject tree format, which is a collection of nested, parent-child records with a single root record. Use these JSON files to import data into an org with the "<%= config.bin %> data import tree" command.
         /// 
-        /// To get data on API performance metrics, specify both --perflog and --json.
+        /// If your SOQL query references multiple objects, the command generates a single JSON file by default. You can specify the --plan flag to generate separate JSON files for each object and a plan definition file that aggregates them. You then specify just this plan definition file when you import the data into an org.
+        /// 
+        /// The SOQL query can return a maximum of 2,000 records. For more information, see the REST API Developer Guide. (https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm).
         /// </summary>
         /// <remarks>
-        /// deletes a single record
-        /// Specify an sObject type and either an ID or a list of <fieldName>=<value> pairs.
-        /// The format of a field-value pair is <fieldName>=<value>.
-        /// Enclose all field-value pairs in one set of double quotation marks, delimited by spaces.
-        /// Enclose values that contain spaces in single quotes.
+        /// Specify a SOQL query, either directly at the command line or read from a file, to retrieve the data you want to export. The exported data is written to JSON files in sObject tree format, which is a collection of nested, parent-child records with a single root record. Use these JSON files to import data into an org with the "<%= config.bin %> data import tree" command.
         /// 
-        /// To get data on API performance metrics, specify both --perflog and --json.
+        /// If your SOQL query references multiple objects, the command generates a single JSON file by default. You can specify the --plan flag to generate separate JSON files for each object and a plan definition file that aggregates them. You then specify just this plan definition file when you import the data into an org.
+        /// 
+        /// The SOQL query can return a maximum of 2,000 records. For more information, see the REST API Developer Guide. (https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm).
         /// </remarks>
         /// <example>
         /// 
-        /// sfdx force:data:record:delete -s Account -i 001D000000Kv3dl
-        /// sfdx force:data:record:delete -s Account -w "Name=Acme"
-        /// sfdx force:data:record:delete -s Account -w "Name='Universal Containers'"
-        /// sfdx force:data:record:delete -s Account -w "Name='Universal Containers' Phone='(123) 456-7890'"
-        /// sfdx force:data:record:delete -t -s TraceFlag -i 7tf170000009cU6AAI --perflog --json
-        /// force:data:record:delete -s <string> [-i <id> | -w <string>] [-t] [--perflog --json] [-u <string>] [--apiversion <string>] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Export records retrieved with the specified SOQL query into a single JSON file in the current directory; the command uses your default org:
+        /// <%= config.bin %> <%= command.id %> --query "SELECT Id, Name, (SELECT Name, Address__c FROM Properties__r) FROM Broker__c"
+        /// Export data using a SOQL query in the "query.txt" file and generate JSON files for each object and a plan that aggregates them:
+        /// <%= config.bin %> <%= command.id %> --query query.txt --plan
+        /// Prepend "export-demo" before each generated file and generate the files in the "export-out" directory; run the command on the org with alias "my-scratch":
+        /// <%= config.bin %> <%= command.id %> --query query.txt --plan --prefix export-demo --output-dir export-out --target-org my-scratch
         /// </example>
-        [Command("record:delete")]
-        public SFDXResponse RecordDelete(DataRecordDeleteOptions p_Options)
+        [Command("export beta tree")]
+        public SfdxResponse ExportBetaTree(DataExportBetaTreeOptions options)
         {
-            return ExecuteCommand<DataRecordDeleteOptions>(nameof(RecordDelete), p_Options);
+            return ExecuteCommand(nameof(ExportBetaTree), options);
         }
 
         /// <summary>
-        /// displays a single record
-        /// Specify an sObject type and either an ID or a list of <fieldName>=<value> pairs.
-        /// The format of a field-value pair is <fieldName>=<value>.
-        /// Enclose all field-value pairs in one set of double quotation marks, delimited by spaces.
-        /// Enclose values that contain spaces in single quotes.
+        /// Specify a SOQL query, either directly at the command line or read from a file, to retrieve the data you want to export. The exported data is written to JSON files in sObject tree format, which is a collection of nested, parent-child records with a single root record. Use these JSON files to import data into an org with the "<%= config.bin %> data import tree" command.
         /// 
-        /// To get data on API performance metrics, specify both --perflog and --json.
+        /// If your SOQL query references multiple objects, the command generates a single JSON file by default. You can specify the --plan flag to generate separate JSON files for each object and a plan definition file that aggregates them. You then specify just this plan definition file when you import the data into an org.
+        /// 
+        /// The SOQL query can return a maximum of 2,000 records. For more information, see the REST API Developer Guide. (https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm).
         /// </summary>
         /// <remarks>
-        /// displays a single record
-        /// Specify an sObject type and either an ID or a list of <fieldName>=<value> pairs.
-        /// The format of a field-value pair is <fieldName>=<value>.
-        /// Enclose all field-value pairs in one set of double quotation marks, delimited by spaces.
-        /// Enclose values that contain spaces in single quotes.
+        /// Specify a SOQL query, either directly at the command line or read from a file, to retrieve the data you want to export. The exported data is written to JSON files in sObject tree format, which is a collection of nested, parent-child records with a single root record. Use these JSON files to import data into an org with the "<%= config.bin %> data import tree" command.
         /// 
-        /// To get data on API performance metrics, specify both --perflog and --json.
+        /// If your SOQL query references multiple objects, the command generates a single JSON file by default. You can specify the --plan flag to generate separate JSON files for each object and a plan definition file that aggregates them. You then specify just this plan definition file when you import the data into an org.
+        /// 
+        /// The SOQL query can return a maximum of 2,000 records. For more information, see the REST API Developer Guide. (https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm).
         /// </remarks>
         /// <example>
         /// 
-        /// sfdx force:data:record:get -s Account -i 001D000000Kv3dl
-        /// sfdx force:data:record:get -s Account -w "Name=Acme"
-        /// sfdx force:data:record:get -s Account -w "Name='Universal Containers'"
-        /// sfdx force:data:record:get -s Account -w "Name='Universal Containers' Phone='(123) 456-7890'"
-        /// sfdx force:data:record:get -t -s TraceFlag -i 7tf170000009cUBAAY --perflog --json
-        /// force:data:record:get -s <string> [-i <id> | -w <string>] [-t] [--perflog --json] [-u <string>] [--apiversion <string>] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Export records retrieved with the specified SOQL query into a single JSON file in the current directory; the command uses your default org:
+        /// <%= config.bin %> <%= command.id %> --query "SELECT Id, Name, (SELECT Name, Address__c FROM Properties__r) FROM Broker__c"
+        /// Export data using a SOQL query in the "query.txt" file and generate JSON files for each object and a plan that aggregates them:
+        /// <%= config.bin %> <%= command.id %> --query query.txt --plan
+        /// Prepend "export-demo" before each generated file and generate the files in the "export-out" directory; run the command on the org with alias "my-scratch":
+        /// <%= config.bin %> <%= command.id %> --query query.txt --plan --prefix export-demo --output-dir export-out --target-org my-scratch
         /// </example>
-        [Command("record:get")]
-        public SFDXResponse RecordGet(DataRecordGetOptions p_Options)
+        [Command("export tree")]
+        public SfdxResponse ExportTree(DataExportTreeOptions options)
         {
-            return ExecuteCommand<DataRecordGetOptions>(nameof(RecordGet), p_Options);
+            return ExecuteCommand(nameof(ExportTree), options);
         }
 
         /// <summary>
-        /// updates a single record
-        /// The format of a field-value pair is <fieldName>=<value>.
-        /// Enclose all field-value pairs in one set of double quotation marks, delimited by spaces.
-        /// Enclose values that contain spaces in single quotes.
+        /// Specify the record you want to retrieve with either its ID or with a list of field-value pairs that identify the record. If your list of fields identifies more than one record, the command fails; the error displays how many records were found.
         /// 
-        /// To get data on API performance metrics, specify both --perflog and --json.
+        /// When specifying field-value pairs, use the format <fieldName>=<value>. Enclose all field-value pairs in one set of double quotation marks, delimited by spaces. Enclose values that contain spaces in single quotes.
+        /// 
+        /// The command displays all the record's fields and their values, one field per terminal line. Fields with no values are displayed as "null".
+        /// 
+        /// This command retrieves a record from Salesforce objects by default. Use the --use-tooling-api flag to retrieve from a Tooling API object.
         /// </summary>
         /// <remarks>
-        /// updates a single record
-        /// The format of a field-value pair is <fieldName>=<value>.
-        /// Enclose all field-value pairs in one set of double quotation marks, delimited by spaces.
-        /// Enclose values that contain spaces in single quotes.
+        /// Specify the record you want to retrieve with either its ID or with a list of field-value pairs that identify the record. If your list of fields identifies more than one record, the command fails; the error displays how many records were found.
         /// 
-        /// To get data on API performance metrics, specify both --perflog and --json.
+        /// When specifying field-value pairs, use the format <fieldName>=<value>. Enclose all field-value pairs in one set of double quotation marks, delimited by spaces. Enclose values that contain spaces in single quotes.
+        /// 
+        /// The command displays all the record's fields and their values, one field per terminal line. Fields with no values are displayed as "null".
+        /// 
+        /// This command retrieves a record from Salesforce objects by default. Use the --use-tooling-api flag to retrieve from a Tooling API object.
         /// </remarks>
         /// <example>
         /// 
-        /// sfdx force:data:record:update -s Account -i 001D000000Kv3dl -v "Name=NewAcme"
-        /// sfdx force:data:record:update -s Account -w "Name='Old Acme'" -v "Name='New Acme'"
-        /// sfdx force:data:record:update -s Account -i 001D000000Kv3dl -v "Name='Acme III' Website=www.example.com"
-        /// sfdx force:data:record:update -t -s TraceFlag -i 7tf170000009cUBAAY -v "ExpirationDate=2017-12-01T00:58:04.000+0000"
-        /// sfdx force:data:record:update -s Account -i 001D000000Kv3dl -v "Name=NewAcme" --perflog --json
-        /// force:data:record:update -s <string> -v <string> [-i <id> | -w <string>] [-t] [--perflog --json] [-u <string>] [--apiversion <string>] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Retrieve and display a record from Account with the specified (truncated) ID:
+        /// <%= config.bin %> <%= command.id %> --sobject Account --record-id 00180XX
+        /// Retrieve a record from Account whose name equals "Acme":
+        /// <%= config.bin %> <%= command.id %> --sobject Account --where "Name=Acme"
+        /// Retrieve a record from Account identified with two field values, one that contains a space; the command uses the org with alias "my-scratch":
+        /// <%= config.bin %> <%= command.id %> --sobject Account --where "Name='Universal Containers' Phone='(123) 456-7890'" --target-org myscratch
+        /// Retrieve a record from the Tooling API object TraceFlag with the specified (truncated) ID:
+        /// <%= config.bin %> <%= command.id %> --use-tooling-api --sobject TraceFlag --record-id 7tf8c
         /// </example>
-        [Command("record:update")]
-        public SFDXResponse RecordUpdate(DataRecordUpdateOptions p_Options)
+        [Command("get record")]
+        public SfdxResponse GetRecord(DataGetRecordOptions options)
         {
-            return ExecuteCommand<DataRecordUpdateOptions>(nameof(RecordUpdate), p_Options);
+            return ExecuteCommand(nameof(GetRecord), options);
         }
 
         /// <summary>
-        /// execute a SOQL query
-        /// When you execute this command in a project, it executes the query against the data in your default scratch org.
+        /// The JSON files that contain the data are in sObject tree format, which is a collection of nested, parent-child records with a single root record. Use the "<%= config.bin %> data export tree" command to generate these JSON files.
         /// 
-        /// To get data on API performance metrics, specify both --perflog and --json.
-        /// 
-        /// 
+        /// If you used the --plan flag when exporting the data to generate a plan definition file, use the --plan flag to reference the file when you import. If you're not using a plan, use the --files flag to list the files. If you specify multiple JSON files that depend on each other in a parent-child relationship, be sure you list them in the correct order.
         /// </summary>
         /// <remarks>
-        /// execute a SOQL query
-        /// When you execute this command in a project, it executes the query against the data in your default scratch org.
+        /// The JSON files that contain the data are in sObject tree format, which is a collection of nested, parent-child records with a single root record. Use the "<%= config.bin %> data export tree" command to generate these JSON files.
         /// 
-        /// To get data on API performance metrics, specify both --perflog and --json.
-        /// 
-        /// 
+        /// If you used the --plan flag when exporting the data to generate a plan definition file, use the --plan flag to reference the file when you import. If you're not using a plan, use the --files flag to list the files. If you specify multiple JSON files that depend on each other in a parent-child relationship, be sure you list them in the correct order.
         /// </remarks>
         /// <example>
         /// 
-        /// sfdx force:data:soql:query -q "SELECT Id, Name, Account.Name FROM Contact"
-        /// sfdx force:data:soql:query -q "SELECT Id, Name FROM Account WHERE ShippingState IN ('CA', 'NY')"
-        /// sfdx force:data:soql:query -q "SELECT Id, Name FROM Account WHERE ShippingState IN ('CA', 'NY')" --perflog --json
-        /// sfdx force:data:soql:query -q "SELECT Name FROM ApexTrigger" -t
-        /// force:data:soql:query -q <string> [-t] [-r human|csv|json] [--perflog --json] [-u <string>] [--apiversion <string>] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Import the records contained in two JSON files into the org with alias "my-scratch":
+        /// <%= config.bin %> <%= command.id %> --files Contact.json,Account.json --target-org my-scratch
+        /// Import records using a plan definition file into your default org:
+        /// <%= config.bin %> <%= command.id %> --plan Account-Contact-plan.json
         /// </example>
-        [Command("soql:query")]
-        public SFDXResponse SoqlQuery(DataSoqlQueryOptions p_Options)
+        [Command("import beta tree")]
+        public SfdxResponse ImportBetaTree(DataImportBetaTreeOptions options)
         {
-            return ExecuteCommand<DataSoqlQueryOptions>(nameof(SoqlQuery), p_Options);
+            return ExecuteCommand(nameof(ImportBetaTree), options);
         }
 
         /// <summary>
-        /// export data from an org
-        /// Exports data from an org into sObject tree format for use with the force:data:tree:import command.
-        /// The query for export can return a maximum of 2,000 records. For more information, see the REST API Developer Guide: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm
+        /// The JSON files that contain the data are in sObject tree format, which is a collection of nested, parent-child records with a single root record. Use the "<%= config.bin %> data export tree" command to generate these JSON files.
+        /// 
+        /// If you used the --plan flag when exporting the data to generate a plan definition file, use the --plan flag to reference the file when you import. If you're not using a plan, use the --files flag to list the files. If you specify multiple JSON files that depend on each other in a parent-child relationship, be sure you list them in the correct order.
+        /// 
+        /// The sObject Tree API supports requests that contain up to 200 records. For more information, see the REST API Developer Guide. (https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm)
         /// </summary>
         /// <remarks>
-        /// export data from an org
-        /// Exports data from an org into sObject tree format for use with the force:data:tree:import command.
-        /// The query for export can return a maximum of 2,000 records. For more information, see the REST API Developer Guide: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm
+        /// The JSON files that contain the data are in sObject tree format, which is a collection of nested, parent-child records with a single root record. Use the "<%= config.bin %> data export tree" command to generate these JSON files.
+        /// 
+        /// If you used the --plan flag when exporting the data to generate a plan definition file, use the --plan flag to reference the file when you import. If you're not using a plan, use the --files flag to list the files. If you specify multiple JSON files that depend on each other in a parent-child relationship, be sure you list them in the correct order.
+        /// 
+        /// The sObject Tree API supports requests that contain up to 200 records. For more information, see the REST API Developer Guide. (https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm)
         /// </remarks>
         /// <example>
         /// 
-        /// sfdx force:data:tree:export -q "SELECT Id, Name, (SELECT Name, Address__c FROM Properties__r) FROM Broker__c"
-        /// sfdx force:data:tree:export -q <path to file containing soql query> -x export-demo -d /tmp/sfdx-out -p
-        /// force:data:tree:export -q <string> [-p] [-x <string>] [-d <directory>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Import the records contained in two JSON files into the org with alias "my-scratch":
+        /// <%= config.bin %> <%= command.id %> --files Contact.json,Account.json --target-org my-scratch
+        /// Import records using a plan definition file into your default org:
+        /// <%= config.bin %> <%= command.id %> --plan Account-Contact-plan.json
         /// </example>
-        [Command("tree:export")]
-        public SFDXResponse TreeExport(DataTreeExportOptions p_Options)
+        [Command("import tree")]
+        public SfdxResponse ImportTree(DataImportTreeOptions options)
         {
-            return ExecuteCommand<DataTreeExportOptions>(nameof(TreeExport), p_Options);
+            return ExecuteCommand(nameof(ImportTree), options);
         }
 
         /// <summary>
-        /// import data into an org
-        /// Imports data into an org using the SObject Tree Save API.  This data can include master-detail relationships.
-        /// To generate JSON files for use with force:data:tree:import, run "sfdx force:data:tree:export".
-        /// The SObject Tree API supports requests that contain up to 200 records. For more information, see the REST API Developer Guide: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm
+        /// Specify the SOQL query at the command line with the --query flag or read the query from a file with the --file flag.
+        /// 
+        /// If your query returns more than 10,000 records, specify the --bulk flag. The command then runs the query using Bulk API 2.0, which has higher limits than the default API used by the command.
+        /// 
+        /// When using --bulk, the command waits 3 minutes by default for the query to complete. Use the --wait parameter to specify a different number of minutes to wait, or set --wait to 0 to immediately return control to the terminal. If you set --wait to 0, or you use the --async flag, or the command simply times out, the command displays an ID. Pass this ID to the the "data query resume" command using the --bulk-query-id flag to get the results; pass the ID to the "data resume" command to get the job status.
         /// </summary>
         /// <remarks>
-        /// import data into an org
-        /// Imports data into an org using the SObject Tree Save API.  This data can include master-detail relationships.
-        /// To generate JSON files for use with force:data:tree:import, run "sfdx force:data:tree:export".
-        /// The SObject Tree API supports requests that contain up to 200 records. For more information, see the REST API Developer Guide: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm
+        /// Specify the SOQL query at the command line with the --query flag or read the query from a file with the --file flag.
+        /// 
+        /// If your query returns more than 10,000 records, specify the --bulk flag. The command then runs the query using Bulk API 2.0, which has higher limits than the default API used by the command.
+        /// 
+        /// When using --bulk, the command waits 3 minutes by default for the query to complete. Use the --wait parameter to specify a different number of minutes to wait, or set --wait to 0 to immediately return control to the terminal. If you set --wait to 0, or you use the --async flag, or the command simply times out, the command displays an ID. Pass this ID to the the "data query resume" command using the --bulk-query-id flag to get the results; pass the ID to the "data resume" command to get the job status.
         /// </remarks>
         /// <example>
         /// 
-        /// sfdx force:data:tree:import -f Contact.json,Account.json -u me@my.org
-        /// sfdx force:data:tree:import -p Account-Contact-plan.json -u me@my.org
-        /// force:data:tree:import [-f <array> | -p <filepath>] [--confighelp] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Specify a SOQL query at the command line; the command uses your default org:
+        /// <%= config.bin %> <%= command.id %> --query "SELECT Id, Name, Account.Name FROM Contact"
+        /// Read the SOQL query from a file called "query.txt"; the command uses the org with alias "my-scratch":
+        /// <%= config.bin %> <%= command.id %> --file query.txt --target-org my-scratch
+        /// Use Tooling API to run a query on the ApexTrigger Tooling API object:
+        /// <%= config.bin %> <%= command.id %> --query "SELECT Name FROM ApexTrigger" --use-tooling-api
+        /// Use Bulk API 2.0 to run a query that returns many rows, and return control to the terminal immediately:
+        /// <%= config.bin %> <%= command.id %> --query "SELECT Id FROM Contact" --bulk --wait 0
         /// </example>
-        [Command("tree:import")]
-        public SFDXResponse TreeImport(DataTreeImportOptions p_Options)
+        [Command("query")]
+        public SfdxResponse Query(DataQueryOptions options)
         {
-            return ExecuteCommand<DataTreeImportOptions>(nameof(TreeImport), p_Options);
+            return ExecuteCommand(nameof(Query), options);
+        }
+
+        /// <summary>
+        /// Run this command using the job ID returned from the "<%= config.bin %> data query --bulk" command.
+        /// </summary>
+        /// <remarks>
+        /// Run this command using the job ID returned from the "<%= config.bin %> data query --bulk" command.
+        /// </remarks>
+        /// <example>
+        /// 
+        /// View the status of a bulk query with the specified ID:
+        /// <%= config.bin %> <%= command.id %> --bulk-query-id 7500x000005BdFzXXX
+        /// </example>
+        [Command("query resume")]
+        public SfdxResponse QueryResume(DataQueryResumeOptions options)
+        {
+            return ExecuteCommand(nameof(QueryResume), options);
+        }
+
+        /// <summary>
+        /// Specify the record you want to update with either its ID or with a list of field-value pairs that identify the record. If your list of fields identifies more than one record, the update fails; the error displays how many records were found.
+        /// 
+        /// When using field-value pairs for both identifying the record and specifiyng the new field values, use the format <fieldName>=<value>. Enclose all field-value pairs in one set of double quotation marks, delimited by spaces. Enclose values that contain spaces in single quotes.
+        /// 
+        /// This command updates a record in Salesforce objects by default. Use the --use-tooling-api flag to update a Tooling API object.
+        /// </summary>
+        /// <remarks>
+        /// Specify the record you want to update with either its ID or with a list of field-value pairs that identify the record. If your list of fields identifies more than one record, the update fails; the error displays how many records were found.
+        /// 
+        /// When using field-value pairs for both identifying the record and specifiyng the new field values, use the format <fieldName>=<value>. Enclose all field-value pairs in one set of double quotation marks, delimited by spaces. Enclose values that contain spaces in single quotes.
+        /// 
+        /// This command updates a record in Salesforce objects by default. Use the --use-tooling-api flag to update a Tooling API object.
+        /// </remarks>
+        /// <example>
+        /// 
+        /// Update the Name field of an Account record with the specified (truncated) ID:
+        /// <%= config.bin %> <%= command.id %> --sobject Account --record-id 001D0 --values "Name=NewAcme"
+        /// Update the Name field of an Account record whose current name is 'Old Acme':
+        /// <%= config.bin %> <%= command.id %> --sobject Account --where "Name='Old Acme'" --values "Name='New Acme'"
+        /// Update the Name and Website fields of an Account record with the specified (truncated) ID:
+        /// <%= config.bin %> <%= command.id %> --sobject Account --record-id 001D0 --values "Name='Acme III' Website=www.example.com"
+        /// Update the ExpirationDate field of a record of the Tooling API object TraceFlag using the specified (truncated) ID:
+        /// <%= config.bin %> <%= command.id %> -t --sobject TraceFlag --record-id 7tf170000009cUBAAY --values "ExpirationDate=2017-12-01T00:58:04.000+0000"
+        /// </example>
+        [Command("update record")]
+        public SfdxResponse UpdateRecord(DataUpdateRecordOptions options)
+        {
+            return ExecuteCommand(nameof(UpdateRecord), options);
+        }
+
+        /// <summary>
+        /// An upsert refers to inserting a record into a Salesforce object if the record doesn't already exist, or updating it if it does exist.
+        /// 
+        /// When you execute this command, it starts a job, displays the ID, and then immediately returns control of the terminal to you by default. If you prefer to wait, set the --wait flag to the number of minutes; if it times out, the command outputs the IDs. Use the job and batch IDs to check the status of the job with the "<%= config.bin %> data upsert resume" command.
+        /// 
+        /// See "Prepare CSV Files" in the Bulk API Developer Guide for details on formatting your CSV file. (https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/datafiles_prepare_csv.htm)
+        /// </summary>
+        /// <remarks>
+        /// An upsert refers to inserting a record into a Salesforce object if the record doesn't already exist, or updating it if it does exist.
+        /// 
+        /// When you execute this command, it starts a job, displays the ID, and then immediately returns control of the terminal to you by default. If you prefer to wait, set the --wait flag to the number of minutes; if it times out, the command outputs the IDs. Use the job and batch IDs to check the status of the job with the "<%= config.bin %> data upsert resume" command.
+        /// 
+        /// See "Prepare CSV Files" in the Bulk API Developer Guide for details on formatting your CSV file. (https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/datafiles_prepare_csv.htm)
+        /// </remarks>
+        /// <example>
+        /// 
+        /// Bulk upsert records to the Contact object in your default org:
+        /// <%= config.bin %> <%= command.id %> --sobject Contact --file files/contacts.csv --external-id Id
+        /// Bulk upsert records to a custom object in an org with alias my-scratch and wait 5 minutes for the command to complete:
+        /// <%= config.bin %> <%= command.id %> --sobject MyObject__c --file files/file.csv --external-id MyField__c --wait 5 --target-org my-scratch
+        /// </example>
+        [Command("upsert bulk")]
+        public SfdxResponse UpsertBulk(DataUpsertBulkOptions options)
+        {
+            return ExecuteCommand(nameof(UpsertBulk), options);
+        }
+
+        /// <summary>
+        /// The command uses the job ID returned from the "<%= config.bin %> data upsert bulk" command or the most recently-run bulk upsert job.
+        /// </summary>
+        /// <remarks>
+        /// The command uses the job ID returned from the "<%= config.bin %> data upsert bulk" command or the most recently-run bulk upsert job.
+        /// </remarks>
+        /// <example>
+        /// 
+        /// Resume a bulk upsert job from your default org using an ID:
+        /// <%= config.bin %> <%= command.id %> --job-id 750xx000000005sAAA
+        /// Resume the most recently run bulk upsert job for an org with alias my-scratch:
+        /// <%= config.bin %> <%= command.id %> --use-most-recent --target-org my-scratch
+        /// </example>
+        [Command("upsert resume")]
+        public SfdxResponse UpsertResume(DataUpsertResumeOptions options)
+        {
+            return ExecuteCommand(nameof(UpsertResume), options);
         }
     }
 }

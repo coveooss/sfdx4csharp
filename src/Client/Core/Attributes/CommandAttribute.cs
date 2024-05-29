@@ -1,6 +1,4 @@
-﻿// Copyright (c) 2005-2020, Coveo Solutions Inc.
-
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Reflection;
 
@@ -12,31 +10,31 @@ namespace sfdx4csharpClient.Core.Attributes
     [AttributeUsage(AttributeTargets.Method)]
     public class CommandAttribute : Attribute
     {
-        private readonly string m_Value;
+        private readonly string _value;
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        /// <param name="p_Value">SFDX CLI command.</param>
+        /// <param name="value">SFDX CLI command.</param>
         /// <example>For the SOQL query command in the Data namespace, the command should be "soql:query".</example>
-        public CommandAttribute(string p_Value)
+        public CommandAttribute(string value)
         {
-            Debug.Assert(!string.IsNullOrEmpty(p_Value));
+            Debug.Assert(!string.IsNullOrEmpty(value));
 
-            m_Value = p_Value;
+            _value = value;
         }
 
         /// <summary>
         /// Gets the attribute value on the given method.
         /// </summary>
-        /// <param name="p_Method">Method with a CommandAttribute to get.</param>
+        /// <param name="method">Method with a CommandAttribute to get.</param>
         /// <returns>The attribute value.</returns>
-        public static string GetCommandValue(MethodBase p_Method)
+        public static string GetCommandValue(MethodBase method)
         {
-            Debug.Assert(p_Method != null);
+            Debug.Assert(method != null);
 
-            var attribute = (CommandAttribute)GetCustomAttribute(p_Method, typeof(CommandAttribute));
-            return attribute?.m_Value;
+            var attribute = (CommandAttribute)GetCustomAttribute(method, typeof(CommandAttribute));
+            return attribute?._value;
         }
     }
 }

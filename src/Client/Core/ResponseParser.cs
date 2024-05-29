@@ -1,6 +1,4 @@
-﻿// Copyright (c) 2005-2020, Coveo Solutions Inc.
-
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -15,23 +13,23 @@ namespace sfdx4csharpClient.Core
         /// <summary>
         /// Deserialize the response's JSON string into a T object.
         /// </summary>
-        /// <param name="p_Json">JSON string</param>
+        /// <param name="json">JSON string</param>
         /// <returns>SFDXResponse result</returns>
-        public static JToken Parse(string p_Json)
+        public static JToken Parse(string json)
         {
-            Debug.Assert(p_Json != null);
+            Debug.Assert(json != null);
 
-            return JsonConvert.DeserializeObject<SFDXJsonResponse>(SanitizeResponse(p_Json))?.Result;
+            return JsonConvert.DeserializeObject<SfdxJsonResponse>(SanitizeResponse(json))?.Result;
         }
 
-        private static string SanitizeResponse(string p_Response)
+        private static string SanitizeResponse(string response)
         {
             // Remove non json message when installing plugin.
-            p_Response = p_Response.Replace("Installing required plugins for force... done", "");
+            response = response.Replace("Installing required plugins for force... done", "");
 
             // Remove leading blank spaces, space character and new lines.
             var rgx = new Regex("/^([\\s\\r\\n]+)/");
-            return rgx.Replace(p_Response, "");
+            return rgx.Replace(response, "");
         }
     }
 }

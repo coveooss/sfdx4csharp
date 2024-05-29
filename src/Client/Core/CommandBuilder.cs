@@ -1,6 +1,4 @@
-﻿// Copyright (c) 2005-2020, Coveo Solutions Inc.
-
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
@@ -12,44 +10,43 @@ namespace sfdx4csharpClient.Core
     /// Command Builder.
     /// </summary>
     /// <typeparam name="T">Command's options type</typeparam>
-    public static class CommandBuilder<T> where T : SFDXOptions
+    public static class CommandBuilder<T> where T : SfdxOptions
     {
         /// <summary>
         /// Constructs the full SFDX CLI command to be executed.
         /// </summary>
-        /// <param name="p_Command">Current api command's method.</param>
-        /// <param name="p_RequestOptions">Current command's method options.</param>
+        /// <param name="command">Current api command's method.</param>
+        /// <param name="requestOptions">Current command's method options.</param>
         /// <returns>SFDX cli command to be executed.</returns>
-        public static string Build(string p_Command,
-            T p_RequestOptions)
+        public static string Build(string command, T requestOptions)
         {
-            Debug.Assert(p_Command != null);
+            Debug.Assert(command != null);
 
-            string options = BuildOptions(p_RequestOptions);
-            return string.IsNullOrEmpty(options) ? p_Command : p_Command + " " + options;
+            var options = BuildOptions(requestOptions);
+            return string.IsNullOrEmpty(options) ? command : command + " " + options;
         }
 
-        private static string BuildOptions(T p_RequestOptions)
+        private static string BuildOptions(T requestOptions)
         {
-            if (p_RequestOptions == null)
+            if (requestOptions == null)
             {
                 return "";
             }
 
-            var parameters = p_RequestOptions.GetType()
+            var parameters = requestOptions.GetType()
                 .GetProperties()
-                .Where(prop => prop.GetValue(p_RequestOptions) != null)
-                .Select(prop => OptionToString(prop, p_RequestOptions));
+                .Where(prop => prop.GetValue(requestOptions) != null)
+                .Select(prop => OptionToString(prop, requestOptions));
             return String.Join(" ", parameters);
         }
 
-        private static string OptionToString(PropertyInfo p_Prop, T p_RequestOptions)
+        private static string OptionToString(PropertyInfo prop, T requestOptions)
         {
-            Debug.Assert(p_Prop != null);
-            Debug.Assert(p_RequestOptions != null);
+            Debug.Assert(prop != null);
+            Debug.Assert(requestOptions != null);
 
-            var apiSwitchName = SwitchNameAttribute.GetSwitchNameValue(p_Prop);
-            var propValue = p_Prop.GetValue(p_RequestOptions);
+            var apiSwitchName = SwitchNameAttribute.GetSwitchNameValue(prop);
+            var propValue = prop.GetValue(requestOptions);
             var boolValue = propValue as bool?;
             if (boolValue != null)
             {

@@ -1,19 +1,16 @@
-﻿// Copyright (c) 2005-2020, Coveo Solutions Inc.
-
-namespace sfdx4csharpClient
+﻿namespace sfdx4csharpClient
 {
     /// <summary>
-    /// A client using the Salesforce Developer Experience (SFDX) command-line interface.
+    /// A client using the Salesforce CLI command-line interface.
     /// </summary>
     /// <remarks>
-    /// In order to use this client, you need to install the sfdxcli on your machine.
+    /// In order to use this client, you need to install the Salesforce CLI on your machine.
     /// How to: https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm
     /// </remarks>
-    public class SFDXClient : GeneratedSFDXClient
+    public class SfdxClient : GeneratedSfdxClient
     {
-        public SFDXClient(string p_SFDXPath,
-            string p_WorkingFolder = "")
-            : base(p_SFDXPath, p_WorkingFolder)
+        public SfdxClient(string sfdxPath, string workingFolder = "")
+            : base(sfdxPath, workingFolder)
         {
         }
     }

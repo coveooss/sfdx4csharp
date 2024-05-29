@@ -1,5 +1,4 @@
-// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
-// Copyright (c) 2005-2021, Coveo Solutions Inc.
+// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -8,407 +7,470 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method create of class Cmdt.
+    /// Options for the method GenerateField of class Cmdt.
     /// </summary>
-    public class CmdtCreateOptions : SFDXOptions
+    public class CmdtGenerateFieldOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The unique name of the object in the API. This name can contain only underscores and alphanumeric characters, and must be unique in your org. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores.
+        /// [Required] You can't use this command to create a custom metadata type field of type "Metadata Relationship". Use the Salesforce Setup UI instead.
         /// </summary>
-        [SwitchName("--typename")]
-        public string typename { get; set; }
+        [SwitchName("--type")]
+        public string Type { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for name
+        /// </summary>
+        [SwitchName("--name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// [Optional] Format output as json.
+        /// </summary>
+        [SwitchName("--json")]
+        public bool? Json { get; set; }
+
+        /// <summary>
+        /// [Required] No description for flags-dir
+        /// </summary>
+        [SwitchName("--flags-dir")]
+        public string FlagsDir { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        public LogLevel? Loglevel { get; set; }
 
         /// <summary>
-        /// [Required] A label for the custom metadata type.
+        /// [Required] No description for picklist-values
+        /// </summary>
+        [SwitchName("--picklist-values")]
+        public string PicklistValues { get; set; }
+
+        /// <summary>
+        /// [Required] The value must be greater than or equal to zero. Default value is 0.
+        /// </summary>
+        [SwitchName("--decimal-places")]
+        public string DecimalPlaces { get; set; }
+
+        /// <summary>
+        /// [Required] No description for label
         /// </summary>
         [SwitchName("--label")]
-        public string label { get; set; }
+        public string Label { get; set; }
 
         /// <summary>
-        /// [Required] The plural version of the label value. If this flag is missing or blank, the singular label is used as the plural label.
+        /// [Required] New files are automatically created in the "fields" directory. The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--plurallabel")]
-        public string plurallabel { get; set; }
-
-        /// <summary>
-        /// [Required] The visibility of the custom metadata type.
-        /// </summary>
-        [SwitchName("--visibility")]
-        public string visibility { get; set; }
-
-        /// <summary>
-        /// [Required] The directory to store the newly-created custom metadata type files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
-        /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--output-directory")]
+        public string OutputDirectory { get; set; }
     }
 
     /// <summary>
-    /// Options for the method fieldCreate of class Cmdt.
+    /// Options for the method GenerateFromorg of class Cmdt.
     /// </summary>
-    public class CmdtFieldCreateOptions : SFDXOptions
+    public class CmdtGenerateFromorgOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The unique name for the field.
+        /// [Required] No description for sobject
         /// </summary>
-        [SwitchName("--fieldtype")]
-        public string fieldtype { get; set; }
+        [SwitchName("--sobject")]
+        public string Sobject { get; set; }
 
         /// <summary>
-        /// [Required] The unique name for the field.
+        /// [Required] No description for dev-name
         /// </summary>
-        [SwitchName("--fieldname")]
-        public string fieldname { get; set; }
+        [SwitchName("--dev-name")]
+        public string DevName { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-org
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
 
         /// <summary>
-        /// [Required] A comma-separated list of picklist values. These values are required when creating a Picklist field.
+        /// [Optional] Format output as json.
         /// </summary>
-        [SwitchName("--picklistvalues")]
-        public string picklistvalues { get; set; }
+        [SwitchName("--json")]
+        public bool? Json { get; set; }
 
         /// <summary>
-        /// [Optional] The number of decimal places to use for Number or Percent fields. The value must be greater than or equal to zero.
+        /// [Required] No description for flags-dir
         /// </summary>
-        [SwitchName("--decimalplaces")]
-        public int? decimalplaces { get; set; }
-
-        /// <summary>
-        /// [Required] The label for the field.
-        /// </summary>
-        [SwitchName("--label")]
-        public string label { get; set; }
-
-        /// <summary>
-        /// [Required] The directory to store the newly-created field definition files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
-        /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method generate of class Cmdt.
-    /// </summary>
-    public class CmdtGenerateOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Required] The API name of the sObject source for custom metadata generation.
-        /// </summary>
-        [SwitchName("--sobjectname")]
-        public string sobjectname { get; set; }
-
-        /// <summary>
-        /// [Required] The name of the custom metadata type.
-        /// </summary>
-        [SwitchName("--devname")]
-        public string devname { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        [SwitchName("--flags-dir")]
+        public string FlagsDir { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] The label for the custom metadata type.
+        /// [Optional] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public LogLevel? Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] No description for label
         /// </summary>
         [SwitchName("--label")]
-        public string label { get; set; }
+        public string Label { get; set; }
 
         /// <summary>
-        /// [Required] The plural version of the label value. If this flag is missing or blank, the singular label is used as the plural label.
+        /// [Required] No description for plural-label
         /// </summary>
-        [SwitchName("--plurallabel")]
-        public string plurallabel { get; set; }
+        [SwitchName("--plural-label")]
+        public string PluralLabel { get; set; }
 
         /// <summary>
-        /// [Required] The visibility of the custom metadata type.
+        /// [Required] For more information on what each option means, see this topic in Salesforce Help: https://help.salesforce.com/s/articleView?id=sf.custommetadatatypes_ui_create.htm&type=5.
         /// </summary>
         [SwitchName("--visibility")]
-        public string visibility { get; set; }
+        public string Visibility { get; set; }
 
         /// <summary>
-        /// [Optional] Ignore unsupported field types (these fields will not be created). The default is to create Text fields and convert the source value to text.
+        /// [Optional] In this context, "ignore" means that the fields aren't created. The default behavior is to create fields of type text and convert the field values to text.
         /// </summary>
-        [SwitchName("--ignoreunsupported")]
-        public bool? ignoreunsupported { get; set; }
+        [SwitchName("--ignore-unsupported")]
+        public bool? IgnoreUnsupported { get; set; }
 
         /// <summary>
-        /// [Required] The directory to store newly-created custom metadata type files.
+        /// [Required] No description for type-output-directory
         /// </summary>
-        [SwitchName("--typeoutputdir")]
-        public string typeoutputdir { get; set; }
+        [SwitchName("--type-output-directory")]
+        public string TypeOutputDirectory { get; set; }
 
         /// <summary>
-        /// [Required] The directory to store newly-created custom metadata record files.
+        /// [Required] No description for records-output-dir
         /// </summary>
-        [SwitchName("--recordsoutputdir")]
-        public string recordsoutputdir { get; set; }
+        [SwitchName("--records-output-dir")]
+        public string RecordsOutputDir { get; set; }
     }
 
     /// <summary>
-    /// Options for the method recordCreate of class Cmdt.
+    /// Options for the method GenerateObject of class Cmdt.
     /// </summary>
-    public class CmdtRecordCreateOptions : SFDXOptions
+    public class CmdtGenerateObjectOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The name for the new record.
+        /// [Required] The name can contain only underscores and alphanumeric characters, and must be unique in your org. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores.
         /// </summary>
-        [SwitchName("--recordname")]
-        public string recordname { get; set; }
+        [SwitchName("--type-name")]
+        public string TypeName { get; set; }
 
         /// <summary>
-        /// [Required] The API name of the custom metadata type to create a record for.
+        /// [Optional] Format output as json.
         /// </summary>
-        [SwitchName("--typename")]
-        public string typename { get; set; }
+        [SwitchName("--json")]
+        public bool? Json { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for flags-dir
+        /// </summary>
+        [SwitchName("--flags-dir")]
+        public string FlagsDir { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        public LogLevel? Loglevel { get; set; }
 
         /// <summary>
-        /// [Required] The label for the new record.
+        /// [Required] No description for label
         /// </summary>
         [SwitchName("--label")]
-        public string label { get; set; }
+        public string Label { get; set; }
 
         /// <summary>
-        /// [Required] Protect the record when it is in a managed package. Protected records can only be accessed by code in the same managed package namespace.
+        /// [Required] No description for plural-label
         /// </summary>
-        [SwitchName("--protected")]
-        public string isprotected { get; set; }
+        [SwitchName("--plural-label")]
+        public string PluralLabel { get; set; }
 
         /// <summary>
-        /// [Required] The directory to pull the custom metadata type definition from.
+        /// [Required] For more information on what each option means, see this topic in Salesforce Help: https://help.salesforce.com/s/articleView?id=sf.custommetadatatypes_ui_create.htm&type=5.
         /// </summary>
-        [SwitchName("--inputdir")]
-        public string inputdir { get; set; }
+        [SwitchName("--visibility")]
+        public string Visibility { get; set; }
 
         /// <summary>
-        /// [Required] The directory to store newly-created custom metadata record files.
+        /// [Required] The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--output-directory")]
+        public string OutputDirectory { get; set; }
     }
 
     /// <summary>
-    /// Options for the method recordInsert of class Cmdt.
+    /// Options for the method GenerateRecord of class Cmdt.
     /// </summary>
-    public class CmdtRecordInsertOptions : SFDXOptions
+    public class CmdtGenerateRecordOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The API Name of the custom metadata type. The '__mdt' suffix will be appended to the end of the name if it is omitted.
+        /// [Required] No description for record-name
         /// </summary>
-        [SwitchName("--typename")]
-        public string typename { get; set; }
+        [SwitchName("--record-name")]
+        public string RecordName { get; set; }
 
         /// <summary>
-        /// [Required] The path to the CSV file.
+        /// [Required] No description for type-name
         /// </summary>
-        [SwitchName("--filepath")]
-        public string filepath { get; set; }
+        [SwitchName("--type-name")]
+        public string TypeName { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Optional] Format output as json.
+        /// </summary>
+        [SwitchName("--json")]
+        public bool? Json { get; set; }
+
+        /// <summary>
+        /// [Required] No description for flags-dir
+        /// </summary>
+        [SwitchName("--flags-dir")]
+        public string FlagsDir { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        public LogLevel? Loglevel { get; set; }
 
         /// <summary>
-        /// [Required] The directory to pull the custom metadata type definition from.
+        /// [Required] No description for label
         /// </summary>
-        [SwitchName("--inputdir")]
-        public string inputdir { get; set; }
+        [SwitchName("--label")]
+        public string Label { get; set; }
 
         /// <summary>
-        /// [Required] The directory to store newly-created custom metadata record files.
+        /// [Required] Protected records can only be accessed by code in the same managed package namespace.
         /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--protected")]
+        public string Isprotected { get; set; }
 
         /// <summary>
-        /// [Required] The column that is used to determine the name of the record.
+        /// [Required] No description for input-directory
         /// </summary>
-        [SwitchName("--namecolumn")]
-        public string namecolumn { get; set; }
+        [SwitchName("--input-directory")]
+        public string InputDirectory { get; set; }
+
+        /// <summary>
+        /// [Required] No description for output-directory
+        /// </summary>
+        [SwitchName("--output-directory")]
+        public string OutputDirectory { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method GenerateRecords of class Cmdt.
+    /// </summary>
+    public class CmdtGenerateRecordsOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] The '__mdt' suffix is appended to the end of the name if it's omitted.
+        /// </summary>
+        [SwitchName("--type-name")]
+        public string TypeName { get; set; }
+
+        /// <summary>
+        /// [Required] No description for csv
+        /// </summary>
+        [SwitchName("--csv")]
+        public string Csv { get; set; }
+
+        /// <summary>
+        /// [Optional] Format output as json.
+        /// </summary>
+        [SwitchName("--json")]
+        public bool? Json { get; set; }
+
+        /// <summary>
+        /// [Required] No description for flags-dir
+        /// </summary>
+        [SwitchName("--flags-dir")]
+        public string FlagsDir { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public LogLevel? Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] No description for input-directory
+        /// </summary>
+        [SwitchName("--input-directory")]
+        public string InputDirectory { get; set; }
+
+        /// <summary>
+        /// [Required] No description for output-directory
+        /// </summary>
+        [SwitchName("--output-directory")]
+        public string OutputDirectory { get; set; }
+
+        /// <summary>
+        /// [Required] No description for name-column
+        /// </summary>
+        [SwitchName("--name-column")]
+        public string NameColumn { get; set; }
     }
 
     /// <summary>
     /// Cmdt
     /// </summary>
-    [CommandClass("force:cmdt")]
-    public class Cmdt : SFDXCommand
+    [CommandClass("cmdt")]
+    public class Cmdt : SfdxCommand
     {
         /// Constructor.
-        public Cmdt(CommandExecutioner p_CommandExecutioner)
-                : base(p_CommandExecutioner)
+        public Cmdt(CommandExecutioner commandExecutioner)
+                : base(commandExecutioner)
         {
         }
 
         /// <summary>
-        /// creates a new custom metadata type in the current project
+        /// Similar to a custom object, a custom metadata type has a list of custom fields that represent aspects of the metadata.
+        /// 
+        /// This command creates a metadata file that describes the new custom metadata type field. By default, the file is created in a "fields" directory in the current directory. Use the --output-directory to generate the file in the directory that contains the custom metadata type metdata files, such as "force-app/main/default/objects/MyCmdt__mdt" for the custom metadata type called MyCmdt.
         /// </summary>
         /// <remarks>
-        /// creates a new custom metadata type in the current project
+        /// Similar to a custom object, a custom metadata type has a list of custom fields that represent aspects of the metadata.
+        /// 
+        /// This command creates a metadata file that describes the new custom metadata type field. By default, the file is created in a "fields" directory in the current directory. Use the --output-directory to generate the file in the directory that contains the custom metadata type metdata files, such as "force-app/main/default/objects/MyCmdt__mdt" for the custom metadata type called MyCmdt.
         /// </remarks>
         /// <example>
         /// 
-        /// Create a custom metadata type with developer name 'MyCustomType'; this name will also be used as the label:
-        ///     $ sfdx force:cmdt:create --typename MyCustomType
-        /// Create a protected custom metadata type with a specific label:
-        ///     $ sfdx force:cmdt:create --typename MyCustomType --label "Custom Type" --plurallabel "Custom Types" --visibility Protected
-        /// force:cmdt:create -n <string> [-l <string>] [-p <string>] [-v PackageProtected|Protected|Public] [-d <directory>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Generate a metadata file for a custom checkbox field and add the file to the MyCmdt__mdt/fields directory:
+        /// <%= config.bin %> <%= command.id %> --name MyCheckboxField --type Checkbox --output-directory force-app/main/default/objects/MyCmdt__mdt
+        /// Generate a metadata file for a custom picklist field and add a few values:
+        /// <%= config.bin %> <%= command.id %> --name MyPicklistField --type Picklist --picklist-values A --picklist-values B --picklist-values C --output-directory force-app/main/default/objects/MyCmdt__mdt
+        /// Generate a metadata file for a custom number field and specify 2 decimal places:
+        /// <%= config.bin %> <%= command.id %> --name MyNumberField --type Number --decimal-places 2 --output-directory force-app/main/default/objects/MyCmdt__mdt
         /// </example>
-        [Command("create")]
-        public SFDXResponse Create(CmdtCreateOptions p_Options)
+        [Command("generate field")]
+        public SfdxResponse GenerateField(CmdtGenerateFieldOptions options)
         {
-            return ExecuteCommand<CmdtCreateOptions>(nameof(Create), p_Options);
+            return ExecuteCommand(nameof(GenerateField), options);
         }
 
         /// <summary>
-        /// generate a custom metadata field based on the field type provided
+        /// Use this command to migrate existing custom objects or custom settings in an org to custom metadata types. If a field of the Salesforce object is of an unsupported type, the field type is automatically converted to text. Run "sf cmdt generate field --help" to see the list of supported cmdt field types, listed in the --type flag summary. Use the --ignore-unsupported to ignore these fields.
+        /// 
+        /// This command creates the metadata files that describe the new custom metadata type and its fields in the "force-app/main/default/objects/TypeName__mdt" directory by default, where "TypeName" is the value of the required --dev-name flag. Use --type-output-directory to create them in a different directory.
         /// </summary>
         /// <remarks>
-        /// generate a custom metadata field based on the field type provided
+        /// Use this command to migrate existing custom objects or custom settings in an org to custom metadata types. If a field of the Salesforce object is of an unsupported type, the field type is automatically converted to text. Run "sf cmdt generate field --help" to see the list of supported cmdt field types, listed in the --type flag summary. Use the --ignore-unsupported to ignore these fields.
+        /// 
+        /// This command creates the metadata files that describe the new custom metadata type and its fields in the "force-app/main/default/objects/TypeName__mdt" directory by default, where "TypeName" is the value of the required --dev-name flag. Use --type-output-directory to create them in a different directory.
         /// </remarks>
         /// <example>
         /// 
-        /// Create a metadata file for a custom checkbox field:
-        ///     $ sfdx force:cmdt:field:create --fieldname MyField --fieldtype Checkbox
-        /// Create a metadata file for a custom picklist field:
-        ///     $ sfdx force:cmdt:field:create --fieldname MyField --fieldtype Picklist --picklistvalues "A,B,C"
-        /// Create a metadata file for a custom number field:
-        ///     $ sfdx force:cmdt:field:create --fieldname MyField --fieldtype Number --decimalplaces 2
-        /// force:cmdt:field:create -n <string> -f Checkbox|Date|DateTime|Email|Number|Percent|Phone|Picklist|Text|TextArea|LongTextArea|Url [-p <array>] [-s <number>] [-l <string>] [-d <directory>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Generate a custom metadata type from a custom object called MySourceObject__c in your default org:
+        /// <%= config.bin %> <%= command.id %> --dev-name MyCMDT --sobject MySourceObject__c
+        /// Generate a custom metadata type from a custom object in an org with alias my-scratch-org; ignore unsupported field types instead of converting them to text:
+        /// <%= config.bin %> <%= command.id %> --dev-name MyCMDT --sobject MySourceObject__c --ignore-unsupported --target-org my-scratch-org
+        /// Generate a protected custom metadata type from a custom object:
+        /// <%= config.bin %> <%= command.id %> --dev-name MyCMDT --sobject MySourceObject__c --visibility Protected
+        /// Generate a protected custom metadata type from a custom setting with a specific singular and plural label:
+        /// <%= config.bin %> <%= command.id %> --dev-name MyCMDT --label "My CMDT" --plural-label "My CMDTs" --sobject MySourceSetting__c --visibility Protected
+        /// Generate a custom metadata type and put the resulting metadata files in the specified directory:
+        /// <%= config.bin %> <%= command.id %> --dev-name MyCMDT --sobject MySourceObject__c --type-output-directory path/to/my/cmdt/directory
+        /// Generate a custom metadata type and put the resulting record metadata file(s) in the specified directory:
+        /// <%= config.bin %> <%= command.id %> --dev-name MyCMDT --sobject MySourceObject__c --records-output-dir path/to/my/cmdt/record/directory
         /// </example>
-        [Command("field:create")]
-        public SFDXResponse FieldCreate(CmdtFieldCreateOptions p_Options)
+        [Command("generate fromorg")]
+        public SfdxResponse GenerateFromorg(CmdtGenerateFromorgOptions options)
         {
-            return ExecuteCommand<CmdtFieldCreateOptions>(nameof(FieldCreate), p_Options);
+            return ExecuteCommand(nameof(GenerateFromorg), options);
         }
 
         /// <summary>
-        /// generates a custom metadata type and all its records for the provided sObject
+        /// This command creates a metadata file that describes the new custom metadata type. By default, the file is created in the MyCustomType__mdt directory in the current directory, where MyCustomType is the value of the required --type-name flag. Use the --output-directory to generate the file in a package directory with other custom metadata types, such as "force-app/main/default/objects".
         /// </summary>
         /// <remarks>
-        /// generates a custom metadata type and all its records for the provided sObject
+        /// This command creates a metadata file that describes the new custom metadata type. By default, the file is created in the MyCustomType__mdt directory in the current directory, where MyCustomType is the value of the required --type-name flag. Use the --output-directory to generate the file in a package directory with other custom metadata types, such as "force-app/main/default/objects".
         /// </remarks>
         /// <example>
         /// 
-        /// Generate a custom metadata type from an sObject in the default target org:
-        ///     $ sfdx force:cmdt:generate --devname MyCMDT --sobjectname MySourceObject__c
-        /// Generate a custom metadata type from an sObject in the specified target org; ignore unsupported field types instead of converting them to text:
-        ///     $ sfdx force:cmdt:generate --devname MyCMDT --sobjectname MySourceObject__c  --ignoreunsupported --targetusername 'alias or user email of the org containing the source type'
-        /// Generate a protected custom metadata type from an sObject in the default target org:
-        ///     $ sfdx force:cmdt:generate --devname MyCMDT --sobjectname SourceCustomObject__c  --visibility Protected
-        /// Generate a protected custom metadata type with a specific label from an sObject in the default target org:
-        ///     $ sfdx force:cmdt:generate --devname MyCMDT --label "My CMDT" --plurallabel "My CMDTs" --sobjectname SourceCustomSetting__c  --visibility Protected
-        /// Generate a custom metadata type from an sObject in the default target org; put the resulting type metadata file in the specified directory:
-        ///     $ sfdx force:cmdt:generate --devname MyCMDT --sobjectname SourceCustomSetting__c --typeoutputdir 'path/to/my/cmdt/directory'
-        /// Generate a custom metadata type from an sObject in the default target org; put the resulting record metadata file(s) in the specified directory:
-        ///     $ sfdx force:cmdt:generate --devname MyCMDT --sobjectname SourceCustomSetting__c --recordsoutputdir 'path/to/my/cmdt/record/directory'
-        /// force:cmdt:generate -n <string> -s <string> [-l <string>] [-p <string>] [-v PackageProtected|Protected|Public] [-i] [-d <directory>] [-r <directory>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Generate a custom metadata type with developer name 'MyCustomType'; this name is also used as the label:
+        /// <%= config.bin %> <%= command.id %> --type-name MyCustomType
+        /// Generate a protected custom metadata type with a specific label:
+        /// <%= config.bin %> <%= command.id %> --type-name MyCustomType --label "Custom Type" --plural-label "Custom Types" --visibility Protected
         /// </example>
-        [Command("generate")]
-        public SFDXResponse Generate(CmdtGenerateOptions p_Options)
+        [Command("generate object")]
+        public SfdxResponse GenerateObject(CmdtGenerateObjectOptions options)
         {
-            return ExecuteCommand<CmdtGenerateOptions>(nameof(Generate), p_Options);
+            return ExecuteCommand(nameof(GenerateObject), options);
         }
 
         /// <summary>
-        /// create a new record for a given custom metadata type in the current project
+        /// The custom metadata type must already exist in your project. You must specify a name for the new record. Use name=value pairs to specify the values for the fields, such as MyTextField="some text here" or MyNumberField=32.
         /// </summary>
         /// <remarks>
-        /// create a new record for a given custom metadata type in the current project
+        /// The custom metadata type must already exist in your project. You must specify a name for the new record. Use name=value pairs to specify the values for the fields, such as MyTextField="some text here" or MyNumberField=32.
         /// </remarks>
         /// <example>
         /// 
-        /// Create a record metadata file for custom metadata type 'MyCMT' with values specified for two custom fields:
-        ///     $ sfdx force:cmdt:record:create --typename MyCMT__mdt --recordname MyRecord My_Custom_Field_1=Foo My_Custom_Field_2=Bar
+        /// Create a record metadata file for custom metadata type 'MyCMT' with specified values for two custom fields:
+        /// <%= config.bin %> <%= command.id %> --type-name MyCMT__mdt --record-name MyRecord My_Custom_Field_1=Foo My_Custom_Field_2=Bar
         /// Create a protected record metadata file for custom metadata type 'MyCMT' with a specific label and values specified for two custom fields:
-        ///     $ sfdx force:cmdt:record:create --typename MyCMT__mdt --recordname MyRecord --label "My Record" --protected true My_Custom_Field_1=Foo My_Custom_Field_2=Bar
-        /// force:cmdt:record:create [name=value...] -t <string> -n <string> [-l <string>] [-p <string>] [-i <directory>] [-d <directory>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// <%= config.bin %> <%= command.id %> --type-name MyCMT__mdt --record-name MyRecord --label "My Record" --protected true My_Custom_Field_1=Foo My_Custom_Field_2=Bar
         /// </example>
-        [Command("record:create")]
-        public SFDXResponse RecordCreate(CmdtRecordCreateOptions p_Options)
+        [Command("generate record")]
+        public SfdxResponse GenerateRecord(CmdtGenerateRecordOptions options)
         {
-            return ExecuteCommand<CmdtRecordCreateOptions>(nameof(RecordCreate), p_Options);
+            return ExecuteCommand(nameof(GenerateRecord), options);
         }
 
         /// <summary>
-        /// create new custom metadata type records from a CSV file
+        /// The custom metadata type must already exist in your project. By default, the Name column is used to determine the record name; use the --name-column flag to specify a different column.
         /// </summary>
         /// <remarks>
-        /// create new custom metadata type records from a CSV file
+        /// The custom metadata type must already exist in your project. By default, the Name column is used to determine the record name; use the --name-column flag to specify a different column.
         /// </remarks>
         /// <example>
         /// 
-        /// Create record metadata files for type 'My_CMDT_Name' (from your local project) based on values in a CSV file, using 'Name' as the column that specifies the record name:
-        ///     $ sfdx force:cmdt:record:insert --filepath path/to/my.csv --typename My_CMDT_Name
-        /// Create record metadata files for type 'My_CMDT_Name' (from the specified directory) based on values in a CSV file, using 'PrimaryKey' as the column that specifies the record name:
-        ///     $ sfdx force:cmdt:record:insert --filepath path/to/my.csv --typename My_CMDT_Name --inputdir "path/to/my/cmdt/directory" --namecolumn "PrimaryKey"
-        /// force:cmdt:record:insert -f <string> -t <string> [-i <directory>] [-d <directory>] [-n <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Generate record metadata files from values in a CSV file for the custom metadata type MyCmdt. Use 'Name' as the column that specifies the record name:
+        /// <%= config.bin %> <%= command.id %> --csv path/to/my.csv --type-name MyCmdt
+        /// Generate record metadata files from a CSV file in the directory different from the default, and use 'PrimaryKey' as the column that specifies the record name:
+        /// <%= config.bin %> <%= command.id %> --csv path/to/my.csv --type-name MyCmdt --input-directory path/to/my/cmdt/directory --name-column "PrimaryKey"
         /// </example>
-        [Command("record:insert")]
-        public SFDXResponse RecordInsert(CmdtRecordInsertOptions p_Options)
+        [Command("generate records")]
+        public SfdxResponse GenerateRecords(CmdtGenerateRecordsOptions options)
         {
-            return ExecuteCommand<CmdtRecordInsertOptions>(nameof(RecordInsert), p_Options);
+            return ExecuteCommand(nameof(GenerateRecords), options);
         }
     }
 }

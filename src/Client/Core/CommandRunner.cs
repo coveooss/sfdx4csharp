@@ -1,6 +1,4 @@
-﻿// Copyright (c) 2005-2020, Coveo Solutions Inc.
-
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
@@ -11,7 +9,7 @@ namespace sfdx4csharpClient.Core
     /// </summary>
     public class CommandRunner
     {
-        private readonly string m_SFDXPath;
+        private readonly string _sfdxPath;
 
         /// <summary>
         /// The working folder where all the commands will be executed.
@@ -26,33 +24,32 @@ namespace sfdx4csharpClient.Core
         /// <summary>
         /// Constructor.
         /// </summary>
-        /// <param name="p_Path">SFDX CLI path.</param>
-        /// <param name="p_WorkingFolder">The working folder where to run SFDX commands.</param>
-        public CommandRunner(string p_Path,
-                             string p_WorkingFolder = "")
+        /// <param name="path">SFDX CLI path.</param>
+        /// <param name="workingFolder">The working folder where to run SFDX commands.</param>
+        public CommandRunner(string path, string workingFolder = "")
         {
-            Debug.Assert(!string.IsNullOrEmpty(p_Path));
+            Debug.Assert(!string.IsNullOrEmpty(path));
 
-            m_SFDXPath = FormatPath(p_Path);
-            WorkingFolder = FormatPath(p_WorkingFolder);
+            _sfdxPath = FormatPath(path);
+            WorkingFolder = FormatPath(workingFolder);
             HomeFolder = "";
         }
 
         /// <summary>
         /// Executes a command in a separate process and return the output.
         /// </summary>
-        /// <param name="p_Command">Command to execute.</param>
+        /// <param name="command">Command to execute.</param>
         /// <returns>SFDX output informations.</returns>
-        public SFDXOutput RunCommand(string p_Command)
+        public SfdxOutput RunCommand(string command)
         {
-            Debug.Assert(!string.IsNullOrEmpty(p_Command));
+            Debug.Assert(!string.IsNullOrEmpty(command));
 
-            SFDXOutput output = new SFDXOutput()
+            var output = new SfdxOutput()
             {
-                Command = p_Command
+                Command = command
             };
 
-            using (var process = Process.Start(GetProcessValues(p_Command)))
+            using (var process = Process.Start(GetProcessValues(command)))
             {
                 if (process == null)
                 {
@@ -69,19 +66,19 @@ namespace sfdx4csharpClient.Core
             return output;
         }
 
-        private string FormatPath(string p_Path)
+        private string FormatPath(string path)
         {
-            Debug.Assert(p_Path != null);
+            Debug.Assert(path != null);
 
-            bool isEscaped = p_Path.StartsWith("\"") && p_Path.EndsWith("\"");
-            return (p_Path.Contains(" ") && !isEscaped) ? string.Format("\"{0}\"", p_Path) : p_Path;
+            var isEscaped = path.StartsWith("\"") && path.EndsWith("\"");
+            return (path.Contains(" ") && !isEscaped) ? string.Format("\"{0}\"", path) : path;
         }
 
-        private ProcessStartInfo GetProcessValues(string p_Command)
+        private ProcessStartInfo GetProcessValues(string command)
         {
-            Debug.Assert(!string.IsNullOrEmpty(p_Command));
+            Debug.Assert(!string.IsNullOrEmpty(command));
 
-            var startInfo = new ProcessStartInfo(m_SFDXPath, p_Command);
+            var startInfo = new ProcessStartInfo(_sfdxPath, command);
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
             startInfo.RedirectStandardError = true;

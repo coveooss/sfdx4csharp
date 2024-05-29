@@ -8,7 +8,7 @@ const templatesFolderPath = resolve(root, "./templates");
 const outputDirectoryPath = resolve(root, "../src/Client/Commands/Generated");
 
 const generator = new Generator({
-  SFDXPath: "sfdx",
+  SFDXPath: "sf",
   templateDirectory: templatesFolderPath,
   outputDirectory: outputDirectoryPath,
   fileExtension: ".cs",

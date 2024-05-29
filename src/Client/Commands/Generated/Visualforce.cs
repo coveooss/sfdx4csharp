@@ -1,5 +1,4 @@
-// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
-// Copyright (c) 2005-2021, Coveo Solutions Inc.
+// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -8,171 +7,149 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method componentCreate of class Visualforce.
+    /// Options for the method GenerateComponent of class Visualforce.
     /// </summary>
-    public class VisualforceComponentCreateOptions : SFDXOptions
+    public class VisualforceGenerateComponentOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The label saved in the metadata for the Visualforce component.
+        /// [Required] No description for label
         /// </summary>
         [SwitchName("--label")]
-        public string label { get; set; }
+        public string Label { get; set; }
 
         /// <summary>
-        /// [Required] The Visualforce component name. The name can be up to 40 characters and must start with a letter.
+        /// [Required] The name can be up to 40 characters and must start with a letter.
         /// </summary>
-        [SwitchName("--componentname")]
-        public string componentname { get; set; }
+        [SwitchName("--name")]
+        public string Name { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
+        /// [Required] Supplied parameter values or default values are filled into a copy of the template.
         /// </summary>
         [SwitchName("--template")]
-        public string template { get; set; }
+        public string Template { get; set; }
 
         /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
+        /// [Required] The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--output-dir")]
+        public string OutputDir { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
     }
 
     /// <summary>
-    /// Options for the method pageCreate of class Visualforce.
+    /// Options for the method GeneratePage of class Visualforce.
     /// </summary>
-    public class VisualforcePageCreateOptions : SFDXOptions
+    public class VisualforceGeneratePageOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The label saved in the metadata for the Visualforce page.
+        /// [Required] No description for label
         /// </summary>
         [SwitchName("--label")]
-        public string label { get; set; }
+        public string Label { get; set; }
 
         /// <summary>
-        /// [Required] The Visualforce page name. The name can be up to 40 characters and must start with a letter.
+        /// [Required] The name can be up to 40 characters and must start with a letter.
         /// </summary>
-        [SwitchName("--pagename")]
-        public string pagename { get; set; }
+        [SwitchName("--name")]
+        public string Name { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
+        /// [Required] Supplied parameter values or default values are filled into a copy of the template.
         /// </summary>
         [SwitchName("--template")]
-        public string template { get; set; }
+        public string Template { get; set; }
 
         /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
+        /// [Required] The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--output-dir")]
+        public string OutputDir { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
     }
 
     /// <summary>
     /// Visualforce
     /// </summary>
-    [CommandClass("force:visualforce")]
-    public class Visualforce : SFDXCommand
+    [CommandClass("visualforce")]
+    public class Visualforce : SfdxCommand
     {
         /// Constructor.
-        public Visualforce(CommandExecutioner p_CommandExecutioner)
-                : base(p_CommandExecutioner)
+        public Visualforce(CommandExecutioner commandExecutioner)
+                : base(commandExecutioner)
         {
         }
 
         /// <summary>
-        /// create a Visualforce component
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// 
+        /// The command generates the .Component file and associated metadata file in the specified directory or the current working directory by default.
         /// </summary>
         /// <remarks>
-        /// create a Visualforce component
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// 
+        /// The command generates the .Component file and associated metadata file in the specified directory or the current working directory by default.
         /// </remarks>
         /// <example>
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
         /// 
-        /// Examples:
-        ///    $ sfdx force:visualforce:component:create -n mycomponent -l mylabel
-        ///    $ sfdx force:visualforce:component:create -n mycomponent -l mylabel -d components
-        /// 
-        /// $ sfdx force:visualforce:component:create -n mycomponent -l mylabel
-        /// $ sfdx force:visualforce:component:create -n mycomponent -l mylabel -d components
-        /// force:visualforce:component:create -n <string> -l <string> [-t <string>] [-d <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Generate the metadata files for a Visualforce component in the current directory:
+        /// <%= config.bin %> <%= command.id %> --name mycomponent --label mylabel
+        /// Similar to previous example, but generate the files in the directory "force-app/main/default/components":
+        /// <%= config.bin %> <%= command.id %> --name mycomponent --label mylabel --output-dir components
         /// </example>
-        [Command("component:create")]
-        public SFDXResponse ComponentCreate(VisualforceComponentCreateOptions p_Options)
+        [Command("generate component")]
+        public SfdxResponse GenerateComponent(VisualforceGenerateComponentOptions options)
         {
-            return ExecuteCommand<VisualforceComponentCreateOptions>(nameof(ComponentCreate), p_Options);
+            return ExecuteCommand(nameof(GenerateComponent), options);
         }
 
         /// <summary>
-        /// create a Visualforce page
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// 
+        /// The command generates the .Page file and associated metadata file in the specified directory or the current working directory by default.
         /// </summary>
         /// <remarks>
-        /// create a Visualforce page
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// 
+        /// The command generates the .Page file and associated metadata file in the specified directory or the current working directory by default.
         /// </remarks>
         /// <example>
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
         /// 
-        /// Examples:
-        ///    $ sfdx force:visualforce:page:create -n mypage -l mylabel
-        ///    $ sfdx force:visualforce:page:create -n mypage -l mylabel -d pages
-        /// 
-        /// $ sfdx force:visualforce:page:create -n mypage -l mylabel
-        /// $ sfdx force:visualforce:page:create -n mypage -l mylabel -d pages
-        /// force:visualforce:page:create -n <string> -l <string> [-t <string>] [-d <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Generate the metadata files for a Visualforce page in the current directory:
+        /// <%= config.bin %> <%= command.id %> --name mypage --label mylabel
+        /// Similar to previous example, but generate the files in the directory "force-app/main/default/pages":
+        /// <%= config.bin %> <%= command.id %> --name mypage --label mylabel --output-dir pages
         /// </example>
-        [Command("page:create")]
-        public SFDXResponse PageCreate(VisualforcePageCreateOptions p_Options)
+        [Command("generate page")]
+        public SfdxResponse GeneratePage(VisualforceGeneratePageOptions options)
         {
-            return ExecuteCommand<VisualforcePageCreateOptions>(nameof(PageCreate), p_Options);
+            return ExecuteCommand(nameof(GeneratePage), options);
         }
     }
 }

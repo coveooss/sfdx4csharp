@@ -1,5 +1,4 @@
-// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
-// Copyright (c) 2005-2021, Coveo Solutions Inc.
+// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -8,89 +7,78 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method create of class Staticresource.
+    /// Options for the method Generate of class StaticResource.
     /// </summary>
-    public class StaticresourceCreateOptions : SFDXOptions
+    public class StaticResourceGenerateOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The name of the new static resource. This name can contain only underscores and alphanumeric characters, and must be unique in your org. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores.
+        /// [Required] This name can contain only underscores and alphanumeric characters, and must be unique in your org. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores.
         /// </summary>
-        [SwitchName("--resourcename")]
-        public string resourcename { get; set; }
+        [SwitchName("--name")]
+        public string Name { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] Must be a valid MIME type such as application/json, application/javascript, application/zip, text/plain, text/css, etc.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--type")]
+        public string Type { get; set; }
 
         /// <summary>
-        /// [Required] The content type of the generated static resource. This must be a valid MIME type such as application/json, application/javascript, application/zip, text/plain, text/css, etc.
+        /// [Required] The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--contenttype")]
-        public string contenttype { get; set; }
-
-        /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
-        /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--output-dir")]
+        public string OutputDir { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
     }
 
     /// <summary>
-    /// Staticresource
+    /// StaticResource
     /// </summary>
-    [CommandClass("force:staticresource")]
-    public class Staticresource : SFDXCommand
+    [CommandClass("static-resource")]
+    public class StaticResource : SfdxCommand
     {
         /// Constructor.
-        public Staticresource(CommandExecutioner p_CommandExecutioner)
-                : base(p_CommandExecutioner)
+        public StaticResource(CommandExecutioner commandExecutioner)
+                : base(commandExecutioner)
         {
         }
 
         /// <summary>
-        /// create a static resource
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// 
+        /// Generates the metadata resource file in the specified directory or the current working directory. Static resource files must be contained in a parent directory called "staticresources" in your package directory. Either run this command from an existing directory of this name, or use the --output-dir flag to create one or point to an existing one.
         /// </summary>
         /// <remarks>
-        /// create a static resource
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// 
+        /// Generates the metadata resource file in the specified directory or the current working directory. Static resource files must be contained in a parent directory called "staticresources" in your package directory. Either run this command from an existing directory of this name, or use the --output-dir flag to create one or point to an existing one.
         /// </remarks>
         /// <example>
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
         /// 
-        /// Examples:
-        ///    $ sfdx force:staticresource:create -n MyResource
-        ///    $ sfdx force:staticresource:create -n MyResource --contenttype application/json
-        ///    $ sfdx force:staticresource:create -n MyResource -d staticresources
-        /// 
-        /// $ sfdx force:staticresource:create -n MyResource
-        /// $ sfdx force:staticresource:create -n MyResource --contenttype application/json
-        /// $ sfdx force:staticresource:create -n MyResource -d staticresources
-        /// force:staticresource:create -n <string> [--contenttype <string>] [-d <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Generate the metadata file for a static resource called MyResource in the current directory:
+        /// <%= config.bin %> <%= command.id %> --name MyResource
+        /// Similar to previous example, but specifies a MIME type of application/json:
+        /// <%= config.bin %> <%= command.id %> --name MyResource --type application/json
+        /// Generate the resource file in the "force-app/main/default/staticresources" directory:
+        /// <%= config.bin %> <%= command.id %> --name MyResource --output-dir force-app/main/default/staticresources
         /// </example>
-        [Command("create")]
-        public SFDXResponse Create(StaticresourceCreateOptions p_Options)
+        [Command("generate")]
+        public SfdxResponse Generate(StaticResourceGenerateOptions options)
         {
-            return ExecuteCommand<StaticresourceCreateOptions>(nameof(Create), p_Options);
+            return ExecuteCommand(nameof(Generate), options);
         }
     }
 }

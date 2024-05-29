@@ -1,6 +1,4 @@
-﻿// Copyright (c) 2005-2020, Coveo Solutions Inc.
-
-using System;
+﻿using System;
 using System.Diagnostics;
 
 namespace sfdx4csharpClient.Core.Attributes
@@ -11,31 +9,31 @@ namespace sfdx4csharpClient.Core.Attributes
     [AttributeUsage(AttributeTargets.Class)]
     public class CommandClassAttribute : Attribute
     {
-        private readonly string m_Value;
+        private readonly string _value;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="p_Value">SFDX CLI command's namespace.</param>
+        /// <param name="value">SFDX CLI command's namespace.</param>
         /// <example>For the Auth commands, the namespace should be "force:auth".</example>
-        public CommandClassAttribute(string p_Value)
+        public CommandClassAttribute(string value)
         {
-            Debug.Assert(!string.IsNullOrEmpty(p_Value));
+            Debug.Assert(!string.IsNullOrEmpty(value));
 
-            m_Value = p_Value;
+            _value = value;
         }
 
         /// <summary>
         /// Gets the attribute value on the given type.
         /// </summary>
-        /// <param name="p_Type">Type with a CommandClassAttribute to get.</param>
+        /// <param name="type">Type with a CommandClassAttribute to get.</param>
         /// <returns>The attribute value.</returns>
-        public static string GetCommandClassValue(Type p_Type)
+        public static string GetCommandClassValue(Type type)
         {
-            Debug.Assert(p_Type != null);
+            Debug.Assert(type != null);
 
-            var attribute = (CommandClassAttribute)GetCustomAttribute(p_Type, typeof(CommandClassAttribute));
-            return attribute?.m_Value;
+            var attribute = (CommandClassAttribute)GetCustomAttribute(type, typeof(CommandClassAttribute));
+            return attribute?._value;
         }
     }
 }

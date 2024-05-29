@@ -1,6 +1,4 @@
-﻿// Copyright (c) 2005-2020, Coveo Solutions Inc.
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace sfdx4csharpUtilities
 {

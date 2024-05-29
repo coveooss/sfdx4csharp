@@ -17,6 +17,7 @@
       "generator"
     ],
     "exclude": [
-      "generated"
+      "generated",
+      "./generator/dist/**/*"
     ]
 }

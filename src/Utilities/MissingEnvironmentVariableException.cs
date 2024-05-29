@@ -1,6 +1,4 @@
-﻿// Copyright (c) 2005-2020, Coveo Solutions Inc.
-
-using System;
+﻿using System;
 
 namespace sfdx4csharpUtilities
 {
@@ -13,9 +11,9 @@ namespace sfdx4csharpUtilities
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="p_Key">Missing environment variable's key.</param>
-        public MissingEnvironmentVariableException(string p_Key)
-            : base(string.Format($"The '{p_Key}' environment variable is missing."))
+        /// <param name="key">Missing environment variable's key.</param>
+        public MissingEnvironmentVariableException(string key)
+            : base(string.Format($"The '{key}' environment variable is missing."))
         {
         }
     }

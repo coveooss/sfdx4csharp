@@ -1,18 +1,31 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sfdx4csharp", "src\sfdx4csharp.csproj", "{9FE4DE08-5D80-4616-84A6-50E65875B474}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FE4DE08-5D80-4616-84A6-50E65875B474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FE4DE08-5D80-4616-84A6-50E65875B474}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FE4DE08-5D80-4616-84A6-50E65875B474}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{9FE4DE08-5D80-4616-84A6-50E65875B474}.Debug|x64.Build.0 = Debug|Any CPU
+		{9FE4DE08-5D80-4616-84A6-50E65875B474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FE4DE08-5D80-4616-84A6-50E65875B474}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9FE4DE08-5D80-4616-84A6-50E65875B474}.Release|x64.ActiveCfg = Release|Any CPU
 		{9FE4DE08-5D80-4616-84A6-50E65875B474}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7961F768-EB11-40DE-8AD7-F813BF508B73}
 	EndGlobalSection
 EndGlobal
