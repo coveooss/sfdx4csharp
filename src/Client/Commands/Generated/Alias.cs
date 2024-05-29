@@ -1,5 +1,4 @@
-// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
-// Copyright (c) 2005-2021, Coveo Solutions Inc.
+// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -8,121 +7,150 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method list of class Alias.
+    /// Options for the method List of class Alias.
     /// </summary>
-    public class AliasListOptions : SFDXOptions
+    public class AliasListOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        public string Loglevel { get; set; }
     }
 
     /// <summary>
-    /// Options for the method set of class Alias.
+    /// Options for the method Set of class Alias.
     /// </summary>
-    public class AliasSetOptions : SFDXOptions
+    public class AliasSetOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        public string Loglevel { get; set; }
     }
 
     /// <summary>
-    /// Options for the method unset of class Alias.
+    /// Options for the method Unset of class Alias.
     /// </summary>
-    public class AliasUnsetOptions : SFDXOptions
+    public class AliasUnsetOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for all
+        /// </summary>
+        [SwitchName("--all")]
+        public bool? All { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for no-prompt
+        /// </summary>
+        [SwitchName("--no-prompt")]
+        public bool? NoPrompt { get; set; }
     }
 
     /// <summary>
     /// Alias
     /// </summary>
     [CommandClass("alias")]
-    public class Alias : SFDXCommand
+    public class Alias : SfdxCommand
     {
         /// Constructor.
-        public Alias(CommandExecutioner p_CommandExecutioner)
-                : base(p_CommandExecutioner)
+        public Alias(CommandExecutioner commandExecutioner)
+                : base(commandExecutioner)
         {
         }
 
         /// <summary>
-        /// list username aliases for the Salesforce CLI
+        /// Aliases are global, which means that you can use all the listed aliases in any Salesforce DX project on your computer.
         /// </summary>
         /// <remarks>
-        /// list username aliases for the Salesforce CLI
+        /// Aliases are global, which means that you can use all the listed aliases in any Salesforce DX project on your computer.
         /// </remarks>
         /// <example>
         /// 
-        /// alias:list [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// List all the aliases you've set:
+        /// <%= config.bin %> <%= command.id %>
         /// </example>
         [Command("list")]
-        public SFDXResponse List(AliasListOptions p_Options)
+        public SfdxResponse List(AliasListOptions options)
         {
-            return ExecuteCommand<AliasListOptions>(nameof(List), p_Options);
+            return ExecuteCommand(nameof(List), options);
         }
 
         /// <summary>
-        /// set username aliases for the Salesforce CLI
-        /// You can associate an alias with only one username at a time. If you’ve set an alias multiple times, the alias points to the most recent username.
+        /// Aliases are user-defined short names that make it easier to use the CLI. For example, users often set an alias for a scratch org usernames because they're long and unintuitive.  Check the --help of a CLI command to determine where you can use an alias.
+        /// 
+        /// You can associate an alias with only one value at a time. If you set an alias multiple times, the alias points to the most recent value. Aliases are global; after you set an alias, you can use it in any Salesforce DX project on your computer.
+        /// 
+        /// Use quotes to specify an alias value that contains spaces. You typically use an equal sign to set your alias, although you don't need it if you're setting a single alias in a command.
         /// </summary>
         /// <remarks>
-        /// set username aliases for the Salesforce CLI
-        /// You can associate an alias with only one username at a time. If you’ve set an alias multiple times, the alias points to the most recent username.
+        /// Aliases are user-defined short names that make it easier to use the CLI. For example, users often set an alias for a scratch org usernames because they're long and unintuitive.  Check the --help of a CLI command to determine where you can use an alias.
+        /// 
+        /// You can associate an alias with only one value at a time. If you set an alias multiple times, the alias points to the most recent value. Aliases are global; after you set an alias, you can use it in any Salesforce DX project on your computer.
+        /// 
+        /// Use quotes to specify an alias value that contains spaces. You typically use an equal sign to set your alias, although you don't need it if you're setting a single alias in a command.
         /// </remarks>
         /// <example>
         /// 
-        /// sfdx alias:set YourAlias=username@example.com
-        /// sfdx alias:set YourAlias=username@example.com YourOtherAlias=devhub@example.com
-        /// alias:set name=value... [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Set an alias for a scratch org username:
+        /// <%= config.bin %> <%= command.id %> my-scratch-org=test-sadbiytjsupn@example.com
+        /// Set multiple aliases with a single command:
+        /// <%= config.bin %> <%= command.id %> my-scratch-org=test-sadbiytjsupn@example.com my-other-scratch-org=test-ss0xut7txzxf@example.com
+        /// Set an alias that contains spaces:
+        /// <%= config.bin %> <%= command.id %> my-alias='alias with spaces'
+        /// Set a single alias without using an equal sign:
+        /// <%= config.bin %> <%= command.id %> my-scratch-org test-ss0xut7txzxf@example.com
         /// </example>
         [Command("set")]
-        public SFDXResponse Set(AliasSetOptions p_Options)
+        public SfdxResponse Set(AliasSetOptions options)
         {
-            return ExecuteCommand<AliasSetOptions>(nameof(Set), p_Options);
+            return ExecuteCommand(nameof(Set), options);
         }
 
         /// <summary>
-        /// unsets aliases for the Salesforce CLI
+        /// Aliases are global, so when you unset one it's no longer available in any Salesforce DX project.
         /// </summary>
         /// <remarks>
-        /// unsets aliases for the Salesforce CLI
+        /// Aliases are global, so when you unset one it's no longer available in any Salesforce DX project.
         /// </remarks>
         /// <example>
         /// 
-        /// alias:unset [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Unset an alias:
+        /// <%= config.bin %> <%= command.id %> my-alias
+        /// Unset multiple aliases with a single command:
+        /// <%= config.bin %> <%= command.id %> my-alias my-other-alias
+        /// Unset all aliases:
+        /// <%= config.bin %> <%= command.id %> --all [--no-prompt]
         /// </example>
         [Command("unset")]
-        public SFDXResponse Unset(AliasUnsetOptions p_Options)
+        public SfdxResponse Unset(AliasUnsetOptions options)
         {
-            return ExecuteCommand<AliasUnsetOptions>(nameof(Unset), p_Options);
+            return ExecuteCommand(nameof(Unset), options);
         }
     }
 }

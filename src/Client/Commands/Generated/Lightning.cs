@@ -1,5 +1,4 @@
-// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
-// Copyright (c) 2005-2021, Coveo Solutions Inc.
+// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -8,613 +7,364 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method appCreate of class Lightning.
+    /// Options for the method GenerateApp of class Lightning.
     /// </summary>
-    public class LightningAppCreateOptions : SFDXOptions
+    public class LightningGenerateAppOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The Lightning app name. The name can be up to 40 characters and must start with a letter.
+        /// [Required] The name can be up to 40 characters and must start with a letter.
         /// </summary>
-        [SwitchName("--appname")]
-        public string appname { get; set; }
+        [SwitchName("--name")]
+        public string Name { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
+        /// [Required] Supplied parameter values or default values are filled into a copy of the template.
         /// </summary>
         [SwitchName("--template")]
-        public string template { get; set; }
+        public string Template { get; set; }
 
         /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
+        /// [Required] The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--output-dir")]
+        public string OutputDir { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Optional] Create lightning bundles without creating a -meta.xml file
+        /// [Optional] No description for internal
         /// </summary>
         [SwitchName("--internal")]
         public bool? _internal { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
     }
 
     /// <summary>
-    /// Options for the method componentCreate of class Lightning.
+    /// Options for the method GenerateComponent of class Lightning.
     /// </summary>
-    public class LightningComponentCreateOptions : SFDXOptions
+    public class LightningGenerateComponentOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The Lightning component name. The name can be up to 40 characters and must start with a letter.
+        /// [Required] The name can be up to 40 characters and must start with a letter.
         /// </summary>
-        [SwitchName("--componentname")]
-        public string componentname { get; set; }
+        [SwitchName("--name")]
+        public string Name { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
+        /// [Required] Supplied parameter values or default values are filled into a copy of the template.
         /// </summary>
         [SwitchName("--template")]
-        public string template { get; set; }
+        public string Template { get; set; }
 
         /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
+        /// [Required] The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--output-dir")]
+        public string OutputDir { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] The type of the new Lightning component.
+        /// [Required] No description for type
         /// </summary>
         [SwitchName("--type")]
-        public string type { get; set; }
+        public string Type { get; set; }
 
         /// <summary>
-        /// [Optional] Create lightning bundles without creating a -meta.xml file
+        /// [Optional] No description for internal
         /// </summary>
         [SwitchName("--internal")]
         public bool? _internal { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
     }
 
     /// <summary>
-    /// Options for the method eventCreate of class Lightning.
+    /// Options for the method GenerateEvent of class Lightning.
     /// </summary>
-    public class LightningEventCreateOptions : SFDXOptions
+    public class LightningGenerateEventOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The Lightning event name. The name can be up to 40 characters and must start with a letter.
+        /// [Required] The name can be up to 40 characters and must start with a letter.
         /// </summary>
-        [SwitchName("--eventname")]
-        public string eventname { get; set; }
+        [SwitchName("--name")]
+        public string Name { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
+        /// [Required] Supplied parameter values or default values are filled into a copy of the template.
         /// </summary>
         [SwitchName("--template")]
-        public string template { get; set; }
+        public string Template { get; set; }
 
         /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
+        /// [Required] The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--output-dir")]
+        public string OutputDir { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Optional] Create lightning bundles without creating a -meta.xml file
+        /// [Optional] No description for internal
         /// </summary>
         [SwitchName("--internal")]
         public bool? _internal { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
     }
 
     /// <summary>
-    /// Options for the method interfaceCreate of class Lightning.
+    /// Options for the method GenerateInterface of class Lightning.
     /// </summary>
-    public class LightningInterfaceCreateOptions : SFDXOptions
+    public class LightningGenerateInterfaceOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The Lightning interface name. The name can be up to 40 characters and must start with a letter.
+        /// [Required] The name can be up to 40 characters and must start with a letter.
         /// </summary>
-        [SwitchName("--interfacename")]
-        public string interfacename { get; set; }
+        [SwitchName("--name")]
+        public string Name { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
+        /// [Required] Supplied parameter values or default values are filled into a copy of the template.
         /// </summary>
         [SwitchName("--template")]
-        public string template { get; set; }
+        public string Template { get; set; }
 
         /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
+        /// [Required] The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--output-dir")]
+        public string OutputDir { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Optional] Create lightning bundles without creating a -meta.xml file
+        /// [Optional] No description for internal
         /// </summary>
         [SwitchName("--internal")]
         public bool? _internal { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
     }
 
     /// <summary>
-    /// Options for the method lint of class Lightning.
+    /// Options for the method GenerateTest of class Lightning.
     /// </summary>
-    public class LightningLintOptions : SFDXOptions
+    public class LightningGenerateTestOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] Name of the new Lightning test; can be up to 40 characters and must start with a letter.
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
+        [SwitchName("--name")]
+        public string Name { get; set; }
 
         /// <summary>
-        /// [Required] A “glob” pattern used to filter folders (and their contents) out of the analysis. For example: --ignore ** /foo/**.
-        /// </summary>
-        [SwitchName("--ignore")]
-        public string ignore { get; set; }
-
-        /// <summary>
-        /// [Required] A “glob” pattern used to add specific files to the analysis. For example, to only analyse your controller files, use --files ** /*Controller.js. When specified, this value overrides the --ignore flag. The default is all .js files.
-        /// </summary>
-        [SwitchName("--files")]
-        public string files { get; set; }
-
-        /// <summary>
-        /// [Required] Path to a custom ESLint configuration file. Only code style rules are used, while the rest are ignored. For example: --config path/to/.eslintrc.
-        /// </summary>
-        [SwitchName("--config")]
-        public string config { get; set; }
-
-        /// <summary>
-        /// [Optional] Report both warnings and errors. The default is to report only errors.
-        /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
-
-        /// <summary>
-        /// [Optional] Exit with error code 1 if there are lint issues. The default exits without an error code.
-        /// </summary>
-        [SwitchName("--exit")]
-        public bool? exit { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method lwcTestCreate of class Lightning.
-    /// </summary>
-    public class LightningLwcTestCreateOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Required] Path to Lightning web component .js file to create a test for.
-        /// </summary>
-        [SwitchName("--filepath")]
-        public string filepath { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method lwcTestRun of class Lightning.
-    /// </summary>
-    public class LightningLwcTestRunOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Optional] Runs tests in a Node process that an external debugger can connect to. The run pauses until the debugger is connected. For more information, see: https://jestjs.io/docs/en/troubleshooting
-        /// </summary>
-        [SwitchName("--debug")]
-        public bool? debug { get; set; }
-
-        /// <summary>
-        /// [Optional] Runs tests when a watched file changes. Watched files include the component under test and any files it references.
-        /// </summary>
-        [SwitchName("--watch")]
-        public bool? watch { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method lwcTestSetup of class Lightning.
-    /// </summary>
-    public class LightningLwcTestSetupOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method testCreate of class Lightning.
-    /// </summary>
-    public class LightningTestCreateOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Required] The name of the new Lightning test. The name can be up to 40 characters and must start with a letter.
-        /// </summary>
-        [SwitchName("--testname")]
-        public string testname { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] The template to use to create the file. Supplied parameter values or default values are filled into a copy of the template.
+        /// [Required] Supplied parameter values or default values are filled into a copy of the template.
         /// </summary>
         [SwitchName("--template")]
-        public string template { get; set; }
+        public string Template { get; set; }
 
         /// <summary>
-        /// [Required] The directory to store the newly created files. The location can be an absolute path or relative to the current working directory. The default is the current directory.
+        /// [Required] The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
-        [SwitchName("--outputdir")]
-        public string outputdir { get; set; }
+        [SwitchName("--output-dir")]
+        public string OutputDir { get; set; }
 
         /// <summary>
-        /// [Optional] Create lightning bundles without creating a -meta.xml file
+        /// [Optional] No description for internal
         /// </summary>
         [SwitchName("--internal")]
         public bool? _internal { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
     }
 
     /// <summary>
     /// Lightning
     /// </summary>
-    [CommandClass("force:lightning")]
-    public class Lightning : SFDXCommand
+    [CommandClass("lightning")]
+    public class Lightning : SfdxCommand
     {
         /// Constructor.
-        public Lightning(CommandExecutioner p_CommandExecutioner)
-                : base(p_CommandExecutioner)
+        public Lightning(CommandExecutioner commandExecutioner)
+                : base(commandExecutioner)
         {
         }
 
         /// <summary>
-        /// create a Lightning app
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// If you don’t specify an outputdir, we create a subfolder in your current working directory with the name of your bundle. For example, if the current working directory is force-app and your Lightning bundle is called myBundle, we create force-app/myBundle/ to store the files in the bundle.
-        /// 
+        /// Generates a Lightning App bundle in the specified directory or the current working directory. The bundle consists of multiple files in a folder with the designated name.
         /// </summary>
         /// <remarks>
-        /// create a Lightning app
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// If you don’t specify an outputdir, we create a subfolder in your current working directory with the name of your bundle. For example, if the current working directory is force-app and your Lightning bundle is called myBundle, we create force-app/myBundle/ to store the files in the bundle.
-        /// 
+        /// Generates a Lightning App bundle in the specified directory or the current working directory. The bundle consists of multiple files in a folder with the designated name.
         /// </remarks>
         /// <example>
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// If you don’t specify an outputdir, we create a subfolder in your current working directory with the name of your bundle. For example, if the current working directory is force-app and your Lightning bundle is called myBundle, we create force-app/myBundle/ to store the files in the bundle.
         /// 
-        /// Examples:
-        ///    $ sfdx force:lightning:app:create -n myapp
-        ///    $ sfdx force:lightning:app:create -n myapp -d aura
-        /// 
-        /// $ sfdx force:lightning:app:create -n myapp
-        /// $ sfdx force:lightning:app:create -n myapp -d aura
-        /// force:lightning:app:create -n <string> [-t <string>] [-d <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Generate the metadata files for a Lightning app bundle called "myapp" in the current directory:
+        /// <%= config.bin %> <%= command.id %> --name myapp
+        /// Similar to the previous example, but generate the files in the "force-app/main/default/aura" directory:
+        /// <%= config.bin %> <%= command.id %> --name myapp --output-dir force-app/main/default/aura
         /// </example>
-        [Command("app:create")]
-        public SFDXResponse AppCreate(LightningAppCreateOptions p_Options)
+        [Command("generate app")]
+        public SfdxResponse GenerateApp(LightningGenerateAppOptions options)
         {
-            return ExecuteCommand<LightningAppCreateOptions>(nameof(AppCreate), p_Options);
+            return ExecuteCommand(nameof(GenerateApp), options);
         }
 
         /// <summary>
-        /// create a bundle for an Aura component or a Lightning web component
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// If you don’t specify an outputdir, we create a subfolder in your current working directory with the name of your bundle. For example, if the current working directory is force-app and your Lightning bundle is called myBundle, we create force-app/myBundle/ to store the files in the bundle.
+        /// Generates the bundle in the specified directory or the current working directory. The bundle consists of multiple files in a directory with the designated name. Lightning web components are contained in the directory with name "lwc", Aura components in "aura".
         /// 
-        /// To create a Lightning web component, pass --type lwc to the command. If you don’t include a --type value, Salesforce CLI creates an Aura component by default.
+        /// To generate a Lightning web component, pass "--type lwc" to the command. If you don’t specify --type, Salesforce CLI generates an Aura component by default.
         /// </summary>
         /// <remarks>
-        /// create a bundle for an Aura component or a Lightning web component
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// If you don’t specify an outputdir, we create a subfolder in your current working directory with the name of your bundle. For example, if the current working directory is force-app and your Lightning bundle is called myBundle, we create force-app/myBundle/ to store the files in the bundle.
+        /// Generates the bundle in the specified directory or the current working directory. The bundle consists of multiple files in a directory with the designated name. Lightning web components are contained in the directory with name "lwc", Aura components in "aura".
         /// 
-        /// To create a Lightning web component, pass --type lwc to the command. If you don’t include a --type value, Salesforce CLI creates an Aura component by default.
+        /// To generate a Lightning web component, pass "--type lwc" to the command. If you don’t specify --type, Salesforce CLI generates an Aura component by default.
         /// </remarks>
         /// <example>
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// If you don’t specify an outputdir, we create a subfolder in your current working directory with the name of your bundle. For example, if the current working directory is force-app and your Lightning bundle is called myBundle, we create force-app/myBundle/ to store the files in the bundle.
         /// 
-        /// To create a Lightning web component, pass --type lwc to the command. If you don’t include a --type value, Salesforce CLI creates an Aura component by default.
-        /// Examples:
-        ///    $ sfdx force:lightning:component:create -n mycomponent
-        ///    $ sfdx force:lightning:component:create -n mycomponent --type lwc
-        ///    $ sfdx force:lightning:component:create -n mycomponent -d aura
-        ///    $ sfdx force:lightning:component:create -n mycomponent --type lwc -d lwc
-        /// 
-        /// $ sfdx force:lightning:component:create -n mycomponent
-        /// $ sfdx force:lightning:component:create -n mycomponent --type lwc
-        /// $ sfdx force:lightning:component:create -n mycomponent -d aura
-        /// $ sfdx force:lightning:component:create -n mycomponent --type lwc -d lwc
-        /// force:lightning:component:create -n <string> [-t <string>] [-d <string>] [--type <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Generate the metadata files for an Aura component bundle in the current directory:
+        /// <%= config.bin %> <%= command.id %> --name mycomponent
+        /// Generate a Lightning web component bundle in the current directory:
+        /// <%= config.bin %> <%= command.id %> --name mycomponent --type lwc
+        /// Generate an Aura component bundle in the "force-app/main/default/aura" directory:
+        /// <%= config.bin %> <%= command.id %> --name mycomponent --output-dir force-app/main/default/aura
+        /// Generate a Lightning web component bundle in the "force-app/main/default/lwc" directory:
+        /// <%= config.bin %> <%= command.id %> --name mycomponent --type lwc --output-dir force-app/main/default/lwc
         /// </example>
-        [Command("component:create")]
-        public SFDXResponse ComponentCreate(LightningComponentCreateOptions p_Options)
+        [Command("generate component")]
+        public SfdxResponse GenerateComponent(LightningGenerateComponentOptions options)
         {
-            return ExecuteCommand<LightningComponentCreateOptions>(nameof(ComponentCreate), p_Options);
+            return ExecuteCommand(nameof(GenerateComponent), options);
         }
 
         /// <summary>
-        /// create a Lightning event
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// If you don’t specify an outputdir, we create a subfolder in your current working directory with the name of your bundle. For example, if the current working directory is force-app and your Lightning bundle is called myBundle, we create force-app/myBundle/ to store the files in the bundle.
-        /// 
+        /// Generates a Lightning Event bundle in the specified directory or the current working directory. The bundle consists of multiple files in a folder with the designated name.
         /// </summary>
         /// <remarks>
-        /// create a Lightning event
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// If you don’t specify an outputdir, we create a subfolder in your current working directory with the name of your bundle. For example, if the current working directory is force-app and your Lightning bundle is called myBundle, we create force-app/myBundle/ to store the files in the bundle.
-        /// 
+        /// Generates a Lightning Event bundle in the specified directory or the current working directory. The bundle consists of multiple files in a folder with the designated name.
         /// </remarks>
         /// <example>
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// If you don’t specify an outputdir, we create a subfolder in your current working directory with the name of your bundle. For example, if the current working directory is force-app and your Lightning bundle is called myBundle, we create force-app/myBundle/ to store the files in the bundle.
         /// 
-        /// Examples:
-        ///    $ sfdx force:lightning:event:create -n myevent
-        ///    $ sfdx force:lightning:event:create -n myevent -d aura
-        /// 
-        /// $ sfdx force:lightning:event:create -n myevent
-        /// $ sfdx force:lightning:event:create -n myevent -d aura
-        /// force:lightning:event:create -n <string> [-t <string>] [-d <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Generate the metadata files for a Lightning event bundle called "myevent" in the current directory:
+        /// <%= config.bin %> <%= command.id %> --name myevent
+        /// Similar to previous example, but generate the files in the "force-app/main/default/aura" directory:
+        /// <%= config.bin %> <%= command.id %> --name myevent --output-dir force-app/main/default/aura
         /// </example>
-        [Command("event:create")]
-        public SFDXResponse EventCreate(LightningEventCreateOptions p_Options)
+        [Command("generate event")]
+        public SfdxResponse GenerateEvent(LightningGenerateEventOptions options)
         {
-            return ExecuteCommand<LightningEventCreateOptions>(nameof(EventCreate), p_Options);
+            return ExecuteCommand(nameof(GenerateEvent), options);
         }
 
         /// <summary>
-        /// create a Lightning interface
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// If you don’t specify an outputdir, we create a subfolder in your current working directory with the name of your bundle. For example, if the current working directory is force-app and your Lightning bundle is called myBundle, we create force-app/myBundle/ to store the files in the bundle.
-        /// 
+        /// Generates a Lightning Interface bundle in the specified directory or the current working directory. The bundle consists of multiple files in a folder with the designated name.
         /// </summary>
         /// <remarks>
-        /// create a Lightning interface
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// If you don’t specify an outputdir, we create a subfolder in your current working directory with the name of your bundle. For example, if the current working directory is force-app and your Lightning bundle is called myBundle, we create force-app/myBundle/ to store the files in the bundle.
-        /// 
+        /// Generates a Lightning Interface bundle in the specified directory or the current working directory. The bundle consists of multiple files in a folder with the designated name.
         /// </remarks>
         /// <example>
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// If you don’t specify an outputdir, we create a subfolder in your current working directory with the name of your bundle. For example, if the current working directory is force-app and your Lightning bundle is called myBundle, we create force-app/myBundle/ to store the files in the bundle.
         /// 
-        /// Examples:
-        ///    $ sfdx force:lightning:interface:create -n myinterface
-        ///    $ sfdx force:lightning:interface:create -n myinterface -d aura
-        /// 
-        /// $ sfdx force:lightning:interface:create -n myinterface
-        /// $ sfdx force:lightning:interface:create -n myinterface -d aura
-        /// force:lightning:interface:create -n <string> [-t <string>] [-d <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Generate the metadata files for a Lightning interface bundle called "myinterface" in the current directory:
+        /// <%= config.bin %> <%= command.id %> --name myinterface
+        /// Similar to the previous example but generate the files in the "force-app/main/default/aura" directory:
+        /// <%= config.bin %> <%= command.id %> --name myinterface --output-dir force-app/main/default/aura
         /// </example>
-        [Command("interface:create")]
-        public SFDXResponse InterfaceCreate(LightningInterfaceCreateOptions p_Options)
+        [Command("generate interface")]
+        public SfdxResponse GenerateInterface(LightningGenerateInterfaceOptions options)
         {
-            return ExecuteCommand<LightningInterfaceCreateOptions>(nameof(InterfaceCreate), p_Options);
+            return ExecuteCommand(nameof(GenerateInterface), options);
         }
 
         /// <summary>
-        /// analyze (lint) Aura component code
+        /// Generates the test in the specified directory or the current working directory. The .resource file and associated metadata file are generated.
         /// </summary>
         /// <remarks>
-        /// analyze (lint) Aura component code
+        /// Generates the test in the specified directory or the current working directory. The .resource file and associated metadata file are generated.
         /// </remarks>
         /// <example>
         /// 
-        /// <%= config.bin %> <%= command.id %> ./path/to/be/linted/
-        /// force:lightning:lint [-i <string>] [--files <string>] [--config <string>] [--exit] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Generate the metadata files for the Lightning test called MyLightningTest in the current directory:
+        /// <%= config.bin %> <%= command.id %> --name MyLightningTest
+        /// Similar to the previous example but generate the files in the "force-app/main/default/lightningTests" directory:
+        /// <%= config.bin %> <%= command.id %> --name MyLightningTest --output-dir force-app/main/default/lightningTests
         /// </example>
-        [Command("lint")]
-        public SFDXResponse Lint(LightningLintOptions p_Options)
+        [Command("generate test")]
+        public SfdxResponse GenerateTest(LightningGenerateTestOptions options)
         {
-            return ExecuteCommand<LightningLintOptions>(nameof(Lint), p_Options);
-        }
-
-        /// <summary>
-        /// creates a Lightning web component test file with boilerplate code inside a __tests__ directory.
-        /// </summary>
-        /// <remarks>
-        /// creates a Lightning web component test file with boilerplate code inside a __tests__ directory.
-        /// </remarks>
-        /// <example>
-        /// 
-        /// $ sfdx force:lightning:lwc:test:create -f force-app/main/default/lwc/myButton/myButton.js
-        /// force:lightning:lwc:test:create -f <string> [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
-        /// </example>
-        [Command("lwc:test:create")]
-        public SFDXResponse LwcTestCreate(LightningLwcTestCreateOptions p_Options)
-        {
-            return ExecuteCommand<LightningLwcTestCreateOptions>(nameof(LwcTestCreate), p_Options);
-        }
-
-        /// <summary>
-        /// invokes Lightning Web Components Jest unit tests.
-        /// </summary>
-        /// <remarks>
-        /// invokes Lightning Web Components Jest unit tests.
-        /// </remarks>
-        /// <example>
-        /// 
-        /// $ sfdx force:lightning:lwc:test:run
-        /// $ sfdx force:lightning:lwc:test:run -w
-        /// force:lightning:lwc:test:run [-d] [--watch] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
-        /// </example>
-        [Command("lwc:test:run")]
-        public SFDXResponse LwcTestRun(LightningLwcTestRunOptions p_Options)
-        {
-            return ExecuteCommand<LightningLwcTestRunOptions>(nameof(LwcTestRun), p_Options);
-        }
-
-        /// <summary>
-        /// install Jest unit testing tools for Lightning Web Components.
-        /// </summary>
-        /// <remarks>
-        /// install Jest unit testing tools for Lightning Web Components.
-        /// </remarks>
-        /// <example>
-        /// 
-        /// $ sfdx force:lightning:lwc:test:setup
-        /// force:lightning:lwc:test:setup [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
-        /// </example>
-        [Command("lwc:test:setup")]
-        public SFDXResponse LwcTestSetup(LightningLwcTestSetupOptions p_Options)
-        {
-            return ExecuteCommand<LightningLwcTestSetupOptions>(nameof(LwcTestSetup), p_Options);
-        }
-
-        /// <summary>
-        /// create a Lightning test
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// create a Lightning test
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// 
-        /// </remarks>
-        /// <example>
-        /// If not supplied, the apiversion, template, and outputdir use default values.
-        /// The outputdir can be an absolute path or relative to the current working directory.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:lightning:test:create -n MyLightningTest
-        ///    $ sfdx force:lightning:test:create -n MyLightningTest -d lightningTests
-        /// 
-        /// $ sfdx force:lightning:test:create -n MyLightningTest
-        /// $ sfdx force:lightning:test:create -n MyLightningTest -d lightningTests
-        /// force:lightning:test:create -n <string> [-t <string>] [-d <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
-        /// </example>
-        [Command("test:create")]
-        public SFDXResponse TestCreate(LightningTestCreateOptions p_Options)
-        {
-            return ExecuteCommand<LightningTestCreateOptions>(nameof(TestCreate), p_Options);
+            return ExecuteCommand(nameof(GenerateTest), options);
         }
     }
 }

@@ -1,5 +1,4 @@
-// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
-// Copyright (c) 2005-2021, Coveo Solutions Inc.
+// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -8,1737 +7,1485 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method create of class Package.
+    /// Options for the method Create of class Package.
     /// </summary>
-    public class PackageCreateOptions : SFDXOptions
+    public class PackageCreateOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The path to the directory that contains the contents of the package.
+        /// [Required] No description for path
         /// </summary>
         [SwitchName("--path")]
-        public string path { get; set; }
+        public string Path { get; set; }
 
         /// <summary>
-        /// [Required] Package type for the package.
-        /// The options for package type are Managed and Unlocked (Managed=DeveloperManagedSubscriberManaged, Unlocked=DeveloperControlledSubscriberEditable).
-        /// These options determine upgrade and editability rules.
+        /// [Required] The options for package type are Managed and Unlocked (Managed=DeveloperManagedSubscriberManaged, Unlocked=DeveloperControlledSubscriberEditable). These options determine upgrade and editability rules.
         /// </summary>
-        [SwitchName("--packagetype")]
-        public string packagetype { get; set; }
+        [SwitchName("--package-type")]
+        public string PackageType { get; set; }
 
         /// <summary>
-        /// [Required] Name of the package to create.
+        /// [Required] No description for name
         /// </summary>
         [SwitchName("--name")]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-dev-hub
+        /// </summary>
+        [SwitchName("--target-dev-hub")]
+        public string TargetDevHub { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
+        public string Loglevel { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] Description of the package.
+        /// [Required] No description for description
         /// </summary>
         [SwitchName("--description")]
-        public string description { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
-        /// [Optional] Creates the package with no namespace. Available only for unlocked packages. Useful when you’re migrating an existing org to packages. But, use a namespaced package for new metadata.
+        /// [Optional] This flag is useful when you’re migrating an existing org to packages. But use a namespaced package for new metadata.
         /// </summary>
-        [SwitchName("--nonamespace")]
-        public bool? nonamespace { get; set; }
+        [SwitchName("--no-namespace")]
+        public bool? NoNamespace { get; set; }
 
         /// <summary>
-        /// [Optional] Package depends on unpackaged metadata in the installation org. Applies to unlocked packages only.
-        /// Use Source Tracking in Sandboxes to develop your org-dependent unlocked package.
-        /// For more information, see "Create Org-Dependent Unlocked Packages" in the Salesforce DX Developer Guide.
+        /// [Optional] Use Source Tracking in Sandboxes to develop your org-dependent unlocked package. For more information, see "Create Org-Dependent Unlocked Packages" in the Salesforce DX Developer Guide.
         /// </summary>
-        [SwitchName("--orgdependent")]
-        public bool? orgdependent { get; set; }
+        [SwitchName("--org-dependent")]
+        public bool? OrgDependent { get; set; }
 
         /// <summary>
-        /// [Required] An active Dev Hub org user designated to receive email notifications for unhandled Apex exceptions, and install, upgrade, or uninstall failures associated with your package.
+        /// [Required] Email notifications include information about unhandled Apex exceptions, and install, upgrade, or uninstall failures associated with your package.
         /// </summary>
-        [SwitchName("--errornotificationusername")]
-        public string errornotificationusername { get; set; }
+        [SwitchName("--error-notification-username")]
+        public string ErrorNotificationUsername { get; set; }
     }
 
     /// <summary>
-    /// Options for the method delete of class Package.
+    /// Options for the method Delete of class Package.
     /// </summary>
-    public class PackageDeleteOptions : SFDXOptions
+    public class PackageDeleteOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The ID (starts with 0Ho) or alias of the package to delete.
+        /// [Required] No description for package
         /// </summary>
         [SwitchName("--package")]
-        public string package { get; set; }
+        public string Package { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-dev-hub
+        /// </summary>
+        [SwitchName("--target-dev-hub")]
+        public string TargetDevHub { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
+        public string Loglevel { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Optional] Don’t prompt before deleting the package
+        /// [Optional] No description for no-prompt
         /// </summary>
-        [SwitchName("--noprompt")]
-        public bool? noprompt { get; set; }
+        [SwitchName("--no-prompt")]
+        public bool? NoPrompt { get; set; }
 
         /// <summary>
-        /// [Optional] Undelete a deleted package.
+        /// [Optional] No description for undelete
         /// </summary>
         [SwitchName("--undelete")]
-        public bool? undelete { get; set; }
+        public bool? Undelete { get; set; }
     }
 
     /// <summary>
-    /// Options for the method install of class Package.
+    /// Options for the method Install of class Package.
     /// </summary>
-    public class PackageInstallOptions : SFDXOptions
+    public class PackageInstallOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for package
+        /// </summary>
+        [SwitchName("--package")]
+        public string Package { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        public string Loglevel { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Optional] Maximum number of minutes to wait for installation status. The default is 0.
+        /// [Required] No description for wait
         /// </summary>
         [SwitchName("--wait")]
-        public int? wait { get; set; }
+        public string Wait { get; set; }
 
         /// <summary>
-        /// [Required] Installation key for installing a key-protected package. The default is null.
+        /// [Required] No description for installation-key
         /// </summary>
-        [SwitchName("--installationkey")]
-        public string installationkey { get; set; }
+        [SwitchName("--installation-key")]
+        public string InstallationKey { get; set; }
 
         /// <summary>
-        /// [Optional] Maximum number of minutes to wait for the Subscriber Package Version ID to become available in the target org before canceling the install request. The default is 0.
+        /// [Required] No description for publish-wait
         /// </summary>
-        [SwitchName("--publishwait")]
-        public int? publishwait { get; set; }
+        [SwitchName("--publish-wait")]
+        public string PublishWait { get; set; }
 
         /// <summary>
-        /// [Optional] Allows the following without an explicit confirmation response: 1) Remote Site Settings and Content Security Policy websites to send or receive data, and 2) --upgradetype Delete to proceed.
+        /// [Optional] Allows the following without an explicit confirmation response: 1) Remote Site Settings and Content Security Policy websites to send or receive data, and 2) --upgrade-type Delete to proceed.
         /// </summary>
-        [SwitchName("--noprompt")]
-        public bool? noprompt { get; set; }
-
-        /// <summary>
-        /// [Required] The ID (starts with 04t) or alias of the package version to install.
-        /// </summary>
-        [SwitchName("--package")]
-        public string package { get; set; }
+        [SwitchName("--no-prompt")]
+        public bool? NoPrompt { get; set; }
 
         /// <summary>
         /// [Required] Applies to unlocked packages only. Specifies whether to compile all Apex in the org and package, or only the Apex in the package.
+        /// 
+        /// For package installs into production orgs, or any org that has Apex Compile on Deploy enabled, the platform compiles all Apex in the org after the package install or upgrade operation completes.
+        /// 
+        /// This approach assures that package installs and upgrades don’t impact the performance of an org, and is done even if --apex-compile package is specified.
         /// </summary>
-        [SwitchName("--apexcompile")]
-        public string apexcompile { get; set; }
+        [SwitchName("--apex-compile")]
+        public string ApexCompile { get; set; }
 
         /// <summary>
-        /// [Required] Security access type for the installed package.
-        /// Deprecation notice: The --securitytype parameter's default value will change from AllUsers to AdminsOnly in an upcoming release (v47.0 or later).
+        /// [Required] No description for security-type
         /// </summary>
-        [SwitchName("--securitytype")]
-        public string securitytype { get; set; }
+        [SwitchName("--security-type")]
+        public string SecurityType { get; set; }
 
         /// <summary>
         /// [Required] For package upgrades, specifies whether to mark all removed components as deprecated (DeprecateOnly), to delete removed components that can be safely deleted and deprecate the others (Mixed), or to delete all removed components, except for custom objects and custom fields, that don't have dependencies (Delete). The default is Mixed. Can specify DeprecateOnly or Delete only for unlocked package upgrades.
         /// </summary>
-        [SwitchName("--upgradetype")]
-        public string upgradetype { get; set; }
+        [SwitchName("--upgrade-type")]
+        public string UpgradeType { get; set; }
+
+        /// <summary>
+        /// [Required] Allows the installer of a package to optionally skip install handlers in order to decrease overall installation time (available handlers: FeatureEnforcement).
+        /// </summary>
+        [SwitchName("--skip-handlers")]
+        public string SkipHandlers { get; set; }
     }
 
     /// <summary>
-    /// Options for the method installReport of class Package.
+    /// Options for the method InstallReport of class Package.
     /// </summary>
-    public class PackageInstallReportOptions : SFDXOptions
+    public class PackageInstallReportOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The ID of the package install request you want to check.
+        /// [Required] No description for request-id
         /// </summary>
-        [SwitchName("--requestid")]
-        public string requestid { get; set; }
+        [SwitchName("--request-id")]
+        public string RequestId { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-org
         /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
     }
 
     /// <summary>
-    /// Options for the method installedList of class Package.
+    /// Options for the method InstalledList of class Package.
     /// </summary>
-    public class PackageInstalledListOptions : SFDXOptions
+    public class PackageInstalledListOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        public string Loglevel { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
     }
 
     /// <summary>
-    /// Options for the method list of class Package.
+    /// Options for the method List of class Package.
     /// </summary>
-    public class PackageListOptions : SFDXOptions
+    public class PackageListOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-dev-hub
+        /// </summary>
+        [SwitchName("--target-dev-hub")]
+        public string TargetDevHub { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
+        public string Loglevel { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Optional] Displays extended package details.
+        /// [Optional] No description for verbose
         /// </summary>
         [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
+        public bool? Verbose { get; set; }
     }
 
     /// <summary>
-    /// Options for the method uninstall of class Package.
+    /// Options for the method Uninstall of class Package.
     /// </summary>
-    public class PackageUninstallOptions : SFDXOptions
+    public class PackageUninstallOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for package
+        /// </summary>
+        [SwitchName("--package")]
+        public string Package { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        public string Loglevel { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Optional] Maximum number of minutes to wait for uninstall status. The default is 0.
+        /// [Required] No description for wait
         /// </summary>
         [SwitchName("--wait")]
-        public int? wait { get; set; }
-
-        /// <summary>
-        /// [Required] The ID (starts with 04t) or alias of the package version to uninstall.
-        /// </summary>
-        [SwitchName("--package")]
-        public string package { get; set; }
+        public string Wait { get; set; }
     }
 
     /// <summary>
-    /// Options for the method uninstallReport of class Package.
+    /// Options for the method UninstallReport of class Package.
     /// </summary>
-    public class PackageUninstallReportOptions : SFDXOptions
+    public class PackageUninstallReportOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The ID of the package uninstall request you want to check.
+        /// [Required] No description for request-id
         /// </summary>
-        [SwitchName("--requestid")]
-        public string requestid { get; set; }
+        [SwitchName("--request-id")]
+        public string RequestId { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        public string Loglevel { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
     }
 
     /// <summary>
-    /// Options for the method update of class Package.
+    /// Options for the method Update of class Package.
     /// </summary>
-    public class PackageUpdateOptions : SFDXOptions
+    public class PackageUpdateOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The ID (starts with 0Ho) or alias of the package to update.
+        /// [Required] No description for package
         /// </summary>
         [SwitchName("--package")]
-        public string package { get; set; }
+        public string Package { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-dev-hub
+        /// </summary>
+        [SwitchName("--target-dev-hub")]
+        public string TargetDevHub { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
+        public string Loglevel { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] New name of the package.
+        /// [Required] No description for name
         /// </summary>
         [SwitchName("--name")]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// [Required] New description of the package.
+        /// [Required] No description for description
         /// </summary>
         [SwitchName("--description")]
-        public string description { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
-        /// [Required] An active Dev Hub org user designated to receive email notifications for unhandled Apex exceptions, and install, upgrade, or uninstall failures associated with your package.
+        /// [Required] Email notifications include information about unhandled Apex exceptions, and install, upgrade, or uninstall failures associated with your package.
         /// </summary>
-        [SwitchName("--errornotificationusername")]
-        public string errornotificationusername { get; set; }
+        [SwitchName("--error-notification-username")]
+        public string ErrorNotificationUsername { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for enable-app-analytics
+        /// </summary>
+        [SwitchName("--enable-app-analytics")]
+        public bool? EnableAppAnalytics { get; set; }
     }
 
     /// <summary>
-    /// Options for the method versionCreate of class Package.
+    /// Options for the method VersionCreate of class Package.
     /// </summary>
-    public class PackageVersionCreateOptions : SFDXOptions
+    public class PackageVersionCreateOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-dev-hub
+        /// </summary>
+        [SwitchName("--target-dev-hub")]
+        public string TargetDevHub { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
+        public string Loglevel { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] The ID (starts with 0Ho) or alias of the package to create a version of.
-        /// </summary>
-        [SwitchName("--package")]
-        public string package { get; set; }
-
-        /// <summary>
-        /// [Required] The path to the directory that contains the contents of the package.
-        /// </summary>
-        [SwitchName("--path")]
-        public string path { get; set; }
-
-        /// <summary>
-        /// [Required] The path to a definition file similar to scratch org definition file that contains the list of features and org preferences that the metadata of the package version depends on.
-        /// </summary>
-        [SwitchName("--definitionfile")]
-        public string definitionfile { get; set; }
-
-        /// <summary>
-        /// [Required] Name of the branch in your source control system that the package version is based on.
+        /// [Required] No description for branch
         /// </summary>
         [SwitchName("--branch")]
-        public string branch { get; set; }
+        public string Branch { get; set; }
 
         /// <summary>
-        /// [Required] The package version’s tag.
+        /// [Required] No description for build-instance
         /// </summary>
-        [SwitchName("--tag")]
-        public string tag { get; set; }
+        [SwitchName("--build-instance")]
+        public string BuildInstance { get; set; }
 
         /// <summary>
-        /// [Required] Installation key for creating the key-protected package. Either an --installationkey value or the --installationkeybypass flag is required.
+        /// [Optional] Before you can promote and release a managed or unlocked package version, the Apex code must meet a minimum 75% code coverage requirement. We don’t calculate code coverage for org-dependent unlocked packages or for package versions that specify --skip-validation.
         /// </summary>
-        [SwitchName("--installationkey")]
-        public string installationkey { get; set; }
+        [SwitchName("--code-coverage")]
+        public bool? CodeCoverage { get; set; }
 
         /// <summary>
-        /// [Optional] Bypasses the installation key requirement. If you bypass this requirement, anyone can install your package. Either an --installationkey value or the --installationkeybypass flag is required.
+        /// [Required] No description for definition-file
         /// </summary>
-        [SwitchName("--installationkeybypass")]
-        public bool? installationkeybypass { get; set; }
+        [SwitchName("--definition-file")]
+        public string DefinitionFile { get; set; }
 
         /// <summary>
-        /// [Optional] Specifies that the temp files are preserved that would otherwise be deleted
+        /// [Required] No description for installation-key
+        /// </summary>
+        [SwitchName("--installation-key")]
+        public string InstallationKey { get; set; }
+
+        /// <summary>
+        /// [Optional] If you bypass this requirement, anyone can install your package.
+        /// </summary>
+        [SwitchName("--installation-key-bypass")]
+        public bool? InstallationKeyBypass { get; set; }
+
+        /// <summary>
+        /// [Required] No description for package
+        /// </summary>
+        [SwitchName("--package")]
+        public string Package { get; set; }
+
+        /// <summary>
+        /// [Required] No description for path
+        /// </summary>
+        [SwitchName("--path")]
+        public string Path { get; set; }
+
+        /// <summary>
+        /// [Required] The post-install script is an Apex class within this package that is run in the installing org after installations or upgrades of this package version.
+        /// </summary>
+        [SwitchName("--post-install-script")]
+        public string PostInstallScript { get; set; }
+
+        /// <summary>
+        /// [Required] The contents of the post-installation instructions URL are displayed in the UI after installation of the package version.
+        /// </summary>
+        [SwitchName("--post-install-url")]
+        public string PostInstallUrl { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for preserve
         /// </summary>
         [SwitchName("--preserve")]
-        public bool? preserve { get; set; }
+        public bool? Preserve { get; set; }
 
         /// <summary>
-        /// [Optional] Specifies that the sfdx-project.json file should be validated against JSON schema.
+        /// [Required] This link is displayed in the package installation UI to provide release notes for this package version to subscribers.
         /// </summary>
-        [SwitchName("--validateschema")]
-        public bool? validateschema { get; set; }
+        [SwitchName("--releasenotes-url")]
+        public string ReleasenotesUrl { get; set; }
 
         /// <summary>
-        /// [Optional] The number of minutes to wait for the package version to be created.
+        /// [Optional] No description for skip-ancestor-check
         /// </summary>
-        [SwitchName("--wait")]
-        public int? wait { get; set; }
-
-        /// <summary>
-        /// [Required] The instance where the package version will be created——for example, NA50.
-        /// </summary>
-        [SwitchName("--buildinstance")]
-        public string buildinstance { get; set; }
-
-        /// <summary>
-        /// [Required] The source org ID used to copy the org shape for the build org.
-        /// </summary>
-        [SwitchName("--sourceorg")]
-        public string sourceorg { get; set; }
-
-        /// <summary>
-        /// [Required] The name of the package version to be created. Overrides the sfdx-project.json value.
-        /// </summary>
-        [SwitchName("--versionname")]
-        public string versionname { get; set; }
-
-        /// <summary>
-        /// [Required] The version number of the package version to be created. Overrides the sfdx-project.json value.
-        /// </summary>
-        [SwitchName("--versionnumber")]
-        public string versionnumber { get; set; }
-
-        /// <summary>
-        /// [Required] The description of the package version to be created. Overrides the sfdx-project.json value.
-        /// </summary>
-        [SwitchName("--versiondescription")]
-        public string versiondescription { get; set; }
-
-        /// <summary>
-        /// [Optional] Calculate and store the code coverage percentage by running the Apex tests included in this package version. Before you can promote and release a managed or unlocked package version, the Apex code must meet a minimum 75% code coverage requirement. We don’t calculate code coverage for org-dependent unlocked packages or for package versions that specify --skipvalidation.
-        /// </summary>
-        [SwitchName("--codecoverage")]
-        public bool? codecoverage { get; set; }
-
-        /// <summary>
-        /// [Required] The release notes URL. This link is displayed in the package installation UI to provide release notes for this package version to subscribers.
-        /// </summary>
-        [SwitchName("--releasenotesurl")]
-        public string releasenotesurl { get; set; }
-
-        /// <summary>
-        /// [Required] The post-install instructions URL. The contents of the post-installation instructions URL are displayed in the UI after installation of the package version.
-        /// </summary>
-        [SwitchName("--postinstallurl")]
-        public string postinstallurl { get; set; }
-
-        /// <summary>
-        /// [Required] Applies to managed packages only. The post-install script name. The post-install script is an Apex class within this package that is run in the installing org after installations or upgrades of this package version.
-        /// </summary>
-        [SwitchName("--postinstallscript")]
-        public string postinstallscript { get; set; }
-
-        /// <summary>
-        /// [Required] Applies to managed packages only. The uninstall script name. The uninstall script is an Apex class within this package that is run in the installing org after uninstallations of this package.
-        /// </summary>
-        [SwitchName("--uninstallscript")]
-        public string uninstallscript { get; set; }
+        [SwitchName("--skip-ancestor-check")]
+        public bool? SkipAncestorCheck { get; set; }
 
         /// <summary>
         /// [Optional] Skips validation of dependencies, package ancestors, and metadata during package version creation. Skipping validation reduces the time it takes to create a new package version, but you can promote only validated package versions. Skipping validation can suppress important errors that can surface at a later stage. You can specify skip validation or code coverage, but not both. Code coverage is calculated during validation.
         /// </summary>
-        [SwitchName("--skipvalidation")]
-        public bool? skipvalidation { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method versionCreateList of class Package.
-    /// </summary>
-    public class PackageVersionCreateListOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
+        [SwitchName("--skip-validation")]
+        public bool? SkipValidation { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
-
-        /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Optional] Filters the list based on the specified maximum number of days since the request was created (starting at 00:00:00 of first day to now; 0 for today).
-        /// </summary>
-        [SwitchName("--createdlastdays")]
-        public int? createdlastdays { get; set; }
-
-        /// <summary>
-        /// [Required] Filters the list based on the status of version creation requests.
-        /// </summary>
-        [SwitchName("--status")]
-        public string status { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method versionCreateReport of class Package.
-    /// </summary>
-    public class PackageVersionCreateReportOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Required] The ID (starts with 08c) of the package version creation request you want to display.
-        /// </summary>
-        [SwitchName("--packagecreaterequestid")]
-        public string packagecreaterequestid { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
-
-        /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method versionDelete of class Package.
-    /// </summary>
-    public class PackageVersionDeleteOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Required] The ID (starts with 04t) or alias of the package version to delete.
-        /// </summary>
-        [SwitchName("--package")]
-        public string package { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
-
-        /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Optional] Don’t prompt before deleting the package version
-        /// </summary>
-        [SwitchName("--noprompt")]
-        public bool? noprompt { get; set; }
-
-        /// <summary>
-        /// [Optional] Undelete a deleted package version.
-        /// </summary>
-        [SwitchName("--undelete")]
-        public bool? undelete { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method versionDisplayancestry of class Package.
-    /// </summary>
-    public class PackageVersionDisplayancestryOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Required] The ID or alias of the package or package version to display ancestry for. If you specify a package ID (starts with 0Ho) or alias, the ancestor tree for every package version associated with the package ID is displayed.
-        /// If you specify a package version (starts with 04t) or alias, the ancestry tree of the specified package version is displayed.
-        /// </summary>
-        [SwitchName("--package")]
-        public string package { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
-
-        /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Optional] Displays the ancestry tree in DOT code. You can use the DOT code output in graph visualization software to create tree visualizations.
-        /// </summary>
-        [SwitchName("--dotcode")]
-        public bool? dotcode { get; set; }
-
-        /// <summary>
-        /// [Optional] Displays both the package version ID (starts with 04t) and the version number (major.minor.patch.build) in the ancestry tree.
-        /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method versionList of class Package.
-    /// </summary>
-    public class PackageVersionListOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
-
-        /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Optional] Filters the list based on the specified maximum number of days since the request was created (starting at 00:00:00 of first day to now; 0 for today).
-        /// </summary>
-        [SwitchName("--createdlastdays")]
-        public int? createdlastdays { get; set; }
-
-        /// <summary>
-        /// [Optional] Displays limited package version details.
-        /// </summary>
-        [SwitchName("--concise")]
-        public bool? concise { get; set; }
-
-        /// <summary>
-        /// [Optional] Lists the items modified in the specified last number of days, starting at 00:00:00 of first day to now. Use 0 for today.
-        /// </summary>
-        [SwitchName("--modifiedlastdays")]
-        public int? modifiedlastdays { get; set; }
-
-        /// <summary>
-        /// [Required] Filters results on the specified comma-delimited packages (aliases or 0Ho IDs).
-        /// </summary>
-        [SwitchName("--packages")]
-        public string packages { get; set; }
-
-        /// <summary>
-        /// [Optional] Displays released versions only (IsReleased=true).
-        /// </summary>
-        [SwitchName("--released")]
-        public bool? released { get; set; }
-
-        /// <summary>
-        /// [Required] Orders the list by the specified package version fields.
-        /// </summary>
-        [SwitchName("--orderby")]
-        public string orderby { get; set; }
-
-        /// <summary>
-        /// [Optional] Displays extended package version details.
-        /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method versionPromote of class Package.
-    /// </summary>
-    public class PackageVersionPromoteOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Required] The ID (starts with 04t) or alias of the package version to promote.
-        /// </summary>
-        [SwitchName("--package")]
-        public string package { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
-
-        /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Optional] Do not prompt to confirm setting the package version as released.
-        /// </summary>
-        [SwitchName("--noprompt")]
-        public bool? noprompt { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method versionReport of class Package.
-    /// </summary>
-    public class PackageVersionReportOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Required] The ID (starts with 04t) or alias of the package to retrieve details for.
-        /// </summary>
-        [SwitchName("--package")]
-        public string package { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
-
-        /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Optional] Displays extended package version details.
-        /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
-    }
-
-    /// <summary>
-    /// Options for the method versionUpdate of class Package.
-    /// </summary>
-    public class PackageVersionUpdateOptions : SFDXOptions
-    {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string expression { get; set; }
-
-        /// <summary>
-        /// [Required] The ID (starts with 04t) or alias of the package to update a version of.
-        /// </summary>
-        [SwitchName("--package")]
-        public string package { get; set; }
-
-        /// <summary>
-        /// [Optional] Logging level for this command invocation
-        /// </summary>
-        [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the dev hub org; overrides default dev hub org
-        /// </summary>
-        [SwitchName("--targetdevhubusername")]
-        public string targetdevhubusername { get; set; }
-
-        /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
-        /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
-
-        /// <summary>
-        /// [Required] The new package version name.
-        /// </summary>
-        [SwitchName("--versionname")]
-        public string versionname { get; set; }
-
-        /// <summary>
-        /// [Required] The new package version description.
-        /// </summary>
-        [SwitchName("--versiondescription")]
-        public string versiondescription { get; set; }
-
-        /// <summary>
-        /// [Required] The new package version branch.
-        /// </summary>
-        [SwitchName("--branch")]
-        public string branch { get; set; }
-
-        /// <summary>
-        /// [Required] The new package version tag.
+        /// [Required] No description for tag
         /// </summary>
         [SwitchName("--tag")]
-        public string tag { get; set; }
+        public string Tag { get; set; }
 
         /// <summary>
-        /// [Required] The new installation key for the key-protected package. The default is null.
+        /// [Required] The uninstall script is an Apex class within this package that is run in the installing org after uninstallations of this package.
         /// </summary>
-        [SwitchName("--installationkey")]
-        public string installationkey { get; set; }
+        [SwitchName("--uninstall-script")]
+        public string UninstallScript { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for validate-schema
+        /// </summary>
+        [SwitchName("--validate-schema")]
+        public bool? ValidateSchema { get; set; }
+
+        /// <summary>
+        /// [Required] No description for version-description
+        /// </summary>
+        [SwitchName("--version-description")]
+        public string VersionDescription { get; set; }
+
+        /// <summary>
+        /// [Required] No description for version-name
+        /// </summary>
+        [SwitchName("--version-name")]
+        public string VersionName { get; set; }
+
+        /// <summary>
+        /// [Required] For information about the format of the version number, see https://developer.salesforce.com/docs/atlas.en-us.pkg2_dev.meta/pkg2_dev/sfdx_dev2gp_config_file.htm.
+        /// </summary>
+        [SwitchName("--version-number")]
+        public string VersionNumber { get; set; }
+
+        /// <summary>
+        /// [Required] No description for wait
+        /// </summary>
+        [SwitchName("--wait")]
+        public string Wait { get; set; }
+
+        /// <summary>
+        /// [Required] Specify the language using a language code listed under "Supported Languages" in Salesforce Help. If no language is specified, the language defaults to the language of the Dev Hub user who created the package.
+        /// </summary>
+        [SwitchName("--language")]
+        public string Language { get; set; }
+
+        /// <summary>
+        /// [Optional] Display verbose command output. When polling for the status of the creation, this will output status and timeout data on a separate line for each poll request, which is useful in CI systems where timeouts can occur with long periods of no output from commands.
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? Verbose { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method VersionCreateList of class Package.
+    /// </summary>
+    public class PackageVersionCreateListOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-dev-hub
+        /// </summary>
+        [SwitchName("--target-dev-hub")]
+        public string TargetDevHub { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for created-last-days
+        /// </summary>
+        [SwitchName("--created-last-days")]
+        public string CreatedLastDays { get; set; }
+
+        /// <summary>
+        /// [Required] No description for status
+        /// </summary>
+        [SwitchName("--status")]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for show-conversions-only
+        /// </summary>
+        [SwitchName("--show-conversions-only")]
+        public bool? ShowConversionsOnly { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for verbose
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? Verbose { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method VersionCreateReport of class Package.
+    /// </summary>
+    public class PackageVersionCreateReportOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for package-create-request-id
+        /// </summary>
+        [SwitchName("--package-create-request-id")]
+        public string PackageCreateRequestId { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-dev-hub
+        /// </summary>
+        [SwitchName("--target-dev-hub")]
+        public string TargetDevHub { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method VersionDelete of class Package.
+    /// </summary>
+    public class PackageVersionDeleteOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for package
+        /// </summary>
+        [SwitchName("--package")]
+        public string Package { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-dev-hub
+        /// </summary>
+        [SwitchName("--target-dev-hub")]
+        public string TargetDevHub { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for no-prompt
+        /// </summary>
+        [SwitchName("--no-prompt")]
+        public bool? NoPrompt { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for undelete
+        /// </summary>
+        [SwitchName("--undelete")]
+        public bool? Undelete { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method VersionDisplayancestry of class Package.
+    /// </summary>
+    public class PackageVersionDisplayancestryOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] If you specify a package ID (starts with 0Ho) or alias, the ancestor tree for every package version associated with the package ID is displayed. If you specify a package version (starts with 04t) or alias, the ancestry tree of the specified package version is displayed.
+        /// </summary>
+        [SwitchName("--package")]
+        public string Package { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-dev-hub
+        /// </summary>
+        [SwitchName("--target-dev-hub")]
+        public string TargetDevHub { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Optional] You can use the DOT code output in graph visualization software to create tree visualizations.
+        /// </summary>
+        [SwitchName("--dot-code")]
+        public bool? DotCode { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for verbose
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? Verbose { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method VersionList of class Package.
+    /// </summary>
+    public class PackageVersionListOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-dev-hub
+        /// </summary>
+        [SwitchName("--target-dev-hub")]
+        public string TargetDevHub { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for created-last-days
+        /// </summary>
+        [SwitchName("--created-last-days")]
+        public string CreatedLastDays { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for concise
+        /// </summary>
+        [SwitchName("--concise")]
+        public bool? Concise { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for show-conversions-only
+        /// </summary>
+        [SwitchName("--show-conversions-only")]
+        public bool? ShowConversionsOnly { get; set; }
+
+        /// <summary>
+        /// [Required] No description for modified-last-days
+        /// </summary>
+        [SwitchName("--modified-last-days")]
+        public string ModifiedLastDays { get; set; }
+
+        /// <summary>
+        /// [Required] No description for packages
+        /// </summary>
+        [SwitchName("--packages")]
+        public string Packages { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for released
+        /// </summary>
+        [SwitchName("--released")]
+        public bool? Released { get; set; }
+
+        /// <summary>
+        /// [Required] No description for order-by
+        /// </summary>
+        [SwitchName("--order-by")]
+        public string OrderBy { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for verbose
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? Verbose { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method VersionPromote of class Package.
+    /// </summary>
+    public class PackageVersionPromoteOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for package
+        /// </summary>
+        [SwitchName("--package")]
+        public string Package { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-dev-hub
+        /// </summary>
+        [SwitchName("--target-dev-hub")]
+        public string TargetDevHub { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for no-prompt
+        /// </summary>
+        [SwitchName("--no-prompt")]
+        public bool? NoPrompt { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method VersionReport of class Package.
+    /// </summary>
+    public class PackageVersionReportOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for package
+        /// </summary>
+        [SwitchName("--package")]
+        public string Package { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-dev-hub
+        /// </summary>
+        [SwitchName("--target-dev-hub")]
+        public string TargetDevHub { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for verbose
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? Verbose { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method VersionUpdate of class Package.
+    /// </summary>
+    public class PackageVersionUpdateOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for package
+        /// </summary>
+        [SwitchName("--package")]
+        public string Package { get; set; }
+
+        /// <summary>
+        /// [Required] No description for target-dev-hub
+        /// </summary>
+        [SwitchName("--target-dev-hub")]
+        public string TargetDevHub { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+
+        /// <summary>
+        /// [Required] Override the api version used for api requests made by this command
+        /// </summary>
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// [Required] No description for version-name
+        /// </summary>
+        [SwitchName("--version-name")]
+        public string VersionName { get; set; }
+
+        /// <summary>
+        /// [Required] No description for version-description
+        /// </summary>
+        [SwitchName("--version-description")]
+        public string VersionDescription { get; set; }
+
+        /// <summary>
+        /// [Required] No description for branch
+        /// </summary>
+        [SwitchName("--branch")]
+        public string Branch { get; set; }
+
+        /// <summary>
+        /// [Required] No description for tag
+        /// </summary>
+        [SwitchName("--tag")]
+        public string Tag { get; set; }
+
+        /// <summary>
+        /// [Required] No description for installation-key
+        /// </summary>
+        [SwitchName("--installation-key")]
+        public string InstallationKey { get; set; }
     }
 
     /// <summary>
     /// Package
     /// </summary>
-    [CommandClass("force:package")]
-    public class Package : SFDXCommand
+    [CommandClass("package")]
+    public class Package : SfdxCommand
     {
         /// Constructor.
-        public Package(CommandExecutioner p_CommandExecutioner)
-                : base(p_CommandExecutioner)
+        public Package(CommandExecutioner commandExecutioner)
+                : base(commandExecutioner)
         {
         }
 
         /// <summary>
-        /// create a package
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
         /// First, use this command to create a package. Then create a package version.
         /// 
-        /// If you don’t have a namespace defined in your sfdx-project.json file, use --nonamespace.
+        /// If you don’t have a namespace defined in your sfdx-project.json file, use --no-namespace.
         /// 
         /// Your --name value must be unique within your namespace.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:create -n YourPackageName -t Unlocked -r force-app
-        ///    $ sfdx force:package:create -n YourPackageName -d "Your Package Descripton" -t Unlocked -r force-app
-        /// 
-        /// Run 'sfdx force:package:list' to list all packages in the Dev Hub org.
+        /// Run '<%= config.bin %> package list to list all packages in the Dev Hub org.
         /// </summary>
         /// <remarks>
-        /// create a package
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
         /// First, use this command to create a package. Then create a package version.
         /// 
-        /// If you don’t have a namespace defined in your sfdx-project.json file, use --nonamespace.
+        /// If you don’t have a namespace defined in your sfdx-project.json file, use --no-namespace.
         /// 
         /// Your --name value must be unique within your namespace.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:create -n YourPackageName -t Unlocked -r force-app
-        ///    $ sfdx force:package:create -n YourPackageName -d "Your Package Descripton" -t Unlocked -r force-app
-        /// 
-        /// Run 'sfdx force:package:list' to list all packages in the Dev Hub org.
+        /// Run '<%= config.bin %> package list to list all packages in the Dev Hub org.
         /// </remarks>
         /// <example>
-        /// First, use this command to create a package. Then create a package version.
         /// 
-        /// If you don’t have a namespace defined in your sfdx-project.json file, use --nonamespace.
-        /// 
-        /// Your --name value must be unique within your namespace.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:create -n YourPackageName -t Unlocked -r force-app
-        ///    $ sfdx force:package:create -n YourPackageName -d "Your Package Descripton" -t Unlocked -r force-app
-        /// 
-        /// Run 'sfdx force:package:list' to list all packages in the Dev Hub org.
-        /// force:package:create -n <string> -t Managed|Unlocked -r <directory> [-d <string>] [-e] [--orgdependent] [-o <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Create an unlocked package from the files in the "force-app" directory; uses your default Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --name MyUnlockedPackage --package-type Unlocked --path force-app
+        /// Create a managed packaged from the "force-app" directory files, give the package a description, and use the specified Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --name MyManagedPackage --description "Your Package Descripton" --package-type Managed --path force-app --target-dev-hub devhub@example.com
         /// </example>
         [Command("create")]
-        public SFDXResponse Create(PackageCreateOptions p_Options)
+        public SfdxResponse Create(PackageCreateOptions options)
         {
-            return ExecuteCommand<PackageCreateOptions>(nameof(Create), p_Options);
+            return ExecuteCommand(nameof(Create), options);
         }
 
         /// <summary>
-        /// delete a package
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
         /// Specify the ID or alias of the package you want to delete.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:delete -p "Your Package Alias"
-        ///    $ sfdx force:package:delete -p 0Ho...
+        /// Delete unlocked and second-generation managed packages. Before you delete a package, first delete all associated package versions.
         /// </summary>
         /// <remarks>
-        /// delete a package
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
         /// Specify the ID or alias of the package you want to delete.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:delete -p "Your Package Alias"
-        ///    $ sfdx force:package:delete -p 0Ho...
+        /// Delete unlocked and second-generation managed packages. Before you delete a package, first delete all associated package versions.
         /// </remarks>
         /// <example>
-        /// Specify the ID or alias of the package you want to delete.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:delete -p "Your Package Alias"
-        ///    $ sfdx force:package:delete -p 0Ho...
-        /// force:package:delete -p <string> [-n] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Delete a package using its alias from your default Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --package "Your Package Alias"
+        /// Delete a package using its ID from the specified Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --package 0Ho... --target-dev-hub devhub@example.com
         /// </example>
         [Command("delete")]
-        public SFDXResponse Delete(PackageDeleteOptions p_Options)
+        public SfdxResponse Delete(PackageDeleteOptions options)
         {
-            return ExecuteCommand<PackageDeleteOptions>(nameof(Delete), p_Options);
+            return ExecuteCommand(nameof(Delete), options);
         }
 
         /// <summary>
-        /// install a package in the target org
+        /// To install a package, specify a specific version of the package using the 04t package ID. The package and the version you specified installs in your default target org unless you supply the username for a different target org.
         /// 
-        /// Supply the ID of the package version to install. The package installs in your default target org unless you supply the username for a different target org.
-        /// 
-        /// For package upgrades, to specify options for component deprecation or deletion of removed components, include an --upgradetype value. To delete components that can be safely deleted and deprecate the others, specify --upgradetype Mixed (the default). To deprecate all removed components, specify --upgradetype DeprecateOnly. To delete all removed components, except for custom objects and custom fields, that don't have dependencies, specify --upgradetype Delete. (Note: This option can result in the loss of data that is associated with the deleted components.) The default is Mixed.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:install --package 04t... -u me@example.com
-        ///    $ sfdx force:package:install --package awesome_package_alias
-        ///    $ sfdx force:package:install --package "Awesome Package Alias"
-        ///    $ sfdx force:package:install --package 04t... -t DeprecateOnly
+        /// For package upgrades, to specify options for component deprecation or deletion of removed components, include an --upgrade-type value. To delete components that can be safely deleted and deprecate the others, specify --upgrade-type Mixed (the default). To deprecate all removed components, specify --upgrade-type DeprecateOnly. To delete all removed components, except for custom objects and custom fields, that don't have dependencies, specify --upgrade-type Delete. (Note: This option can result in the loss of data that is associated with the deleted components.) The default is Mixed.
         /// </summary>
         /// <remarks>
-        /// install a package in the target org
+        /// To install a package, specify a specific version of the package using the 04t package ID. The package and the version you specified installs in your default target org unless you supply the username for a different target org.
         /// 
-        /// Supply the ID of the package version to install. The package installs in your default target org unless you supply the username for a different target org.
-        /// 
-        /// For package upgrades, to specify options for component deprecation or deletion of removed components, include an --upgradetype value. To delete components that can be safely deleted and deprecate the others, specify --upgradetype Mixed (the default). To deprecate all removed components, specify --upgradetype DeprecateOnly. To delete all removed components, except for custom objects and custom fields, that don't have dependencies, specify --upgradetype Delete. (Note: This option can result in the loss of data that is associated with the deleted components.) The default is Mixed.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:install --package 04t... -u me@example.com
-        ///    $ sfdx force:package:install --package awesome_package_alias
-        ///    $ sfdx force:package:install --package "Awesome Package Alias"
-        ///    $ sfdx force:package:install --package 04t... -t DeprecateOnly
+        /// For package upgrades, to specify options for component deprecation or deletion of removed components, include an --upgrade-type value. To delete components that can be safely deleted and deprecate the others, specify --upgrade-type Mixed (the default). To deprecate all removed components, specify --upgrade-type DeprecateOnly. To delete all removed components, except for custom objects and custom fields, that don't have dependencies, specify --upgrade-type Delete. (Note: This option can result in the loss of data that is associated with the deleted components.) The default is Mixed.
         /// </remarks>
         /// <example>
-        /// Supply the ID of the package version to install. The package installs in your default target org unless you supply the username for a different target org.
         /// 
-        /// For package upgrades, to specify options for component deprecation or deletion of removed components, include an --upgradetype value. To delete components that can be safely deleted and deprecate the others, specify --upgradetype Mixed (the default). To deprecate all removed components, specify --upgradetype DeprecateOnly. To delete all removed components, except for custom objects and custom fields, that don't have dependencies, specify --upgradetype Delete. (Note: This option can result in the loss of data that is associated with the deleted components.) The default is Mixed.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:install --package 04t... -u me@example.com
-        ///    $ sfdx force:package:install --package awesome_package_alias
-        ///    $ sfdx force:package:install --package "Awesome Package Alias"
-        ///    $ sfdx force:package:install --package 04t... -t DeprecateOnly
-        /// force:package:install [-w <minutes>] [-k <string>] [-b <minutes>] [-r] [-p <string>] [-a all|package] [-s AllUsers|AdminsOnly] [-t DeprecateOnly|Mixed|Delete] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Install a package version with the specified ID in the org with username "me@example.com":
+        /// <%= config.bin %> <%= command.id %> --package 04t... --target-org me@example.com
+        /// Install a package version with the specified alias into your default org:
+        /// <%= config.bin %> <%= command.id %> --package awesome_package_alias
+        /// Install a package version with an alias that includes spaces into your default org:
+        /// <%= config.bin %> <%= command.id %> --package "Awesome Package Alias"
+        /// Install an unlocked package version with the specified ID and deprecate all removed components:
+        /// <%= config.bin %> <%= command.id %> --package 04t... --upgrade-type DeprecateOnly
         /// </example>
         [Command("install")]
-        public SFDXResponse Install(PackageInstallOptions p_Options)
+        public SfdxResponse Install(PackageInstallOptions options)
         {
-            return ExecuteCommand<PackageInstallOptions>(nameof(Install), p_Options);
+            return ExecuteCommand(nameof(Install), options);
         }
 
         /// <summary>
-        /// retrieve the status of a package installation request
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:install:report -i 0Hf...
-        ///    $ sfdx force:package:install:report -i 0Hf... -u me@example.com
         /// </summary>
         /// <remarks>
-        /// retrieve the status of a package installation request
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:install:report -i 0Hf...
-        ///    $ sfdx force:package:install:report -i 0Hf... -u me@example.com
         /// </remarks>
         /// <example>
-        /// Examples:
-        ///    $ sfdx force:package:install:report -i 0Hf...
-        ///    $ sfdx force:package:install:report -i 0Hf... -u me@example.com
-        /// force:package:install:report -i <id> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// 
+        /// Retrieve the status of a package installation request with the specified ID on your default org:
+        /// <%= config.bin %> <%= command.id %> --request-id 0Hf...
+        /// Similar to previous example, except use the org with username me@example.com:
+        /// <%= config.bin %> <%= command.id %> --request-id 0Hf... --target-org me@example.com
         /// </example>
-        [Command("install:report")]
-        public SFDXResponse InstallReport(PackageInstallReportOptions p_Options)
+        [Command("install report")]
+        public SfdxResponse InstallReport(PackageInstallReportOptions options)
         {
-            return ExecuteCommand<PackageInstallReportOptions>(nameof(InstallReport), p_Options);
+            return ExecuteCommand(nameof(InstallReport), options);
         }
 
         /// <summary>
-        /// list the org’s installed packages
         /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:installed:list
-        ///    $ sfdx force:package:installed:list -u me@example.com
         /// </summary>
         /// <remarks>
-        /// list the org’s installed packages
         /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:installed:list
-        ///    $ sfdx force:package:installed:list -u me@example.com
         /// </remarks>
         /// <example>
-        /// Examples:
-        ///    $ sfdx force:package:installed:list
-        ///    $ sfdx force:package:installed:list -u me@example.com
-        /// force:package:installed:list [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// 
+        /// List the installed packages in your default org:
+        /// <%= config.bin %> <%= command.id %>
+        /// List the installed packages in the org with username me@example.com:
+        /// <%= config.bin %> <%= command.id %> --target-org me@example.com
         /// </example>
-        [Command("installed:list")]
-        public SFDXResponse InstalledList(PackageInstalledListOptions p_Options)
+        [Command("installed list")]
+        public SfdxResponse InstalledList(PackageInstalledListOptions options)
         {
-            return ExecuteCommand<PackageInstalledListOptions>(nameof(InstalledList), p_Options);
+            return ExecuteCommand(nameof(InstalledList), options);
         }
 
         /// <summary>
-        /// list all packages in the Dev Hub org
-        /// 
-        /// You can view the namespace, IDs, and other details for each package.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:list -v devhub@example.com
-        ///    $ sfdx force:package:list -v devhub@example.com --verbose
+        /// Description
         /// </summary>
         /// <remarks>
-        /// list all packages in the Dev Hub org
-        /// 
-        /// You can view the namespace, IDs, and other details for each package.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:list -v devhub@example.com
-        ///    $ sfdx force:package:list -v devhub@example.com --verbose
+        /// Description
         /// </remarks>
         /// <example>
-        /// You can view the namespace, IDs, and other details for each package.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:list -v devhub@example.com
-        ///    $ sfdx force:package:list -v devhub@example.com --verbose
-        /// force:package:list [-v <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// List all packages in the specified Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --target-dev-hub devhub@example.com
+        /// List all packages details in the specified Dev Hub org, and show extended details about each package:
+        /// <%= config.bin %> <%= command.id %> --target-dev-hub devhub@example.com --verbose
         /// </example>
         [Command("list")]
-        public SFDXResponse List(PackageListOptions p_Options)
+        public SfdxResponse List(PackageListOptions options)
         {
-            return ExecuteCommand<PackageListOptions>(nameof(List), p_Options);
+            return ExecuteCommand(nameof(List), options);
         }
 
         /// <summary>
-        /// uninstall a second-generation package from the target org
-        /// 
         /// Specify the package ID for a second-generation package.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:uninstall -p 04t... -u me@example.com
-        ///    $ sfdx force:package:uninstall -p undesirable_package_alias
-        ///    $ sfdx force:package:uninstall -p "Undesirable Package Alias"
-        /// 
-        /// To list the org’s installed packages, run "sfdx force:package:installed:list".
+        /// To list the org’s installed packages, run "<%= config.bin %> package installed list".
         /// 
         /// To uninstall a first-generation package, from Setup, enter Installed Packages in the Quick Find box, then select Installed Packages.
         /// </summary>
         /// <remarks>
-        /// uninstall a second-generation package from the target org
-        /// 
         /// Specify the package ID for a second-generation package.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:uninstall -p 04t... -u me@example.com
-        ///    $ sfdx force:package:uninstall -p undesirable_package_alias
-        ///    $ sfdx force:package:uninstall -p "Undesirable Package Alias"
-        /// 
-        /// To list the org’s installed packages, run "sfdx force:package:installed:list".
+        /// To list the org’s installed packages, run "<%= config.bin %> package installed list".
         /// 
         /// To uninstall a first-generation package, from Setup, enter Installed Packages in the Quick Find box, then select Installed Packages.
         /// </remarks>
         /// <example>
-        /// Specify the package ID for a second-generation package.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:uninstall -p 04t... -u me@example.com
-        ///    $ sfdx force:package:uninstall -p undesirable_package_alias
-        ///    $ sfdx force:package:uninstall -p "Undesirable Package Alias"
-        /// 
-        /// To list the org’s installed packages, run "sfdx force:package:installed:list".
-        /// 
-        /// To uninstall a first-generation package, from Setup, enter Installed Packages in the Quick Find box, then select Installed Packages.
-        /// force:package:uninstall [-w <minutes>] [-p <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Uninstall a package with specified ID from an org with username me@example.com:
+        /// <%= config.bin %> <%= command.id %> --package 04t... --target-org me@example.com
+        /// Uninstall a package with the specified alias from your default org:
+        /// <%= config.bin %> <%= command.id %> --package undesirable_package_alias
+        /// Uninstall a package with an alias that contains spaces from your default org:
+        /// <%= config.bin %> <%= command.id %> --package "Undesirable Package Alias"
         /// </example>
         [Command("uninstall")]
-        public SFDXResponse Uninstall(PackageUninstallOptions p_Options)
+        public SfdxResponse Uninstall(PackageUninstallOptions options)
         {
-            return ExecuteCommand<PackageUninstallOptions>(nameof(Uninstall), p_Options);
+            return ExecuteCommand(nameof(Uninstall), options);
         }
 
         /// <summary>
-        /// retrieve status of package uninstall request
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:uninstall:report -i 06y...
-        ///    $ sfdx force:package:uninstall:report -i 06y... -u me@example.com
         /// </summary>
         /// <remarks>
-        /// retrieve status of package uninstall request
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:uninstall:report -i 06y...
-        ///    $ sfdx force:package:uninstall:report -i 06y... -u me@example.com
         /// </remarks>
         /// <example>
-        /// Examples:
-        ///    $ sfdx force:package:uninstall:report -i 06y...
-        ///    $ sfdx force:package:uninstall:report -i 06y... -u me@example.com
-        /// force:package:uninstall:report -i <id> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// 
+        /// Retrieve the status of a package uninstall in your default org using the specified request ID:
+        /// <%= config.bin %> <%= command.id %> --request-id 06y...
+        /// Similar to previous example, but use the org with username me@example.com:
+        /// <%= config.bin %> <%= command.id %> --request-id 06y... --target-org me@example.com
         /// </example>
-        [Command("uninstall:report")]
-        public SFDXResponse UninstallReport(PackageUninstallReportOptions p_Options)
+        [Command("uninstall report")]
+        public SfdxResponse UninstallReport(PackageUninstallReportOptions options)
         {
-            return ExecuteCommand<PackageUninstallReportOptions>(nameof(UninstallReport), p_Options);
+            return ExecuteCommand(nameof(UninstallReport), options);
         }
 
         /// <summary>
-        /// update package details
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
         /// Specify a new value for each option you want to update.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:update -p "Your Package Alias" -n "New Package Name"
-        ///    $ sfdx force:package:update -p 0Ho... -d "New Package Description"
-        /// 
-        /// Run "sfdx force:package:list" to list all packages in the Dev Hub org.
+        /// Run "<%= config.bin %> package list" to list all packages in the Dev Hub org.
         /// </summary>
         /// <remarks>
-        /// update package details
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
         /// Specify a new value for each option you want to update.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:update -p "Your Package Alias" -n "New Package Name"
-        ///    $ sfdx force:package:update -p 0Ho... -d "New Package Description"
-        /// 
-        /// Run "sfdx force:package:list" to list all packages in the Dev Hub org.
+        /// Run "<%= config.bin %> package list" to list all packages in the Dev Hub org.
         /// </remarks>
         /// <example>
-        /// Specify a new value for each option you want to update.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:update -p "Your Package Alias" -n "New Package Name"
-        ///    $ sfdx force:package:update -p 0Ho... -d "New Package Description"
-        /// 
-        /// Run "sfdx force:package:list" to list all packages in the Dev Hub org.
-        /// force:package:update -p <string> [-n <string>] [-d <string>] [-o <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Update the name of the package with the specified alias; uses your default Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --package "Your Package Alias" --name "New Package Name"
+        /// Update the description of the package with the specified ID; uses the specified Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --package 0Ho... --description "New Package Description" --target-dev-hub devhub@example.com
         /// </example>
         [Command("update")]
-        public SFDXResponse Update(PackageUpdateOptions p_Options)
+        public SfdxResponse Update(PackageUpdateOptions options)
         {
-            return ExecuteCommand<PackageUpdateOptions>(nameof(Update), p_Options);
+            return ExecuteCommand(nameof(Update), options);
         }
 
         /// <summary>
-        /// create a package version
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
         /// The package version is based on the package contents in the specified directory.
         /// 
-        /// To retrieve details about a package version create request, including status and package version ID (04t), run "sfdx force:package:version:create:report -i 08c...".
+        /// To retrieve details about a package version create request, including status and package version ID (04t), run "<%= config.bin %> package version create report -i 08c...".
         /// 
-        /// We recommend that you specify the --installationkey parameter to protect the contents of your package and to prevent unauthorized installation of your package.
+        /// We recommend that you specify the --installation-key parameter to protect the contents of your package and to prevent unauthorized installation of your package.
         /// 
-        /// To list package version creation requests in the org, run "sfdx force:package:version:create:list".
+        /// To list package version creation requests in the org, run "<%= config.bin %> package version create list".
+        /// To promote a package version to released, you must use the --code-coverage parameter. The package must also meet the code coverage requirements. This requirement applies to both managed and unlocked packages.
         /// 
-        /// To promote a package version to released, you must use the --codecoverage parameter. The package must also meet the code coverage requirements. This requirement applies to both managed and unlocked packages.
-        /// 
-        /// We don’t calculate code coverage for org-dependent unlocked packages, or for package versions that specify --skipvalidation.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:create -d common -k password123
-        ///    $ sfdx force:package:version:create -p "Your Package Alias" -k password123
-        ///    $ sfdx force:package:version:create -p 0Ho... -k password123
-        ///    $ sfdx force:package:version:create -d common -k password123 --skipvalidation
+        /// We don’t calculate code coverage for org-dependent unlocked packages, or for package versions that specify --skip-validation.
         /// </summary>
         /// <remarks>
-        /// create a package version
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
         /// The package version is based on the package contents in the specified directory.
         /// 
-        /// To retrieve details about a package version create request, including status and package version ID (04t), run "sfdx force:package:version:create:report -i 08c...".
+        /// To retrieve details about a package version create request, including status and package version ID (04t), run "<%= config.bin %> package version create report -i 08c...".
         /// 
-        /// We recommend that you specify the --installationkey parameter to protect the contents of your package and to prevent unauthorized installation of your package.
+        /// We recommend that you specify the --installation-key parameter to protect the contents of your package and to prevent unauthorized installation of your package.
         /// 
-        /// To list package version creation requests in the org, run "sfdx force:package:version:create:list".
+        /// To list package version creation requests in the org, run "<%= config.bin %> package version create list".
+        /// To promote a package version to released, you must use the --code-coverage parameter. The package must also meet the code coverage requirements. This requirement applies to both managed and unlocked packages.
         /// 
-        /// To promote a package version to released, you must use the --codecoverage parameter. The package must also meet the code coverage requirements. This requirement applies to both managed and unlocked packages.
-        /// 
-        /// We don’t calculate code coverage for org-dependent unlocked packages, or for package versions that specify --skipvalidation.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:create -d common -k password123
-        ///    $ sfdx force:package:version:create -p "Your Package Alias" -k password123
-        ///    $ sfdx force:package:version:create -p 0Ho... -k password123
-        ///    $ sfdx force:package:version:create -d common -k password123 --skipvalidation
+        /// We don’t calculate code coverage for org-dependent unlocked packages, or for package versions that specify --skip-validation.
         /// </remarks>
         /// <example>
-        /// The package version is based on the package contents in the specified directory.
         /// 
-        /// To retrieve details about a package version create request, including status and package version ID (04t), run "sfdx force:package:version:create:report -i 08c...".
-        /// 
-        /// We recommend that you specify the --installationkey parameter to protect the contents of your package and to prevent unauthorized installation of your package.
-        /// 
-        /// To list package version creation requests in the org, run "sfdx force:package:version:create:list".
-        /// 
-        /// To promote a package version to released, you must use the --codecoverage parameter. The package must also meet the code coverage requirements. This requirement applies to both managed and unlocked packages.
-        /// 
-        /// We don’t calculate code coverage for org-dependent unlocked packages, or for package versions that specify --skipvalidation.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:create -d common -k password123
-        ///    $ sfdx force:package:version:create -p "Your Package Alias" -k password123
-        ///    $ sfdx force:package:version:create -p 0Ho... -k password123
-        ///    $ sfdx force:package:version:create -d common -k password123 --skipvalidation
-        /// force:package:version:create [-p <string>] [-d <directory>] [-f <filepath>] [-b <string>] [-t <string>] [-k <string>] [-x] [-w <minutes>] [-a <string>] [-n <string>] [-e <string>] [-c] [--releasenotesurl <url>] [--postinstallurl <url>] [--postinstallscript <string>] [--uninstallscript <string>] [--skipvalidation] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Create a package version from the contents of the "common" directory and give it an installation key of "password123"; uses your default Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --path common --installation-key password123
+        /// Create a package version from a package with the specified alias; uses the Dev Hub org with username devhub@example.com:
+        /// <%= config.bin %> <%= command.id %> --package "Your Package Alias" --installation-key password123 --target-dev-hub devhub@example.com
+        /// Create a package version from a package with the specified ID:
+        /// <%= config.bin %> <%= command.id %> --package 0Ho... --installation-key password123
+        /// Create a package version and skip the validation step:
+        /// <%= config.bin %> <%= command.id %> --path common --installation-key password123 --skip-validation
         /// </example>
-        [Command("version:create")]
-        public SFDXResponse VersionCreate(PackageVersionCreateOptions p_Options)
+        [Command("version create")]
+        public SfdxResponse VersionCreate(PackageVersionCreateOptions options)
         {
-            return ExecuteCommand<PackageVersionCreateOptions>(nameof(VersionCreate), p_Options);
+            return ExecuteCommand(nameof(VersionCreate), options);
         }
 
         /// <summary>
-        /// list package version creation requests
-        /// 
         /// Shows the details of each request to create a package version in the Dev Hub org.
         /// 
         /// All filter parameters are applied using the AND logical operator (not OR).
         /// 
-        /// To get information about a specific request, run "sfdx force:package:version:create:report" and supply the request ID.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:create:list
-        ///    $ sfdx force:package:version:create:list --createdlastdays 3
-        ///    $ sfdx force:package:version:create:list --status Error
-        ///    $ sfdx force:package:version:create:list -s InProgress
-        ///    $ sfdx force:package:version:create:list -c 3 -s Success
+        /// To get information about a specific request, run "<%= config.bin %> package version create report" and supply the request ID.
         /// </summary>
         /// <remarks>
-        /// list package version creation requests
-        /// 
         /// Shows the details of each request to create a package version in the Dev Hub org.
         /// 
         /// All filter parameters are applied using the AND logical operator (not OR).
         /// 
-        /// To get information about a specific request, run "sfdx force:package:version:create:report" and supply the request ID.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:create:list
-        ///    $ sfdx force:package:version:create:list --createdlastdays 3
-        ///    $ sfdx force:package:version:create:list --status Error
-        ///    $ sfdx force:package:version:create:list -s InProgress
-        ///    $ sfdx force:package:version:create:list -c 3 -s Success
+        /// To get information about a specific request, run "<%= config.bin %> package version create report" and supply the request ID.
         /// </remarks>
         /// <example>
-        /// Shows the details of each request to create a package version in the Dev Hub org.
         /// 
-        /// All filter parameters are applied using the AND logical operator (not OR).
-        /// 
-        /// To get information about a specific request, run "sfdx force:package:version:create:report" and supply the request ID.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:create:list
-        ///    $ sfdx force:package:version:create:list --createdlastdays 3
-        ///    $ sfdx force:package:version:create:list --status Error
-        ///    $ sfdx force:package:version:create:list -s InProgress
-        ///    $ sfdx force:package:version:create:list -c 3 -s Success
-        /// force:package:version:create:list [-c <number>] [-s Queued|InProgress|Success|Error] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// List all package version creation requests in your default Dev Hub org:
+        /// <%= config.bin %> <%= command.id %>
+        /// List package version creation requests from the last 3 days in the Dev Hub org with username devhub@example.com:
+        /// <%= config.bin %> <%= command.id %> --created-last-days 3 --target-dev-hub
+        /// List package version creation requests with status Error:
+        /// <%= config.bin %> <%= command.id %> --status Error
+        /// List package version creation requests with status InProgress:
+        /// <%= config.bin %> <%= command.id %> --status InProgress
+        /// List package version creation requests with status Success that were created today:
+        /// <%= config.bin %> <%= command.id %> --created-last-days 0 --status Success
         /// </example>
-        [Command("version:create:list")]
-        public SFDXResponse VersionCreateList(PackageVersionCreateListOptions p_Options)
+        [Command("version create list")]
+        public SfdxResponse VersionCreateList(PackageVersionCreateListOptions options)
         {
-            return ExecuteCommand<PackageVersionCreateListOptions>(nameof(VersionCreateList), p_Options);
+            return ExecuteCommand(nameof(VersionCreateList), options);
         }
 
         /// <summary>
-        /// retrieve details about a package version creation request
-        /// 
         /// Specify the request ID for which you want to view details. If applicable, the command displays errors related to the request.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:create:report -i 08c...
-        ///    $ sfdx force:package:version:create:report -i 08c... -v devhub@example.com
-        /// 
-        /// To show all requests in the org, run "sfdx force:package:version:create:list".
+        /// To show all requests in the org, run "<%= config.bin %> package version create list".
         /// </summary>
         /// <remarks>
-        /// retrieve details about a package version creation request
-        /// 
         /// Specify the request ID for which you want to view details. If applicable, the command displays errors related to the request.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:create:report -i 08c...
-        ///    $ sfdx force:package:version:create:report -i 08c... -v devhub@example.com
-        /// 
-        /// To show all requests in the org, run "sfdx force:package:version:create:list".
+        /// To show all requests in the org, run "<%= config.bin %> package version create list".
         /// </remarks>
         /// <example>
-        /// Specify the request ID for which you want to view details. If applicable, the command displays errors related to the request.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:create:report -i 08c...
-        ///    $ sfdx force:package:version:create:report -i 08c... -v devhub@example.com
-        /// 
-        /// To show all requests in the org, run "sfdx force:package:version:create:list".
-        /// force:package:version:create:report -i <id> [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Retrieve details about the package version creation request with the specified ID; uses your default Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --package-create-request-id 08c...
+        /// Retrieve details about the specified package version creation request in the Dev Hub org with username devhub@example.com:
+        /// <%= config.bin %> <%= command.id %> --package-create-request-id 08c... --target-dev-hub devhub@example.com
         /// </example>
-        [Command("version:create:report")]
-        public SFDXResponse VersionCreateReport(PackageVersionCreateReportOptions p_Options)
+        [Command("version create report")]
+        public SfdxResponse VersionCreateReport(PackageVersionCreateReportOptions options)
         {
-            return ExecuteCommand<PackageVersionCreateReportOptions>(nameof(VersionCreateReport), p_Options);
+            return ExecuteCommand(nameof(VersionCreateReport), options);
         }
 
         /// <summary>
-        /// delete a package version
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
         /// Specify the ID or alias of the package version you want to delete.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:delete -p "Your Package Alias"
-        ///    $ sfdx force:package:version:delete -p 04t...
         /// </summary>
         /// <remarks>
-        /// delete a package version
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
         /// Specify the ID or alias of the package version you want to delete.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:delete -p "Your Package Alias"
-        ///    $ sfdx force:package:version:delete -p 04t...
         /// </remarks>
         /// <example>
-        /// Specify the ID or alias of the package version you want to delete.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:delete -p "Your Package Alias"
-        ///    $ sfdx force:package:version:delete -p 04t...
-        /// force:package:version:delete -p <string> [-n] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Delete a package version with the specified alias using your default Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --package "Your Package Alias"
+        /// Delete a package version with the specified ID using the Dev Hub org with username "devhub@example.com":
+        /// <%= config.bin %> <%= command.id %> --package 04t... --target-org devhub@example.com
         /// </example>
-        [Command("version:delete")]
-        public SFDXResponse VersionDelete(PackageVersionDeleteOptions p_Options)
+        [Command("version delete")]
+        public SfdxResponse VersionDelete(PackageVersionDeleteOptions options)
         {
-            return ExecuteCommand<PackageVersionDeleteOptions>(nameof(VersionDelete), p_Options);
+            return ExecuteCommand(nameof(VersionDelete), options);
         }
 
         /// <summary>
-        /// display the ancestry tree for a 2GP managed package version
+        /// 
         /// </summary>
         /// <remarks>
-        /// display the ancestry tree for a 2GP managed package version
+        /// 
         /// </remarks>
         /// <example>
-        /// Examples:
-        ///    $ sfdx force:package:version:displayancestry -p package_version_alias
-        ///    $ sfdx force:package:version:displayancestry -p package_version_alias --dotcode
-        ///    $ sfdx force:package:version:displayancestry -p OHo...
-        ///    $ sfdx force:package:version:displayancestry -p 04t...
-        /// force:package:version:displayancestry -p <string> [--dotcode] [-v <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// 
+        /// Display the ancestry tree for a package version with the specified alias, using your default Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --package package_version_alias
+        /// Similar to previous example, but display the output in DOT code:
+        /// <%= config.bin %> <%= command.id %> --package package_version_alias --dot-code
+        /// Display the ancestry tree for a package with the specified ID, using the Dev Hub org with username devhub@example.com:
+        /// <%= config.bin %> <%= command.id %> --package OHo... --target-dev-hub devhub@example.com
+        /// Display the ancestry tree of a package version with the specified ID, using your default Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --package 04t...
         /// </example>
-        [Command("version:displayancestry")]
-        public SFDXResponse VersionDisplayancestry(PackageVersionDisplayancestryOptions p_Options)
+        [Command("version displayancestry")]
+        public SfdxResponse VersionDisplayancestry(PackageVersionDisplayancestryOptions options)
         {
-            return ExecuteCommand<PackageVersionDisplayancestryOptions>(nameof(VersionDisplayancestry), p_Options);
+            return ExecuteCommand(nameof(VersionDisplayancestry), options);
         }
 
         /// <summary>
-        /// list all package versions in the Dev Hub org
-        /// 
-        /// Displays details of each package version in the org.
-        /// 
-        /// Use --concise or --verbose to display limited or additional details, respectively.
-        /// 
-        /// All filter parameters are applied using the AND logical operator (not OR).
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:list --verbose --createdlastdays 3 --released --orderby PatchVersion
-        ///    $ sfdx force:package:version:list --packages 0Ho000000000000,0Ho000000000001 --released --modifiedlastdays 0
-        ///    $ sfdx force:package:version:list --released
-        ///    $ sfdx force:package:version:list --concise --modifiedlastdays 0
-        ///    $ sfdx force:package:version:list --concise -c 3 -r
-        ///    $ sfdx force:package:version:list --packages exp-mgr,exp-mgr-util --released --modifiedlastdays 0
+        /// Description
         /// </summary>
         /// <remarks>
-        /// list all package versions in the Dev Hub org
-        /// 
-        /// Displays details of each package version in the org.
-        /// 
-        /// Use --concise or --verbose to display limited or additional details, respectively.
-        /// 
-        /// All filter parameters are applied using the AND logical operator (not OR).
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:list --verbose --createdlastdays 3 --released --orderby PatchVersion
-        ///    $ sfdx force:package:version:list --packages 0Ho000000000000,0Ho000000000001 --released --modifiedlastdays 0
-        ///    $ sfdx force:package:version:list --released
-        ///    $ sfdx force:package:version:list --concise --modifiedlastdays 0
-        ///    $ sfdx force:package:version:list --concise -c 3 -r
-        ///    $ sfdx force:package:version:list --packages exp-mgr,exp-mgr-util --released --modifiedlastdays 0
+        /// Description
         /// </remarks>
         /// <example>
-        /// Displays details of each package version in the org.
         /// 
-        /// Use --concise or --verbose to display limited or additional details, respectively.
-        /// 
-        /// All filter parameters are applied using the AND logical operator (not OR).
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:list --verbose --createdlastdays 3 --released --orderby PatchVersion
-        ///    $ sfdx force:package:version:list --packages 0Ho000000000000,0Ho000000000001 --released --modifiedlastdays 0
-        ///    $ sfdx force:package:version:list --released
-        ///    $ sfdx force:package:version:list --concise --modifiedlastdays 0
-        ///    $ sfdx force:package:version:list --concise -c 3 -r
-        ///    $ sfdx force:package:version:list --packages exp-mgr,exp-mgr-util --released --modifiedlastdays 0
-        /// force:package:version:list [-c <number>] [-m <number>] [-p <array>] [-r] [-o <array>] [-v <string>] [--apiversion <string>] [--concise] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// List package versions in your default Dev Hub org that were created in the last 3 days; show only the released versions and order the list using the PatchVersion field. Display extended details about each package version:
+        /// <%= config.bin %> <%= command.id %> --verbose --created-last-days 3 --released --order-by PatchVersion
+        /// List the released package versions for the two specified packages that were modified today; use the Dev Hub org with username devhub@example.com:
+        /// <%= config.bin %> <%= command.id %> --packages 0Ho000000000000,0Ho000000000001 --released --modified-last-days 0 --target-dev-hub devhub@example.com
+        /// List all released package versions in your default Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --released
+        /// List package versions that were modified today in your default Dev Hub org; show limited details about each one:
+        /// <%= config.bin %> <%= command.id %> --concise --modified-last-days 0
+        /// List released package versions that were created in the last 3 days in your default Dev Hub org; show limited details:
+        /// <%= config.bin %> <%= command.id %> --concise --created-last-days 3 --released
+        /// List released package versions that were modified today for the two packages with specified aliases in your default Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --packages exp-mgr,exp-mgr-util --released --modified-last-days 0
         /// </example>
-        [Command("version:list")]
-        public SFDXResponse VersionList(PackageVersionListOptions p_Options)
+        [Command("version list")]
+        public SfdxResponse VersionList(PackageVersionListOptions options)
         {
-            return ExecuteCommand<PackageVersionListOptions>(nameof(VersionList), p_Options);
+            return ExecuteCommand(nameof(VersionList), options);
         }
 
         /// <summary>
-        /// promote a package version to released
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
         /// Supply the ID or alias of the package version you want to promote. Promotes the package version to released status.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:promote -p 04t...
-        ///    $ sfdx force:package:version:promote -p awesome_package_alias
-        ///    $ sfdx force:package:version:promote -p "Awesome Package Alias"
         /// </summary>
         /// <remarks>
-        /// promote a package version to released
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
         /// Supply the ID or alias of the package version you want to promote. Promotes the package version to released status.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:promote -p 04t...
-        ///    $ sfdx force:package:version:promote -p awesome_package_alias
-        ///    $ sfdx force:package:version:promote -p "Awesome Package Alias"
         /// </remarks>
         /// <example>
-        /// Supply the ID or alias of the package version you want to promote. Promotes the package version to released status.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:promote -p 04t...
-        ///    $ sfdx force:package:version:promote -p awesome_package_alias
-        ///    $ sfdx force:package:version:promote -p "Awesome Package Alias"
-        /// force:package:version:promote -p <string> [-n] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Promote the package version with the specified ID to released; uses your default Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --package 04t...
+        /// Promote the package version with the specified alias to released; uses the Dev Hub org with username devhub@example.com:
+        /// <%= config.bin %> <%= command.id %> --package awesome_package_alias --target-dev-hub devhub@example.com
+        /// Promote the package version with an alias that has spaces to released:
+        /// <%= config.bin %> <%= command.id %> --package "Awesome Package Alias"
         /// </example>
-        [Command("version:promote")]
-        public SFDXResponse VersionPromote(PackageVersionPromoteOptions p_Options)
+        [Command("version promote")]
+        public SfdxResponse VersionPromote(PackageVersionPromoteOptions options)
         {
-            return ExecuteCommand<PackageVersionPromoteOptions>(nameof(VersionPromote), p_Options);
+            return ExecuteCommand(nameof(VersionPromote), options);
         }
 
         /// <summary>
-        /// retrieve details about a package version in the Dev Hub org
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:report -p 04t...
-        ///    $ sfdx force:package:version:report -p "Your Package Alias"
-        /// 
-        /// To update package version values, run "sfdx force:package:version:update".
+        /// To update package version values, run "<%= config.bin %> package version update".
         /// </summary>
         /// <remarks>
-        /// retrieve details about a package version in the Dev Hub org
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:report -p 04t...
-        ///    $ sfdx force:package:version:report -p "Your Package Alias"
-        /// 
-        /// To update package version values, run "sfdx force:package:version:update".
+        /// To update package version values, run "<%= config.bin %> package version update".
         /// </remarks>
         /// <example>
-        /// Examples:
-        ///    $ sfdx force:package:version:report -p 04t...
-        ///    $ sfdx force:package:version:report -p "Your Package Alias"
         /// 
-        /// To update package version values, run "sfdx force:package:version:update".
-        /// force:package:version:report -p <string> [-v <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Retrieve details about the package version with the specified ID from your default Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --package 04t...
+        /// Retrieve details about the package version with the specified alias (that contains spaces) from the Dev Hub org with username devhub@example.com:
+        /// <%= config.bin %> <%= command.id %> --package "Your Package Alias" --target-dev-hub devhub@example.com
         /// </example>
-        [Command("version:report")]
-        public SFDXResponse VersionReport(PackageVersionReportOptions p_Options)
+        [Command("version report")]
+        public SfdxResponse VersionReport(PackageVersionReportOptions options)
         {
-            return ExecuteCommand<PackageVersionReportOptions>(nameof(VersionReport), p_Options);
+            return ExecuteCommand(nameof(VersionReport), options);
         }
 
         /// <summary>
-        /// update a package version
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
         /// Specify a new value for each option you want to update.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:update -p "Your Package Alias" -k password123
-        ///    $ sfdx force:package:version:update -p 04t... -b master -t 'Release 1.0.7'
-        ///    $ sfdx force:package:version:update -p 04t... -e "New Package Version Description"
-        /// 
-        /// To display details about a package version, run "sfdx force:package:version:report".
+        /// To display details about a package version, run "<%= config.bin %> package version display".
         /// </summary>
         /// <remarks>
-        /// update a package version
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
         /// Specify a new value for each option you want to update.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:update -p "Your Package Alias" -k password123
-        ///    $ sfdx force:package:version:update -p 04t... -b master -t 'Release 1.0.7'
-        ///    $ sfdx force:package:version:update -p 04t... -e "New Package Version Description"
-        /// 
-        /// To display details about a package version, run "sfdx force:package:version:report".
+        /// To display details about a package version, run "<%= config.bin %> package version display".
         /// </remarks>
         /// <example>
-        /// Specify a new value for each option you want to update.
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:update -p "Your Package Alias" -k password123
-        ///    $ sfdx force:package:version:update -p 04t... -b master -t 'Release 1.0.7'
-        ///    $ sfdx force:package:version:update -p 04t... -e "New Package Version Description"
-        /// 
-        /// To display details about a package version, run "sfdx force:package:version:report".
-        /// force:package:version:update -p <string> [-a <string>] [-e <string>] [-b <string>] [-t <string>] [-k <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// Update the package version that has the specified alias (that contains spaces) with a new installation key "password123"; uses your default Dev Hub org:
+        /// <%= config.bin %> <%= command.id %> --package "Your Package Alias" --installation-key password123
+        /// Update the package version that has the specified ID with a new branch and tag; use the Dev Hub org with username devhub@example.com:
+        /// <%= config.bin %> <%= command.id %> --package 04t... --branch main --tag 'Release 1.0.7' --target-dev-hub devhub@example.com
+        /// Update the package version that has the specified ID with a new description:
+        /// <%= config.bin %> <%= command.id %> --package 04t... --version-description "New Package Version Description"
         /// </example>
-        [Command("version:update")]
-        public SFDXResponse VersionUpdate(PackageVersionUpdateOptions p_Options)
+        [Command("version update")]
+        public SfdxResponse VersionUpdate(PackageVersionUpdateOptions options)
         {
-            return ExecuteCommand<PackageVersionUpdateOptions>(nameof(VersionUpdate), p_Options);
+            return ExecuteCommand(nameof(VersionUpdate), options);
         }
     }
 }

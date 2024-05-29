@@ -1,5 +1,4 @@
-// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
-// Copyright (c) 2005-2021, Coveo Solutions Inc.
+// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -8,305 +7,283 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method versionCreate of class Package1.
+    /// Options for the method VersionCreate of class Package1.
     /// </summary>
-    public class Package1VersionCreateOptions : SFDXOptions
+    public class Package1VersionCreateOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] Package version name.
+        /// [Required] No description for name
         /// </summary>
         [SwitchName("--name")]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// [Required] ID of the metadata package (starts with 033) of which you’re creating a new version.
+        /// [Required] No description for package-id
         /// </summary>
-        [SwitchName("--packageid")]
-        public string packageid { get; set; }
+        [SwitchName("--package-id")]
+        public string PackageId { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        public string Loglevel { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] Package version description.
+        /// [Required] No description for description
         /// </summary>
         [SwitchName("--description")]
-        public string description { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
-        /// [Required] Package version in major.minor format, for example, 3.2.
+        /// [Required] No description for version
         /// </summary>
         [SwitchName("--version")]
-        public string version { get; set; }
+        public string Version { get; set; }
 
         /// <summary>
-        /// [Optional] Creates a managed package version. To create a beta version, don’t include this parameter.
+        /// [Optional] To create a beta version, don’t include this parameter.
         /// </summary>
-        [SwitchName("--managedreleased")]
-        public bool? managedreleased { get; set; }
+        [SwitchName("--managed-released")]
+        public bool? ManagedReleased { get; set; }
 
         /// <summary>
-        /// [Required] The release notes URL. This link is displayed in the package installation UI to provide release notes for this package version to subscribers.
+        /// [Required] This link is displayed in the package installation UI to provide release notes for this package version to subscribers.
         /// </summary>
-        [SwitchName("--releasenotesurl")]
-        public string releasenotesurl { get; set; }
+        [SwitchName("--release-notes-url")]
+        public string ReleaseNotesUrl { get; set; }
 
         /// <summary>
-        /// [Required] The post-install instructions URL. The contents of the post-installation instructions URL are displayed in the UI after installation of the package version.
+        /// [Required] The contents of the post-installation instructions URL are displayed in the UI after installation of the package version.
         /// </summary>
-        [SwitchName("--postinstallurl")]
-        public string postinstallurl { get; set; }
+        [SwitchName("--post-install-url")]
+        public string PostInstallUrl { get; set; }
 
         /// <summary>
-        /// [Required] Installation key for creating the key-protected package. The default is null.
+        /// [Required] No description for installation-key
         /// </summary>
-        [SwitchName("--installationkey")]
-        public string installationkey { get; set; }
+        [SwitchName("--installation-key")]
+        public string InstallationKey { get; set; }
 
         /// <summary>
-        /// [Optional] Minutes to wait for the package version to be created. The default is 2 minutes.
+        /// [Required] No description for wait
         /// </summary>
         [SwitchName("--wait")]
-        public int? wait { get; set; }
+        public string Wait { get; set; }
     }
 
     /// <summary>
-    /// Options for the method versionCreateGet of class Package1.
+    /// Options for the method VersionCreateGet of class Package1.
     /// </summary>
-    public class Package1VersionCreateGetOptions : SFDXOptions
+    public class Package1VersionCreateGetOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] The ID of the PackageUploadRequest.
+        /// [Required] No description for request-id
         /// </summary>
-        [SwitchName("--requestid")]
-        public string requestid { get; set; }
+        [SwitchName("--request-id")]
+        public string RequestId { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        public string Loglevel { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
     }
 
     /// <summary>
-    /// Options for the method versionDisplay of class Package1.
+    /// Options for the method VersionDisplay of class Package1.
     /// </summary>
-    public class Package1VersionDisplayOptions : SFDXOptions
+    public class Package1VersionDisplayOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] ID (starts with 04t) of the metadata package version whose details you want to display.
+        /// [Required] No description for package-version-id
         /// </summary>
-        [SwitchName("--packageversionid")]
-        public string packageversionid { get; set; }
+        [SwitchName("--package-version-id")]
+        public string PackageVersionId { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        public string Loglevel { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
     }
 
     /// <summary>
-    /// Options for the method versionList of class Package1.
+    /// Options for the method VersionList of class Package1.
     /// </summary>
-    public class Package1VersionListOptions : SFDXOptions
+    public class Package1VersionListOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Logging level for this command invocation
+        /// [Required] No description for target-org
+        /// </summary>
+        [SwitchName("--target-org")]
+        public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
-        public LogLevel? loglevel { get; set; }
-
-        /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org
-        /// </summary>
-        [SwitchName("--targetusername")]
-        public string targetusername { get; set; }
+        public string Loglevel { get; set; }
 
         /// <summary>
         /// [Required] Override the api version used for api requests made by this command
         /// </summary>
-        [SwitchName("--apiversion")]
-        public string apiversion { get; set; }
+        [SwitchName("--api-version")]
+        public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] Metadata package ID (starts with 033) whose package versions you want to list. If not specified, shows all versions for all packages (managed and unmanaged) in the org.
+        /// [Required] If not specified, shows all versions for all packages (managed and unmanaged) in the org.
         /// </summary>
-        [SwitchName("--packageid")]
-        public string packageid { get; set; }
+        [SwitchName("--package-id")]
+        public string PackageId { get; set; }
     }
 
     /// <summary>
     /// Package1
     /// </summary>
-    [CommandClass("force:package1")]
-    public class Package1 : SFDXCommand
+    [CommandClass("package1")]
+    public class Package1 : SfdxCommand
     {
         /// Constructor.
-        public Package1(CommandExecutioner p_CommandExecutioner)
-                : base(p_CommandExecutioner)
+        public Package1(CommandExecutioner commandExecutioner)
+                : base(commandExecutioner)
         {
         }
 
         /// <summary>
-        /// create a first-generation package version in the release org
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
-        /// The package version is based on the contents of the specified metadata package. Omit -m if you want to create an unmanaged package version.
+        /// The package version is based on the contents of the specified metadata package. Omit --managed-released if you want to create an unmanaged package version.
         /// </summary>
         /// <remarks>
-        /// create a first-generation package version in the release org
-        /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
-        /// The package version is based on the contents of the specified metadata package. Omit -m if you want to create an unmanaged package version.
+        /// The package version is based on the contents of the specified metadata package. Omit --managed-released if you want to create an unmanaged package version.
         /// </remarks>
         /// <example>
-        /// The package version is based on the contents of the specified metadata package. Omit -m if you want to create an unmanaged package version.
-        /// force:package1:version:create -i <id> -n <string> [-d <string>] [-v <string>] [-m] [-r <url>] [-p <url>] [-k <string>] [-w <number>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// 
+        /// Create a first-generation package version from the package with the specified ID and name the package version "example"; use your default org:
+        /// <%= config.bin %> <%= command.id %> --package-id 033... --name example
+        /// Same as previous example, but provide a description and wait for 30 minutes for the package version to be created; use the specified org:
+        /// <%= config.bin %> <%= command.id %> --package-id 033... --name example --description "example description" --wait 30 --target-org myorg@example.com
         /// </example>
-        [Command("version:create")]
-        public SFDXResponse VersionCreate(Package1VersionCreateOptions p_Options)
+        [Command("version create")]
+        public SfdxResponse VersionCreate(Package1VersionCreateOptions options)
         {
-            return ExecuteCommand<Package1VersionCreateOptions>(nameof(VersionCreate), p_Options);
+            return ExecuteCommand(nameof(VersionCreate), options);
         }
 
         /// <summary>
-        /// retrieve the status of a package version creation request
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:create:report -i 08c...
-        ///    $ sfdx force:package:version:create:report -i 08c... -v devhub@example.com
         /// </summary>
         /// <remarks>
-        /// retrieve the status of a package version creation request
         /// 
-        /// Examples:
-        ///    $ sfdx force:package:version:create:report -i 08c...
-        ///    $ sfdx force:package:version:create:report -i 08c... -v devhub@example.com
         /// </remarks>
         /// <example>
-        /// Examples:
-        ///    $ sfdx force:package:version:create:report -i 08c...
-        ///    $ sfdx force:package:version:create:report -i 08c... -v devhub@example.com
-        /// force:package1:version:create:get -i <id> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// 
+        /// Get the status of the creation request for the package version with the specified ID in your default org:
+        /// <%= config.bin %> <%= command.id %> --request-id 0HD...
+        /// Same as previous example, but use the specified org:
+        /// <%= config.bin %> <%= command.id %> --request-id 0HD... --target-org myorg@example.com
         /// </example>
-        [Command("version:create:get")]
-        public SFDXResponse VersionCreateGet(Package1VersionCreateGetOptions p_Options)
+        [Command("version create get")]
+        public SfdxResponse VersionCreateGet(Package1VersionCreateGetOptions options)
         {
-            return ExecuteCommand<Package1VersionCreateGetOptions>(nameof(VersionCreateGet), p_Options);
+            return ExecuteCommand(nameof(VersionCreateGet), options);
         }
 
         /// <summary>
-        /// display details about a first-generation package version
         /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
-        /// Display detailed information about an individual package version, including metadata package ID, name, the release state, and build number.
         /// </summary>
         /// <remarks>
-        /// display details about a first-generation package version
         /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
-        /// Display detailed information about an individual package version, including metadata package ID, name, the release state, and build number.
         /// </remarks>
         /// <example>
-        /// Display detailed information about an individual package version, including metadata package ID, name, the release state, and build number.
-        /// force:package1:version:display -i <id> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// 
+        /// Display details about the first-generation package version with the specified ID in your default org:
+        /// <%= config.bin %> <%= command.id %> --package-version-id 04t...
+        /// Same as previous example, but use the specified org:
+        /// <%= config.bin %> <%= command.id %> --package-version-id 04t... --target-org myorg@example.com
         /// </example>
-        [Command("version:display")]
-        public SFDXResponse VersionDisplay(Package1VersionDisplayOptions p_Options)
+        [Command("version display")]
+        public SfdxResponse VersionDisplay(Package1VersionDisplayOptions options)
         {
-            return ExecuteCommand<Package1VersionDisplayOptions>(nameof(VersionDisplay), p_Options);
+            return ExecuteCommand(nameof(VersionDisplay), options);
         }
 
         /// <summary>
-        /// list package versions for the specified first-generation package or for the org
         /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
-        /// If a metadata package ID is specified, lists all versions of the specified package. Otherwise, lists all package versions for the org. For each package version, the list includes the package version ID, metadata package ID, name, version number, and release state.
         /// </summary>
         /// <remarks>
-        /// list package versions for the specified first-generation package or for the org
         /// 
-        /// NOTE: This command must be run from within a project.
-        /// 
-        /// If a metadata package ID is specified, lists all versions of the specified package. Otherwise, lists all package versions for the org. For each package version, the list includes the package version ID, metadata package ID, name, version number, and release state.
         /// </remarks>
         /// <example>
-        /// If a metadata package ID is specified, lists all versions of the specified package. Otherwise, lists all package versions for the org. For each package version, the list includes the package version ID, metadata package ID, name, version number, and release state.
-        /// force:package1:version:list [-i <id>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// 
+        /// List all first-generation package versions in your default org:
+        /// <%= config.bin %> <%= command.id %>
+        /// List package versions for the specified first-generation package in the specifief org:
+        /// <%= config.bin %> <%= command.id %> --package-id 033... --target-org myorg@example.com
         /// </example>
-        [Command("version:list")]
-        public SFDXResponse VersionList(Package1VersionListOptions p_Options)
+        [Command("version list")]
+        public SfdxResponse VersionList(Package1VersionListOptions options)
         {
-            return ExecuteCommand<Package1VersionListOptions>(nameof(VersionList), p_Options);
+            return ExecuteCommand(nameof(VersionList), options);
         }
     }
 }

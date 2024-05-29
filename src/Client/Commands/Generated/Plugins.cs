@@ -1,5 +1,4 @@
-// Generated on Thu Aug 05 2021 using sfdx-cli/7.110.0 win32-x64 node-v16.2.0. DO NOT MODIFY
-// Copyright (c) 2005-2021, Coveo Solutions Inc.
+// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -8,240 +7,309 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method generate of class Plugins.
+    /// Options for the method Install of class Plugins.
     /// </summary>
-    public class PluginsGenerateOptions : SFDXOptions
+    public class PluginsInstallOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Use defaults for every setting
-        /// </summary>
-        [SwitchName("--defaults")]
-        public bool? defaults { get; set; }
-
-        /// <summary>
-        /// [Optional] Overwrite existing files
+        /// [Optional] Force npm to fetch remote resources even if a local copy exists on disk.
         /// </summary>
         [SwitchName("--force")]
-        public bool? force { get; set; }
+        public bool? Force { get; set; }
+
+        /// <summary>
+        /// [Optional] Show CLI help.
+        /// </summary>
+        [SwitchName("--help")]
+        public bool? Help { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for jit
+        /// </summary>
+        [SwitchName("--jit")]
+        public bool? Jit { get; set; }
+
+        /// <summary>
+        /// [Optional] Silences npm output.
+        /// </summary>
+        [SwitchName("--silent")]
+        public bool? Silent { get; set; }
+
+        /// <summary>
+        /// [Optional] Show verbose npm output.
+        /// </summary>
+        [SwitchName("--verbose")]
+        public bool? Verbose { get; set; }
     }
 
     /// <summary>
-    /// Options for the method inspect of class Plugins.
+    /// Options for the method Discover of class Plugins.
     /// </summary>
-    public class PluginsInspectOptions : SFDXOptions
+    public class PluginsDiscoverOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Show CLI help
+        /// [Optional] Format output as json.
         /// </summary>
-        [SwitchName("--help")]
-        public bool? help { get; set; }
+        [SwitchName("--json")]
+        public bool? Json { get; set; }
 
         /// <summary>
-        /// [Optional] No description for verbose
+        /// [Required] No description for flags-dir
         /// </summary>
-        [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
+        [SwitchName("--flags-dir")]
+        public string FlagsDir { get; set; }
     }
 
     /// <summary>
-    /// Options for the method install of class Plugins.
+    /// Options for the method Inspect of class Plugins.
     /// </summary>
-    public class PluginsInstallOptions : SFDXOptions
+    public class PluginsInspectOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Show CLI help
+        /// [Optional] Show CLI help.
         /// </summary>
         [SwitchName("--help")]
-        public bool? help { get; set; }
+        public bool? Help { get; set; }
 
         /// <summary>
         /// [Optional] No description for verbose
         /// </summary>
         [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
-
-        /// <summary>
-        /// [Optional] Yarn install with force flag
-        /// </summary>
-        [SwitchName("--force")]
-        public bool? force { get; set; }
+        public bool? Verbose { get; set; }
     }
 
     /// <summary>
-    /// Options for the method link of class Plugins.
+    /// Options for the method Link of class Plugins.
     /// </summary>
-    public class PluginsLinkOptions : SFDXOptions
+    public class PluginsLinkOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Show CLI help
+        /// [Optional] Show CLI help.
         /// </summary>
         [SwitchName("--help")]
-        public bool? help { get; set; }
+        public bool? Help { get; set; }
+
+        /// <summary>
+        /// [Optional] Install dependencies after linking the plugin.
+        /// </summary>
+        [SwitchName("--install")]
+        public bool? Install { get; set; }
 
         /// <summary>
         /// [Optional] No description for verbose
         /// </summary>
         [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
+        public bool? Verbose { get; set; }
     }
 
     /// <summary>
-    /// Options for the method uninstall of class Plugins.
+    /// Options for the method Uninstall of class Plugins.
     /// </summary>
-    public class PluginsUninstallOptions : SFDXOptions
+    public class PluginsUninstallOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Show CLI help
+        /// [Optional] Show CLI help.
         /// </summary>
         [SwitchName("--help")]
-        public bool? help { get; set; }
+        public bool? Help { get; set; }
 
         /// <summary>
         /// [Optional] No description for verbose
         /// </summary>
         [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
+        public bool? Verbose { get; set; }
     }
 
     /// <summary>
-    /// Options for the method update of class Plugins.
+    /// Options for the method Reset of class Plugins.
     /// </summary>
-    public class PluginsUpdateOptions : SFDXOptions
+    public class PluginsResetOptions : SfdxOptions
     {
         /// <summary>
         /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
-        public string expression { get; set; }
+        public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Show CLI help
+        /// [Optional] No description for hard
+        /// </summary>
+        [SwitchName("--hard")]
+        public bool? Hard { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for reinstall
+        /// </summary>
+        [SwitchName("--reinstall")]
+        public bool? Reinstall { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method TrustVerify of class Plugins.
+    /// </summary>
+    public class PluginsTrustVerifyOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Required] No description for npm
+        /// </summary>
+        [SwitchName("--npm")]
+        public string Npm { get; set; }
+
+        /// <summary>
+        /// [Required] No description for registry
+        /// </summary>
+        [SwitchName("--registry")]
+        public string Registry { get; set; }
+
+        /// <summary>
+        /// [Required] No description for loglevel
+        /// </summary>
+        [SwitchName("--loglevel")]
+        public string Loglevel { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method Update of class Plugins.
+    /// </summary>
+    public class PluginsUpdateOptions : SfdxOptions
+    {
+        /// <summary>
+        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Show CLI help.
         /// </summary>
         [SwitchName("--help")]
-        public bool? help { get; set; }
+        public bool? Help { get; set; }
 
         /// <summary>
         /// [Optional] No description for verbose
         /// </summary>
         [SwitchName("--verbose")]
-        public bool? verbose { get; set; }
+        public bool? Verbose { get; set; }
     }
 
     /// <summary>
     /// Plugins
     /// </summary>
     [CommandClass("plugins")]
-    public class Plugins : SFDXCommand
+    public class Plugins : SfdxCommand
     {
         /// Constructor.
-        public Plugins(CommandExecutioner p_CommandExecutioner)
-                : base(p_CommandExecutioner)
+        public Plugins(CommandExecutioner commandExecutioner)
+                : base(commandExecutioner)
         {
         }
 
         /// <summary>
-        /// create a new sfdx-cli plugin
+        /// Uses bundled npm executable to install plugins into <%= config.dataDir %>
+        /// 
+        /// Installation of a user-installed plugin will override a core plugin.
+        /// 
+        /// Use the <%= config.scopedEnvVarKey('NPM_LOG_LEVEL') %> environment variable to set the npm loglevel.
+        /// Use the <%= config.scopedEnvVarKey('NPM_REGISTRY') %> environment variable to set the npm registry.
         /// </summary>
         /// <remarks>
-        /// create a new sfdx-cli plugin
+        /// Uses bundled npm executable to install plugins into <%= config.dataDir %>
+        /// 
+        /// Installation of a user-installed plugin will override a core plugin.
+        /// 
+        /// Use the <%= config.scopedEnvVarKey('NPM_LOG_LEVEL') %> environment variable to set the npm loglevel.
+        /// Use the <%= config.scopedEnvVarKey('NPM_REGISTRY') %> environment variable to set the npm registry.
         /// </remarks>
         /// <example>
         /// 
-        /// 
+        /// [object Object]
+        /// [object Object]
+        /// [object Object]
         /// </example>
-        [Command("generate")]
-        public SFDXResponse Generate(PluginsGenerateOptions p_Options)
+        [Command("install")]
+        public SfdxResponse Install(PluginsInstallOptions options)
         {
-            return ExecuteCommand<PluginsGenerateOptions>(nameof(Generate), p_Options);
+            return ExecuteCommand(nameof(Install), options);
         }
 
         /// <summary>
-        /// displays installation properties of a plugin
+        /// 
         /// </summary>
         /// <remarks>
-        /// displays installation properties of a plugin
+        /// 
         /// </remarks>
         /// <example>
         /// 
-        /// $ <%= config.bin %> plugins:inspect <%- config.pjson.oclif.examplePlugin || "myplugin" %> 
+        /// <%= config.bin %> <%= command.id %>
+        /// </example>
+        [Command("discover")]
+        public SfdxResponse Discover(PluginsDiscoverOptions options)
+        {
+            return ExecuteCommand(nameof(Discover), options);
+        }
+
+        /// <summary>
+        /// Displays installation properties of a plugin.
+        /// </summary>
+        /// <remarks>
+        /// Displays installation properties of a plugin.
+        /// </remarks>
+        /// <example>
+        /// 
+        /// <%= config.bin %> <%= command.id %> <%- config.pjson.oclif.examplePlugin || "myplugin" %> 
         /// plugins:inspect PLUGIN...
         /// </example>
         [Command("inspect")]
-        public SFDXResponse Inspect(PluginsInspectOptions p_Options)
+        public SfdxResponse Inspect(PluginsInspectOptions options)
         {
-            return ExecuteCommand<PluginsInspectOptions>(nameof(Inspect), p_Options);
+            return ExecuteCommand(nameof(Inspect), options);
         }
 
         /// <summary>
-        /// installs a plugin into the CLI
-        /// Can be installed from npm or a git url.
-        /// 
-        /// Installation of a user-installed plugin will override a core plugin.
-        /// 
-        /// e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in the CLI without the need to patch and update the whole CLI.
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// installs a plugin into the CLI
-        /// Can be installed from npm or a git url.
-        /// 
-        /// Installation of a user-installed plugin will override a core plugin.
-        /// 
-        /// e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in the CLI without the need to patch and update the whole CLI.
-        /// 
-        /// </remarks>
-        /// <example>
-        /// 
-        /// $ <%= config.bin %> plugins:install <%- config.pjson.oclif.examplePlugin || "myplugin" %> 
-        /// $ <%= config.bin %> plugins:install https://github.com/someuser/someplugin
-        /// $ <%= config.bin %> plugins:install someuser/someplugin
-        /// plugins:install PLUGIN...
-        /// </example>
-        [Command("install")]
-        public SFDXResponse Install(PluginsInstallOptions p_Options)
-        {
-            return ExecuteCommand<PluginsInstallOptions>(nameof(Install), p_Options);
-        }
-
-        /// <summary>
-        /// links a plugin into the CLI for development
+        /// Links a plugin into the CLI for development.
         /// Installation of a linked plugin will override a user-installed or core plugin.
         /// 
         /// e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' command will override the user-installed or core plugin implementation. This is useful for development work.
         /// 
         /// </summary>
         /// <remarks>
-        /// links a plugin into the CLI for development
+        /// Links a plugin into the CLI for development.
         /// Installation of a linked plugin will override a user-installed or core plugin.
         /// 
         /// e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' command will override the user-installed or core plugin implementation. This is useful for development work.
@@ -249,48 +317,77 @@ namespace sfdx4csharpClient
         /// </remarks>
         /// <example>
         /// 
-        /// $ <%= config.bin %> plugins:link <%- config.pjson.oclif.examplePlugin || "myplugin" %> 
-        /// plugins:link PLUGIN
+        /// <%= config.bin %> <%= command.id %> <%- config.pjson.oclif.examplePlugin || "myplugin" %> 
         /// </example>
         [Command("link")]
-        public SFDXResponse Link(PluginsLinkOptions p_Options)
+        public SfdxResponse Link(PluginsLinkOptions options)
         {
-            return ExecuteCommand<PluginsLinkOptions>(nameof(Link), p_Options);
+            return ExecuteCommand(nameof(Link), options);
         }
 
         /// <summary>
-        /// removes a plugin from the CLI
+        /// Removes a plugin from the CLI.
         /// </summary>
         /// <remarks>
-        /// removes a plugin from the CLI
+        /// Removes a plugin from the CLI.
         /// </remarks>
         /// <example>
         /// 
-        ///   Example:
-        ///     $ <%- config.bin %> plugins:uninstall <%- config.pjson.oclif.examplePlugin || "myplugin" %>
-        ///   
-        /// plugins:uninstall PLUGIN...
+        /// <%= config.bin %> <%= command.id %> <%- config.pjson.oclif.examplePlugin || "myplugin" %>
         /// </example>
         [Command("uninstall")]
-        public SFDXResponse Uninstall(PluginsUninstallOptions p_Options)
+        public SfdxResponse Uninstall(PluginsUninstallOptions options)
         {
-            return ExecuteCommand<PluginsUninstallOptions>(nameof(Uninstall), p_Options);
+            return ExecuteCommand(nameof(Uninstall), options);
         }
 
         /// <summary>
-        /// update installed plugins
+        /// 
         /// </summary>
         /// <remarks>
-        /// update installed plugins
+        /// 
+        /// </remarks>
+        /// <example>
+        /// 
+        /// 
+        /// </example>
+        [Command("reset")]
+        public SfdxResponse Reset(PluginsResetOptions options)
+        {
+            return ExecuteCommand(nameof(Reset), options);
+        }
+
+        /// <summary>
+        /// Verifies the digital signature on an npm package matches the signature and key stored at the expected URLs.
+        /// </summary>
+        /// <remarks>
+        /// Verifies the digital signature on an npm package matches the signature and key stored at the expected URLs.
+        /// </remarks>
+        /// <example>
+        /// 
+        /// <%= config.bin %> <%= command.id %> --npm @scope/npmName --registry https://npm.pkg.github.com
+        /// <%= config.bin %> <%= command.id %> --npm @scope/npmName
+        /// </example>
+        [Command("trust verify")]
+        public SfdxResponse TrustVerify(PluginsTrustVerifyOptions options)
+        {
+            return ExecuteCommand(nameof(TrustVerify), options);
+        }
+
+        /// <summary>
+        /// Update installed plugins.
+        /// </summary>
+        /// <remarks>
+        /// Update installed plugins.
         /// </remarks>
         /// <example>
         /// 
         /// 
         /// </example>
         [Command("update")]
-        public SFDXResponse Update(PluginsUpdateOptions p_Options)
+        public SfdxResponse Update(PluginsUpdateOptions options)
         {
-            return ExecuteCommand<PluginsUpdateOptions>(nameof(Update), p_Options);
+            return ExecuteCommand(nameof(Update), options);
         }
     }
 }
