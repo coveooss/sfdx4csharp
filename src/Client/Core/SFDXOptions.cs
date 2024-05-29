@@ -1,13 +1,11 @@
-﻿// Copyright (c) 2005-2020, Coveo Solutions Inc.
-
-using sfdx4csharpClient.Core.Attributes;
+﻿using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient.Core
 {
     /// <summary>
     /// SFDX CLI command options's wrapper.
     /// </summary>
-    public abstract class SFDXOptions
+    public abstract class SfdxOptions
     {
         /// <summary>
         /// Format output as JSON.
