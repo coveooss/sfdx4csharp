@@ -4,12 +4,19 @@ using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
 using sfdx4csharpClient.Core.Attributes;
 <%
-    escapeForComments = function(element, numberOfSpaces = 8) {
+    escapeForComments = function(element, apiCommand = "", numberOfSpaces = 8) {
         if (element === undefined) {
             return element;
         }
+
+        var cleanElement = element.split("\<\%= config.bin \%\>").join("$ sf")
+        cleanElement = cleanElement.split("\<\%= command.id \%\>").join(apiCommand)
+        cleanElement = cleanElement.split("<").join("[")
+        cleanElement = cleanElement.split(">").join("]")
+        cleanElement = cleanElement.split("&").join("&amp;")
+
         var spaces = new Array(numberOfSpaces + 1).join(" ");
-        return element.replace(/\*\//g, "* /").replace(/\n/g, "\n" + spaces + "/// ");
+        return cleanElement.replace(/\*\//g, "* /").replace(/\n/g, "\n" + spaces + "/// ");
     }
 %>
 namespace sfdx4csharpClient
@@ -18,11 +25,11 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method <%= functionDef.name %> of class <%= className %>.
     /// </summary>
-    public class <%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options : SfdxOptions
+    public class <%= className %><%= capitalizeFirstLetter(functionDef.name) %>Options : SfOptions
     {<%
         _.each(functionDef.parameters, function(functionParameter, index) {
             if(functionParameter.name == 'json'){
-                // Skip this parameter, it will be handle by SfdxOptions
+                // Skip this parameter, it will be handle by SfOptions
                 return;
             }
             
@@ -37,21 +44,22 @@ namespace sfdx4csharpClient
             }
 
             // String in C# are optional by default.
+            addExclamation = functionParameter.optional
             if(functionParameter.type == 'string') {
-                functionParameter.optional = false;
+                addExclamation = false;
             }%>
         /// <summary>
         /// <%= functionParameter.optional ? '[Optional]' : '[Required]' %> <%= escapeForComments(functionParameter.description) %>
         /// </summary>
         [SwitchName("<%= functionParameter.flagKey %>")]
-        public <%= functionParameter.type %><% if(functionParameter.optional){ %>?<% } %> <%= functionParameter.name %> { get; set; }
+        public <%= functionParameter.type %><% if(addExclamation){ %>?<% } %> <%= functionParameter.name %> { get; set; }
 <% }) %>    }
 <% }) %>
     /// <summary>
     /// <%= className %>
     /// </summary>
     [CommandClass("<%= apiCommandClass %>")]
-    public class <%= className %> : SfdxCommand
+    public class <%= className %> : SfCommand
     {
         /// Constructor.
         public <%= className %>(CommandExecutioner commandExecutioner)
@@ -62,17 +70,16 @@ namespace sfdx4csharpClient
     var capitalizedFunctionName = capitalizeFirstLetter(functionDef.name);
 %>
         /// <summary>
-        /// <%= escapeForComments(functionDef.shortDescription) %>
+        /// <%= escapeForComments(functionDef.shortDescription, functionDef.apiCommand) %>
         /// </summary>
         /// <remarks>
-        /// <%= escapeForComments(functionDef.description) %>
+        /// <%= escapeForComments(functionDef.description, functionDef.apiCommand) %>
         /// </remarks>
         /// <example>
-        /// <%= escapeForComments(functionDef.help) %>
-        /// <%= escapeForComments(functionDef.example) %>
+        /// <%= escapeForComments(functionDef.example, functionDef.apiCommand) %>
         /// </example>
         [Command("<%= functionDef.apiCommand %>")]
-        public SfdxResponse <%= capitalizedFunctionName %>(<%= className %><%= capitalizedFunctionName %>Options options<% if(isAllOptionalParameters(functionDef.parameters)) {%> = null<%} %>)
+        public SfResponse <%= capitalizedFunctionName %>(<%= className %><%= capitalizedFunctionName %>Options options<% if(isAllOptionalParameters(functionDef.parameters)) {%> = null<%} %>)
         {
             return ExecuteCommand(nameof(<%= capitalizedFunctionName %>), options);
         }

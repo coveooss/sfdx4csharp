@@ -1,4 +1,4 @@
-// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
+// Generated on Mon Jun 03 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -9,10 +9,10 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method Function of class Run.
     /// </summary>
-    public class RunFunctionOptions : SfdxOptions
+    public class RunFunctionOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
@@ -24,25 +24,25 @@ namespace sfdx4csharpClient
         public bool? Json { get; set; }
 
         /// <summary>
-        /// [Required] URL of the function to run.
+        /// [Optional] URL of the function to run.
         /// </summary>
         [SwitchName("--function-url")]
         public string FunctionUrl { get; set; }
 
         /// <summary>
-        /// [Required] URL of the function to run.
+        /// [Optional] URL of the function to run.
         /// </summary>
         [SwitchName("--url")]
         public string Url { get; set; }
 
         /// <summary>
-        /// [Required] Set headers.
+        /// [Optional] Set headers.
         /// </summary>
         [SwitchName("--headers")]
         public string Headers { get; set; }
 
         /// <summary>
-        /// [Required] Set the payload of the cloudevent as a JSON object or a path to a file via @file.json.
+        /// [Optional] Set the payload of the cloudevent as a JSON object or a path to a file via @file.json.
         /// </summary>
         [SwitchName("--payload")]
         public string Payload { get; set; }
@@ -54,7 +54,7 @@ namespace sfdx4csharpClient
         public bool? Structured { get; set; }
 
         /// <summary>
-        /// [Required] Username or alias for the target org; overrides default target org.
+        /// [Optional] Username or alias for the target org; overrides default target org.
         /// </summary>
         [SwitchName("--connected-org")]
         public string ConnectedOrg { get; set; }
@@ -63,34 +63,34 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method FunctionStart of class Run.
     /// </summary>
-    public class RunFunctionStartOptions : SfdxOptions
+    public class RunFunctionStartOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] Path to function directory.
+        /// [Optional] Path to function directory.
         /// </summary>
         [SwitchName("--path")]
         public string Path { get; set; }
 
         /// <summary>
-        /// [Required] Port for running the function.
+        /// [Optional] Port for running the function.
         /// </summary>
         [SwitchName("--port")]
         public string Port { get; set; }
 
         /// <summary>
-        /// [Required] Port for remote debugging.
+        /// [Optional] Port for remote debugging.
         /// </summary>
         [SwitchName("--debug-port")]
         public string DebugPort { get; set; }
 
         /// <summary>
-        /// [Required] The language that the function runs in.
+        /// [Optional] The language that the function runs in.
         /// </summary>
         [SwitchName("--language")]
         public string Language { get; set; }
@@ -105,10 +105,10 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method FunctionStartContainer of class Run.
     /// </summary>
-    public class RunFunctionStartContainerOptions : SfdxOptions
+    public class RunFunctionStartContainerOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
@@ -117,34 +117,34 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method FunctionStartLocal of class Run.
     /// </summary>
-    public class RunFunctionStartLocalOptions : SfdxOptions
+    public class RunFunctionStartLocalOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] Path to function directory.
+        /// [Optional] Path to function directory.
         /// </summary>
         [SwitchName("--path")]
         public string Path { get; set; }
 
         /// <summary>
-        /// [Required] Port to bind the invoker to.
+        /// [Optional] Port to bind the invoker to.
         /// </summary>
         [SwitchName("--port")]
         public string Port { get; set; }
 
         /// <summary>
-        /// [Required] Port to use for debugging the function.
+        /// [Optional] Port to use for debugging the function.
         /// </summary>
         [SwitchName("--debug-port")]
         public string DebugPort { get; set; }
 
         /// <summary>
-        /// [Required] The language in which the function is written.
+        /// [Optional] The language in which the function is written.
         /// </summary>
         [SwitchName("--language")]
         public string Language { get; set; }
@@ -154,7 +154,7 @@ namespace sfdx4csharpClient
     /// Run
     /// </summary>
     [CommandClass("run")]
-    public class Run : SfdxCommand
+    public class Run : SfCommand
     {
         /// Constructor.
         public Run(CommandExecutioner commandExecutioner)
@@ -163,28 +163,25 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// 
+        /// Send a cloudevent to a function.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <example>
-        /// 
         /// Run a function:
-        /// <%= config.bin %> <%= command.id %> --url http://path/to/function
+        /// $ sf function --url http://path/to/function
         /// Run a function with a payload and a JSON response:
-        /// <%= config.bin %> <%= command.id %> --url http://path/to/function --payload '@file.json' --structured
+        /// $ sf function --url http://path/to/function --payload '@file.json' --structured
         /// </example>
         [Command("function")]
-        public SfdxResponse Function(RunFunctionOptions options)
+        public SfResponse Function(RunFunctionOptions options = null)
         {
             return ExecuteCommand(nameof(Function), options);
         }
 
         /// <summary>
-        /// Run this command from the directory of your Salesforce Functions project.
-        /// 
-        /// This command will run the target function locally (on the same operating system as this CLI), just like the `local` subcommand.
+        /// Build and run a Salesforce Function.
         /// </summary>
         /// <remarks>
         /// Run this command from the directory of your Salesforce Functions project.
@@ -192,14 +189,13 @@ namespace sfdx4csharpClient
         /// This command will run the target function locally (on the same operating system as this CLI), just like the `local` subcommand.
         /// </remarks>
         /// <example>
-        /// 
         /// Build a function and start the invoker
-        /// <%= config.bin %> <%= command.id %>
+        /// $ sf function start
         /// Start the invoker with a specific language and port
-        /// <%= config.bin %> <%= command.id %> --port 5000 --language javascript
+        /// $ sf function start --port 5000 --language javascript
         /// </example>
         [Command("function start")]
-        public SfdxResponse FunctionStart(RunFunctionStartOptions options)
+        public SfResponse FunctionStart(RunFunctionStartOptions options = null)
         {
             return ExecuteCommand(nameof(FunctionStart), options);
         }
@@ -212,29 +208,27 @@ namespace sfdx4csharpClient
         /// </remarks>
         /// <example>
         /// 
-        /// 
         /// </example>
         [Command("function start container")]
-        public SfdxResponse FunctionStartContainer(RunFunctionStartContainerOptions options)
+        public SfResponse FunctionStartContainer(RunFunctionStartContainerOptions options = null)
         {
             return ExecuteCommand(nameof(FunctionStartContainer), options);
         }
 
         /// <summary>
-        /// Build and run a Salesforce Function locally.
+        /// 
         /// </summary>
         /// <remarks>
         /// Build and run a Salesforce Function locally.
         /// </remarks>
         /// <example>
-        /// 
         /// Build a function and start the invoker
-        /// <%= config.bin %> <%= command.id %>
+        /// $ sf function start local
         /// Start the invoker with a specific language and port
-        /// <%= config.bin %> <%= command.id %> --port 5000 --language javascript
+        /// $ sf function start local --port 5000 --language javascript
         /// </example>
         [Command("function start local")]
-        public SfdxResponse FunctionStartLocal(RunFunctionStartLocalOptions options)
+        public SfResponse FunctionStartLocal(RunFunctionStartLocalOptions options = null)
         {
             return ExecuteCommand(nameof(FunctionStartLocal), options);
         }

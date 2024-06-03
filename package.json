@@ -1,6 +1,6 @@
 {
   "name": "sfdx4csharp-generator",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "A node wrapper for Salesforce DX",
   "keywords": [
     "sf",

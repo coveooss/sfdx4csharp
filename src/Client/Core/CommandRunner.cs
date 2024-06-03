@@ -40,11 +40,11 @@ namespace sfdx4csharpClient.Core
         /// </summary>
         /// <param name="command">Command to execute.</param>
         /// <returns>SFDX output informations.</returns>
-        public SfdxOutput RunCommand(string command)
+        public SfCommandOutput RunCommand(string command)
         {
             Debug.Assert(!string.IsNullOrEmpty(command));
 
-            var output = new SfdxOutput()
+            var output = new SfCommandOutput
             {
                 Command = command
             };

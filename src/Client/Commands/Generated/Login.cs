@@ -1,4 +1,4 @@
-// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
+// Generated on Mon Jun 03 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -9,10 +9,10 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method Functions of class Login.
     /// </summary>
-    public class LoginFunctionsOptions : SfdxOptions
+    public class LoginFunctionsOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
@@ -27,14 +27,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method FunctionsJwt of class Login.
     /// </summary>
-    public class LoginFunctionsJwtOptions : SfdxOptions
+    public class LoginFunctionsJwtOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] OAuth client ID.
         /// </summary>
@@ -54,25 +48,31 @@ namespace sfdx4csharpClient
         public string Username { get; set; }
 
         /// <summary>
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
         /// [Optional] Format output as json.
         /// </summary>
         [SwitchName("--json")]
         public bool? Json { get; set; }
 
         /// <summary>
-        /// [Required] The login URL of the instance the org lives on.
+        /// [Optional] The login URL of the instance the org lives on.
         /// </summary>
         [SwitchName("--instance-url")]
         public string InstanceUrl { get; set; }
 
         /// <summary>
-        /// [Required] The login URL of the instance the org lives on.
+        /// [Optional] The login URL of the instance the org lives on.
         /// </summary>
         [SwitchName("--instanceurl")]
         public string Instanceurl { get; set; }
 
         /// <summary>
-        /// [Required] Alias for the org.
+        /// [Optional] Alias for the org.
         /// </summary>
         [SwitchName("--alias")]
         public string Alias { get; set; }
@@ -94,7 +94,7 @@ namespace sfdx4csharpClient
     /// Login
     /// </summary>
     [CommandClass("login")]
-    public class Login : SfdxCommand
+    public class Login : SfCommand
     {
         /// Constructor.
         public Login(CommandExecutioner commandExecutioner)
@@ -103,37 +103,35 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// This step is required to develop or deploy Salesforce Functions.
+        /// Log in to Salesforce Functions.
         /// </summary>
         /// <remarks>
         /// This step is required to develop or deploy Salesforce Functions.
         /// </remarks>
         /// <example>
-        /// 
         /// Log in to Salesforce Functions:
-        /// <%= config.bin %> <%= command.id %>
+        /// $ sf functions
         /// </example>
         [Command("functions")]
-        public SfdxResponse Functions(LoginFunctionsOptions options)
+        public SfResponse Functions(LoginFunctionsOptions options = null)
         {
             return ExecuteCommand(nameof(Functions), options);
         }
 
         /// <summary>
-        /// Use this command when executing from a script.
+        /// Login using JWT instead of default web-based flow. This will authenticate you with both sf and Salesforce Functions.
         /// </summary>
         /// <remarks>
         /// Use this command when executing from a script.
         /// </remarks>
         /// <example>
-        /// 
         /// Log in using JWT:
-        /// <%= config.bin %> <%= command.id %> --username example@username.org --keyfile file.key --clientid 123456
+        /// $ sf functions jwt --username example@username.org --keyfile file.key --clientid 123456
         /// Log in and specify the org alias and URL, set as default org and default Dev Hub, and format output as JSON:
-        /// <%= config.bin %> <%= command.id %> --username example@username.org --keyfile file.key --clientid 123456 --alias org-alias --set-default --set-default-dev-hub --instance-url https://path/to/instance --json
+        /// $ sf functions jwt --username example@username.org --keyfile file.key --clientid 123456 --alias org-alias --set-default --set-default-dev-hub --instance-url https://path/to/instance --json
         /// </example>
         [Command("functions jwt")]
-        public SfdxResponse FunctionsJwt(LoginFunctionsJwtOptions options)
+        public SfResponse FunctionsJwt(LoginFunctionsJwtOptions options)
         {
             return ExecuteCommand(nameof(FunctionsJwt), options);
         }
