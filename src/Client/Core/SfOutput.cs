@@ -3,7 +3,7 @@ namespace sfdx4csharpClient.Core
     /// <summary>
     /// SFDX CLI Output's wrapper
     /// </summary>
-    public class SfdxOutput
+    public class SfCommandOutput
     {
         /// <summary>
         /// SFDX cli command used with parameters and flags.

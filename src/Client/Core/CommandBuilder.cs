@@ -10,7 +10,7 @@ namespace sfdx4csharpClient.Core
     /// Command Builder.
     /// </summary>
     /// <typeparam name="T">Command's options type</typeparam>
-    public static class CommandBuilder<T> where T : SfdxOptions
+    public static class CommandBuilder<T> where T : SfOptions
     {
         /// <summary>
         /// Constructs the full SFDX CLI command to be executed.
