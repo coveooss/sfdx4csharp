@@ -7,6 +7,9 @@ using sfdx4csharpClient.Core;
 
 namespace sfdx4csharp
 {
+    /// <summary>
+    /// This is only used as simple tests and examples of usages of the SfClient class.
+    /// </summary>
     public class Program
     {
         private const string SFDX_PATH_ENV_KEY = "SF_PATH";
@@ -21,7 +24,7 @@ namespace sfdx4csharp
             var version = runner.RunCommand("--version").RawOutput;
             Console.WriteLine($"Using SFDX version: {version}");
 
-            var client = new SfdxClient(cliPath);
+            var client = new SfClient(cliPath);
             var projectFolder = "C:\\TmpSfdxProject";
             if (Directory.Exists(projectFolder)) {
                 Directory.Delete(projectFolder, true);
@@ -29,6 +32,12 @@ namespace sfdx4csharp
 
             Directory.CreateDirectory(projectFolder);
             client.ChangeWorkingFolder(projectFolder);
+
+            var result = client.Org.DisplayUser(new OrgDisplayUserOptions
+            {
+                TargetOrg = "Bob"
+            });
+
             Console.WriteLine("Listing the existing orgs.");
             client.Org.List(new OrgListOptions { All = true});
 
@@ -41,7 +50,7 @@ namespace sfdx4csharp
             {
                 DefinitionFile = "config\\project-scratch-def.json",
                 Alias = "Toto",
-                Wait = "5"
+                Wait = 5
             });
 
             Console.WriteLine("Project status:");

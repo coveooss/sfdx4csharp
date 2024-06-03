@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace sfdx4csharpClient.Core
 {
@@ -15,11 +14,11 @@ namespace sfdx4csharpClient.Core
         /// </summary>
         /// <param name="json">JSON string</param>
         /// <returns>SFDXResponse result</returns>
-        public static JToken Parse(string json)
+        public static SfResponse Parse(string json)
         {
             Debug.Assert(json != null);
 
-            return JsonConvert.DeserializeObject<SfdxJsonResponse>(SanitizeResponse(json))?.Result;
+            return JsonConvert.DeserializeObject<SfResponse>(SanitizeResponse(json));
         }
 
         private static string SanitizeResponse(string response)

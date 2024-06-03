@@ -7,9 +7,9 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method Functions of class Logout.
+    /// Options for the method Execute of class Help.
     /// </summary>
-    public class LogoutFunctionsOptions : SfOptions
+    public class HelpExecuteOptions : SfOptions
     {
         /// <summary>
         /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
@@ -18,38 +18,37 @@ namespace sfdx4csharpClient
         public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Format output as json.
+        /// [Optional] Include all nested commands in the output.
         /// </summary>
-        [SwitchName("--json")]
-        public bool? Json { get; set; }
+        [SwitchName("--nested-commands")]
+        public bool? NestedCommands { get; set; }
     }
 
     /// <summary>
-    /// Logout
+    /// Help
     /// </summary>
-    [CommandClass("logout")]
-    public class Logout : SfCommand
+    [CommandClass("help")]
+    public class Help : SfCommand
     {
         /// Constructor.
-        public Logout(CommandExecutioner commandExecutioner)
+        public Help(CommandExecutioner commandExecutioner)
                 : base(commandExecutioner)
         {
         }
 
         /// <summary>
-        /// Log out of your Salesforce Functions account.
+        /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// Display help for $ sf.
         /// </remarks>
         /// <example>
-        /// Log out:
-        /// $ sf functions
+        /// 
         /// </example>
-        [Command("functions")]
-        public SfResponse Functions(LogoutFunctionsOptions options = null)
+        [Command("")]
+        public SfResponse Execute(HelpExecuteOptions options = null)
         {
-            return ExecuteCommand(nameof(Functions), options);
+            return ExecuteCommand(nameof(Execute), options);
         }
     }
 }

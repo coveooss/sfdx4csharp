@@ -18,16 +18,16 @@ limitations under the License.
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <PackageId>sfdx4csharp</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.7</PackageVersion>
     <Authors>Denis Shelgunov;Vincent Gregoire;Rozerin Akkus</Authors>
     <Owners>Denis Shelgunov;Vincent Gregoire;Rozerin Akkus</Owners>
     <Title>SFDX for C#</Title>
-    <Description>A simple wrapper in C# for the offcial Salesfoce Cli</Description>
+    <Description>A simple wrapper in C# for the offcial Salesfoce CLI</Description>
     <ProjectUrl>https://github.com/coveo/sfdx4csharp</ProjectUrl>
     <LicenseUrl>https://github.com/coveo/sfdx4csharp/LICENSE.md</LicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright 2024 Coveo</Copyright>
-    <PackageTags>SFDX;SF;Cli;C#;Salesforce DX;Wrapper;Library;Coveo</PackageTags>
+    <PackageTags>SFDX;SF;CLI;C#;Salesforce DX;Wrapper;Library;Coveo</PackageTags>
   </PropertyGroup>
   
   <PropertyGroup>
@@ -35,6 +35,7 @@ limitations under the License.
     <TargetFrameworks>net6.0</TargetFrameworks>
     <NoWin32Manifest>true</NoWin32Manifest>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,4 +1,4 @@
-// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
+// Generated on Mon Jun 03 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -9,19 +9,19 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method LwcTestCreate of class ForceLightning.
     /// </summary>
-    public class ForceLightningLwcTestCreateOptions : SfdxOptions
+    public class ForceLightningLwcTestCreateOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] Path to Lightning web component .js file to create a test for.
         /// </summary>
         [SwitchName("--filepath")]
         public string Filepath { get; set; }
+
+        /// <summary>
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
 
         /// <summary>
         /// [Optional] Format output as json
@@ -39,10 +39,10 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method LwcTestRun of class ForceLightning.
     /// </summary>
-    public class ForceLightningLwcTestRunOptions : SfdxOptions
+    public class ForceLightningLwcTestRunOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
@@ -75,10 +75,10 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method LwcTestSetup of class ForceLightning.
     /// </summary>
-    public class ForceLightningLwcTestSetupOptions : SfdxOptions
+    public class ForceLightningLwcTestSetupOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
@@ -100,7 +100,7 @@ namespace sfdx4csharpClient
     /// ForceLightning
     /// </summary>
     [CommandClass("force lightning")]
-    public class ForceLightning : SfdxCommand
+    public class ForceLightning : SfCommand
     {
         /// Constructor.
         public ForceLightning(CommandExecutioner commandExecutioner)
@@ -109,53 +109,50 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// creates a Lightning web component test file with boilerplate code inside a __tests__ directory.
+        /// 
         /// </summary>
         /// <remarks>
         /// creates a Lightning web component test file with boilerplate code inside a __tests__ directory.
         /// </remarks>
         /// <example>
-        /// 
         /// $ sfdx force:lightning:lwc:test:create -f force-app/main/default/lwc/myButton/myButton.js
-        /// force:lightning:lwc:test:create -f <string> [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+        /// force:lightning:lwc:test:create -f [string] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("lwc test create")]
-        public SfdxResponse LwcTestCreate(ForceLightningLwcTestCreateOptions options)
+        public SfResponse LwcTestCreate(ForceLightningLwcTestCreateOptions options)
         {
             return ExecuteCommand(nameof(LwcTestCreate), options);
         }
 
         /// <summary>
-        /// invokes Lightning Web Components Jest unit tests.
+        /// 
         /// </summary>
         /// <remarks>
         /// invokes Lightning Web Components Jest unit tests.
         /// </remarks>
         /// <example>
-        /// 
         /// $ sfdx force:lightning:lwc:test:run
         /// $ sfdx force:lightning:lwc:test:run -w
         /// force:lightning:lwc:test:run [-d | --watch] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("lwc test run")]
-        public SfdxResponse LwcTestRun(ForceLightningLwcTestRunOptions options)
+        public SfResponse LwcTestRun(ForceLightningLwcTestRunOptions options = null)
         {
             return ExecuteCommand(nameof(LwcTestRun), options);
         }
 
         /// <summary>
-        /// install Jest unit testing tools for Lightning Web Components.
+        /// 
         /// </summary>
         /// <remarks>
         /// install Jest unit testing tools for Lightning Web Components.
         /// </remarks>
         /// <example>
-        /// 
         /// $ sfdx force:lightning:lwc:test:setup
         /// force:lightning:lwc:test:setup [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
         /// </example>
         [Command("lwc test setup")]
-        public SfdxResponse LwcTestSetup(ForceLightningLwcTestSetupOptions options)
+        public SfResponse LwcTestSetup(ForceLightningLwcTestSetupOptions options = null)
         {
             return ExecuteCommand(nameof(LwcTestSetup), options);
         }

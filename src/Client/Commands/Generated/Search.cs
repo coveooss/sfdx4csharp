@@ -7,49 +7,42 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method Functions of class Logout.
+    /// Options for the method Execute of class Search.
     /// </summary>
-    public class LogoutFunctionsOptions : SfOptions
+    public class SearchExecuteOptions : SfOptions
     {
         /// <summary>
         /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
-
-        /// <summary>
-        /// [Optional] Format output as json.
-        /// </summary>
-        [SwitchName("--json")]
-        public bool? Json { get; set; }
     }
 
     /// <summary>
-    /// Logout
+    /// Search
     /// </summary>
-    [CommandClass("logout")]
-    public class Logout : SfCommand
+    [CommandClass("search")]
+    public class Search : SfCommand
     {
         /// Constructor.
-        public Logout(CommandExecutioner commandExecutioner)
+        public Search(CommandExecutioner commandExecutioner)
                 : base(commandExecutioner)
         {
         }
 
         /// <summary>
-        /// Log out of your Salesforce Functions account.
+        /// Search for a command.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Once you select a command, hit enter and it will show the help for that command.
         /// </remarks>
         /// <example>
-        /// Log out:
-        /// $ sf functions
+        /// 
         /// </example>
-        [Command("functions")]
-        public SfResponse Functions(LogoutFunctionsOptions options = null)
+        [Command("")]
+        public SfResponse Execute(SearchExecuteOptions options = null)
         {
-            return ExecuteCommand(nameof(Functions), options);
+            return ExecuteCommand(nameof(Execute), options);
         }
     }
 }

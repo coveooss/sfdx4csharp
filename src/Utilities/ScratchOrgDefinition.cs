@@ -11,30 +11,57 @@ namespace sfdx4csharpUtilities
     /// </remarks>
     public class ScratchOrgDefinition
     {
+        /// <summary>
+        /// The admin user email.
+        /// </summary>
         [JsonProperty("adminEmail")]
         public string AdminEmail { get; set; }
 
+        /// <summary>
+        /// Country.
+        /// </summary>
         [JsonProperty("country")]
         public string Country { get; set; }
 
+        /// <summary>
+        /// Description.
+        /// </summary>
         [JsonProperty("description")]
         public string Description { get; set; }
 
+        /// <summary>
+        /// Edition (ex: Developer, Sandbox, Enterprise...).
+        /// </summary>
         [JsonProperty("edition", Required = Required.Always)]
         public string Edition { get; set; }
 
+        /// <summary>
+        /// Features to enable (ex: Communities, Knowledge).
+        /// </summary>
         [JsonProperty("features")]
         public string[] Features { get; set; }
 
+        /// <summary>
+        /// Whether to create the organization with sample data or empty.
+        /// </summary>
         [JsonProperty("hasSampleData")]
         public bool HasSampleData { get; set; }
 
+        /// <summary>
+        /// The organization name.
+        /// </summary>
         [JsonProperty("orgName")]
         public string OrgName { get; set; }
 
+        /// <summary>
+        /// Organization settings (ex: enableKnowledge, enableLightningKnowledge, enableSecureGuestAccess).
+        /// </summary>
         [JsonProperty("orgPreferences")]
         public OrgPreferences OrgPreferences { get; set; }
 
+        /// <summary>
+        /// The username.
+        /// </summary>
         [JsonProperty("username")]
         public string Username { get; set; }
     }
@@ -48,9 +75,15 @@ namespace sfdx4csharpUtilities
     /// </remarks>
     public class OrgPreferences
     {
+        /// <summary>
+        /// Disabled organization state.
+        /// </summary>
         [JsonProperty("disabled")]
         public string[] Disabled { get; set; }
 
+        /// <summary>
+        /// Enabled organization state.
+        /// </summary>
         [JsonProperty("enabled")]
         public string[] Enabled { get; set; }
     }

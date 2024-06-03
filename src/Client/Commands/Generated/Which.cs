@@ -7,9 +7,9 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method Functions of class Whoami.
+    /// Options for the method Execute of class Which.
     /// </summary>
-    public class WhoamiFunctionsOptions : SfOptions
+    public class WhichExecuteOptions : SfOptions
     {
         /// <summary>
         /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
@@ -22,42 +22,35 @@ namespace sfdx4csharpClient
         /// </summary>
         [SwitchName("--json")]
         public bool? Json { get; set; }
-
-        /// <summary>
-        /// [Optional] Show the stored functions token.
-        /// </summary>
-        [SwitchName("--show-token")]
-        public bool? ShowToken { get; set; }
     }
 
     /// <summary>
-    /// Whoami
+    /// Which
     /// </summary>
-    [CommandClass("whoami")]
-    public class Whoami : SfCommand
+    [CommandClass("which")]
+    public class Which : SfCommand
     {
         /// Constructor.
-        public Whoami(CommandExecutioner commandExecutioner)
+        public Which(CommandExecutioner commandExecutioner)
                 : base(commandExecutioner)
         {
         }
 
         /// <summary>
-        /// Show information on your Salesforce Functions login.
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns your email and ID. Use '--show-token' to show your Salesforce Functions token.
+        /// Show which plugin a command is in.
         /// </remarks>
         /// <example>
-        /// Get account information:
-        /// $ sf functions
-        /// Show token and output result as JSON:
-        /// $ sf functions --show-token --json
+        /// See which plugin the `help` command is in:
+        /// $ sf  help
+        /// 
         /// </example>
-        [Command("functions")]
-        public SfResponse Functions(WhoamiFunctionsOptions options = null)
+        [Command("")]
+        public SfResponse Execute(WhichExecuteOptions options = null)
         {
-            return ExecuteCommand(nameof(Functions), options);
+            return ExecuteCommand(nameof(Execute), options);
         }
     }
 }

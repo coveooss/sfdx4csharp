@@ -1,4 +1,4 @@
-// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
+// Generated on Mon Jun 03 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -9,14 +9,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method Describe of class Sobject.
     /// </summary>
-    public class SobjectDescribeOptions : SfdxOptions
+    public class SobjectDescribeOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] No description for sobject
         /// </summary>
@@ -30,13 +24,19 @@ namespace sfdx4csharpClient
         public string TargetOrg { get; set; }
 
         /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] No description for loglevel
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
         public string Loglevel { get; set; }
@@ -51,14 +51,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method List of class Sobject.
     /// </summary>
-    public class SobjectListOptions : SfdxOptions
+    public class SobjectListOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] No description for target-org
         /// </summary>
@@ -66,19 +60,25 @@ namespace sfdx4csharpClient
         public string TargetOrg { get; set; }
 
         /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] No description for loglevel
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
         public string Loglevel { get; set; }
 
         /// <summary>
-        /// [Required] No description for sobject
+        /// [Optional] No description for sobject
         /// </summary>
         [SwitchName("--sobject")]
         public string Sobject { get; set; }
@@ -88,7 +88,7 @@ namespace sfdx4csharpClient
     /// Sobject
     /// </summary>
     [CommandClass("sobject")]
-    public class Sobject : SfdxCommand
+    public class Sobject : SfCommand
     {
         /// Constructor.
         public Sobject(CommandExecutioner commandExecutioner)
@@ -97,9 +97,7 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// The metadata is displayed in JSON format. See this topic for a description of each property: https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_calls_describesobjects_describesobjectresult.htm.
-        /// 
-        /// This command displays metadata for Salesforce objects by default. Use the --use-tooling-api flag to view metadata for a Tooling API object.
+        /// Display the metadata for a standard or custom object or a Tooling API object.
         /// </summary>
         /// <remarks>
         /// The metadata is displayed in JSON format. See this topic for a description of each property: https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_calls_describesobjects_describesobjectresult.htm.
@@ -107,35 +105,33 @@ namespace sfdx4csharpClient
         /// This command displays metadata for Salesforce objects by default. Use the --use-tooling-api flag to view metadata for a Tooling API object.
         /// </remarks>
         /// <example>
-        /// 
         /// Display the metadata of the "Account" standard object in your default org:
-        /// <%= config.bin %> <%= command.id %> --sobject Account
+        /// $ sf describe --sobject Account
         /// Display the metadata of the "MyObject__c" custom object in the org with alias "my-scratch-org":
-        /// <%= config.bin %> <%= command.id %> --sobject MyObject__c --target-org my-scratch-org
+        /// $ sf describe --sobject MyObject__c --target-org my-scratch-org
         /// Display the metadata of the ApexCodeCoverage Tooling API object in your default org:
-        /// <%= config.bin %> <%= command.id %> --sobject ApexCodeCoverage --use-tooling-api
+        /// $ sf describe --sobject ApexCodeCoverage --use-tooling-api
         /// </example>
         [Command("describe")]
-        public SfdxResponse Describe(SobjectDescribeOptions options)
+        public SfResponse Describe(SobjectDescribeOptions options)
         {
             return ExecuteCommand(nameof(Describe), options);
         }
 
         /// <summary>
-        /// You can list the standard objects, custom objects, or all. The lists include only Salesforce objects, not Tooling API objects.
+        /// List all Salesforce objects of a specified category.
         /// </summary>
         /// <remarks>
         /// You can list the standard objects, custom objects, or all. The lists include only Salesforce objects, not Tooling API objects.
         /// </remarks>
         /// <example>
-        /// 
         /// List all objects in your default org:
-        /// <%= config.bin %> <%= command.id %> --sobject all
+        /// $ sf list --sobject all
         /// List only custom objects in the org with alias "my-scratch-org":
-        /// <%= config.bin %> <%= command.id %> --sobject custom --target-org my-scratch-org
+        /// $ sf list --sobject custom --target-org my-scratch-org
         /// </example>
         [Command("list")]
-        public SfdxResponse List(SobjectListOptions options)
+        public SfResponse List(SobjectListOptions options)
         {
             return ExecuteCommand(nameof(List), options);
         }

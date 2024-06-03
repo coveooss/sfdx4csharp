@@ -1,4 +1,4 @@
-// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
+// Generated on Mon Jun 03 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -9,19 +9,19 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method Functions of class Deploy.
     /// </summary>
-    public class DeployFunctionsOptions : SfdxOptions
+    public class DeployFunctionsOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] Username or alias for the org that the compute environment should be connected to.
         /// </summary>
         [SwitchName("--connected-org")]
         public string ConnectedOrg { get; set; }
+
+        /// <summary>
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
 
         /// <summary>
         /// [Optional] Format output as json.
@@ -30,7 +30,7 @@ namespace sfdx4csharpClient
         public bool? Json { get; set; }
 
         /// <summary>
-        /// [Required] Deploy the latest commit from a branch different from the currently active branch.
+        /// [Optional] Deploy the latest commit from a branch different from the currently active branch.
         /// </summary>
         [SwitchName("--branch")]
         public string Branch { get; set; }
@@ -52,7 +52,7 @@ namespace sfdx4csharpClient
     /// Deploy
     /// </summary>
     [CommandClass("deploy")]
-    public class Deploy : SfdxCommand
+    public class Deploy : SfCommand
     {
         /// Constructor.
         public Deploy(CommandExecutioner commandExecutioner)
@@ -61,22 +61,21 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// You must run this command from within a git repository. Only committed changes to Functions are deployed. The active branch is deployed unless specified otherwise with `--branch`.
+        /// Deploy a Salesforce Function to an org from your local project.
         /// </summary>
         /// <remarks>
         /// You must run this command from within a git repository. Only committed changes to Functions are deployed. The active branch is deployed unless specified otherwise with `--branch`.
         /// </remarks>
         /// <example>
-        /// 
         /// Deploy a Salesforce Function:
-        /// <%= config.bin %> <%= command.id %> --connected-org org-alias
+        /// $ sf functions --connected-org org-alias
         /// Deploy to 'deploy-branch':
-        /// <%= config.bin %> <%= command.id %> --connected-org org-alias --branch deploy-branch
+        /// $ sf functions --connected-org org-alias --branch deploy-branch
         /// Overwrite the remote repository:
-        /// <%= config.bin %> <%= command.id %> --connected-org org-alias --force
+        /// $ sf functions --connected-org org-alias --force
         /// </example>
         [Command("functions")]
-        public SfdxResponse Functions(DeployFunctionsOptions options)
+        public SfResponse Functions(DeployFunctionsOptions options)
         {
             return ExecuteCommand(nameof(Functions), options);
         }

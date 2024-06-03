@@ -13,8 +13,11 @@ namespace sfdx4csharpClient
     /// In order to use this client, you need to install the Salesforce CLI on your machine.
     /// How to: https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm
     /// </remarks>
-    public class GeneratedSfdxClient
+    public class GeneratedSfClient
     {<% _.each(classDefinitions, function(classDefinition) { %>
+        /// <summary>
+        /// Regroups all Salesforce CLI calls under the '<%= classDefinition.className %>' topic.
+        /// </summary>
         public <%= classDefinition.className %> <%= classDefinition.fileName %> { get; }<% }) %>
 
         private readonly CommandRunner _cmdRunner;
@@ -23,8 +26,8 @@ namespace sfdx4csharpClient
         /// Initialize the modules that encapsulate the commands in the force namespace.
         /// </summary>
         /// <param name="path">File path to the SFDC CLI executable.</param>
-        /// <param name="workingFolder">The working folder where to run sfdx commands.</param>
-        public GeneratedSfdxClient(string path,
+        /// <param name="workingFolder">The working folder where to run sf commands.</param>
+        public GeneratedSfClient(string path,
             string workingFolder = "")
         {
             Debug.Assert(!string.IsNullOrEmpty(path));
@@ -38,9 +41,9 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// Changes the working folder of the sfdx client.
+        /// Changes the working folder of the sf client.
         /// </summary>
-        /// <param name="folderPath">The new working folder path where to run sfdx commands.</param>
+        /// <param name="folderPath">The new working folder path where to run sf commands.</param>
         public void ChangeWorkingFolder(string folderPath)
         {
             Debug.Assert(!string.IsNullOrEmpty(folderPath));
@@ -49,7 +52,7 @@ namespace sfdx4csharpClient
         }
 		
         /// <summary>
-        /// Changes the home folder of the sfdx client. 
+        /// Changes the home folder of the sf client. 
         /// This is the directory where it looks for the .sfdx folder
         /// </summary>
         /// <param name="homeFolderPath">The new home folder where the .sfdx folder is located, or null/empty to revert back to the default.</param>

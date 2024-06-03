@@ -1,4 +1,4 @@
-// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
+// Generated on Mon Jun 03 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -9,14 +9,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method ConvertMdapi of class Project.
     /// </summary>
-    public class ProjectConvertMdapiOptions : SfdxOptions
+    public class ProjectConvertMdapiOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] No description for root-dir
         /// </summary>
@@ -24,31 +18,37 @@ namespace sfdx4csharpClient
         public string RootDir { get; set; }
 
         /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] No description for loglevel
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
         public string Loglevel { get; set; }
 
         /// <summary>
-        /// [Required] No description for output-dir
+        /// [Optional] No description for output-dir
         /// </summary>
         [SwitchName("--output-dir")]
         public string OutputDir { get; set; }
 
         /// <summary>
-        /// [Required] If you specify this parameter, don’t specify --metadata or --source-dir.
+        /// [Optional] If you specify this parameter, don’t specify --metadata or --source-dir.
         /// </summary>
         [SwitchName("--manifest")]
         public string Manifest { get; set; }
 
         /// <summary>
-        /// [Required] The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its sub-directories).
+        /// [Optional] The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its sub-directories).
         /// 
         /// If you specify this flag, don’t specify --manifest or --metadata. If the comma-separated list you’re supplying contains spaces, enclose the entire comma-separated list in one set of double quotes.
         /// </summary>
@@ -56,7 +56,7 @@ namespace sfdx4csharpClient
         public string MetadataDir { get; set; }
 
         /// <summary>
-        /// [Required] No description for metadata
+        /// [Optional] No description for metadata
         /// </summary>
         [SwitchName("--metadata")]
         public string Metadata { get; set; }
@@ -65,52 +65,52 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method ConvertSource of class Project.
     /// </summary>
-    public class ProjectConvertSourceOptions : SfdxOptions
+    public class ProjectConvertSourceOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
+        /// [Optional] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] No description for loglevel
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
         public string Loglevel { get; set; }
 
         /// <summary>
-        /// [Required] No description for root-dir
+        /// [Optional] No description for root-dir
         /// </summary>
         [SwitchName("--root-dir")]
         public string RootDir { get; set; }
 
         /// <summary>
-        /// [Required] No description for output-dir
+        /// [Optional] No description for output-dir
         /// </summary>
         [SwitchName("--output-dir")]
         public string OutputDir { get; set; }
 
         /// <summary>
-        /// [Required] No description for package-name
+        /// [Optional] No description for package-name
         /// </summary>
         [SwitchName("--package-name")]
         public string PackageName { get; set; }
 
         /// <summary>
-        /// [Required] If you specify this parameter, don’t specify --metadata or --source-dir.
+        /// [Optional] If you specify this parameter, don’t specify --metadata or --source-dir.
         /// </summary>
         [SwitchName("--manifest")]
         public string Manifest { get; set; }
 
         /// <summary>
-        /// [Required] The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its sub-directories).
+        /// [Optional] The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its sub-directories).
         /// 
         /// If you specify this parameter, don’t specify --manifest or --metadata.
         /// </summary>
@@ -118,7 +118,7 @@ namespace sfdx4csharpClient
         public string SourceDir { get; set; }
 
         /// <summary>
-        /// [Required] No description for metadata
+        /// [Optional] No description for metadata
         /// </summary>
         [SwitchName("--metadata")]
         public string Metadata { get; set; }
@@ -127,14 +127,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method DeleteSource of class Project.
     /// </summary>
-    public class ProjectDeleteSourceOptions : SfdxOptions
+    public class ProjectDeleteSourceOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] No description for target-org
         /// </summary>
@@ -142,13 +136,19 @@ namespace sfdx4csharpClient
         public string TargetOrg { get; set; }
 
         /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] No description for loglevel
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
         public string Loglevel { get; set; }
@@ -172,13 +172,13 @@ namespace sfdx4csharpClient
         public bool? CheckOnly { get; set; }
 
         /// <summary>
-        /// [Required] If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
+        /// [Optional] If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
         /// </summary>
         [SwitchName("--wait")]
-        public string Wait { get; set; }
+        public int? Wait { get; set; }
 
         /// <summary>
-        /// [Required] If a test name contains a space, enclose it in double quotes.
+        /// [Optional] If a test name contains a space, enclose it in double quotes.
         /// For multiple test names, use one of the following formats:
         /// 
         /// - Repeat the flag for multiple test names: --tests Test1 --tests Test2 --tests "Test With Space"
@@ -188,7 +188,7 @@ namespace sfdx4csharpClient
         public string Tests { get; set; }
 
         /// <summary>
-        /// [Required] Valid values are:
+        /// [Optional] Valid values are:
         /// 
         /// - NoTestRun — No tests are run. This test level applies only to deployments to development environments, such as sandbox, Developer Edition, or trial orgs. This test level is the default for development environments.
         /// 
@@ -210,13 +210,13 @@ namespace sfdx4csharpClient
         public bool? NoPrompt { get; set; }
 
         /// <summary>
-        /// [Required] If you specify this parameter, don’t specify --source-dir.
+        /// [Optional] If you specify this parameter, don’t specify --source-dir.
         /// </summary>
         [SwitchName("--metadata")]
         public string Metadata { get; set; }
 
         /// <summary>
-        /// [Required] The supplied paths can be a single file (in which case the operation is applied to only one file) or a folder (in which case the operation is applied to all metadata types in the directory and its sub-directories).
+        /// [Optional] The supplied paths can be a single file (in which case the operation is applied to only one file) or a folder (in which case the operation is applied to all metadata types in the directory and its sub-directories).
         /// 
         /// If you specify this parameter, don’t specify --metadata.
         /// </summary>
@@ -245,14 +245,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method DeleteTracking of class Project.
     /// </summary>
-    public class ProjectDeleteTrackingOptions : SfdxOptions
+    public class ProjectDeleteTrackingOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] No description for target-org
         /// </summary>
@@ -260,13 +254,19 @@ namespace sfdx4csharpClient
         public string TargetOrg { get; set; }
 
         /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] No description for loglevel
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
         public string Loglevel { get; set; }
@@ -281,33 +281,33 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method DeployCancel of class Project.
     /// </summary>
-    public class ProjectDeployCancelOptions : SfdxOptions
+    public class ProjectDeployCancelOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] Overrides your default org.
+        /// [Optional] Overrides your default org.
         /// </summary>
         [SwitchName("--target-org")]
         public string TargetOrg { get; set; }
 
         /// <summary>
-        /// [Optional] The command immediately returns the control of the terminal to you. This way, you can continue to use the CLI. To resume watching the cancellation, run "<%= config.bin %> project deploy resume". To check the status of the cancellation, run "<%= config.bin %> project deploy report".
+        /// [Optional] The command immediately returns the control of the terminal to you. This way, you can continue to use the CLI. To resume watching the cancellation, run "$ sf project deploy resume". To check the status of the cancellation, run "$ sf project deploy report".
         /// </summary>
         [SwitchName("--async")]
         public bool? Async { get; set; }
 
         /// <summary>
-        /// [Required] These commands return a job ID if they time out or you specified the --async flag:
+        /// [Optional] These commands return a job ID if they time out or you specified the --async flag:
         /// 
-        /// - <%= config.bin %> project deploy start
-        /// - <%= config.bin %> project deploy validate
-        /// - <%= config.bin %> project deploy quick
-        /// - <%= config.bin %> project deploy cancel
+        /// - $ sf project deploy start
+        /// - $ sf project deploy validate
+        /// - $ sf project deploy quick
+        /// - $ sf project deploy cancel
         /// 
         /// The job ID is valid for 10 days from when you started the deploy operation.
         /// </summary>
@@ -321,28 +321,28 @@ namespace sfdx4csharpClient
         public bool? UseMostRecent { get; set; }
 
         /// <summary>
-        /// [Required] If the command continues to run after the wait period, the CLI returns control of the terminal window to you. To resume watching the cancellation, run "<%= config.bin %> project deploy resume". To check the status of the cancellation, run "<%= config.bin %> project deploy report".
+        /// [Optional] If the command continues to run after the wait period, the CLI returns control of the terminal window to you. To resume watching the cancellation, run "$ sf project deploy resume". To check the status of the cancellation, run "$ sf project deploy report".
         /// </summary>
         [SwitchName("--wait")]
-        public string Wait { get; set; }
+        public int? Wait { get; set; }
     }
 
     /// <summary>
     /// Options for the method DeployPipelineQuick of class Project.
     /// </summary>
-    public class ProjectDeployPipelineQuickOptions : SfdxOptions
+    public class ProjectDeployPipelineQuickOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] No description for devops-center-username
         /// </summary>
         [SwitchName("--devops-center-username")]
         public string DevopsCenterUsername { get; set; }
+
+        /// <summary>
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
 
         /// <summary>
         /// [Optional] Format output as json.
@@ -369,13 +369,13 @@ namespace sfdx4csharpClient
         public bool? Verbose { get; set; }
 
         /// <summary>
-        /// [Required] If the command continues to run after the wait period, the CLI returns control of the terminal window to you and returns the job ID. To check the status of the operation, run "<%= config.bin %> <%= command.id.split(' ').slice(0, -1).join(' ') %> report".
+        /// [Optional] If the command continues to run after the wait period, the CLI returns control of the terminal window to you and returns the job ID. To check the status of the operation, run "$ sf [%= command.id.split(' ').slice(0, -1).join(' ') %] report".
         /// </summary>
         [SwitchName("--wait")]
         public string Wait { get; set; }
 
         /// <summary>
-        /// [Required] The job ID is valid for 10 days from when you started the validation.
+        /// [Optional] The job ID is valid for 10 days from when you started the validation.
         /// </summary>
         [SwitchName("--job-id")]
         public string JobId { get; set; }
@@ -390,19 +390,19 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method DeployPipelineReport of class Project.
     /// </summary>
-    public class ProjectDeployPipelineReportOptions : SfdxOptions
+    public class ProjectDeployPipelineReportOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] No description for devops-center-username
         /// </summary>
         [SwitchName("--devops-center-username")]
         public string DevopsCenterUsername { get; set; }
+
+        /// <summary>
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
 
         /// <summary>
         /// [Optional] Format output as json.
@@ -411,7 +411,7 @@ namespace sfdx4csharpClient
         public bool? Json { get; set; }
 
         /// <summary>
-        /// [Required] The job ID is valid for 10 days from when you started the deploy operation.
+        /// [Optional] The job ID is valid for 10 days from when you started the deploy operation.
         /// </summary>
         [SwitchName("--job-id")]
         public string JobId { get; set; }
@@ -426,19 +426,19 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method DeployPipelineResume of class Project.
     /// </summary>
-    public class ProjectDeployPipelineResumeOptions : SfdxOptions
+    public class ProjectDeployPipelineResumeOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] No description for devops-center-username
         /// </summary>
         [SwitchName("--devops-center-username")]
         public string DevopsCenterUsername { get; set; }
+
+        /// <summary>
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
 
         /// <summary>
         /// [Optional] Format output as json.
@@ -447,7 +447,7 @@ namespace sfdx4csharpClient
         public bool? Json { get; set; }
 
         /// <summary>
-        /// [Required] These commands return a job ID if they time out or you specified the --async flag:
+        /// [Optional] These commands return a job ID if they time out or you specified the --async flag:
         /// 
         /// - sf project deploy pipeline start
         /// - sf project deploy pipeline validate
@@ -477,7 +477,7 @@ namespace sfdx4csharpClient
         public bool? Verbose { get; set; }
 
         /// <summary>
-        /// [Required] If the command continues to run after the wait period, the CLI returns control of the terminal window to you and returns the job ID. To check the status of the operation, run "<%= config.bin %> <%= command.id.split(' ').slice(0, -1).join(' ') %> report".
+        /// [Optional] If the command continues to run after the wait period, the CLI returns control of the terminal window to you and returns the job ID. To check the status of the operation, run "$ sf [%= command.id.split(' ').slice(0, -1).join(' ') %] report".
         /// </summary>
         [SwitchName("--wait")]
         public string Wait { get; set; }
@@ -486,14 +486,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method DeployPipelineStart of class Project.
     /// </summary>
-    public class ProjectDeployPipelineStartOptions : SfdxOptions
+    public class ProjectDeployPipelineStartOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] No description for devops-center-username
         /// </summary>
@@ -513,13 +507,19 @@ namespace sfdx4csharpClient
         public string BranchName { get; set; }
 
         /// <summary>
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
         /// [Optional] Format output as json.
         /// </summary>
         [SwitchName("--json")]
         public bool? Json { get; set; }
 
         /// <summary>
-        /// [Required] You must indicate the bundle version if deploying to the environment that corresponds to the first stage after the bundling stage.
+        /// [Optional] You must indicate the bundle version if deploying to the environment that corresponds to the first stage after the bundling stage.
         /// </summary>
         [SwitchName("--bundle-version-name")]
         public string BundleVersionName { get; set; }
@@ -531,13 +531,13 @@ namespace sfdx4csharpClient
         public bool? DeployAll { get; set; }
 
         /// <summary>
-        /// [Required] Separate multiple test names with commas. Enclose the entire flag value in double quotes if a test name contains spaces.
+        /// [Optional] Separate multiple test names with commas. Enclose the entire flag value in double quotes if a test name contains spaces.
         /// </summary>
         [SwitchName("--tests")]
         public string Tests { get; set; }
 
         /// <summary>
-        /// [Required] Valid values are:
+        /// [Optional] Valid values are:
         /// 
         /// - NoTestRun — No tests are run. This test level applies only to deployments to development environments, such as sandbox, Developer Edition, or trial orgs. This test level is the default for development environments.
         /// 
@@ -559,7 +559,7 @@ namespace sfdx4csharpClient
         public bool? Async { get; set; }
 
         /// <summary>
-        /// [Required] If the command continues to run after the wait period, the CLI returns control of the terminal window to you and returns the job ID. To check the status of the operation, run "<%= config.bin %> <%= command.id.split(' ').slice(0, -1).join(' ') %> report".
+        /// [Optional] If the command continues to run after the wait period, the CLI returns control of the terminal window to you and returns the job ID. To check the status of the operation, run "$ sf [%= command.id.split(' ').slice(0, -1).join(' ') %] report".
         /// </summary>
         [SwitchName("--wait")]
         public string Wait { get; set; }
@@ -580,14 +580,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method DeployPipelineValidate of class Project.
     /// </summary>
-    public class ProjectDeployPipelineValidateOptions : SfdxOptions
+    public class ProjectDeployPipelineValidateOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] No description for devops-center-username
         /// </summary>
@@ -607,13 +601,19 @@ namespace sfdx4csharpClient
         public string BranchName { get; set; }
 
         /// <summary>
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
         /// [Optional] Format output as json.
         /// </summary>
         [SwitchName("--json")]
         public bool? Json { get; set; }
 
         /// <summary>
-        /// [Required] You must indicate the bundle version if deploying to the environment that corresponds to the first stage after the bundling stage.
+        /// [Optional] You must indicate the bundle version if deploying to the environment that corresponds to the first stage after the bundling stage.
         /// </summary>
         [SwitchName("--bundle-version-name")]
         public string BundleVersionName { get; set; }
@@ -625,13 +625,13 @@ namespace sfdx4csharpClient
         public bool? DeployAll { get; set; }
 
         /// <summary>
-        /// [Required] Separate multiple test names with commas. Enclose the entire flag value in double quotes if a test name contains spaces.
+        /// [Optional] Separate multiple test names with commas. Enclose the entire flag value in double quotes if a test name contains spaces.
         /// </summary>
         [SwitchName("--tests")]
         public string Tests { get; set; }
 
         /// <summary>
-        /// [Required] Valid values are:
+        /// [Optional] Valid values are:
         /// 
         /// - NoTestRun — No tests are run. This test level applies only to deployments to development environments, such as sandbox, Developer Edition, or trial orgs. This test level is the default for development environments.
         /// 
@@ -653,7 +653,7 @@ namespace sfdx4csharpClient
         public bool? Async { get; set; }
 
         /// <summary>
-        /// [Required] If the command continues to run after the wait period, the CLI returns control of the terminal window to you and returns the job ID. To check the status of the operation, run "<%= config.bin %> <%= command.id.split(' ').slice(0, -1).join(' ') %> report".
+        /// [Optional] If the command continues to run after the wait period, the CLI returns control of the terminal window to you and returns the job ID. To check the status of the operation, run "$ sf [%= command.id.split(' ').slice(0, -1).join(' ') %] report".
         /// </summary>
         [SwitchName("--wait")]
         public string Wait { get; set; }
@@ -674,19 +674,19 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method DeployPreview of class Project.
     /// </summary>
-    public class ProjectDeployPreviewOptions : SfdxOptions
+    public class ProjectDeployPreviewOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] Overrides your default org.
         /// </summary>
         [SwitchName("--target-org")]
         public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
 
         /// <summary>
         /// [Optional] This flag applies only to orgs that allow source tracking. It has no effect on orgs that don't allow it, such as production orgs.
@@ -695,19 +695,19 @@ namespace sfdx4csharpClient
         public bool? IgnoreConflicts { get; set; }
 
         /// <summary>
-        /// [Required] All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
+        /// [Optional] All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
         /// </summary>
         [SwitchName("--manifest")]
         public string Manifest { get; set; }
 
         /// <summary>
-        /// [Required] No description for metadata
+        /// [Optional] No description for metadata
         /// </summary>
         [SwitchName("--metadata")]
         public string Metadata { get; set; }
 
         /// <summary>
-        /// [Required] The supplied path can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its subdirectories).
+        /// [Optional] The supplied path can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its subdirectories).
         /// 
         /// If you specify this flag, don’t specify --metadata or --manifest.
         /// </summary>
@@ -724,16 +724,16 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method DeployQuick of class Project.
     /// </summary>
-    public class ProjectDeployQuickOptions : SfdxOptions
+    public class ProjectDeployQuickOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] The command immediately returns the control of the terminal to you. This way, you can continue to use the CLI. To resume watching the deploy, run "<%= config.bin %> project deploy resume". To check the status of the deploy, run "<%= config.bin %> project deploy report".
+        /// [Optional] The command immediately returns the control of the terminal to you. This way, you can continue to use the CLI. To resume watching the deploy, run "$ sf project deploy resume". To check the status of the deploy, run "$ sf project deploy report".
         /// </summary>
         [SwitchName("--async")]
         public bool? Async { get; set; }
@@ -745,13 +745,13 @@ namespace sfdx4csharpClient
         public bool? Concise { get; set; }
 
         /// <summary>
-        /// [Required] The job ID is valid for 10 days from when you started the validation.
+        /// [Optional] The job ID is valid for 10 days from when you started the validation.
         /// </summary>
         [SwitchName("--job-id")]
         public string JobId { get; set; }
 
         /// <summary>
-        /// [Required] Overrides your default org.
+        /// [Optional] Overrides your default org.
         /// </summary>
         [SwitchName("--target-org")]
         public string TargetOrg { get; set; }
@@ -769,13 +769,13 @@ namespace sfdx4csharpClient
         public bool? Verbose { get; set; }
 
         /// <summary>
-        /// [Required] If the command continues to run after the wait period, the CLI returns control of the terminal window to you. To resume watching the deploy, run "<%= config.bin %> project deploy resume". To check the status of the deploy, run "<%= config.bin %> project deploy report".
+        /// [Optional] If the command continues to run after the wait period, the CLI returns control of the terminal window to you. To resume watching the deploy, run "$ sf project deploy resume". To check the status of the deploy, run "$ sf project deploy report".
         /// </summary>
         [SwitchName("--wait")]
-        public string Wait { get; set; }
+        public int? Wait { get; set; }
 
         /// <summary>
-        /// [Required] Use this flag to override the default API version with the API version of your package.xml file. The default API version is the latest version supported by the CLI.
+        /// [Optional] Use this flag to override the default API version with the API version of your package.xml file. The default API version is the latest version supported by the CLI.
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
@@ -784,27 +784,27 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method DeployReport of class Project.
     /// </summary>
-    public class ProjectDeployReportOptions : SfdxOptions
+    public class ProjectDeployReportOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] Overrides your default org.
+        /// [Optional] Overrides your default org.
         /// </summary>
         [SwitchName("--target-org")]
         public string TargetOrg { get; set; }
 
         /// <summary>
-        /// [Required] These commands return a job ID if they time out or you specified the --async flag:
+        /// [Optional] These commands return a job ID if they time out or you specified the --async flag:
         /// 
-        /// - <%= config.bin %> project deploy start
-        /// - <%= config.bin %> project deploy validate
-        /// - <%= config.bin %> project deploy quick
-        /// - <%= config.bin %> project deploy cancel
+        /// - $ sf project deploy start
+        /// - $ sf project deploy validate
+        /// - $ sf project deploy quick
+        /// - $ sf project deploy cancel
         /// 
         /// The job ID is valid for 10 days from when you started the deploy operation.
         /// </summary>
@@ -818,7 +818,7 @@ namespace sfdx4csharpClient
         public bool? UseMostRecent { get; set; }
 
         /// <summary>
-        /// [Required] For multiple formatters, repeat the flag for each formatter.
+        /// [Optional] For multiple formatters, repeat the flag for each formatter.
         /// --coverage-formatters lcov --coverage-formatters clover
         /// </summary>
         [SwitchName("--coverage-formatters")]
@@ -831,25 +831,25 @@ namespace sfdx4csharpClient
         public bool? Junit { get; set; }
 
         /// <summary>
-        /// [Required] No description for results-dir
+        /// [Optional] No description for results-dir
         /// </summary>
         [SwitchName("--results-dir")]
         public string ResultsDir { get; set; }
 
         /// <summary>
-        /// [Required] If the command continues to run after the wait period, the CLI returns control of the terminal window to you and returns the job ID. To resume the deployment, run "<%= config.bin %> project deploy resume". To check the status of the deployment, run "<%= config.bin %> project deploy report".
+        /// [Optional] If the command continues to run after the wait period, the CLI returns control of the terminal window to you and returns the job ID. To resume the deployment, run "$ sf project deploy resume". To check the status of the deployment, run "$ sf project deploy report".
         /// </summary>
         [SwitchName("--wait")]
-        public string Wait { get; set; }
+        public int? Wait { get; set; }
     }
 
     /// <summary>
     /// Options for the method DeployResume of class Project.
     /// </summary>
-    public class ProjectDeployResumeOptions : SfdxOptions
+    public class ProjectDeployResumeOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
@@ -861,12 +861,12 @@ namespace sfdx4csharpClient
         public bool? Concise { get; set; }
 
         /// <summary>
-        /// [Required] These commands return a job ID if they time out or you specified the --async flag:
+        /// [Optional] These commands return a job ID if they time out or you specified the --async flag:
         /// 
-        /// - <%= config.bin %> project deploy start
-        /// - <%= config.bin %> project deploy validate
-        /// - <%= config.bin %> project deploy quick
-        /// - <%= config.bin %> project deploy cancel
+        /// - $ sf project deploy start
+        /// - $ sf project deploy validate
+        /// - $ sf project deploy quick
+        /// - $ sf project deploy cancel
         /// 
         /// The job ID is valid for 10 days from when you started the deploy operation.
         /// </summary>
@@ -886,13 +886,13 @@ namespace sfdx4csharpClient
         public bool? Verbose { get; set; }
 
         /// <summary>
-        /// [Required] If the command continues to run after the wait period, the CLI returns control of the terminal window to you. To resume watching the deploy operation, run this command again. To check the status of the deploy operation, run "<%= config.bin %> project deploy report".
+        /// [Optional] If the command continues to run after the wait period, the CLI returns control of the terminal window to you. To resume watching the deploy operation, run this command again. To check the status of the deploy operation, run "$ sf project deploy report".
         /// </summary>
         [SwitchName("--wait")]
-        public string Wait { get; set; }
+        public int? Wait { get; set; }
 
         /// <summary>
-        /// [Required] For multiple formatters, repeat the flag for each formatter.
+        /// [Optional] For multiple formatters, repeat the flag for each formatter.
         /// --coverage-formatters lcov --coverage-formatters clover
         /// </summary>
         [SwitchName("--coverage-formatters")]
@@ -905,7 +905,7 @@ namespace sfdx4csharpClient
         public bool? Junit { get; set; }
 
         /// <summary>
-        /// [Required] No description for results-dir
+        /// [Optional] No description for results-dir
         /// </summary>
         [SwitchName("--results-dir")]
         public string ResultsDir { get; set; }
@@ -914,14 +914,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method DeployStart of class Project.
     /// </summary>
-    public class ProjectDeployStartOptions : SfdxOptions
+    public class ProjectDeployStartOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] Overrides your default org.
         /// </summary>
@@ -929,13 +923,19 @@ namespace sfdx4csharpClient
         public string TargetOrg { get; set; }
 
         /// <summary>
-        /// [Required] Use this flag to override the default API version with the API version of your package.xml file. The default API version is the latest version supported by the CLI.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Use this flag to override the default API version with the API version of your package.xml file. The default API version is the latest version supported by the CLI.
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Optional] The command immediately returns the job ID and control of the terminal to you. This way, you can continue to use the CLI. To resume the deployment, run "<%= config.bin %> project deploy resume". To check the status of the deployment, run "<%= config.bin %> project deploy report".
+        /// [Optional] The command immediately returns the job ID and control of the terminal to you. This way, you can continue to use the CLI. To resume the deployment, run "$ sf project deploy resume". To check the status of the deployment, run "$ sf project deploy report".
         /// </summary>
         [SwitchName("--async")]
         public bool? Async { get; set; }
@@ -973,19 +973,19 @@ namespace sfdx4csharpClient
         public bool? IgnoreWarnings { get; set; }
 
         /// <summary>
-        /// [Required] All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
+        /// [Optional] All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
         /// </summary>
         [SwitchName("--manifest")]
         public string Manifest { get; set; }
 
         /// <summary>
-        /// [Required] No description for metadata
+        /// [Optional] No description for metadata
         /// </summary>
         [SwitchName("--metadata")]
         public string Metadata { get; set; }
 
         /// <summary>
-        /// [Required] No description for metadata-dir
+        /// [Optional] No description for metadata-dir
         /// </summary>
         [SwitchName("--metadata-dir")]
         public string MetadataDir { get; set; }
@@ -997,7 +997,7 @@ namespace sfdx4csharpClient
         public bool? SinglePackage { get; set; }
 
         /// <summary>
-        /// [Required] The supplied path can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its subdirectories).
+        /// [Optional] The supplied path can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its subdirectories).
         /// 
         /// If you specify this flag, don’t specify --metadata or --manifest.
         /// </summary>
@@ -1005,7 +1005,7 @@ namespace sfdx4csharpClient
         public string SourceDir { get; set; }
 
         /// <summary>
-        /// [Required] If a test name contains a space, enclose it in double quotes.
+        /// [Optional] If a test name contains a space, enclose it in double quotes.
         /// For multiple test names, use one of the following formats:
         /// 
         /// - Repeat the flag for multiple test names: --tests Test1 --tests Test2 --tests "Test With Space"
@@ -1015,7 +1015,7 @@ namespace sfdx4csharpClient
         public string Tests { get; set; }
 
         /// <summary>
-        /// [Required] Valid values are:
+        /// [Optional] Valid values are:
         /// 
         /// - NoTestRun — No tests are run. This test level applies only to deployments to development environments, such as sandbox, Developer Edition, or trial orgs. This test level is the default for development environments.
         /// 
@@ -1037,10 +1037,10 @@ namespace sfdx4csharpClient
         public bool? Verbose { get; set; }
 
         /// <summary>
-        /// [Required] If the command continues to run after the wait period, the CLI returns control of the terminal window to you and returns the job ID. To resume the deployment, run "<%= config.bin %> project deploy resume". To check the status of the deployment, run "<%= config.bin %> project deploy report".
+        /// [Optional] If the command continues to run after the wait period, the CLI returns control of the terminal window to you and returns the job ID. To resume the deployment, run "$ sf project deploy resume". To check the status of the deployment, run "$ sf project deploy report".
         /// </summary>
         [SwitchName("--wait")]
-        public string Wait { get; set; }
+        public int? Wait { get; set; }
 
         /// <summary>
         /// [Optional] No description for purge-on-delete
@@ -1049,19 +1049,19 @@ namespace sfdx4csharpClient
         public bool? PurgeOnDelete { get; set; }
 
         /// <summary>
-        /// [Required] No description for pre-destructive-changes
+        /// [Optional] No description for pre-destructive-changes
         /// </summary>
         [SwitchName("--pre-destructive-changes")]
         public string PreDestructiveChanges { get; set; }
 
         /// <summary>
-        /// [Required] No description for post-destructive-changes
+        /// [Optional] No description for post-destructive-changes
         /// </summary>
         [SwitchName("--post-destructive-changes")]
         public string PostDestructiveChanges { get; set; }
 
         /// <summary>
-        /// [Required] For multiple formatters, repeat the flag for each formatter.
+        /// [Optional] For multiple formatters, repeat the flag for each formatter.
         /// --coverage-formatters lcov --coverage-formatters clover
         /// </summary>
         [SwitchName("--coverage-formatters")]
@@ -1074,7 +1074,7 @@ namespace sfdx4csharpClient
         public bool? Junit { get; set; }
 
         /// <summary>
-        /// [Required] No description for results-dir
+        /// [Optional] No description for results-dir
         /// </summary>
         [SwitchName("--results-dir")]
         public string ResultsDir { get; set; }
@@ -1083,14 +1083,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method DeployValidate of class Project.
     /// </summary>
-    public class ProjectDeployValidateOptions : SfdxOptions
+    public class ProjectDeployValidateOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] Overrides your default org.
         /// </summary>
@@ -1098,13 +1092,19 @@ namespace sfdx4csharpClient
         public string TargetOrg { get; set; }
 
         /// <summary>
-        /// [Required] Use this flag to override the default API version with the API version of your package.xml file. The default API version is the latest version supported by the CLI.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Use this flag to override the default API version with the API version of your package.xml file. The default API version is the latest version supported by the CLI.
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Optional] The command immediately returns the job ID and control of the terminal to you. This way, you can continue to use the CLI. To resume watching the validation, run "<%= config.bin %> project deploy resume". To check the status of the validation, run "<%= config.bin %> project deploy report".
+        /// [Optional] The command immediately returns the job ID and control of the terminal to you. This way, you can continue to use the CLI. To resume watching the validation, run "$ sf project deploy resume". To check the status of the validation, run "$ sf project deploy report".
         /// </summary>
         [SwitchName("--async")]
         public bool? Async { get; set; }
@@ -1116,19 +1116,19 @@ namespace sfdx4csharpClient
         public bool? Concise { get; set; }
 
         /// <summary>
-        /// [Required] All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
+        /// [Optional] All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
         /// </summary>
         [SwitchName("--manifest")]
         public string Manifest { get; set; }
 
         /// <summary>
-        /// [Required] No description for metadata
+        /// [Optional] No description for metadata
         /// </summary>
         [SwitchName("--metadata")]
         public string Metadata { get; set; }
 
         /// <summary>
-        /// [Required] The supplied path can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its subdirectories).
+        /// [Optional] The supplied path can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all metadata types in the directory and its subdirectories).
         /// 
         /// If you specify this flag, don’t specify --metadata or --manifest.
         /// </summary>
@@ -1136,7 +1136,7 @@ namespace sfdx4csharpClient
         public string SourceDir { get; set; }
 
         /// <summary>
-        /// [Required] No description for metadata-dir
+        /// [Optional] No description for metadata-dir
         /// </summary>
         [SwitchName("--metadata-dir")]
         public string MetadataDir { get; set; }
@@ -1148,7 +1148,7 @@ namespace sfdx4csharpClient
         public bool? SinglePackage { get; set; }
 
         /// <summary>
-        /// [Required] If a test name contains a space, enclose it in double quotes.
+        /// [Optional] If a test name contains a space, enclose it in double quotes.
         /// For multiple test names, use one of the following formats:
         /// 
         /// - Repeat the flag for multiple test names: --tests Test1 --tests Test2 --tests "Test With Space"
@@ -1158,7 +1158,7 @@ namespace sfdx4csharpClient
         public string Tests { get; set; }
 
         /// <summary>
-        /// [Required] Valid values are:
+        /// [Optional] Valid values are:
         /// 
         /// - RunSpecifiedTests — Runs only the tests that you specify with the --tests flag. Code coverage requirements differ from the default coverage requirements when using this test level. Executed tests must comprise a minimum of 75% code coverage for each class and trigger in the deployment package. This coverage is computed for each class and trigger individually and is different than the overall coverage percentage.
         /// 
@@ -1176,10 +1176,10 @@ namespace sfdx4csharpClient
         public bool? Verbose { get; set; }
 
         /// <summary>
-        /// [Required] If the command continues to run after the wait period, the CLI returns control of the terminal window to you and returns the job ID. To resume watching the validation, run "<%= config.bin %> project deploy resume". To check the status of the validation, run "<%= config.bin %> project deploy report".
+        /// [Optional] If the command continues to run after the wait period, the CLI returns control of the terminal window to you and returns the job ID. To resume watching the validation, run "$ sf project deploy resume". To check the status of the validation, run "$ sf project deploy report".
         /// </summary>
         [SwitchName("--wait")]
-        public string Wait { get; set; }
+        public int? Wait { get; set; }
 
         /// <summary>
         /// [Optional] If you specify this flag, and a warning occurs, the success status of the deployment is set to true. If you don't specify this flag, and a warning occurs, then the success status is set to false, and the warning is treated like an error.
@@ -1190,7 +1190,7 @@ namespace sfdx4csharpClient
         public bool? IgnoreWarnings { get; set; }
 
         /// <summary>
-        /// [Required] For multiple formatters, repeat the flag for each formatter.
+        /// [Optional] For multiple formatters, repeat the flag for each formatter.
         /// --coverage-formatters lcov --coverage-formatters clover
         /// </summary>
         [SwitchName("--coverage-formatters")]
@@ -1203,7 +1203,7 @@ namespace sfdx4csharpClient
         public bool? Junit { get; set; }
 
         /// <summary>
-        /// [Required] No description for results-dir
+        /// [Optional] No description for results-dir
         /// </summary>
         [SwitchName("--results-dir")]
         public string ResultsDir { get; set; }
@@ -1215,13 +1215,13 @@ namespace sfdx4csharpClient
         public bool? PurgeOnDelete { get; set; }
 
         /// <summary>
-        /// [Required] No description for pre-destructive-changes
+        /// [Optional] No description for pre-destructive-changes
         /// </summary>
         [SwitchName("--pre-destructive-changes")]
         public string PreDestructiveChanges { get; set; }
 
         /// <summary>
-        /// [Required] No description for post-destructive-changes
+        /// [Optional] No description for post-destructive-changes
         /// </summary>
         [SwitchName("--post-destructive-changes")]
         public string PostDestructiveChanges { get; set; }
@@ -1230,14 +1230,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method Generate of class Project.
     /// </summary>
-    public class ProjectGenerateOptions : SfdxOptions
+    public class ProjectGenerateOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] Generates a project directory with this name; any valid directory name is accepted. Also sets the "name" property in the sfdx-project.json file to this name.
         /// </summary>
@@ -1245,7 +1239,13 @@ namespace sfdx4csharpClient
         public string Name { get; set; }
 
         /// <summary>
-        /// [Required] The template determines the sample configuration files and directories that this command generates. For example, the empty template provides these files and directory to get you started.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] The template determines the sample configuration files and directories that this command generates. For example, the empty template provides these files and directory to get you started.
         /// 
         /// - .forceignore
         /// - config/project-scratch-def.json
@@ -1267,19 +1267,19 @@ namespace sfdx4csharpClient
         public string Template { get; set; }
 
         /// <summary>
-        /// [Required] The location can be an absolute path or relative to the current working directory. The default is the current directory.
+        /// [Optional] The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
         [SwitchName("--output-dir")]
         public string OutputDir { get; set; }
 
         /// <summary>
-        /// [Required] No description for namespace
+        /// [Optional] No description for namespace
         /// </summary>
         [SwitchName("--namespace")]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// [Required] Metadata items such as classes and Lightning bundles are placed inside this folder.
+        /// [Optional] Metadata items such as classes and Lightning bundles are placed inside this folder.
         /// </summary>
         [SwitchName("--default-package-dir")]
         public string DefaultPackageDir { get; set; }
@@ -1291,19 +1291,19 @@ namespace sfdx4csharpClient
         public bool? Manifest { get; set; }
 
         /// <summary>
-        /// [Required] Normally defaults to https://login.salesforce.com.
+        /// [Optional] Normally defaults to https://login.salesforce.com.
         /// </summary>
         [SwitchName("--login-url")]
         public string LoginUrl { get; set; }
 
         /// <summary>
-        /// [Required] No description for loglevel
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
         public string Loglevel { get; set; }
 
         /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
+        /// [Optional] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
@@ -1312,64 +1312,64 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method GenerateManifest of class Project.
     /// </summary>
-    public class ProjectGenerateManifestOptions : SfdxOptions
+    public class ProjectGenerateManifestOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
+        /// [Optional] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] No description for loglevel
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
         public string Loglevel { get; set; }
 
         /// <summary>
-        /// [Required] No description for metadata
+        /// [Optional] No description for metadata
         /// </summary>
         [SwitchName("--metadata")]
         public string Metadata { get; set; }
 
         /// <summary>
-        /// [Required] No description for source-dir
+        /// [Optional] No description for source-dir
         /// </summary>
         [SwitchName("--source-dir")]
         public string SourceDir { get; set; }
 
         /// <summary>
-        /// [Required] No description for name
+        /// [Optional] No description for name
         /// </summary>
         [SwitchName("--name")]
         public string Name { get; set; }
 
         /// <summary>
-        /// [Required] No description for type
+        /// [Optional] No description for type
         /// </summary>
         [SwitchName("--type")]
         public string Type { get; set; }
 
         /// <summary>
-        /// [Required] No description for include-packages
+        /// [Optional] No description for include-packages
         /// </summary>
         [SwitchName("--include-packages")]
         public string IncludePackages { get; set; }
 
         /// <summary>
-        /// [Required] No description for from-org
+        /// [Optional] No description for from-org
         /// </summary>
         [SwitchName("--from-org")]
         public string FromOrg { get; set; }
 
         /// <summary>
-        /// [Required] No description for output-dir
+        /// [Optional] No description for output-dir
         /// </summary>
         [SwitchName("--output-dir")]
         public string OutputDir { get; set; }
@@ -1378,16 +1378,16 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method ListIgnored of class Project.
     /// </summary>
-    public class ProjectListIgnoredOptions : SfdxOptions
+    public class ProjectListIgnoredOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
 
         /// <summary>
-        /// [Required] No description for source-dir
+        /// [Optional] No description for source-dir
         /// </summary>
         [SwitchName("--source-dir")]
         public string SourceDir { get; set; }
@@ -1396,14 +1396,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method ResetTracking of class Project.
     /// </summary>
-    public class ProjectResetTrackingOptions : SfdxOptions
+    public class ProjectResetTrackingOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] No description for target-org
         /// </summary>
@@ -1411,19 +1405,25 @@ namespace sfdx4csharpClient
         public string TargetOrg { get; set; }
 
         /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] No description for loglevel
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
         public string Loglevel { get; set; }
 
         /// <summary>
-        /// [Required] No description for revision
+        /// [Optional] No description for revision
         /// </summary>
         [SwitchName("--revision")]
         public string Revision { get; set; }
@@ -1438,19 +1438,19 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method RetrievePreview of class Project.
     /// </summary>
-    public class ProjectRetrievePreviewOptions : SfdxOptions
+    public class ProjectRetrievePreviewOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] Overrides your default org.
         /// </summary>
         [SwitchName("--target-org")]
         public string TargetOrg { get; set; }
+
+        /// <summary>
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
 
         /// <summary>
         /// [Optional] This flag applies only to orgs that allow source tracking. It has no effect on orgs that don't allow it, such as production orgs.
@@ -1468,14 +1468,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method RetrieveStart of class Project.
     /// </summary>
-    public class ProjectRetrieveStartOptions : SfdxOptions
+    public class ProjectRetrieveStartOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] Overrides your default org.
         /// </summary>
@@ -1483,7 +1477,13 @@ namespace sfdx4csharpClient
         public string TargetOrg { get; set; }
 
         /// <summary>
-        /// [Required] Use this flag to override the default API version, which is the latest version supported the CLI, with the API version in your package.xml file.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Use this flag to override the default API version, which is the latest version supported the CLI, with the API version in your package.xml file.
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
@@ -1495,25 +1495,25 @@ namespace sfdx4csharpClient
         public bool? IgnoreConflicts { get; set; }
 
         /// <summary>
-        /// [Required] If you specify this parameter, don’t specify --metadata or --source-dir.
+        /// [Optional] If you specify this parameter, don’t specify --metadata or --source-dir.
         /// </summary>
         [SwitchName("--manifest")]
         public string Manifest { get; set; }
 
         /// <summary>
-        /// [Required] No description for metadata
+        /// [Optional] No description for metadata
         /// </summary>
         [SwitchName("--metadata")]
         public string Metadata { get; set; }
 
         /// <summary>
-        /// [Required] No description for package-name
+        /// [Optional] No description for package-name
         /// </summary>
         [SwitchName("--package-name")]
         public string PackageName { get; set; }
 
         /// <summary>
-        /// [Required] The root of the directory structure into which the source files are retrieved.
+        /// [Optional] The root of the directory structure into which the source files are retrieved.
         /// If the target directory matches one of the package directories in your sfdx-project.json file, the command fails.
         /// Running the command multiple times with the same target adds new files and overwrites existing files.
         /// </summary>
@@ -1527,22 +1527,22 @@ namespace sfdx4csharpClient
         public bool? SinglePackage { get; set; }
 
         /// <summary>
-        /// [Required] The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all source files in the directory and its subdirectories).
+        /// [Optional] The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder (in which case the operation is applied to all source files in the directory and its subdirectories).
         /// </summary>
         [SwitchName("--source-dir")]
         public string SourceDir { get; set; }
 
         /// <summary>
-        /// [Required] No description for target-metadata-dir
+        /// [Optional] No description for target-metadata-dir
         /// </summary>
         [SwitchName("--target-metadata-dir")]
         public string TargetMetadataDir { get; set; }
 
         /// <summary>
-        /// [Required] If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
+        /// [Optional] If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
         /// </summary>
         [SwitchName("--wait")]
-        public string Wait { get; set; }
+        public int? Wait { get; set; }
 
         /// <summary>
         /// [Optional] No description for unzip
@@ -1551,7 +1551,7 @@ namespace sfdx4csharpClient
         public bool? Unzip { get; set; }
 
         /// <summary>
-        /// [Required] No description for zip-file-name
+        /// [Optional] No description for zip-file-name
         /// </summary>
         [SwitchName("--zip-file-name")]
         public string ZipFileName { get; set; }
@@ -1561,7 +1561,7 @@ namespace sfdx4csharpClient
     /// Project
     /// </summary>
     [CommandClass("project")]
-    public class Project : SfdxCommand
+    public class Project : SfCommand
     {
         /// Constructor.
         public Project(CommandExecutioner commandExecutioner)
@@ -1570,98 +1570,79 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// To use Salesforce CLI to work with components that you retrieved via Metadata API, first convert your files from the metadata format to the source format using this command.
-        /// 
-        /// To convert files from the source format back to the metadata format, run "<%= config.bin %> project convert source".
-        /// 
-        /// To convert multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
+        /// Convert metadata retrieved via Metadata API into the source format used in Salesforce DX projects.
         /// </summary>
         /// <remarks>
         /// To use Salesforce CLI to work with components that you retrieved via Metadata API, first convert your files from the metadata format to the source format using this command.
         /// 
-        /// To convert files from the source format back to the metadata format, run "<%= config.bin %> project convert source".
+        /// To convert files from the source format back to the metadata format, run "$ sf project convert source".
         /// 
-        /// To convert multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
+        /// To convert multiple metadata components, either set multiple --metadata [name] flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
         /// </remarks>
         /// <example>
-        /// 
         /// Convert metadata formatted files in the specified directory into source formatted files; writes converted files to your default package directory:
-        /// $ <%= config.bin %> <%= command.id %> --root-dir path/to/metadata
+        /// $ $ sf convert mdapi --root-dir path/to/metadata
         /// Similar to previous example, but writes converted files to the specified output directory:
-        /// $ <%= config.bin %> <%= command.id %> --root-dir path/to/metadata --output-dir path/to/outputdir
+        /// $ $ sf convert mdapi --root-dir path/to/metadata --output-dir path/to/outputdir
         /// </example>
         [Command("convert mdapi")]
-        public SfdxResponse ConvertMdapi(ProjectConvertMdapiOptions options)
+        public SfResponse ConvertMdapi(ProjectConvertMdapiOptions options)
         {
             return ExecuteCommand(nameof(ConvertMdapi), options);
         }
 
         /// <summary>
-        /// To convert source-formatted files into the metadata format, so that you can deploy them using Metadata API, run this command. Then deploy the metadata using "<%= config.bin %> project deploy".
-        /// 
-        /// To convert Metadata API–formatted files into the source format, run "<%= config.bin %> project convert mdapi".
-        /// 
-        /// To specify a package name that includes spaces, enclose the name in single quotes.
-        /// 
-        /// To convert multiple components, either set multiple --metadata <name> flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
+        /// Convert source-formatted files into metadata that you can deploy using Metadata API.
         /// </summary>
         /// <remarks>
-        /// To convert source-formatted files into the metadata format, so that you can deploy them using Metadata API, run this command. Then deploy the metadata using "<%= config.bin %> project deploy".
+        /// To convert source-formatted files into the metadata format, so that you can deploy them using Metadata API, run this command. Then deploy the metadata using "$ sf project deploy".
         /// 
-        /// To convert Metadata API–formatted files into the source format, run "<%= config.bin %> project convert mdapi".
+        /// To convert Metadata API–formatted files into the source format, run "$ sf project convert mdapi".
         /// 
         /// To specify a package name that includes spaces, enclose the name in single quotes.
         /// 
-        /// To convert multiple components, either set multiple --metadata <name> flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
+        /// To convert multiple components, either set multiple --metadata [name] flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
         /// </remarks>
         /// <example>
-        /// 
         /// Convert source-formatted files in the specified directory into metadata-formatted files; writes converted files into a new directory:
-        /// $ <%= config.bin %> <%= command.id %> --root-dir path/to/source
+        /// $ $ sf convert source --root-dir path/to/source
         /// Similar to previous example, but writes converted files to the specified output directory and associates the files with the specified package:
-        /// $ <%= config.bin %> <%= command.id %> --root-dir path/to/source --output-dir path/to/outputdir --package-name 'My Package'
+        /// $ $ sf convert source --root-dir path/to/source --output-dir path/to/outputdir --package-name 'My Package'
         /// </example>
         [Command("convert source")]
-        public SfdxResponse ConvertSource(ProjectConvertSourceOptions options)
+        public SfResponse ConvertSource(ProjectConvertSourceOptions options = null)
         {
             return ExecuteCommand(nameof(ConvertSource), options);
         }
 
         /// <summary>
-        /// Use this command to delete components from orgs that don’t have source tracking. To remove deleted items from orgs that have source tracking enabled, "<%= config.bin %> project deploy start".
-        /// 
-        /// When you run this command, both the local source file and the metadata component in the org are deleted.
-        /// 
-        /// To delete multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
+        /// Delete source from your project and from a non-source-tracked org.
         /// </summary>
         /// <remarks>
-        /// Use this command to delete components from orgs that don’t have source tracking. To remove deleted items from orgs that have source tracking enabled, "<%= config.bin %> project deploy start".
+        /// Use this command to delete components from orgs that don’t have source tracking. To remove deleted items from orgs that have source tracking enabled, "$ sf project deploy start".
         /// 
         /// When you run this command, both the local source file and the metadata component in the org are deleted.
         /// 
-        /// To delete multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
+        /// To delete multiple metadata components, either set multiple --metadata [name] flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
         /// </remarks>
         /// <example>
-        /// 
         /// Delete all local Apex source files and all Apex classes from the org with alias "my-scratch":
-        /// <%= config.bin %> <%= command.id %> --metadata ApexClass --target-org my-scratch
+        /// $ sf delete source --metadata ApexClass --target-org my-scratch
         /// Delete a specific Apex class and a Profile that has a space in it from your default org; don't prompt for confirmation:
-        /// <%= config.bin %> <%= command.id %> --metadata ApexClass:MyFabulousApexClass --metadata "Profile: My Profile" --no-prompt
+        /// $ sf delete source --metadata ApexClass:MyFabulousApexClass --metadata "Profile: My Profile" --no-prompt
         /// Run the tests that aren’t in any managed packages as part of the deletion; if the delete succeeds, and the org has source-tracking enabled, update the source tracking information:
-        /// <%= config.bin %> <%= command.id %> --metadata ApexClass --test-level RunLocalTests --track-source
+        /// $ sf delete source --metadata ApexClass --test-level RunLocalTests --track-source
         /// Delete the Apex source files in a directory and the corresponding components from your default org:
-        /// <%= config.bin %> <%= command.id %> --source-dir force-app/main/default/classes
+        /// $ sf delete source --source-dir force-app/main/default/classes
         /// </example>
         [Command("delete source")]
-        public SfdxResponse DeleteSource(ProjectDeleteSourceOptions options)
+        public SfResponse DeleteSource(ProjectDeleteSourceOptions options)
         {
             return ExecuteCommand(nameof(DeleteSource), options);
         }
 
         /// <summary>
-        /// WARNING: This command deletes or overwrites all existing source tracking files. Use with extreme caution.
-        /// 
-        /// Deletes all local source tracking information. When you next run 'project deploy preview', Salesforce CLI displays all local and remote files as changed, and any files with the same name are listed as conflicts.
+        /// Delete all local source tracking information.
         /// </summary>
         /// <remarks>
         /// WARNING: This command deletes or overwrites all existing source tracking files. Use with extreme caution.
@@ -1669,20 +1650,17 @@ namespace sfdx4csharpClient
         /// Deletes all local source tracking information. When you next run 'project deploy preview', Salesforce CLI displays all local and remote files as changed, and any files with the same name are listed as conflicts.
         /// </remarks>
         /// <example>
-        /// 
         /// Delete local source tracking for the org with alias "my-scratch":
-        /// $ <%= config.bin %> <%= command.id %> --target-org my-scratch
+        /// $ $ sf delete tracking --target-org my-scratch
         /// </example>
         [Command("delete tracking")]
-        public SfdxResponse DeleteTracking(ProjectDeleteTrackingOptions options)
+        public SfResponse DeleteTracking(ProjectDeleteTrackingOptions options)
         {
             return ExecuteCommand(nameof(DeleteTracking), options);
         }
 
         /// <summary>
-        /// Use this command to cancel a deploy operation that hasn't yet completed in the org. Deploy operations include standard deploys, quick deploys, deploy validations, and deploy cancellations.
-        /// 
-        /// Run this command by either passing it a job ID or specifying the --use-most-recent flag to use the job ID of the most recent deploy operation.
+        /// Cancel a deploy operation.
         /// </summary>
         /// <remarks>
         /// Use this command to cancel a deploy operation that hasn't yet completed in the org. Deploy operations include standard deploys, quick deploys, deploy validations, and deploy cancellations.
@@ -1690,26 +1668,19 @@ namespace sfdx4csharpClient
         /// Run this command by either passing it a job ID or specifying the --use-most-recent flag to use the job ID of the most recent deploy operation.
         /// </remarks>
         /// <example>
-        /// 
         /// Cancel a deploy operation using a job ID:
-        /// <%= config.bin %> <%= command.id %> --job-id 0Af0x000017yLUFCA2
+        /// $ sf deploy cancel --job-id 0Af0x000017yLUFCA2
         /// Cancel the most recent deploy operation:
-        /// <%= config.bin %> <%= command.id %> --use-most-recent
+        /// $ sf deploy cancel --use-most-recent
         /// </example>
         [Command("deploy cancel")]
-        public SfdxResponse DeployCancel(ProjectDeployCancelOptions options)
+        public SfResponse DeployCancel(ProjectDeployCancelOptions options = null)
         {
             return ExecuteCommand(nameof(DeployCancel), options);
         }
 
         /// <summary>
-        /// The first time you run any "project deploy pipeline" command, be sure to authorize the org in which DevOps Center is installed. The easiest way to authorize an org is with the "org login web" command.
-        /// 
-        /// Before you run this command, create a validated deployment with the "project deploy pipeline validate" command, which returns a job ID. Validated deployments haven't been deployed to the org yet; you deploy them with this command. Either pass the job ID to this command or use the --use-most-recent flag to use the job ID of the most recently validated deployment. For the quick deploy to succeed, the associated validated deployment must also have succeeded.
-        /// 
-        /// Executing this quick deploy command takes less time than a standard deploy because it skips running Apex tests. These tests were previously run as part of the validation. Validating first and then running a quick deploy is useful if the deployment to your production org take several hours and you don’t want to risk a failed deploy.
-        /// 
-        /// This command doesn't support source-tracking. The source you deploy overwrites the corresponding metadata in your org. This command doesn’t attempt to merge your source with the versions in your org.
+        /// Quickly deploy a validated deployment to an org.
         /// </summary>
         /// <remarks>
         /// The first time you run any "project deploy pipeline" command, be sure to authorize the org in which DevOps Center is installed. The easiest way to authorize an org is with the "org login web" command.
@@ -1721,22 +1692,19 @@ namespace sfdx4csharpClient
         /// This command doesn't support source-tracking. The source you deploy overwrites the corresponding metadata in your org. This command doesn’t attempt to merge your source with the versions in your org.
         /// </remarks>
         /// <example>
-        /// 
         /// Run a quick deploy using your default Devops Center org and a job ID:
-        /// <%= config.bin %> <%= command.id %> --job-id 0Af0x000017yLUFCA2
+        /// $ sf deploy pipeline quick --job-id 0Af0x000017yLUFCA2
         /// Asynchronously run a quick deploy of the most recently validated deployment using an org with alias "my-prod-org":
-        /// <%= config.bin %> <%= command.id %> --async --use-most-recent --devops-center-username my-prod-org
+        /// $ sf deploy pipeline quick --async --use-most-recent --devops-center-username my-prod-org
         /// </example>
         [Command("deploy pipeline quick")]
-        public SfdxResponse DeployPipelineQuick(ProjectDeployPipelineQuickOptions options)
+        public SfResponse DeployPipelineQuick(ProjectDeployPipelineQuickOptions options)
         {
             return ExecuteCommand(nameof(DeployPipelineQuick), options);
         }
 
         /// <summary>
-        /// The first time you run any "project deploy pipeline" command, be sure to authorize the org in which DevOps Center is installed. The easiest way to authorize an org is with the "org login web" command.
-        /// 
-        /// Run this command by either indicating a job ID or specifying the —use-most-recent flag to use the job ID of the most recent deploy operation.
+        /// Check the status of a pipeline deploy operation.
         /// </summary>
         /// <remarks>
         /// The first time you run any "project deploy pipeline" command, be sure to authorize the org in which DevOps Center is installed. The easiest way to authorize an org is with the "org login web" command.
@@ -1744,24 +1712,19 @@ namespace sfdx4csharpClient
         /// Run this command by either indicating a job ID or specifying the —use-most-recent flag to use the job ID of the most recent deploy operation.
         /// </remarks>
         /// <example>
-        /// 
         /// Check the status using a job ID:
-        /// <%= config.bin %> <%= command.id %> --devops-center-username MyStagingSandbox --job-id 0Af0x000017yLUFCA2
+        /// $ sf deploy pipeline report --devops-center-username MyStagingSandbox --job-id 0Af0x000017yLUFCA2
         /// Check the status of the most recent deploy operation:
-        /// <%= config.bin %> <%= command.id %> --devops-center-username MyStagingSandbox --use-most-recent
+        /// $ sf deploy pipeline report --devops-center-username MyStagingSandbox --use-most-recent
         /// </example>
         [Command("deploy pipeline report")]
-        public SfdxResponse DeployPipelineReport(ProjectDeployPipelineReportOptions options)
+        public SfResponse DeployPipelineReport(ProjectDeployPipelineReportOptions options)
         {
             return ExecuteCommand(nameof(DeployPipelineReport), options);
         }
 
         /// <summary>
-        /// The first time you run any "project deploy pipeline" command, be sure to authorize the org in which DevOps Center is installed. The easiest way to authorize an org is with the "org login web" command. 
-        /// 
-        /// Use this command to resume watching a pipeline deploy operation if the original command times out or you specified the --async flag.
-        /// 
-        /// Run this command by either indicating a job ID or specifying the --use-most-recent flag to use the job ID of the most recent deploy operation.
+        /// Resume watching a pipeline deploy operation.
         /// </summary>
         /// <remarks>
         /// The first time you run any "project deploy pipeline" command, be sure to authorize the org in which DevOps Center is installed. The easiest way to authorize an org is with the "org login web" command. 
@@ -1771,22 +1734,19 @@ namespace sfdx4csharpClient
         /// Run this command by either indicating a job ID or specifying the --use-most-recent flag to use the job ID of the most recent deploy operation.
         /// </remarks>
         /// <example>
-        /// 
         /// Resume watching a deploy operation using a job ID:
-        /// <%= config.bin %> <%= command.id %> --job-id 0Af0x000017yLUFCA2
+        /// $ sf deploy pipeline resume --job-id 0Af0x000017yLUFCA2
         /// Resume watching the most recent deploy operation:
-        /// <%= config.bin %> <%= command.id %> --use-most-recent
+        /// $ sf deploy pipeline resume --use-most-recent
         /// </example>
         [Command("deploy pipeline resume")]
-        public SfdxResponse DeployPipelineResume(ProjectDeployPipelineResumeOptions options)
+        public SfResponse DeployPipelineResume(ProjectDeployPipelineResumeOptions options)
         {
             return ExecuteCommand(nameof(DeployPipelineResume), options);
         }
 
         /// <summary>
-        /// The first time you run any "project deploy pipeline" command, be sure to authorize the org in which DevOps Center is installed. The easiest way to authorize an org is with the "org login web" command.
-        /// 
-        /// Before you run this command, changes in the pipeline stage's branch must be merged in the source control repository.
+        /// Deploy changes from a branch to the pipeline stage’s org.
         /// </summary>
         /// <remarks>
         /// The first time you run any "project deploy pipeline" command, be sure to authorize the org in which DevOps Center is installed. The easiest way to authorize an org is with the "org login web" command.
@@ -1794,22 +1754,19 @@ namespace sfdx4csharpClient
         /// Before you run this command, changes in the pipeline stage's branch must be merged in the source control repository.
         /// </remarks>
         /// <example>
-        /// 
         /// Deploy changes in the Staging branch to the Staging environment (sandbox), if the previous stage is the bundling stage:
-        /// <%= config.bin %> <%= command.id %> --devops-center-project-name “Recruiting App” --branch-name staging --devops-center-username MyStagingSandbox --bundle-version-name 1.0
+        /// $ sf deploy pipeline start --devops-center-project-name “Recruiting App” --branch-name staging --devops-center-username MyStagingSandbox --bundle-version-name 1.0
         /// Deploy all changes in the main branch to the release environment:
-        /// <%= config.bin %> <%= command.id %> --devops-center-project-name “Recruiting App” --branch-name main --devops-center-username MyReleaseOrg --deploy-all
+        /// $ sf deploy pipeline start --devops-center-project-name “Recruiting App” --branch-name main --devops-center-username MyReleaseOrg --deploy-all
         /// </example>
         [Command("deploy pipeline start")]
-        public SfdxResponse DeployPipelineStart(ProjectDeployPipelineStartOptions options)
+        public SfResponse DeployPipelineStart(ProjectDeployPipelineStartOptions options)
         {
             return ExecuteCommand(nameof(DeployPipelineStart), options);
         }
 
         /// <summary>
-        /// The first time you run any "project deploy pipeline" command, be sure to authorize the org in which DevOps Center is installed. The easiest way to authorize an org is with the "org login web" command.
-        /// 
-        /// A validation runs Apex tests to verify whether a deployment will succeed without actually deploying the metadata to your environment, so you can then quickly deploy the changes later without re-running the tests.
+        /// Perform a validate-only deployment from a branch to the pipeline stage’s org.
         /// </summary>
         /// <remarks>
         /// The first time you run any "project deploy pipeline" command, be sure to authorize the org in which DevOps Center is installed. The easiest way to authorize an org is with the "org login web" command.
@@ -1817,65 +1774,51 @@ namespace sfdx4csharpClient
         /// A validation runs Apex tests to verify whether a deployment will succeed without actually deploying the metadata to your environment, so you can then quickly deploy the changes later without re-running the tests.
         /// </remarks>
         /// <example>
-        /// 
         /// Perform a validate-only deployment from the Staging branch to the Staging environment (sandbox):
-        /// <%= config.bin %> <%= command.id %> --devops-center-project-name “Recruiting App” --branch-name staging --devops-center-username MyStagingSandbox
+        /// $ sf deploy pipeline validate --devops-center-project-name “Recruiting App” --branch-name staging --devops-center-username MyStagingSandbox
         /// Perform a validate-only deployment of all changes from the main branch to the release environment:
-        /// <%= config.bin %> <%= command.id %> --devops-center-project-name “Recruiting App” --branch-name main --devops-center-username MyReleaseOrg --deploy-all
+        /// $ sf deploy pipeline validate --devops-center-project-name “Recruiting App” --branch-name main --devops-center-username MyReleaseOrg --deploy-all
         /// </example>
         [Command("deploy pipeline validate")]
-        public SfdxResponse DeployPipelineValidate(ProjectDeployPipelineValidateOptions options)
+        public SfResponse DeployPipelineValidate(ProjectDeployPipelineValidateOptions options)
         {
             return ExecuteCommand(nameof(DeployPipelineValidate), options);
         }
 
         /// <summary>
-        /// You must run this command from within a project.
-        /// 
-        /// The command outputs a table that describes what will happen if you run the "<%= config.bin %> project deploy start" command. The table lists the metadata components that will be deployed and deleted. The table also lists the current conflicts between files in your local project and components in the org. Finally, the table lists the files that won't be deployed because they're included in your .forceignore file.
-        /// 
-        /// If your org allows source tracking, then this command displays potential conflicts between the org and your local project. Some orgs, such as production org, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable source tracking when you create the orgs by specifying the --no-track-source flag on the "<%= config.bin %> org create scratch|sandbox" commands.
-        /// 
-        /// To preview the deployment of multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
+        /// Preview a deployment to see what will deploy to the org, the potential conflicts, and the ignored files.
         /// </summary>
         /// <remarks>
         /// You must run this command from within a project.
         /// 
-        /// The command outputs a table that describes what will happen if you run the "<%= config.bin %> project deploy start" command. The table lists the metadata components that will be deployed and deleted. The table also lists the current conflicts between files in your local project and components in the org. Finally, the table lists the files that won't be deployed because they're included in your .forceignore file.
+        /// The command outputs a table that describes what will happen if you run the "$ sf project deploy start" command. The table lists the metadata components that will be deployed and deleted. The table also lists the current conflicts between files in your local project and components in the org. Finally, the table lists the files that won't be deployed because they're included in your .forceignore file.
         /// 
-        /// If your org allows source tracking, then this command displays potential conflicts between the org and your local project. Some orgs, such as production org, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable source tracking when you create the orgs by specifying the --no-track-source flag on the "<%= config.bin %> org create scratch|sandbox" commands.
+        /// If your org allows source tracking, then this command displays potential conflicts between the org and your local project. Some orgs, such as production org, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable source tracking when you create the orgs by specifying the --no-track-source flag on the "$ sf org create scratch|sandbox" commands.
         /// 
-        /// To preview the deployment of multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
+        /// To preview the deployment of multiple metadata components, either set multiple --metadata [name] flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
         /// </remarks>
         /// <example>
-        /// 
-        /// NOTE: The commands to preview a deployment and actually deploy it use similar flags. We provide a few preview examples here, but see the help for "<%= config.bin %> project deploy start" for more examples that you can adapt for previewing.
+        /// NOTE: The commands to preview a deployment and actually deploy it use similar flags. We provide a few preview examples here, but see the help for "$ sf project deploy start" for more examples that you can adapt for previewing.
         /// Preview the deployment of source files in a directory, such as force-app, to your default org:
-        /// <%= config.bin %> <%= command.id %>  --source-dir force-app
+        /// $ sf deploy preview  --source-dir force-app
         /// Preview the deployment of all Apex classes to an org with alias "my-scratch":
-        /// <%= config.bin %> <%= command.id %> --metadata ApexClass --target-org my-scratch
+        /// $ sf deploy preview --metadata ApexClass --target-org my-scratch
         /// Preview deployment of a specific Apex class:
-        /// <%= config.bin %> <%= command.id %> --metadata ApexClass:MyApexClass
+        /// $ sf deploy preview --metadata ApexClass:MyApexClass
         /// Preview deployment of all components listed in a manifest:
-        /// <%= config.bin %> <%= command.id %> --manifest path/to/package.xml
+        /// $ sf deploy preview --manifest path/to/package.xml
         /// </example>
         [Command("deploy preview")]
-        public SfdxResponse DeployPreview(ProjectDeployPreviewOptions options)
+        public SfResponse DeployPreview(ProjectDeployPreviewOptions options)
         {
             return ExecuteCommand(nameof(DeployPreview), options);
         }
 
         /// <summary>
-        /// Before you run this command, first create a validated deployment with the "<%= config.bin %> project deploy validate" command, which returns a job ID. Validated deployments haven't been deployed to the org yet; you deploy them with this command. Either pass the job ID to this command or use the --use-most-recent flag to use the job ID of the most recently validated deployment. For the quick deploy to succeed, the associated validated deployment must also have succeeded.
-        /// 
-        /// Executing this quick deploy command takes less time than a standard deploy because it skips running Apex tests. These tests were previously run as part of the validation. Validating first and then running a quick deploy is useful if the deployment to your production org take several hours and you don’t want to risk a failed deploy.
-        /// 
-        /// This command doesn't support source-tracking. The source you deploy overwrites the corresponding metadata in your org. This command doesn’t attempt to merge your source with the versions in your org.
-        /// 
-        /// Note: Don't use this command on sandboxes; the command is intended to be used on production orgs.  By default, sandboxes don't run tests during a deploy. Use `sf project deploy start` instead.
+        /// Quickly deploy a validated deployment to an org.
         /// </summary>
         /// <remarks>
-        /// Before you run this command, first create a validated deployment with the "<%= config.bin %> project deploy validate" command, which returns a job ID. Validated deployments haven't been deployed to the org yet; you deploy them with this command. Either pass the job ID to this command or use the --use-most-recent flag to use the job ID of the most recently validated deployment. For the quick deploy to succeed, the associated validated deployment must also have succeeded.
+        /// Before you run this command, first create a validated deployment with the "$ sf project deploy validate" command, which returns a job ID. Validated deployments haven't been deployed to the org yet; you deploy them with this command. Either pass the job ID to this command or use the --use-most-recent flag to use the job ID of the most recently validated deployment. For the quick deploy to succeed, the associated validated deployment must also have succeeded.
         /// 
         /// Executing this quick deploy command takes less time than a standard deploy because it skips running Apex tests. These tests were previously run as part of the validation. Validating first and then running a quick deploy is useful if the deployment to your production org take several hours and you don’t want to risk a failed deploy.
         /// 
@@ -1884,26 +1827,19 @@ namespace sfdx4csharpClient
         /// Note: Don't use this command on sandboxes; the command is intended to be used on production orgs.  By default, sandboxes don't run tests during a deploy. Use `sf project deploy start` instead.
         /// </remarks>
         /// <example>
-        /// 
         /// Run a quick deploy to your default org using a job ID:
-        /// <%= config.bin %> <%= command.id %> --job-id 0Af0x000017yLUFCA2
+        /// $ sf deploy quick --job-id 0Af0x000017yLUFCA2
         /// Asynchronously run a quick deploy of the most recently validated deployment to an org with alias "my-prod-org":
-        /// <%= config.bin %> <%= command.id %> --async --use-most-recent --target-org my-prod-org
+        /// $ sf deploy quick --async --use-most-recent --target-org my-prod-org
         /// </example>
         [Command("deploy quick")]
-        public SfdxResponse DeployQuick(ProjectDeployQuickOptions options)
+        public SfResponse DeployQuick(ProjectDeployQuickOptions options = null)
         {
             return ExecuteCommand(nameof(DeployQuick), options);
         }
 
         /// <summary>
-        /// Deploy operations include standard deploys, quick deploys, deploy validations, and deploy cancellations.
-        /// 
-        /// Run this command by either passing it a job ID or specifying the --use-most-recent flag to use the job ID of the most recent deploy operation. If you specify the --wait flag, the command polls for the status every second until the timeout of --wait minutes. If you don't specify the --wait flag, the command simply checks and displays the status of the deploy; the command doesn't poll for the status.
-        /// 
-        /// You typically don't specify the --target-org flag because the cached job already references the org to which you deployed. But if you run this command on a computer different than the one from which you deployed, then you must specify the --target-org and it must point to the same org.
-        /// 
-        /// This command doesn't update source tracking information.
+        /// Check or poll for the status of a deploy operation.
         /// </summary>
         /// <remarks>
         /// Deploy operations include standard deploys, quick deploys, deploy validations, and deploy cancellations.
@@ -1915,24 +1851,21 @@ namespace sfdx4csharpClient
         /// This command doesn't update source tracking information.
         /// </remarks>
         /// <example>
-        /// 
         /// Check the status using a job ID:
-        /// <%= config.bin %> <%= command.id %> --job-id 0Af0x000017yLUFCA2
+        /// $ sf deploy report --job-id 0Af0x000017yLUFCA2
         /// Check the status of the most recent deploy operation:
-        /// <%= config.bin %> <%= command.id %> --use-most-recent
+        /// $ sf deploy report --use-most-recent
         /// Poll for the status using a job ID and target org:
-        /// <%= config.bin %> <%= command.id %> --job-id 0Af0x000017yLUFCA2 --target-org me@my.org --wait 30
+        /// $ sf deploy report --job-id 0Af0x000017yLUFCA2 --target-org me@my.org --wait 30
         /// </example>
         [Command("deploy report")]
-        public SfdxResponse DeployReport(ProjectDeployReportOptions options)
+        public SfResponse DeployReport(ProjectDeployReportOptions options = null)
         {
             return ExecuteCommand(nameof(DeployReport), options);
         }
 
         /// <summary>
-        /// Use this command to resume watching a deploy operation if the original command times out or you specified the --async flag. Deploy operations include standard deploys, quick deploys, deploy validations, and deploy cancellations. This command doesn't resume the original operation itself, because the operation always continues after you've started it, regardless of whether you're watching it or not. When the deploy completes, source tracking information is updated as needed.
-        /// 
-        /// Run this command by either passing it a job ID or specifying the --use-most-recent flag to use the job ID of the most recent deploy operation.
+        /// Resume watching a deploy operation and update source tracking when the deploy completes.
         /// </summary>
         /// <remarks>
         /// Use this command to resume watching a deploy operation if the original command times out or you specified the --async flag. Deploy operations include standard deploys, quick deploys, deploy validations, and deploy cancellations. This command doesn't resume the original operation itself, because the operation always continues after you've started it, regardless of whether you're watching it or not. When the deploy completes, source tracking information is updated as needed.
@@ -1940,111 +1873,92 @@ namespace sfdx4csharpClient
         /// Run this command by either passing it a job ID or specifying the --use-most-recent flag to use the job ID of the most recent deploy operation.
         /// </remarks>
         /// <example>
-        /// 
         /// Resume watching a deploy operation using a job ID:
-        /// <%= config.bin %> <%= command.id %> --job-id 0Af0x000017yLUFCA2
+        /// $ sf deploy resume --job-id 0Af0x000017yLUFCA2
         /// Resume watching the most recent deploy operation:
-        /// <%= config.bin %> <%= command.id %> --use-most-recent
+        /// $ sf deploy resume --use-most-recent
         /// </example>
         [Command("deploy resume")]
-        public SfdxResponse DeployResume(ProjectDeployResumeOptions options)
+        public SfResponse DeployResume(ProjectDeployResumeOptions options = null)
         {
             return ExecuteCommand(nameof(DeployResume), options);
         }
 
         /// <summary>
-        /// You must run this command from within a project.
-        /// 
-        /// Metadata components are deployed in source format by default. Deploy them in metadata format by specifying the --metadata-dir flag, which specifies the root directory or ZIP file that contains the metadata formatted files you want to deploy.
-        /// 
-        /// If your org allows source tracking, then this command tracks the changes in your source. Some orgs, such as production orgs, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable source tracking when you create the orgs by specifying the --no-track-source flag on the "<%= config.bin %> org create scratch|sandbox" commands.
-        /// 
-        /// To deploy multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
+        /// Deploy metadata to an org from your local project.
         /// </summary>
         /// <remarks>
         /// You must run this command from within a project.
         /// 
         /// Metadata components are deployed in source format by default. Deploy them in metadata format by specifying the --metadata-dir flag, which specifies the root directory or ZIP file that contains the metadata formatted files you want to deploy.
         /// 
-        /// If your org allows source tracking, then this command tracks the changes in your source. Some orgs, such as production orgs, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable source tracking when you create the orgs by specifying the --no-track-source flag on the "<%= config.bin %> org create scratch|sandbox" commands.
+        /// If your org allows source tracking, then this command tracks the changes in your source. Some orgs, such as production orgs, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable source tracking when you create the orgs by specifying the --no-track-source flag on the "$ sf org create scratch|sandbox" commands.
         /// 
-        /// To deploy multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
+        /// To deploy multiple metadata components, either set multiple --metadata [name] flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
         /// </remarks>
         /// <example>
-        /// 
         /// Deploy local changes not in the org; uses your default org:
-        /// <%= config.bin %> <%= command.id %>
+        /// $ sf deploy start
         /// Deploy all source files in the "force-app" directory to an org with alias "my-scratch"; show only concise output, in other words don't print a list of all the source that was deployed:
-        /// <%= config.bin %> <%= command.id %>  --source-dir force-app --target-org my-scratch --concise
+        /// $ sf deploy start  --source-dir force-app --target-org my-scratch --concise
         /// Deploy all the Apex classes and custom objects that are in the "force-app" directory. The list views, layouts, etc, that are associated with the custom objects are also deployed. Both examples are equivalent:
-        /// <%= config.bin %> <%= command.id %> --source-dir force-app/main/default/classes force-app/main/default/objects
-        /// <%= config.bin %> <%= command.id %> --source-dir force-app/main/default/classes --source-dir force-app/main/default/objects
+        /// $ sf deploy start --source-dir force-app/main/default/classes force-app/main/default/objects
+        /// $ sf deploy start --source-dir force-app/main/default/classes --source-dir force-app/main/default/objects
         /// Deploy all Apex classes that are in all package directories defined in the "sfdx-project.json" file:
-        /// <%= config.bin %> <%= command.id %> --metadata ApexClass
+        /// $ sf deploy start --metadata ApexClass
         /// Deploy a specific Apex class; ignore any conflicts between the local project and org (be careful with this flag, because it will overwrite the Apex class in the org if there are conflicts!):
-        /// <%= config.bin %> <%= command.id %> --metadata ApexClass:MyApexClass --ignore-conflicts
+        /// $ sf deploy start --metadata ApexClass:MyApexClass --ignore-conflicts
         /// Deploy specific Apex classes that match a pattern; in this example, deploy Apex classes whose names contain the string "MyApex". Also ignore any deployment warnings (again, be careful with this flag! You typically want to see the warnings):
-        /// <%= config.bin %> <%= command.id %> --metadata 'ApexClass:MyApex*' --ignore-warnings
+        /// $ sf deploy start --metadata 'ApexClass:MyApex*' --ignore-warnings
         /// Deploy all custom objects and Apex classes found in all defined package directories (both examples are equivalent):
-        /// <%= config.bin %> <%= command.id %> --metadata CustomObject ApexClass
-        /// <%= config.bin %> <%= command.id %> --metadata CustomObject --metadata ApexClass
+        /// $ sf deploy start --metadata CustomObject ApexClass
+        /// $ sf deploy start --metadata CustomObject --metadata ApexClass
         /// Deploy all Apex classes and a profile that has a space in its name:
-        /// <%= config.bin %> <%= command.id %> --metadata ApexClass --metadata "Profile:My Profile"
+        /// $ sf deploy start --metadata ApexClass --metadata "Profile:My Profile"
         /// Deploy all components listed in a manifest:
-        /// <%= config.bin %> <%= command.id %> --manifest path/to/package.xml
+        /// $ sf deploy start --manifest path/to/package.xml
         /// Run the tests that aren’t in any managed packages as part of a deployment:
-        /// <%= config.bin %> <%= command.id %> --metadata ApexClass --test-level RunLocalTests
+        /// $ sf deploy start --metadata ApexClass --test-level RunLocalTests
         /// </example>
         [Command("deploy start")]
-        public SfdxResponse DeployStart(ProjectDeployStartOptions options)
+        public SfResponse DeployStart(ProjectDeployStartOptions options)
         {
             return ExecuteCommand(nameof(DeployStart), options);
         }
 
         /// <summary>
-        /// Use this command to verify whether a deployment will succeed without actually deploying the metadata to your org. This command is similar to "<%= config.bin %> project deploy start", except you're required to run Apex tests, and the command returns a job ID rather than executing the deployment. If the validation succeeds, then you pass this job ID to the "<%= config.bin %> project deploy quick" command to actually deploy the metadata. This quick deploy takes less time because it skips running Apex tests. The job ID is valid for 10 days from when you started the validation. Validating first is useful if the deployment to your production org take several hours and you don’t want to risk a failed deploy.
-        /// 
-        /// You must run this command from within a project.
-        /// 
-        /// This command doesn't support source-tracking. When you quick deploy with the resulting job ID, the source you deploy overwrites the corresponding metadata in your org.
-        /// 
-        /// To validate the deployment of multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
-        /// 
-        /// Note: Don't use this command on sandboxes; the command is intended to be used on production orgs. By default, sandboxes don't run tests during a deploy.  If you want to validate a deployment with tests on a sandbox, use "sf project deploy start --dry-run --test-level RunLocalTests" instead.
+        /// Validate a metadata deployment without actually executing it.
         /// </summary>
         /// <remarks>
-        /// Use this command to verify whether a deployment will succeed without actually deploying the metadata to your org. This command is similar to "<%= config.bin %> project deploy start", except you're required to run Apex tests, and the command returns a job ID rather than executing the deployment. If the validation succeeds, then you pass this job ID to the "<%= config.bin %> project deploy quick" command to actually deploy the metadata. This quick deploy takes less time because it skips running Apex tests. The job ID is valid for 10 days from when you started the validation. Validating first is useful if the deployment to your production org take several hours and you don’t want to risk a failed deploy.
+        /// Use this command to verify whether a deployment will succeed without actually deploying the metadata to your org. This command is similar to "$ sf project deploy start", except you're required to run Apex tests, and the command returns a job ID rather than executing the deployment. If the validation succeeds, then you pass this job ID to the "$ sf project deploy quick" command to actually deploy the metadata. This quick deploy takes less time because it skips running Apex tests. The job ID is valid for 10 days from when you started the validation. Validating first is useful if the deployment to your production org take several hours and you don’t want to risk a failed deploy.
         /// 
         /// You must run this command from within a project.
         /// 
         /// This command doesn't support source-tracking. When you quick deploy with the resulting job ID, the source you deploy overwrites the corresponding metadata in your org.
         /// 
-        /// To validate the deployment of multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
+        /// To validate the deployment of multiple metadata components, either set multiple --metadata [name] flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
         /// 
         /// Note: Don't use this command on sandboxes; the command is intended to be used on production orgs. By default, sandboxes don't run tests during a deploy.  If you want to validate a deployment with tests on a sandbox, use "sf project deploy start --dry-run --test-level RunLocalTests" instead.
         /// </remarks>
         /// <example>
-        /// 
-        /// NOTE: These examples focus on validating large deployments. See the help for "<%= config.bin %> project deploy start" for examples of deploying smaller sets of metadata which you can also use to validate.
+        /// NOTE: These examples focus on validating large deployments. See the help for "$ sf project deploy start" for examples of deploying smaller sets of metadata which you can also use to validate.
         /// Validate the deployment of all source files in the "force-app" directory to the default org:
-        /// <%= config.bin %> <%= command.id %> --source-dir force-app
+        /// $ sf deploy validate --source-dir force-app
         /// Validate the deployment of all source files in two directories: "force-app" and "force-app-utils":
-        /// <%= config.bin %> <%= command.id %> --source-dir force-app --source-dir force-app-utils
+        /// $ sf deploy validate --source-dir force-app --source-dir force-app-utils
         /// Asynchronously validate the deployment and run all tests in the org with alias "my-prod-org"; command immediately returns the job ID:
-        /// <%= config.bin %> <%= command.id %> --source-dir force-app --async --test-level RunAllTestsInOrg --target-org my-prod-org
+        /// $ sf deploy validate --source-dir force-app --async --test-level RunAllTestsInOrg --target-org my-prod-org
         /// Validate the deployment of all components listed in a manifest:
-        /// <%= config.bin %> <%= command.id %> --manifest path/to/package.xml
+        /// $ sf deploy validate --manifest path/to/package.xml
         /// </example>
         [Command("deploy validate")]
-        public SfdxResponse DeployValidate(ProjectDeployValidateOptions options)
+        public SfResponse DeployValidate(ProjectDeployValidateOptions options)
         {
             return ExecuteCommand(nameof(DeployValidate), options);
         }
 
         /// <summary>
-        /// A Salesforce DX project has a specific structure and a configuration file (sfdx-project.json) that identifies the directory as a Salesforce DX project. This command generates the necessary configuration files and directories to get you started.
-        /// 
-        /// By default, the generated sfdx-project.json file sets the sourceApiVersion property to the default API version currently used by Salesforce CLI. To specify a different version, set the apiVersion configuration variable. For example: "sf config set apiVersion=57.0 --global".
+        /// Generate a Salesforce DX project.
         /// </summary>
         /// <remarks>
         /// A Salesforce DX project has a specific structure and a configuration file (sfdx-project.json) that identifies the directory as a Salesforce DX project. This command generates the necessary configuration files and directories to get you started.
@@ -2052,37 +1966,23 @@ namespace sfdx4csharpClient
         /// By default, the generated sfdx-project.json file sets the sourceApiVersion property to the default API version currently used by Salesforce CLI. To specify a different version, set the apiVersion configuration variable. For example: "sf config set apiVersion=57.0 --global".
         /// </remarks>
         /// <example>
-        /// 
         /// Generate a project called "mywork":
-        /// <%= config.bin %> <%= command.id %> --name mywork
+        /// $ sf generate --name mywork
         /// Similar to previous example, but generate the files in a directory called "myapp":
-        /// <%= config.bin %> <%= command.id %> --name mywork --default-package-dir myapp
+        /// $ sf generate --name mywork --default-package-dir myapp
         /// Similar to prevoius example, but also generate a default package.xml manifest file:
-        /// <%= config.bin %> <%= command.id %> --name mywork --default-package-dir myapp --manifest
+        /// $ sf generate --name mywork --default-package-dir myapp --manifest
         /// Generate a project with the minimum files and directories:
-        /// <%= config.bin %> <%= command.id %> --name mywork --template empty
+        /// $ sf generate --name mywork --template empty
         /// </example>
         [Command("generate")]
-        public SfdxResponse Generate(ProjectGenerateOptions options)
+        public SfResponse Generate(ProjectGenerateOptions options)
         {
             return ExecuteCommand(nameof(Generate), options);
         }
 
         /// <summary>
-        /// Create a manifest from a list of metadata components (--metadata) or from one or more local directories that contain source files (--source-dir). You can specify either of these parameters, not both.
-        /// 
-        /// Use --type to specify the type of manifest you want to create. The resulting manifest files have specific names, such as the standard package.xml or destructiveChanges.xml to delete metadata. Valid values for this parameter, and their respective file names, are:
-        /// 
-        ///     * package : package.xml (default)
-        ///     * pre : destructiveChangesPre.xml
-        ///     * post : destructiveChangesPost.xml
-        ///     * destroy : destructiveChanges.xml
-        /// 
-        /// See https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_deploy_deleting_files.htm for information about these destructive manifest files.
-        /// 
-        /// Use --name to specify a custom name for the generated manifest if the pre-defined ones don’t suit your needs. You can specify either --type or --name, but not both.
-        /// 
-        /// To include multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --include-packages and --source-dir.
+        /// Create a project manifest that lists the metadata components you want to deploy or retrieve.
         /// </summary>
         /// <remarks>
         /// Create a manifest from a list of metadata components (--metadata) or from one or more local directories that contain source files (--source-dir). You can specify either of these parameters, not both.
@@ -2098,54 +1998,46 @@ namespace sfdx4csharpClient
         /// 
         /// Use --name to specify a custom name for the generated manifest if the pre-defined ones don’t suit your needs. You can specify either --type or --name, but not both.
         /// 
-        /// To include multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --include-packages and --source-dir.
+        /// To include multiple metadata components, either set multiple --metadata [name] flags or a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --include-packages and --source-dir.
         /// </remarks>
         /// <example>
-        /// 
         /// Create a manifest for deploying or retrieving all Apex classes and custom objects:
-        /// $ <%= config.bin %> <%= command.id %> --metadata ApexClass --metadata CustomObject
+        /// $ $ sf generate manifest --metadata ApexClass --metadata CustomObject
         /// Create a manifest for deleting the specified Apex class:
-        /// $ <%= config.bin %> <%= command.id %> --metadata ApexClass:MyApexClass --type destroy
+        /// $ $ sf generate manifest --metadata ApexClass:MyApexClass --type destroy
         /// Create a manifest for deploying or retrieving all the metadata components in the specified local directory; name the file myNewManifest.xml:
-        /// $ <%= config.bin %> <%= command.id %> --source-dir force-app --name myNewManifest
+        /// $ $ sf generate manifest --source-dir force-app --name myNewManifest
         /// Create a manifest from the metadata components in the specified org and include metadata in any unlocked packages:
-        /// $ <%= config.bin %> <%= command.id %> --from-org test@myorg.com --include-packages unlocked
+        /// $ $ sf generate manifest --from-org test@myorg.com --include-packages unlocked
         /// </example>
         [Command("generate manifest")]
-        public SfdxResponse GenerateManifest(ProjectGenerateManifestOptions options)
+        public SfResponse GenerateManifest(ProjectGenerateManifestOptions options = null)
         {
             return ExecuteCommand(nameof(GenerateManifest), options);
         }
 
         /// <summary>
-        /// When deploying or retrieving metadata between your local project and an org, you can specify the source files you want to exclude with a .forceignore file. The .forceignore file structure mimics the .gitignore structure. Each line in .forceignore specifies a pattern that corresponds to one or more files. The files typically represent metadata components, but can be any files you want to exclude, such as LWC configuration JSON files or tests.
+        /// Check your local project package directories for forceignored files.
         /// </summary>
         /// <remarks>
         /// When deploying or retrieving metadata between your local project and an org, you can specify the source files you want to exclude with a .forceignore file. The .forceignore file structure mimics the .gitignore structure. Each line in .forceignore specifies a pattern that corresponds to one or more files. The files typically represent metadata components, but can be any files you want to exclude, such as LWC configuration JSON files or tests.
         /// </remarks>
         /// <example>
-        /// 
         /// List all the files in all package directories that are ignored:
-        /// <%= config.bin %> <%= command.id %>
+        /// $ sf list ignored
         /// List all the files in a specific directory that are ignored:
-        /// <%= config.bin %> <%= command.id %> --source-dir force-app
+        /// $ sf list ignored --source-dir force-app
         /// Check if a particular file is ignored:
-        /// <%= config.bin %> <%= command.id %> --source-dir package.xml
+        /// $ sf list ignored --source-dir package.xml
         /// </example>
         [Command("list ignored")]
-        public SfdxResponse ListIgnored(ProjectListIgnoredOptions options)
+        public SfResponse ListIgnored(ProjectListIgnoredOptions options = null)
         {
             return ExecuteCommand(nameof(ListIgnored), options);
         }
 
         /// <summary>
-        /// WARNING: This command deletes or overwrites all existing source tracking files. Use with extreme caution.
-        /// 
-        /// Resets local and remote source tracking so that Salesforce CLI no longer registers differences between your local files and those in the org. When you next run 'project deploy preview', Salesforce CLI returns no results, even though conflicts might actually exist. Salesforce CLI then resumes tracking new source changes as usual.
-        /// 
-        /// Use the --revision parameter to reset source tracking to a specific revision number of an org source member. To get the revision number, query the SourceMember Tooling API object with the 'data soql' command. For example:
-        /// 
-        ///     <%= config.bin %> data query --query "SELECT MemberName, MemberType, RevisionCounter FROM SourceMember" --use-tooling-api --target-org my-scratch
+        /// Reset local and remote source tracking.
         /// </summary>
         /// <remarks>
         /// WARNING: This command deletes or overwrites all existing source tracking files. Use with extreme caution.
@@ -2154,98 +2046,85 @@ namespace sfdx4csharpClient
         /// 
         /// Use the --revision parameter to reset source tracking to a specific revision number of an org source member. To get the revision number, query the SourceMember Tooling API object with the 'data soql' command. For example:
         /// 
-        ///     <%= config.bin %> data query --query "SELECT MemberName, MemberType, RevisionCounter FROM SourceMember" --use-tooling-api --target-org my-scratch
+        ///     $ sf data query --query "SELECT MemberName, MemberType, RevisionCounter FROM SourceMember" --use-tooling-api --target-org my-scratch
         /// </remarks>
         /// <example>
-        /// 
         /// Reset source tracking for the org with alias "my-scratch":
-        /// $ <%= config.bin %> <%= command.id %> --target-org my-scratch
+        /// $ $ sf reset tracking --target-org my-scratch
         /// Reset source tracking to revision number 30 for your default org:
-        /// $ <%= config.bin %> <%= command.id %> --revision 30
+        /// $ $ sf reset tracking --revision 30
         /// </example>
         [Command("reset tracking")]
-        public SfdxResponse ResetTracking(ProjectResetTrackingOptions options)
+        public SfResponse ResetTracking(ProjectResetTrackingOptions options)
         {
             return ExecuteCommand(nameof(ResetTracking), options);
         }
 
         /// <summary>
-        /// You must run this command from within a project.
-        /// 
-        /// The command outputs a table that describes what will happen if you run the "<%= config.bin %> project retrieve start" command. The table lists the metadata components that will be retrieved and deleted. The table also lists the current conflicts between files in your local project and components in the org. Finally, the table lists the files that won't be retrieved because they're included in your .forceignore file.
-        /// 
-        /// If your org allows source tracking, then this command displays potential conflicts between the org and your local project. Some orgs, such as production org, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable source tracking when you create the orgs by specifying the --no-track-source flag on the "<%= config.bin %> org create scratch|sandbox" commands.
+        /// Preview a retrieval to see what will be retrieved from the org, the potential conflicts, and the ignored files.
         /// </summary>
         /// <remarks>
         /// You must run this command from within a project.
         /// 
-        /// The command outputs a table that describes what will happen if you run the "<%= config.bin %> project retrieve start" command. The table lists the metadata components that will be retrieved and deleted. The table also lists the current conflicts between files in your local project and components in the org. Finally, the table lists the files that won't be retrieved because they're included in your .forceignore file.
+        /// The command outputs a table that describes what will happen if you run the "$ sf project retrieve start" command. The table lists the metadata components that will be retrieved and deleted. The table also lists the current conflicts between files in your local project and components in the org. Finally, the table lists the files that won't be retrieved because they're included in your .forceignore file.
         /// 
-        /// If your org allows source tracking, then this command displays potential conflicts between the org and your local project. Some orgs, such as production org, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable source tracking when you create the orgs by specifying the --no-track-source flag on the "<%= config.bin %> org create scratch|sandbox" commands.
+        /// If your org allows source tracking, then this command displays potential conflicts between the org and your local project. Some orgs, such as production org, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable source tracking when you create the orgs by specifying the --no-track-source flag on the "$ sf org create scratch|sandbox" commands.
         /// </remarks>
         /// <example>
-        /// 
         /// Preview the retrieve of all changes from your default org:
-        /// <%= config.bin %> <%= command.id %>
+        /// $ sf retrieve preview
         /// Preview the retrieve when ignoring any conflicts from an org with alias "my-scratch":
-        /// <%= config.bin %> <%= command.id %> --ignore-conflicts --target-org my-scratch
+        /// $ sf retrieve preview --ignore-conflicts --target-org my-scratch
         /// </example>
         [Command("retrieve preview")]
-        public SfdxResponse RetrievePreview(ProjectRetrievePreviewOptions options)
+        public SfResponse RetrievePreview(ProjectRetrievePreviewOptions options)
         {
             return ExecuteCommand(nameof(RetrievePreview), options);
         }
 
         /// <summary>
-        /// You must run this command from within a project.
-        /// 
-        /// Metadata components are retrieved in source format by default. Retrieve them in metadata format by specifying the --target-metadata-dir flag, which retrieves the components into a ZIP file in the specified directory.
-        /// 
-        /// If your org allows source tracking, then this command tracks the changes in your source. Some orgs, such as production orgs, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable source tracking when you create the orgs by specifying the --no-track-source flag on the "<%= config.bin %> org create scratch|sandbox" commands.
-        /// 
-        /// To retrieve multiple metadata components, either use multiple --metadata <name> flags or use a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
+        /// Retrieve metadata from an org to your local project.
         /// </summary>
         /// <remarks>
         /// You must run this command from within a project.
         /// 
         /// Metadata components are retrieved in source format by default. Retrieve them in metadata format by specifying the --target-metadata-dir flag, which retrieves the components into a ZIP file in the specified directory.
         /// 
-        /// If your org allows source tracking, then this command tracks the changes in your source. Some orgs, such as production orgs, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable source tracking when you create the orgs by specifying the --no-track-source flag on the "<%= config.bin %> org create scratch|sandbox" commands.
+        /// If your org allows source tracking, then this command tracks the changes in your source. Some orgs, such as production orgs, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable source tracking when you create the orgs by specifying the --no-track-source flag on the "$ sf org create scratch|sandbox" commands.
         /// 
-        /// To retrieve multiple metadata components, either use multiple --metadata <name> flags or use a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
+        /// To retrieve multiple metadata components, either use multiple --metadata [name] flags or use a single --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to --manifest and --source-dir.
         /// </remarks>
         /// <example>
-        /// 
         /// Retrieve all remote changes from your default org:
-        /// <%= config.bin %> <%= command.id %>
+        /// $ sf retrieve start
         /// Retrieve the source files in the "force-app" directory from an org with alias "my-scratch":
-        /// <%= config.bin %> <%= command.id %> --source-dir force-app --target-org my-scratch
+        /// $ sf retrieve start --source-dir force-app --target-org my-scratch
         /// Retrieve all the Apex classes and custom objects whose source is in the "force-app" directory. The list views, layouts, etc, that are associated with the custom objects are also retrieved. Both examples are equivalent:
-        /// <%= config.bin %> <%= command.id %> --source-dir force-app/main/default/classes force-app/main/default/objects
-        /// <%= config.bin %> <%= command.id %> --source-dir force-app/main/default/classes --source-dir force-app/main/default/objects
+        /// $ sf retrieve start --source-dir force-app/main/default/classes force-app/main/default/objects
+        /// $ sf retrieve start --source-dir force-app/main/default/classes --source-dir force-app/main/default/objects
         /// Retrieve all Apex classes that are in all package directories defined in the "sfdx-project.json" file:
-        /// <%= config.bin %> <%= command.id %> --metadata ApexClass
+        /// $ sf retrieve start --metadata ApexClass
         /// Retrieve a specific Apex class; ignore any conflicts between the local project and org (be careful with this flag, because it will overwrite the Apex class source files in your local project if there are conflicts!):
-        /// <%= config.bin %> <%= command.id %> --metadata ApexClass:MyApexClass --ignore-conflicts
+        /// $ sf retrieve start --metadata ApexClass:MyApexClass --ignore-conflicts
         /// Retrieve specific Apex classes that match a pattern; in this example, retrieve Apex classes whose names contain the string "MyApex":
-        /// <%= config.bin %> <%= command.id %> --metadata 'ApexClass:MyApex*'
+        /// $ sf retrieve start --metadata 'ApexClass:MyApex*'
         /// Retrieve all custom objects and Apex classes found in all defined package directories (both examples are equivalent):
-        /// <%= config.bin %> <%= command.id %> --metadata CustomObject ApexClass
-        /// <%= config.bin %> <%= command.id %> --metadata CustomObject --metadata ApexClass
+        /// $ sf retrieve start --metadata CustomObject ApexClass
+        /// $ sf retrieve start --metadata CustomObject --metadata ApexClass
         /// Retrieve all metadata components listed in a manifest:
-        /// <%= config.bin %> <%= command.id %> --manifest path/to/package.xml
+        /// $ sf retrieve start --manifest path/to/package.xml
         /// Retrieve metadata from a package:
-        /// <%= config.bin %> <%= command.id %> --package-name MyPackageName
+        /// $ sf retrieve start --package-name MyPackageName
         /// Retrieve metadata from multiple packages, one of which has a space in its name (both examples are equivalent):
-        /// <%= config.bin %> <%= command.id %> --package-name Package1 "PackageName With Spaces" Package3
-        /// <%= config.bin %> <%= command.id %> --package-name Package1 --package-name "PackageName With Spaces" --package-name Package3
+        /// $ sf retrieve start --package-name Package1 "PackageName With Spaces" Package3
+        /// $ sf retrieve start --package-name Package1 --package-name "PackageName With Spaces" --package-name Package3
         /// Retrieve the metadata components listed in the force-app directory, but retrieve them in metadata format into a ZIP file in the "output" directory:
-        /// <%= config.bin %> <%= command.id %> --source-dir force-app --target-metadata-dir output
+        /// $ sf retrieve start --source-dir force-app --target-metadata-dir output
         /// Retrieve in metadata format and automatically extract the contents into the "output" directory:
-        /// <%= config.bin %> <%= command.id %> --source-dir force-app --target-metadata-dir output --unzip
+        /// $ sf retrieve start --source-dir force-app --target-metadata-dir output --unzip
         /// </example>
         [Command("retrieve start")]
-        public SfdxResponse RetrieveStart(ProjectRetrieveStartOptions options)
+        public SfResponse RetrieveStart(ProjectRetrieveStartOptions options)
         {
             return ExecuteCommand(nameof(RetrieveStart), options);
         }

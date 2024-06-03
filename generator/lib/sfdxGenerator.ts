@@ -1,4 +1,4 @@
-import { Result, Flag } from "./rootObject";
+import { Result, Flag, CommandExamples } from "./rootObject";
 import {
   IClassDefinition,
   IFunctionDefinition,
@@ -44,9 +44,6 @@ export class Generator {
     const classDefinitions: { [id: string]: IClassDefinition } = {};
     rootObject.forEach(result => {
       const topic = this.extractTopicFromId(result.id);
-      if (topic === result.id) {
-        return;
-      }
 
       // Check if existing, else creates it.
       let className = this.extractClassNameFromTopic(topic);
@@ -61,7 +58,22 @@ export class Generator {
       }
 
       let command = result.id.substring(topic.length + 1);
-      let examples = result.examples?.join("\n") ?? "";
+      let apiCommand = command.split(":").join(" ")
+      if (command === ""){
+        command = "execute"
+        apiCommand = ""
+      }
+
+      let examples = ""
+      let dictExamples = result.examples as CommandExamples[]
+      if (dictExamples && dictExamples[0].description != null){
+        let theExample = dictExamples[0]
+        examples = [theExample.description, theExample.command].join("\n").concat("\n")
+      } else {
+        let lstValues = result.examples as string[];
+        examples = lstValues?.join("\n") ?? "";
+      }
+
       if (result.usage){
         if (examples !== ""){
           examples += "\n";
@@ -72,14 +84,13 @@ export class Generator {
 
       let funcName = this.extractFunctionNameFromCommand(command)
       let functionDefinition: IFunctionDefinition = {
-        apiCommand: command.split(":").join(" "),
+        apiCommand: apiCommand,
         name: this.beautifyName(funcName),
         parameters: this.extractParameters(result),
         returnType: this.extractReturnType(result),
-        shortDescription: result.description,
+        shortDescription: result.summary,
         description: result.description,
-        example: examples,
-        help: result.help
+        example: examples
       };
 
       let classNameDefinition = classDefinitions[className];
@@ -178,7 +189,7 @@ export class Generator {
         flagKey: "--" + key,
         type: this.extractType(flag),
         description: desription,
-        optional: !flag.required
+        optional: flag.required === undefined || flag.required === null || flag.required === false
       };
 
       parameters.push(parameter);
@@ -188,7 +199,7 @@ export class Generator {
       name: "Expression",
       description: "Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.",
       flagKey: "",
-      optional: false,
+      optional: true,
       type: "IStringKeyPair[] | string[] | string"
     });
 
@@ -214,7 +225,15 @@ export class Generator {
         return "Boolean";
       }
 
-      if (flag.type === "number" || flag.type === "minutes" || flag.kind === "number" || flag.kind === "minutes" || flag.kind === "integer") {
+      if (flag.type === "number" || flag.type === "minutes") {
+        return "number";
+      }
+
+      if (flag.kind === "number" || flag.kind === "minutes" || flag.kind === "integer") {
+        return "number";
+      }
+
+      if (flag.unit === "minutes" || flag.unit === "seconds" || flag.unit === "days" || flag.unit === "hours") {
         return "number";
       }
     }

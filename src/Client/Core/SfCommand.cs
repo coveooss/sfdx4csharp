@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Reflection;
 using sfdx4csharpClient.Core.Attributes;
 
 namespace sfdx4csharpClient.Core
@@ -7,18 +6,24 @@ namespace sfdx4csharpClient.Core
     /// <summary>
     /// SFDX CLI command's wrapper.
     /// </summary>
-    public abstract class SfdxCommand
+    public abstract class SfCommand
     {
         private readonly CommandExecutioner _commandExecutioner;
 
-        protected SfdxCommand(CommandExecutioner commandExecutioner)
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        protected SfCommand(CommandExecutioner commandExecutioner)
         {
             Debug.Assert(commandExecutioner != null);
 
             _commandExecutioner = commandExecutioner;
         }
 
-        protected SfdxResponse ExecuteCommand<TOptions>(string methodName, TOptions commandOptions) where TOptions : SfdxOptions, new()
+        /// <summary>
+        /// Executes a Salesforce CLI command.
+        /// </summary>
+        protected SfResponse ExecuteCommand<TOptions>(string methodName, TOptions commandOptions) where TOptions : SfOptions, new()
         {
             Debug.Assert(methodName != null);
 
@@ -29,13 +34,14 @@ namespace sfdx4csharpClient.Core
             var apiCommand = CommandAttribute.GetCommandValue(methodInfo);
             var command = $"{apiCommandClass} {apiCommand}";
 
-            SfdxOptions options = commandOptions ?? new TOptions();
+            SfOptions options = commandOptions ?? new TOptions();
             var output = _commandExecutioner.Execute(command, options);
-            return new SfdxResponse
-            {
-                AdditionalInfo = output,
-                Result = options.json ? ResponseParser.Parse(output.RawOutput) : null
-            };
+            var parsedResponse = options.json
+                ? ResponseParser.Parse(output.RawOutput)
+                : new SfResponse();
+
+            parsedResponse.CommandOutput = output;
+            return parsedResponse;
         }
     }
 }

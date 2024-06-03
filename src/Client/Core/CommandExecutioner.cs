@@ -27,7 +27,7 @@ namespace sfdx4csharpClient.Core
         /// <param name="command">Current command's method.</param>
         /// <param name="requestOptions">Current command's method options.</param>
         /// <returns>SFDX output information.</returns>
-        public SfdxOutput Execute<T>(string command, T requestOptions) where T : SfdxOptions
+        public SfCommandOutput Execute<T>(string command, T requestOptions) where T : SfOptions
         {
             Debug.Assert(command != null);
 
