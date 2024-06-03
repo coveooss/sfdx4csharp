@@ -7,9 +7,9 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method Functions of class Logout.
+    /// Options for the method Execute of class Version.
     /// </summary>
-    public class LogoutFunctionsOptions : SfOptions
+    public class VersionExecuteOptions : SfOptions
     {
         /// <summary>
         /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
@@ -18,38 +18,37 @@ namespace sfdx4csharpClient
         public string Expression { get; set; }
 
         /// <summary>
-        /// [Optional] Format output as json.
+        /// [Optional] Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
         /// </summary>
-        [SwitchName("--json")]
-        public bool? Json { get; set; }
+        [SwitchName("--verbose")]
+        public bool? Verbose { get; set; }
     }
 
     /// <summary>
-    /// Logout
+    /// Version
     /// </summary>
-    [CommandClass("logout")]
-    public class Logout : SfCommand
+    [CommandClass("version")]
+    public class Version : SfCommand
     {
         /// Constructor.
-        public Logout(CommandExecutioner commandExecutioner)
+        public Version(CommandExecutioner commandExecutioner)
                 : base(commandExecutioner)
         {
         }
 
         /// <summary>
-        /// Log out of your Salesforce Functions account.
+        /// 
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <example>
-        /// Log out:
-        /// $ sf functions
+        /// 
         /// </example>
-        [Command("functions")]
-        public SfResponse Functions(LogoutFunctionsOptions options = null)
+        [Command("")]
+        public SfResponse Execute(VersionExecuteOptions options = null)
         {
-            return ExecuteCommand(nameof(Functions), options);
+            return ExecuteCommand(nameof(Execute), options);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
+// Generated on Mon Jun 03 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -9,14 +9,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method GenerateComponent of class Visualforce.
     /// </summary>
-    public class VisualforceGenerateComponentOptions : SfdxOptions
+    public class VisualforceGenerateComponentOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] No description for label
         /// </summary>
@@ -30,25 +24,31 @@ namespace sfdx4csharpClient
         public string Name { get; set; }
 
         /// <summary>
-        /// [Required] Supplied parameter values or default values are filled into a copy of the template.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Supplied parameter values or default values are filled into a copy of the template.
         /// </summary>
         [SwitchName("--template")]
         public string Template { get; set; }
 
         /// <summary>
-        /// [Required] The location can be an absolute path or relative to the current working directory. The default is the current directory.
+        /// [Optional] The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
         [SwitchName("--output-dir")]
         public string OutputDir { get; set; }
 
         /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
+        /// [Optional] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] No description for loglevel
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
         public string Loglevel { get; set; }
@@ -57,14 +57,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method GeneratePage of class Visualforce.
     /// </summary>
-    public class VisualforceGeneratePageOptions : SfdxOptions
+    public class VisualforceGeneratePageOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] No description for label
         /// </summary>
@@ -78,25 +72,31 @@ namespace sfdx4csharpClient
         public string Name { get; set; }
 
         /// <summary>
-        /// [Required] Supplied parameter values or default values are filled into a copy of the template.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Supplied parameter values or default values are filled into a copy of the template.
         /// </summary>
         [SwitchName("--template")]
         public string Template { get; set; }
 
         /// <summary>
-        /// [Required] The location can be an absolute path or relative to the current working directory. The default is the current directory.
+        /// [Optional] The location can be an absolute path or relative to the current working directory. The default is the current directory.
         /// </summary>
         [SwitchName("--output-dir")]
         public string OutputDir { get; set; }
 
         /// <summary>
-        /// [Required] Override the api version used for api requests made by this command
+        /// [Optional] Override the api version used for api requests made by this command
         /// </summary>
         [SwitchName("--api-version")]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// [Required] No description for loglevel
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
         public string Loglevel { get; set; }
@@ -106,7 +106,7 @@ namespace sfdx4csharpClient
     /// Visualforce
     /// </summary>
     [CommandClass("visualforce")]
-    public class Visualforce : SfdxCommand
+    public class Visualforce : SfCommand
     {
         /// Constructor.
         public Visualforce(CommandExecutioner commandExecutioner)
@@ -115,39 +115,37 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// The command generates the .Component file and associated metadata file in the specified directory or the current working directory by default.
+        /// Generate a Visualforce Component.
         /// </summary>
         /// <remarks>
         /// The command generates the .Component file and associated metadata file in the specified directory or the current working directory by default.
         /// </remarks>
         /// <example>
-        /// 
         /// Generate the metadata files for a Visualforce component in the current directory:
-        /// <%= config.bin %> <%= command.id %> --name mycomponent --label mylabel
+        /// $ sf generate component --name mycomponent --label mylabel
         /// Similar to previous example, but generate the files in the directory "force-app/main/default/components":
-        /// <%= config.bin %> <%= command.id %> --name mycomponent --label mylabel --output-dir components
+        /// $ sf generate component --name mycomponent --label mylabel --output-dir components
         /// </example>
         [Command("generate component")]
-        public SfdxResponse GenerateComponent(VisualforceGenerateComponentOptions options)
+        public SfResponse GenerateComponent(VisualforceGenerateComponentOptions options)
         {
             return ExecuteCommand(nameof(GenerateComponent), options);
         }
 
         /// <summary>
-        /// The command generates the .Page file and associated metadata file in the specified directory or the current working directory by default.
+        /// Generate a Visualforce Page.
         /// </summary>
         /// <remarks>
         /// The command generates the .Page file and associated metadata file in the specified directory or the current working directory by default.
         /// </remarks>
         /// <example>
-        /// 
         /// Generate the metadata files for a Visualforce page in the current directory:
-        /// <%= config.bin %> <%= command.id %> --name mypage --label mylabel
+        /// $ sf generate page --name mypage --label mylabel
         /// Similar to previous example, but generate the files in the directory "force-app/main/default/pages":
-        /// <%= config.bin %> <%= command.id %> --name mypage --label mylabel --output-dir pages
+        /// $ sf generate page --name mypage --label mylabel --output-dir pages
         /// </example>
         [Command("generate page")]
-        public SfdxResponse GeneratePage(VisualforceGeneratePageOptions options)
+        public SfResponse GeneratePage(VisualforceGeneratePageOptions options)
         {
             return ExecuteCommand(nameof(GeneratePage), options);
         }

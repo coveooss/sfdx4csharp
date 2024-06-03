@@ -1,4 +1,4 @@
-// Generated on Wed May 29 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
+// Generated on Mon Jun 03 2024 using @salesforce/cli/2.42.6 win32-x64 node-v20.12.2. DO NOT MODIFY
 
 using sfdx4csharp.Client.Core;
 using sfdx4csharpClient.Core;
@@ -7,12 +7,30 @@ using sfdx4csharpClient.Core.Attributes;
 namespace sfdx4csharpClient
 {
     /// <summary>
-    /// Options for the method Install of class Plugins.
+    /// Options for the method Execute of class Plugins.
     /// </summary>
-    public class PluginsInstallOptions : SfdxOptions
+    public class PluginsExecuteOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] Show core plugins.
+        /// </summary>
+        [SwitchName("--core")]
+        public bool? Core { get; set; }
+    }
+
+    /// <summary>
+    /// Options for the method Install of class Plugins.
+    /// </summary>
+    public class PluginsInstallOptions : SfOptions
+    {
+        /// <summary>
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
@@ -51,10 +69,10 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method Discover of class Plugins.
     /// </summary>
-    public class PluginsDiscoverOptions : SfdxOptions
+    public class PluginsDiscoverOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
@@ -66,7 +84,7 @@ namespace sfdx4csharpClient
         public bool? Json { get; set; }
 
         /// <summary>
-        /// [Required] No description for flags-dir
+        /// [Optional] No description for flags-dir
         /// </summary>
         [SwitchName("--flags-dir")]
         public string FlagsDir { get; set; }
@@ -75,10 +93,10 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method Inspect of class Plugins.
     /// </summary>
-    public class PluginsInspectOptions : SfdxOptions
+    public class PluginsInspectOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
@@ -99,10 +117,10 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method Link of class Plugins.
     /// </summary>
-    public class PluginsLinkOptions : SfdxOptions
+    public class PluginsLinkOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
@@ -129,10 +147,10 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method Uninstall of class Plugins.
     /// </summary>
-    public class PluginsUninstallOptions : SfdxOptions
+    public class PluginsUninstallOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
@@ -153,10 +171,10 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method Reset of class Plugins.
     /// </summary>
-    public class PluginsResetOptions : SfdxOptions
+    public class PluginsResetOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
@@ -177,14 +195,8 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method TrustVerify of class Plugins.
     /// </summary>
-    public class PluginsTrustVerifyOptions : SfdxOptions
+    public class PluginsTrustVerifyOptions : SfOptions
     {
-        /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
-        /// </summary>
-        [SwitchName("")]
-        public string Expression { get; set; }
-
         /// <summary>
         /// [Required] No description for npm
         /// </summary>
@@ -192,13 +204,19 @@ namespace sfdx4csharpClient
         public string Npm { get; set; }
 
         /// <summary>
-        /// [Required] No description for registry
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// </summary>
+        [SwitchName("")]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// [Optional] No description for registry
         /// </summary>
         [SwitchName("--registry")]
         public string Registry { get; set; }
 
         /// <summary>
-        /// [Required] No description for loglevel
+        /// [Optional] No description for loglevel
         /// </summary>
         [SwitchName("--loglevel")]
         public string Loglevel { get; set; }
@@ -207,10 +225,10 @@ namespace sfdx4csharpClient
     /// <summary>
     /// Options for the method Update of class Plugins.
     /// </summary>
-    public class PluginsUpdateOptions : SfdxOptions
+    public class PluginsUpdateOptions : SfOptions
     {
         /// <summary>
-        /// [Required] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
+        /// [Optional] Raw string parameters for the command. EX: 'name=value' expressions or parameters without flags.
         /// </summary>
         [SwitchName("")]
         public string Expression { get; set; }
@@ -232,7 +250,7 @@ namespace sfdx4csharpClient
     /// Plugins
     /// </summary>
     [CommandClass("plugins")]
-    public class Plugins : SfdxCommand
+    public class Plugins : SfCommand
     {
         /// Constructor.
         public Plugins(CommandExecutioner commandExecutioner)
@@ -241,71 +259,74 @@ namespace sfdx4csharpClient
         }
 
         /// <summary>
-        /// Uses bundled npm executable to install plugins into <%= config.dataDir %>
         /// 
-        /// Installation of a user-installed plugin will override a core plugin.
-        /// 
-        /// Use the <%= config.scopedEnvVarKey('NPM_LOG_LEVEL') %> environment variable to set the npm loglevel.
-        /// Use the <%= config.scopedEnvVarKey('NPM_REGISTRY') %> environment variable to set the npm registry.
         /// </summary>
         /// <remarks>
-        /// Uses bundled npm executable to install plugins into <%= config.dataDir %>
+        /// List installed plugins.
+        /// </remarks>
+        /// <example>
+        /// $ sf 
+        /// </example>
+        [Command("")]
+        public SfResponse Execute(PluginsExecuteOptions options = null)
+        {
+            return ExecuteCommand(nameof(Execute), options);
+        }
+
+        /// <summary>
+        /// Installs a plugin into $ sf.
+        /// </summary>
+        /// <remarks>
+        /// Uses bundled npm executable to install plugins into [%= config.dataDir %]
         /// 
         /// Installation of a user-installed plugin will override a core plugin.
         /// 
-        /// Use the <%= config.scopedEnvVarKey('NPM_LOG_LEVEL') %> environment variable to set the npm loglevel.
-        /// Use the <%= config.scopedEnvVarKey('NPM_REGISTRY') %> environment variable to set the npm registry.
+        /// Use the [%= config.scopedEnvVarKey('NPM_LOG_LEVEL') %] environment variable to set the npm loglevel.
+        /// Use the [%= config.scopedEnvVarKey('NPM_REGISTRY') %] environment variable to set the npm registry.
         /// </remarks>
         /// <example>
+        /// Install a plugin from npm registry.
+        /// $ sf install [%- config.pjson.oclif.examplePlugin || "myplugin" %] 
         /// 
-        /// [object Object]
-        /// [object Object]
-        /// [object Object]
         /// </example>
         [Command("install")]
-        public SfdxResponse Install(PluginsInstallOptions options)
+        public SfResponse Install(PluginsInstallOptions options = null)
         {
             return ExecuteCommand(nameof(Install), options);
         }
 
         /// <summary>
-        /// 
+        /// See a list of 3rd-party sf plugins you can install.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <example>
-        /// 
-        /// <%= config.bin %> <%= command.id %>
+        /// $ sf discover
         /// </example>
         [Command("discover")]
-        public SfdxResponse Discover(PluginsDiscoverOptions options)
+        public SfResponse Discover(PluginsDiscoverOptions options = null)
         {
             return ExecuteCommand(nameof(Discover), options);
         }
 
         /// <summary>
-        /// Displays installation properties of a plugin.
+        /// 
         /// </summary>
         /// <remarks>
         /// Displays installation properties of a plugin.
         /// </remarks>
         /// <example>
-        /// 
-        /// <%= config.bin %> <%= command.id %> <%- config.pjson.oclif.examplePlugin || "myplugin" %> 
+        /// $ sf inspect [%- config.pjson.oclif.examplePlugin || "myplugin" %] 
         /// plugins:inspect PLUGIN...
         /// </example>
         [Command("inspect")]
-        public SfdxResponse Inspect(PluginsInspectOptions options)
+        public SfResponse Inspect(PluginsInspectOptions options = null)
         {
             return ExecuteCommand(nameof(Inspect), options);
         }
 
         /// <summary>
-        /// Links a plugin into the CLI for development.
-        /// Installation of a linked plugin will override a user-installed or core plugin.
-        /// 
-        /// e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' command will override the user-installed or core plugin implementation. This is useful for development work.
         /// 
         /// </summary>
         /// <remarks>
@@ -316,76 +337,71 @@ namespace sfdx4csharpClient
         /// 
         /// </remarks>
         /// <example>
-        /// 
-        /// <%= config.bin %> <%= command.id %> <%- config.pjson.oclif.examplePlugin || "myplugin" %> 
+        /// $ sf link [%- config.pjson.oclif.examplePlugin || "myplugin" %] 
         /// </example>
         [Command("link")]
-        public SfdxResponse Link(PluginsLinkOptions options)
+        public SfResponse Link(PluginsLinkOptions options = null)
         {
             return ExecuteCommand(nameof(Link), options);
         }
 
         /// <summary>
-        /// Removes a plugin from the CLI.
+        /// 
         /// </summary>
         /// <remarks>
         /// Removes a plugin from the CLI.
         /// </remarks>
         /// <example>
-        /// 
-        /// <%= config.bin %> <%= command.id %> <%- config.pjson.oclif.examplePlugin || "myplugin" %>
+        /// $ sf uninstall [%- config.pjson.oclif.examplePlugin || "myplugin" %]
         /// </example>
         [Command("uninstall")]
-        public SfdxResponse Uninstall(PluginsUninstallOptions options)
+        public SfResponse Uninstall(PluginsUninstallOptions options = null)
         {
             return ExecuteCommand(nameof(Uninstall), options);
         }
 
         /// <summary>
-        /// 
+        /// Remove all user-installed and linked plugins.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <example>
         /// 
-        /// 
         /// </example>
         [Command("reset")]
-        public SfdxResponse Reset(PluginsResetOptions options)
+        public SfResponse Reset(PluginsResetOptions options = null)
         {
             return ExecuteCommand(nameof(Reset), options);
         }
 
         /// <summary>
-        /// Verifies the digital signature on an npm package matches the signature and key stored at the expected URLs.
+        /// Validate a digital signature.
         /// </summary>
         /// <remarks>
         /// Verifies the digital signature on an npm package matches the signature and key stored at the expected URLs.
         /// </remarks>
         /// <example>
-        /// 
-        /// <%= config.bin %> <%= command.id %> --npm @scope/npmName --registry https://npm.pkg.github.com
-        /// <%= config.bin %> <%= command.id %> --npm @scope/npmName
+        /// $ sf trust verify --npm @scope/npmName --registry https://npm.pkg.github.com
+        /// $ sf trust verify --npm @scope/npmName
         /// </example>
         [Command("trust verify")]
-        public SfdxResponse TrustVerify(PluginsTrustVerifyOptions options)
+        public SfResponse TrustVerify(PluginsTrustVerifyOptions options)
         {
             return ExecuteCommand(nameof(TrustVerify), options);
         }
 
         /// <summary>
-        /// Update installed plugins.
+        /// 
         /// </summary>
         /// <remarks>
         /// Update installed plugins.
         /// </remarks>
         /// <example>
         /// 
-        /// 
         /// </example>
         [Command("update")]
-        public SfdxResponse Update(PluginsUpdateOptions options)
+        public SfResponse Update(PluginsUpdateOptions options = null)
         {
             return ExecuteCommand(nameof(Update), options);
         }
