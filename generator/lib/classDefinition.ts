@@ -13,7 +13,6 @@ export interface IFunctionDefinition {
   shortDescription: string;
   description: string;
   example: string;
-  help: string;
 }
 
 export interface IParameterDefinition {
