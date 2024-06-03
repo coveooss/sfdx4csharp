@@ -4,6 +4,9 @@ using System.Reflection;
 
 namespace sfdx4csharpClient.Core.Attributes
 {
+    /// <summary>
+    /// Represents an arguments name used with a Salesforce CLI command.
+    /// </summary>
     [AttributeUsage(AttributeTargets.Property)]
     public class SwitchNameAttribute : Attribute
     {
