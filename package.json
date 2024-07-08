@@ -35,7 +35,7 @@
     "@types/underscore": "^1.9.4",
     "fs-extra": "^7.0.1",
     "lodash.camelcase": "^4.3.0",
-    "prettier": "^1.19.1",
+    "prettier": "^3.0.0",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
