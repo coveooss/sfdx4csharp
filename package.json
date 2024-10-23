@@ -30,10 +30,10 @@
   },
   "devDependencies": {
     "@salesforce/cli": "^2.0.0",
-    "@types/fs-extra": "^7.0.0",
+    "@types/fs-extra": "^11.0.0",
     "@types/node": "^10.17.17",
     "@types/underscore": "^1.9.4",
-    "fs-extra": "^7.0.1",
+    "fs-extra": "^11.0.0",
     "lodash.camelcase": "^4.3.0",
     "prettier": "^1.19.1",
     "tslint": "^5.20.1",
